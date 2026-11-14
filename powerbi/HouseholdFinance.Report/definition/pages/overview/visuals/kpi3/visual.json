@@ -44,9 +44,13 @@
               }
             },
             "fontColor": {
-              "expr": {
-                "Literal": {
-                  "Value": "'#183D40'"
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
                 }
               }
             }
@@ -99,6 +103,21 @@
           ]
         }
       }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

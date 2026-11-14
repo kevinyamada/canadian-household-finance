@@ -1,0 +1,7 @@
+* text=auto
+data/raw/* -text
+data/raw/manifest.json text eol=lf
+*.png -text
+*.sqlite -text
+*.zip -text
+*.pbix -text

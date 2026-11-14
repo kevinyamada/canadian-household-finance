@@ -15,3 +15,4 @@ jobs:
       - run: pip install -r requirements-lock.txt
       - run: python run.py
       - run: python -m pytest -q
+      - run: python src/validate_powerbi.py

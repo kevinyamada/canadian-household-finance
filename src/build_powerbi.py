@@ -1,5 +1,7 @@
 import base64
 import json
+import shutil
+from datetime import datetime
 from pathlib import Path
 import pandas as pd
 
@@ -55,11 +57,13 @@ def literal(value):
 
 
 def visual(page,name,kind,x,y,w,h,title,roles=None,sort=None,objects=None):
-    v={'visualType':kind,'visualContainerObjects':{'title':[{'properties':{'show':literal(True),'text':literal(title),'fontSize':literal(12),'bold':literal(True),'fontColor':literal('#183D40')}}],
+    v={'visualType':kind,'visualContainerObjects':{'title':[{'properties':{'show':literal(True),'text':literal(title),'fontSize':literal(12),'bold':literal(True),'fontColor':{'solid':{'color':literal('#183D40')}}}}],
          'background':[{'properties':{'show':literal(True),'color':{'solid':{'color':literal('#FFFFFF')}}}}]}}
     if roles:
         v['query']={'queryState':{role:{'projections':items} for role,items in roles.items()}}
         if sort:v['query']['sortDefinition']={'sort':[{'field':sort,'direction':'Ascending'}]}
+    if kind=='card':
+        v['objects']={'categoryLabels':[{'properties':{'show':literal(False)}}]}
     if kind=='lineChart':
         v['objects']={'categoryAxis':[{'properties':{'axisType':literal('Scalar'),'labelColor':{'solid':{'color':literal('#35444A')}}}}]}
     if objects:v.setdefault('objects',{}).update(objects)
@@ -74,6 +78,14 @@ def text(page,name,x,y,w,h,content,size=13,color='#183D40'):
 
 
 def build():
+    caches=[MODEL/'.pbi',REPORT/'.pbi']
+    present=[path for path in caches if path.exists()]
+    if present:
+        backup=ROOT/'.powerbi_cache_backup'/datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+        backup.mkdir(parents=True)
+        for path in present:
+            shutil.move(str(path),str(backup/path.parent.name))
+        print('Preserved the previous Power BI local cache:',backup)
     panel=pd.read_csv(OUT/'quarterly_panel.csv')
     changes=pd.read_csv(OUT/'recent_changes.csv')
     panel=panel.merge(changes[['quarter','dsr_qoq_pp','dsr_yoy_pp']],on='quarter',validate='one_to_one')
@@ -99,8 +111,8 @@ def build():
             table('Backtest',backtest,[measure('Observed','MAX(Backtest[actual])'),measure('Model estimate','MAX(Backtest[prediction])'),
                                       measure('Persistence estimate','MAX(Backtest[baseline])'),measure('Test MAE','AVERAGE(Backtest[absolute_error])'),
                                       measure('Band coverage','AVERAGE(Backtest[covered])','0.0%')]),
-            table('Scores',pd.read_csv(OUT/'holdout_scores.csv'),[measure('Mean absolute error','MAX(Scores[mae])'),measure('Root mean squared error','MAX(Scores[rmse])')]),
-            table('Scenarios',pd.read_csv(OUT/'scenarios.csv'),[measure('Scenario ratio','MAX(Scenarios[scenario_dsr])','0.00"%"')]),
+            table('Scores',pd.read_csv(OUT/'holdout_scores.csv'),[measure('Mean absolute error','IF(HASONEVALUE(Scores[model]), MAX(Scores[mae]))','0.000'),measure('Root mean squared error','IF(HASONEVALUE(Scores[model]), MAX(Scores[rmse]))','0.000')]),
+            table('Scenarios',pd.read_csv(OUT/'scenarios.csv'),[measure('Scenario ratio','IF(HASONEVALUE(Scenarios[income_change_pct]) && HASONEVALUE(Scenarios[payment_change_pct]), MAX(Scenarios[scenario_dsr]))','0.00"%"')]),
             table('Contributions',pd.read_csv(OUT/'latest_decomposition.csv'),[measure('Contribution','SUM(Contributions[contribution_pp])')]),
             table('Estimate',pd.read_csv(OUT/'next_estimate.csv'))]
     relationships=[{'name':'Household_Quarter','fromTable':'Household','fromColumn':'quarter','toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'},
@@ -146,7 +158,7 @@ def build():
     visual('scenarios','payment_select','slicer',830,150,420,180,'Assumed payment change (%)',{'Values':[projection('Scenarios','payment_change_pct')]})
     visual('scenarios','income_select','slicer',830,350,420,180,'Assumed income change (%)',{'Values':[projection('Scenarios','income_change_pct')]})
     text('scenarios','equation',24,610,1210,75,'Scenario ratio = 100 × current payments × (1 + payment change) / [current income × (1 + income change)]. No causal link from policy rates is assumed. Clear slicers to show every scenario.',12)
-    write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61'})
+    write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}})
     write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',json.loads((BI/'theme.json').read_text()))
     print('Power BI project generated:',BI/'HouseholdFinance.pbip')
 

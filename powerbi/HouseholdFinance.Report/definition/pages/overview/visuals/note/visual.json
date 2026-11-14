@@ -44,9 +44,13 @@
               }
             },
             "fontColor": {
-              "expr": {
-                "Literal": {
-                  "Value": "'#183D40'"
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
                 }
               }
             }

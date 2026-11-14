@@ -11,3 +11,5 @@ ui_*
 *.pbix
 
 .schema_cache/
+
+.powerbi_cache_backup/

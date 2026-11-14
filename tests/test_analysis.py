@@ -86,3 +86,28 @@ def test_persistence_is_previous_observation(panel):
     result=pd.read_csv(OUT/'holdout_predictions.csv')
     result=result[result.model=='Persistence'].merge(panel[['quarter','dsr']],left_on='origin_quarter',right_on='quarter',validate='one_to_one')
     np.testing.assert_allclose(result.prediction,result.dsr)
+
+
+def test_raw_snapshots_match_recorded_hashes():
+    import hashlib
+    raw=OUT.parent/'raw'
+    manifest=json.loads((raw/'manifest.json').read_text())
+    for source in manifest:
+        assert hashlib.sha256((raw/source['file']).read_bytes()).hexdigest()==source['sha256']
+
+
+def test_powerbi_snapshot_matches_python_results(panel):
+    import base64
+    import re
+    root=OUT.parents[1]
+    model=json.loads((root/'powerbi/HouseholdFinance.SemanticModel/model.bim').read_text(encoding='utf-8'))['model']
+    for table in model['tables']:
+        names=[x['name'].casefold() for x in table['columns']+table.get('measures',[])]
+        assert len(names)==len(set(names))
+        if table['name']!='Household':continue
+        expression='\n'.join(table['partitions'][0]['source']['expression'])
+        encoded=re.search(r'Binary.FromText\("([A-Za-z0-9+/=]+)"',expression).group(1)
+        embedded=pd.DataFrame(json.loads(base64.b64decode(encoded)))
+        assert embedded.quarter.tolist()==panel.quarter.tolist()
+        np.testing.assert_allclose(embedded.dsr,panel.dsr,rtol=0,atol=1e-10)
+        np.testing.assert_allclose(embedded.income,panel.income,rtol=0,atol=1e-6)

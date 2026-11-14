@@ -15,7 +15,7 @@
       "items": [
         {
           "name": "HouseholdTheme",
-          "path": "HouseholdTheme.json",
+          "path": "HouseholdTheme",
           "type": "CustomTheme"
         }
       ]
