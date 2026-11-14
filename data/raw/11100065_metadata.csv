@@ -1,0 +1,70 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Debt service indicators of households, national balance sheet accounts","11100065",,"https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110006501",,"CURRENT - a cube available to the public and that is current","Quarterly","1990-01-01","2026-04-01","3",
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+"1","Geography",,""
+"2","Seasonal adjustment",,""
+"3","Estimates",,""
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+"1","Canada","[11124]","1","","",,
+"2","Seasonally adjusted at annual rates","","1","","",,
+"2","Unadjusted","","2","","",,
+"3","Household income","","1","","",,
+"3","Compensation of employees","","2","1","",,
+"3","Net mixed income","","3","1","",,
+"3","Property income received","","4","1","",1,
+"3","Current transfers received","","5","1","",,
+"3","Household outlays","","6","","",,
+"3","Property income paid","","7","6","",1,
+"3","Current transfers paid","","8","6","",,
+"3","Household final consumption expenditure","","9","6","",,
+"3","Disposable income ","","10","","",,
+"3","Plus: Interest paid","","11","","",,
+"3","Equals: disposable income before payment of interest","","12","","",2,
+"3","Total debt payments","","13","","",2,
+"3","Mortgage debt payments","","14","13","",2,
+"3","Non-mortgage debt payments","","15","13","",2,
+"3","Total obligated payments of principal","","16","","",2,
+"3","Obligated mortgage principal payments","","17","16","",2,
+"3","Obligated non-mortgage principal payments","","18","16","",2,
+"3","Total interest paid","","19","","",2,
+"3","Mortgage interest paid","","20","19","",2,
+"3","Non-mortgage interest paid","","21","19","",2,
+"3","Of which: consumer debt ","","29","21","",2,
+"3","Debt service ratio","","22","","",2,
+"3","Mortgage debt service ratio","","23","22","",2,
+"3","Non-mortgage debt service ratio","","24","22","",2,
+"3","Debt service ratio, interest only","","25","","",2,
+"3","Mortgage debt service ratio, interest only","","26","25","",2,
+"3","Non-mortgage debt service ratio, interest only","","27","25","",2,
+"3","Of which: consumer debt service ratio, interest only","","28","27","",2,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period","..",
+"less than the limit of detection","<LOD",
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded","0s",
+"data quality: excellent","A",
+"data quality: very good","B",
+"data quality: good","C",
+"data quality: acceptable","D",
+"use with caution","E",
+"too unreliable to be published","F",
+"not applicable","...",
+"preliminary","p",
+"revised","r",
+"suppressed to meet the confidentiality requirements of the Statistics Act","x",
+"terminated","t",
+
+"Survey Code","Survey Name"
+"1806","National Balance Sheet Accounts"
+
+"Subject Code","Subject Name"
+"11","Income, pensions, spending and wealth"
+
+"Note ID",Note
+1,"Property incomes are adjusted for the cost of financial services indirectly measured."
+2,"Household debt service indicators."
+
+"Correction ID","Correction Date","Correction Note"

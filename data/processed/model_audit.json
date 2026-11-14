@@ -1,0 +1,38 @@
+{
+  "selection_period": [
+    "2007Q1",
+    "2018Q4"
+  ],
+  "holdout_period": [
+    "2019Q1",
+    "2026Q2"
+  ],
+  "selected_model": "Random forest",
+  "features": [
+    "dsr",
+    "change_1",
+    "change_2",
+    "change_4",
+    "income_growth",
+    "payment_growth",
+    "mortgage_share",
+    "interest_share"
+  ],
+  "selected_holdout_coverage": 0.8,
+  "interval_radius_pp": 0.30758666933149925,
+  "nominal_interval": 0.9,
+  "bootstrap_mae_difference": {
+    "mean_difference_pp": 0.005536391166745129,
+    "lower_95": -0.03901939404512036,
+    "upper_95": 0.04092956015462974,
+    "block_quarters": 4,
+    "replicates": 4000,
+    "interpretation": "Negative means selected model has lower MAE; short dependent series limits precision."
+  },
+  "limitations": [
+    "Historical series are revised; this is a revised vintage retrospective experiment.",
+    "Quarter t data are published during quarter t+1; this is a next unpublished quarter nowcast.",
+    "Intervals use validation errors of the selected model and have no guaranteed coverage.",
+    "All figures describe national aggregates, not TD customers or default probabilities."
+  ]
+}

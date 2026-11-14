@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+.pbi/
+.env
+.env.*
+transfer*
+ui_*
+*.pbix
+
+.schema_cache/

@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label": "Run full analysis", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["run.py"], "group": "build", "problemMatcher": []},
+    {"label": "Run validation", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["-m", "pytest", "-q"], "group": "test", "problemMatcher": []}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "latest_quarter": "2026Q2",
+  "latest_dsr": 14.52,
+  "qoq_change_pp": -0.16000000000000014,
+  "payment_growth_pct": 0.9669433920975967,
+  "income_growth_pct": 2.064706035896924,
+  "payment_contribution_pp": 0.14052146990810824,
+  "income_contribution_pp": -0.29842419108113843,
+  "mortgage_change_since_2019q4_pp": 0.5299999999999994,
+  "other_change_since_2019q4_pp": -0.96,
+  "holdout_mae_pp": 0.25020305783341185,
+  "baseline_mae_pp": 0.24466666666666673,
+  "mae_improvement_pct": -2.262830177143781
+}

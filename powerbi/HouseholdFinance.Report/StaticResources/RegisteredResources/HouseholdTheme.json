@@ -1,0 +1,12 @@
+{
+  "name": "Household Finance",
+  "dataColors": [
+    "#176B61",
+    "#D38136",
+    "#6579A4",
+    "#4B5563"
+  ],
+  "background": "#F2F5F4",
+  "foreground": "#183D40",
+  "tableAccent": "#176B61"
+}

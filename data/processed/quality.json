@@ -1,0 +1,15 @@
+{
+  "raw_rows": 8468,
+  "selected_rows": 1898,
+  "quarters": 146,
+  "start": "1990Q1",
+  "end": "2026Q2",
+  "duplicate_keys": 0,
+  "missing_core_values": 0,
+  "max_dsr_rounding_error_pp": 0.004967155066015749,
+  "max_payment_component_error_millions": 0.0,
+  "max_principal_interest_error_millions": 0.0,
+  "policy_missing_quarters": 77,
+  "policy_use": "Context only; never backfilled into the primary forecast",
+  "source_vintage": "2026-11-14"
+}

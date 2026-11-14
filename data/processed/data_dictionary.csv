@@ -1,0 +1,14 @@
+indicator,vector,unit,scale
+Disposable income ,v1001696801,Dollars,millions
+Equals: disposable income before payment of interest,v1001696803,Dollars,millions
+Total debt payments,v1001696804,Dollars,millions
+Mortgage debt payments,v1001696805,Dollars,millions
+Non-mortgage debt payments,v1001696806,Dollars,millions
+Total obligated payments of principal,v1001696807,Dollars,millions
+Total interest paid,v1001696810,Dollars,millions
+Mortgage interest paid,v1001696811,Dollars,millions
+Non-mortgage interest paid,v1001696812,Dollars,millions
+Debt service ratio,v1001696813,Ratio,units
+Mortgage debt service ratio,v1001696814,Ratio,units
+Non-mortgage debt service ratio,v1001696815,Ratio,units
+"Debt service ratio, interest only",v1001696816,Ratio,units

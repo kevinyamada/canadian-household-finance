@@ -1,0 +1,16 @@
+[
+  {
+    "file": "11100065-eng.zip",
+    "url": "https://www150.statcan.gc.ca/n1/en/tbl/csv/11100065-eng.zip",
+    "snapshot_date": "2026-11-14",
+    "sha256": "564773fc7389621ac2243519a81ad38179d765843c68c9794f186dd09cbf3cac",
+    "bytes": 67037
+  },
+  {
+    "file": "policy_rate.json",
+    "url": "https://www.bankofcanada.ca/valet/observations/V39079/json?start_date=1990-01-01&end_date=2026-11-13",
+    "snapshot_date": "2026-11-14",
+    "sha256": "fe8fff3310e578f518137e93eb75114b53d44af78d5f51883a6d5b19910dab86",
+    "bytes": 539816
+  }
+]
