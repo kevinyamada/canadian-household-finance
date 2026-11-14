@@ -123,7 +123,7 @@ We used 2007Q1 through 2018Q4 to choose among persistence, recent drift, three r
 | :--- | ---: | ---: | ---: |
 {table}
 
-{conclusion} Its relative MAE improvement was {gain:.1f}%. The paired block bootstrap interval for its MAE minus persistence is [{audit['bootstrap_mae_difference']['lower_95']:.3f}, {audit['bootstrap_mae_difference']['upper_95']:.3f}] percentage points. If the interval includes zero, the sample does not establish a clear advantage. There are only {int(chosen.n)} test quarters, so the evidence is limited.
+{conclusion} The selected model's relative MAE improvement over persistence was {gain:.1f}%. The paired block bootstrap interval for its MAE minus persistence is [{audit['bootstrap_mae_difference']['lower_95']:.3f}, {audit['bootstrap_mae_difference']['upper_95']:.3f}] percentage points. If the interval includes zero, the sample does not establish a clear advantage. There are only {int(chosen.n)} test quarters, so the evidence is limited.
 
 ![Forecast evaluation](figures/03_model_backtest.png)
 

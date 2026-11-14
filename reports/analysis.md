@@ -24,7 +24,7 @@ We used 2007Q1 through 2018Q4 to choose among persistence, recent drift, three r
 | Random forest | 30 | 0.250 | 0.458 |
 | Recent drift | 30 | 0.295 | 0.522 |
 
-The selected model did not beat persistence in the final period. Keep persistence as the practical benchmark. Its relative MAE improvement was -2.3%. The paired block bootstrap interval for its MAE minus persistence is [-0.039, 0.041] percentage points. If the interval includes zero, the sample does not establish a clear advantage. There are only 30 test quarters, so the evidence is limited.
+The selected model did not beat persistence in the final period. Keep persistence as the practical benchmark. The selected model's relative MAE improvement over persistence was -2.3%. The paired block bootstrap interval for its MAE minus persistence is [-0.039, 0.041] percentage points. If the interval includes zero, the sample does not establish a clear advantage. There are only 30 test quarters, so the evidence is limited.
 
 ![Forecast evaluation](figures/03_model_backtest.png)
 
