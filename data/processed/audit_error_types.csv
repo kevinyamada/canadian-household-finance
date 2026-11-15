@@ -1,0 +1,8 @@
+kind,cases,unsupported_recall,false_alarm_rate,abstention_rate,balanced_accuracy,coverage,accuracy_when_answered,true_positive,false_positive,unsupported_cases,supported_cases
+causality,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520
+individual,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520
+number,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520
+pension,1040,1.0,0.09807692307692308,0.0,0.9509615384615384,1.0,0.9509615384615384,520,51,520,520
+period,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520
+ratio_definition,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520
+units,1040,1.0,0.0,0.0,1.0,1.0,1.0,520,0,520,520

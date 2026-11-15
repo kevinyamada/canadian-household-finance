@@ -35,6 +35,13 @@
         }
       }
     },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -106,5 +113,23 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "af34c9ed55602a855ada",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Scenarios"
+              }
+            },
+            "Property": "payment_change_pct"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

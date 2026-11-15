@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Quarter\", \"Household\", \"Backtest\", \"Scores\", \"Scenarios\", \"Contributions\", \"Estimate\", \"GPUBacktest\", \"GPUScores\", \"GPUAudit\", \"TenurePressure\", \"AgePressure\", \"IncomePressure\", \"ReportingControls\"]"
+        "value": "[\"Quarter\", \"Household\", \"Backtest\", \"Scores\", \"Scenarios\", \"Contributions\", \"Estimate\", \"GPUBacktest\", \"GPUScores\", \"GPUAudit\", \"TenurePressure\", \"AgePressure\", \"IncomePressure\", \"ReportingControls\", \"AuditMethods\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -71,6 +71,111 @@
                 "Terms": [
                   {
                     "Household group": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "auditmethods.method": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "AuditMethods",
+                    "ConceptualProperty": "method"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "method": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "auditmethods.review_abstentions": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "AuditMethods",
+                    "ConceptualProperty": "Review abstentions"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Review abstentions": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "auditmethods.review_coverage": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "AuditMethods",
+                    "ConceptualProperty": "Review coverage"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Review coverage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "auditmethods.supported_claims_wrongly_flagged": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "AuditMethods",
+                    "ConceptualProperty": "Supported claims wrongly flagged"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Supported claims wrongly flagged": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "auditmethods.unsupported_claims_flagged": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "AuditMethods",
+                    "ConceptualProperty": "Unsupported claims flagged"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Unsupported claims flagged": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -965,33 +1070,33 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "46f15d6f-0b0c-4a35-b3ef-3c5efb1e00b6",
+            "lineageTag": "7a3ebb26-de99-4fe3-b5e9-67ee1464b50a",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "lineageTag": "8e7132bd-139f-4856-9be2-95e4abb1ece2",
+            "lineageTag": "1cc44df9-085a-43fa-b10e-fab4f5e7deed",
             "sourceColumn": "date",
             "summarizeBy": "none"
           },
           {
             "name": "year",
             "dataType": "int64",
-            "lineageTag": "f84bcb98-8649-4a31-b7ab-d24ddae77fbc",
+            "lineageTag": "34833dd9-2f81-42eb-99e0-634151cf4a5e",
             "sourceColumn": "year",
             "summarizeBy": "none"
           },
           {
             "name": "quarter_number",
             "dataType": "int64",
-            "lineageTag": "d9913a9d-add0-4441-be31-0227a213d7d7",
+            "lineageTag": "1608f3ec-cbd9-451f-abe4-73a649612afa",
             "sourceColumn": "quarter_number",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "afaa6d78-5876-4fa3-a5a6-2b21b7142c5e",
+        "lineageTag": "80bcbc1e-6afd-4587-83b5-1e2ce1ab9e2d",
         "partitions": [
           {
             "name": "Quarter",
@@ -1015,232 +1120,232 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "9087adc2-c20c-47df-b2bf-35d5ed9ff154",
+            "lineageTag": "1c0c2269-e5f4-44a7-9274-2c4996ceeef5",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "dsr",
             "dataType": "double",
-            "lineageTag": "423ac4c8-0538-41d3-b5da-bbe66ed900a2",
+            "lineageTag": "50890230-17d6-49aa-b15f-97127dc0eea9",
             "sourceColumn": "dsr",
             "summarizeBy": "none"
           },
           {
             "name": "interest_dsr",
             "dataType": "double",
-            "lineageTag": "2ba81c53-2e61-44d5-8081-611c4d71e86f",
+            "lineageTag": "b860fe55-7e7b-42f8-a391-aa93adb391e8",
             "sourceColumn": "interest_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "disposable_income",
             "dataType": "double",
-            "lineageTag": "d4eabc93-8526-41ba-9d45-6e7da8aa0be9",
+            "lineageTag": "0f4c1a47-80f0-48a9-89bb-96b25bbbfc4b",
             "sourceColumn": "disposable_income",
             "summarizeBy": "none"
           },
           {
             "name": "income",
             "dataType": "double",
-            "lineageTag": "0ec3d2b0-7a7c-4b3c-9c71-37def2a8a5cd",
+            "lineageTag": "3e800dad-c8b5-43f2-a257-adc88cd5311d",
             "sourceColumn": "income",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_payments",
             "dataType": "double",
-            "lineageTag": "6cfdc62c-9c44-4779-9b25-a4ac817dc286",
+            "lineageTag": "9ecb6e1c-280f-4993-8924-5e10cc3a7aa1",
             "sourceColumn": "mortgage_payments",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_dsr",
             "dataType": "double",
-            "lineageTag": "01cdce85-ce9f-4486-8e86-c799e1c8635e",
+            "lineageTag": "445baa66-1da8-4c70-b9e0-cfd9b16419f5",
             "sourceColumn": "mortgage_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_interest",
             "dataType": "double",
-            "lineageTag": "73a85768-d931-44da-a601-6803a3f122df",
+            "lineageTag": "3428b8fa-a709-47a2-a231-68dbd185bc6b",
             "sourceColumn": "mortgage_interest",
             "summarizeBy": "none"
           },
           {
             "name": "other_payments",
             "dataType": "double",
-            "lineageTag": "c5e69013-f15f-4c00-a580-5ee9aa8b3f1d",
+            "lineageTag": "96e2f236-b0f2-445e-84ca-a6d886eb241d",
             "sourceColumn": "other_payments",
             "summarizeBy": "none"
           },
           {
             "name": "other_dsr",
             "dataType": "double",
-            "lineageTag": "71795655-c76b-44d9-8ef4-eeea82b9b56f",
+            "lineageTag": "b0290271-bac1-422d-acc3-d331c16ecef8",
             "sourceColumn": "other_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "other_interest",
             "dataType": "double",
-            "lineageTag": "d8cac88b-397d-492b-9a67-55eac393fe92",
+            "lineageTag": "16473ed6-af0b-4ca4-bc7f-0e6be0effb0a",
             "sourceColumn": "other_interest",
             "summarizeBy": "none"
           },
           {
             "name": "payments",
             "dataType": "double",
-            "lineageTag": "11ca39db-1689-422d-aee9-50d052e3b059",
+            "lineageTag": "cd57d2c6-1a5e-4122-a9ee-20e8914e2f2e",
             "sourceColumn": "payments",
             "summarizeBy": "none"
           },
           {
             "name": "interest",
             "dataType": "double",
-            "lineageTag": "b3b1055a-405b-457c-84f2-2692485204bd",
+            "lineageTag": "ba523193-d411-4d26-94d3-fc2f567ecf73",
             "sourceColumn": "interest",
             "summarizeBy": "none"
           },
           {
             "name": "principal",
             "dataType": "double",
-            "lineageTag": "fd03df29-b619-4593-89e5-312940afd9c7",
+            "lineageTag": "e4ed361d-3067-439d-985b-5b0497590304",
             "sourceColumn": "principal",
             "summarizeBy": "none"
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "lineageTag": "15ed7afd-2fa6-4d47-800e-cedbab89e371",
+            "lineageTag": "1b5b4655-4b00-4960-a119-8a18d21c6c95",
             "sourceColumn": "date",
             "summarizeBy": "none"
           },
           {
             "name": "income_growth",
             "dataType": "double",
-            "lineageTag": "8aa8066a-0b9d-4261-938c-175f7ac751c8",
+            "lineageTag": "3ca3a388-8eca-4a7e-bee0-1ae713c357a0",
             "sourceColumn": "income_growth",
             "summarizeBy": "none"
           },
           {
             "name": "payment_growth",
             "dataType": "double",
-            "lineageTag": "84cdb5e6-be12-4615-a558-80c87e5d627e",
+            "lineageTag": "322445b3-263f-455c-acbb-8e9e79c4d9e0",
             "sourceColumn": "payment_growth",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_share",
             "dataType": "double",
-            "lineageTag": "a1776c02-8b6b-4a43-8716-52b8d5a6fd81",
+            "lineageTag": "8e4154ca-8c9e-4a55-919e-dbf29dc42ed8",
             "sourceColumn": "mortgage_share",
             "summarizeBy": "none"
           },
           {
             "name": "principal_dsr",
             "dataType": "double",
-            "lineageTag": "59e517e1-7ff8-4498-afa7-707b6cb993f8",
+            "lineageTag": "67a4e2b3-7b6d-4f77-8e75-0e4fbea1cb4c",
             "sourceColumn": "principal_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "policy_rate",
             "dataType": "double",
-            "lineageTag": "18856d1b-0cf4-46df-8636-5e19cfaf2338",
+            "lineageTag": "fe156af7-4b88-4eab-9594-ca5206279348",
             "sourceColumn": "policy_rate",
             "summarizeBy": "none"
           },
           {
             "name": "policy_business_days",
             "dataType": "double",
-            "lineageTag": "4dd095dc-92c6-49bd-9661-8346537c7da5",
+            "lineageTag": "01203ed2-06d5-489d-b6a3-10cde61f4f3c",
             "sourceColumn": "policy_business_days",
             "summarizeBy": "none"
           },
           {
             "name": "policy_last_date",
             "dataType": "string",
-            "lineageTag": "1ced580b-f096-4f44-af04-3153868cdf58",
+            "lineageTag": "7a1c3630-3ebb-4599-af7a-b0576758ffff",
             "sourceColumn": "policy_last_date",
             "summarizeBy": "none"
           },
           {
             "name": "dsr_qoq_pp",
             "dataType": "double",
-            "lineageTag": "b731086d-999e-4707-a111-e175633fe9ff",
+            "lineageTag": "9016b602-e9c9-4e0b-9db1-d73c5afd0fe5",
             "sourceColumn": "dsr_qoq_pp",
             "summarizeBy": "none"
           },
           {
             "name": "dsr_yoy_pp",
             "dataType": "double",
-            "lineageTag": "18afed69-6512-4ada-89dc-746bc9163754",
+            "lineageTag": "790f6d14-3cd9-4a52-87b7-207189c63967",
             "sourceColumn": "dsr_yoy_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "6a622062-9cc4-40b0-8f16-9f114a4e116b",
+        "lineageTag": "103235f8-9aea-4b64-a470-ae628ea74db2",
         "measures": [
           {
             "name": "Debt service ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "99960f82-2502-4d7e-b14b-4be4154903c5"
+            "lineageTag": "5e4356ad-b3c4-4a17-a736-cc8462875a18"
           },
           {
             "name": "Mortgage ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[mortgage_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "51ae64f5-1729-4b8f-a937-da441ee8e34e"
+            "lineageTag": "7999e576-edf8-49df-8be6-86ed02348775"
           },
           {
             "name": "Other debt ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[other_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "7299b022-eddb-437d-89dd-a59535799d37"
+            "lineageTag": "3a3fed63-512e-4204-9b5e-e18dabca186f"
           },
           {
             "name": "Income growth",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[income_growth])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "130aa023-3364-4644-8756-96c861cfc7ab"
+            "lineageTag": "d7f76b55-7441-4ddc-9c6a-7ff1690d1520"
           },
           {
             "name": "Payment growth",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[payment_growth])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "8e1be911-b94f-4dc8-85d2-89b9b25a056c"
+            "lineageTag": "7c02e22a-e847-469d-a8b5-d4155a9a7d20"
           },
           {
             "name": "Quarterly change",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[dsr_qoq_pp])",
             "formatString": "+0.00;-0.00;0.00",
-            "lineageTag": "71f3fb50-2f9f-47e4-8e19-9f2c01fc5ff3"
+            "lineageTag": "5ed8c663-2703-46dd-92c6-61dce6894816"
           },
           {
             "name": "Interest ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[interest_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "b22fe8d6-75ea-419d-bbb4-3c9bb6075372"
+            "lineageTag": "67040153-59f1-46cd-9c69-1f462e701f67"
           },
           {
             "name": "Principal ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[principal_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "1bf0aa9b-9272-4be9-895d-e7e66820c5b3"
+            "lineageTag": "4f9d6ce4-4e0b-49b9-a15c-12e39387c33d"
           },
           {
             "name": "Latest quarter",
             "expression": "MAX(Household[quarter])",
-            "lineageTag": "a1d4decf-63d6-433c-b79e-8ac3be314cbe"
+            "lineageTag": "34fd6946-0fab-448a-8144-1766cb9c917c"
           },
           {
             "name": "Policy rate",
             "expression": "MAX(Household[policy_rate])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "0a7b3f12-9189-467f-b50c-afc20fa5f944"
+            "lineageTag": "3e6ed493-71e9-4798-9631-d36a43f37f96"
           }
         ],
         "partitions": [
@@ -1266,126 +1371,126 @@
           {
             "name": "origin_quarter",
             "dataType": "string",
-            "lineageTag": "a553f129-2e94-48c8-9d1c-5b6090b751ec",
+            "lineageTag": "53717382-ba18-4cdf-97ca-046f3279bd07",
             "sourceColumn": "origin_quarter",
             "summarizeBy": "none"
           },
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "9dd04832-482e-4cd3-8744-eea79d41450a",
+            "lineageTag": "0e6324f8-cbca-4bc9-8053-9a9af127f621",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "f8b8bf6e-7c7b-4c54-b15d-e1523eb8e98d",
+            "lineageTag": "d58cc962-2b9e-4c91-944f-2dc2fec9f7a6",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "actual",
             "dataType": "double",
-            "lineageTag": "1f638808-bd41-46d9-88c5-0018f2857a87",
+            "lineageTag": "ab4920b2-ffc3-4051-93fe-30e790679ce3",
             "sourceColumn": "actual",
             "summarizeBy": "none"
           },
           {
             "name": "prediction",
             "dataType": "double",
-            "lineageTag": "17120f6b-0807-41b1-afac-d76a47b5fd7c",
+            "lineageTag": "303a1d7c-5cef-4206-8bcf-1e3fc7788323",
             "sourceColumn": "prediction",
             "summarizeBy": "none"
           },
           {
             "name": "error",
             "dataType": "double",
-            "lineageTag": "0353f2c2-c292-412b-bac6-7679d69006c3",
+            "lineageTag": "8fe34c8e-e2db-4b70-87f8-672a1ca5fa35",
             "sourceColumn": "error",
             "summarizeBy": "none"
           },
           {
             "name": "absolute_error",
             "dataType": "double",
-            "lineageTag": "997f9db2-a70f-4d70-a62a-9501bad00dac",
+            "lineageTag": "7171f21b-d5e9-4fef-b286-add64e658be2",
             "sourceColumn": "absolute_error",
             "summarizeBy": "none"
           },
           {
             "name": "n_train",
             "dataType": "int64",
-            "lineageTag": "45d25892-56f8-4ee9-ae6c-161a853d1f4d",
+            "lineageTag": "dccbfef8-a3f8-43c6-b4b8-fc7c3c4ab90f",
             "sourceColumn": "n_train",
             "summarizeBy": "none"
           },
           {
             "name": "last_train_target",
             "dataType": "string",
-            "lineageTag": "482f96b8-5038-4725-ba03-6c77058705f1",
+            "lineageTag": "b197b256-8b25-4f54-944e-32cea4608298",
             "sourceColumn": "last_train_target",
             "summarizeBy": "none"
           },
           {
             "name": "lower",
             "dataType": "double",
-            "lineageTag": "3b5865ed-2e33-403b-8abf-cff3f0e153bd",
+            "lineageTag": "59242b1a-e0b6-4bec-8fa8-1d0d02426dd2",
             "sourceColumn": "lower",
             "summarizeBy": "none"
           },
           {
             "name": "upper",
             "dataType": "double",
-            "lineageTag": "f55e7730-c032-498e-9ecd-9839840fcfc1",
+            "lineageTag": "9c326c2e-3c61-4a55-b3b8-8493d2b7dd9b",
             "sourceColumn": "upper",
             "summarizeBy": "none"
           },
           {
             "name": "covered",
             "dataType": "int64",
-            "lineageTag": "7f492e9d-c5b1-461d-b9fa-94ea726f989e",
+            "lineageTag": "631e93ab-3b5b-4956-b6ac-61bb72b7dc1d",
             "sourceColumn": "covered",
             "summarizeBy": "none"
           },
           {
             "name": "baseline",
             "dataType": "double",
-            "lineageTag": "33be8ea9-cf1c-490f-91a9-00542b7abdad",
+            "lineageTag": "ece16c3a-c773-4520-9322-a6bfcd12aa8a",
             "sourceColumn": "baseline",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "f8cb273c-5cc3-4e75-b0c8-91100c5afff4",
+        "lineageTag": "c522d3fa-7962-4900-8c7d-440e85499f3d",
         "measures": [
           {
             "name": "Observed",
             "expression": "MAX(Backtest[actual])",
             "formatString": "0.00",
-            "lineageTag": "779764fb-c148-4b02-acfe-3c3ccfb2a1fa"
+            "lineageTag": "e787571a-e4d4-4e3f-b065-7ff4d7579e0f"
           },
           {
             "name": "Model estimate",
             "expression": "MAX(Backtest[prediction])",
             "formatString": "0.00",
-            "lineageTag": "4fd778c3-20e9-4b43-82a8-018387282282"
+            "lineageTag": "8fc93c60-0699-4e08-912c-8aefd88dc409"
           },
           {
             "name": "Persistence estimate",
             "expression": "MAX(Backtest[baseline])",
             "formatString": "0.00",
-            "lineageTag": "feaebe2f-ba57-4ae3-a16f-b4fd4dc0b1e2"
+            "lineageTag": "d264c9fa-d422-40b8-8b5b-0c113009e4e6"
           },
           {
             "name": "Test MAE",
             "expression": "AVERAGE(Backtest[absolute_error])",
             "formatString": "0.00",
-            "lineageTag": "dadd08f2-b715-4752-8639-92252f4431a0"
+            "lineageTag": "9cd95de0-051c-40a8-8a79-bbe1408ece2f"
           },
           {
             "name": "Band coverage",
             "expression": "AVERAGE(Backtest[covered])",
             "formatString": "0.0%",
-            "lineageTag": "7f923e71-74ce-44b7-9b24-81bcbf03a424"
+            "lineageTag": "f1903838-f19b-4031-b463-310264335337"
           }
         ],
         "partitions": [
@@ -1411,52 +1516,52 @@
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "8252f7da-b3e8-4391-9905-85d548144734",
+            "lineageTag": "49a739bb-024e-4d8c-b26d-c4c7f7154377",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "n",
             "dataType": "int64",
-            "lineageTag": "c0cd189a-a685-484a-bebb-6a8811c06f1d",
+            "lineageTag": "715af699-9a65-497e-b1dc-e014c5a61cc8",
             "sourceColumn": "n",
             "summarizeBy": "none"
           },
           {
             "name": "mae",
             "dataType": "double",
-            "lineageTag": "7f4531b0-3821-4624-b942-e75c4f018857",
+            "lineageTag": "923acc3c-e737-4464-956f-ef230dad73a9",
             "sourceColumn": "mae",
             "summarizeBy": "none"
           },
           {
             "name": "rmse",
             "dataType": "double",
-            "lineageTag": "842a94ce-3d8c-4092-b327-7095f708eccd",
+            "lineageTag": "c5854b07-40d6-4315-ac58-ae1f01e4aa59",
             "sourceColumn": "rmse",
             "summarizeBy": "none"
           },
           {
             "name": "bias",
             "dataType": "double",
-            "lineageTag": "eb69f688-37a3-4a4c-a978-bfcda388e9cd",
+            "lineageTag": "9a59b667-c378-4ffb-b5d0-b134315be793",
             "sourceColumn": "bias",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "88687f2e-4161-4a80-8a85-2c4859ad6353",
+        "lineageTag": "a1b3854d-1c2c-44b2-b843-a291478f9bca",
         "measures": [
           {
             "name": "Mean absolute error",
             "expression": "IF(HASONEVALUE(Scores[model]), MAX(Scores[mae]))",
             "formatString": "0.000",
-            "lineageTag": "73135aa9-c56d-4a69-8b79-f847c740df24"
+            "lineageTag": "4ad2d14f-05ad-4e12-bf84-8a7e39a44802"
           },
           {
             "name": "Root mean squared error",
             "expression": "IF(HASONEVALUE(Scores[model]), MAX(Scores[rmse]))",
             "formatString": "0.000",
-            "lineageTag": "f88de03d-2292-4f64-af76-4a5b1a410819"
+            "lineageTag": "4b0d63c9-95c3-4449-9acb-b9e8d18d9ee2"
           }
         ],
         "partitions": [
@@ -1482,39 +1587,39 @@
           {
             "name": "income_change_pct",
             "dataType": "int64",
-            "lineageTag": "1f8ee4b6-cc5b-40c8-986e-2e2c722451c6",
+            "lineageTag": "af7605fc-babe-4cc2-8e0b-bb330d9a936f",
             "sourceColumn": "income_change_pct",
             "summarizeBy": "none"
           },
           {
             "name": "payment_change_pct",
             "dataType": "int64",
-            "lineageTag": "e177f914-c872-4441-baa4-1f32565bccce",
+            "lineageTag": "f099d111-f719-468e-b90c-549ef8d383d1",
             "sourceColumn": "payment_change_pct",
             "summarizeBy": "none"
           },
           {
             "name": "scenario_dsr",
             "dataType": "double",
-            "lineageTag": "06899f08-3a0b-4782-a078-a51c1f0a5aae",
+            "lineageTag": "ff857712-ab6c-400a-a5f0-dd01883380bc",
             "sourceColumn": "scenario_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "change_pp",
             "dataType": "double",
-            "lineageTag": "ba4935a0-44e1-43e6-a2e1-99a41c309972",
+            "lineageTag": "0265a791-c798-4bc5-96ec-b0405650768d",
             "sourceColumn": "change_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "6ee549ea-41c6-495b-a347-4bd347c4e9b7",
+        "lineageTag": "161e0ba8-71b4-4a26-a730-64e2b27b4302",
         "measures": [
           {
             "name": "Scenario ratio",
             "expression": "IF(HASONEVALUE(Scenarios[income_change_pct]) && HASONEVALUE(Scenarios[payment_change_pct]), MAX(Scenarios[scenario_dsr]))",
             "formatString": "0.00\"%\"",
-            "lineageTag": "fbc369be-86ca-4d7f-b368-09ccea3f8ec9"
+            "lineageTag": "14257061-27b1-40e1-88c3-1a4297cd9484"
           }
         ],
         "partitions": [
@@ -1540,25 +1645,25 @@
           {
             "name": "driver",
             "dataType": "string",
-            "lineageTag": "38367329-bff6-456b-88e8-e558bc743f1f",
+            "lineageTag": "cfa6c4f5-a1e1-4d92-a6e7-59bec0fc8ca5",
             "sourceColumn": "driver",
             "summarizeBy": "none"
           },
           {
             "name": "contribution_pp",
             "dataType": "double",
-            "lineageTag": "c8229570-b397-46bb-99a3-1bda5f576f3c",
+            "lineageTag": "ef18ef3c-68b4-4167-8393-be4350c90147",
             "sourceColumn": "contribution_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "5b8ba495-6271-4dad-b828-62c222559c96",
+        "lineageTag": "ba2b85c3-ce6e-425f-8dad-cb8c23328baa",
         "measures": [
           {
             "name": "Contribution",
             "expression": "SUM(Contributions[contribution_pp])",
             "formatString": "0.00",
-            "lineageTag": "084961db-0a4f-4b28-b58d-ad7a90f1b0b2"
+            "lineageTag": "39f15555-a590-49db-bb69-890c829fa940"
           }
         ],
         "partitions": [
@@ -1584,54 +1689,54 @@
           {
             "name": "origin_quarter",
             "dataType": "string",
-            "lineageTag": "ffb1d83b-da00-4e9e-8a67-6e05666a1bea",
+            "lineageTag": "80ba29de-f27e-46e9-b7f1-84fe13f06b7c",
             "sourceColumn": "origin_quarter",
             "summarizeBy": "none"
           },
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "506743ad-bd6a-411e-badc-6be44395713a",
+            "lineageTag": "434d0efe-c1a6-4f16-8625-855d41b94162",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "73e8ee91-ccab-49a8-934d-75580c429545",
+            "lineageTag": "7dce3d32-f7c0-4139-bf6b-c688f72cc233",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "prediction",
             "dataType": "double",
-            "lineageTag": "58db1205-2d86-4973-8891-eb1c3226dda4",
+            "lineageTag": "eb79f19a-e3df-4448-8a93-5904a7f3eacd",
             "sourceColumn": "prediction",
             "summarizeBy": "none"
           },
           {
             "name": "lower",
             "dataType": "double",
-            "lineageTag": "3a3b572d-0fa7-4c73-9f60-16f256fd13f2",
+            "lineageTag": "c9dfda11-87d0-4623-ae79-fb670b9a5431",
             "sourceColumn": "lower",
             "summarizeBy": "none"
           },
           {
             "name": "upper",
             "dataType": "double",
-            "lineageTag": "dd865abb-b919-481d-b31f-d66b2cd8fd20",
+            "lineageTag": "7cda419c-72a4-48ce-adac-f3cd977f0acc",
             "sourceColumn": "upper",
             "summarizeBy": "none"
           },
           {
             "name": "label",
             "dataType": "string",
-            "lineageTag": "5f1bd04b-3bf2-42f4-98cb-e44c5ca11d9f",
+            "lineageTag": "67b9431b-22fa-41d6-bcc5-e1a80cf8208c",
             "sourceColumn": "label",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "efa03f99-2e34-455c-b520-123b72839a9e",
+        "lineageTag": "dc116070-9abf-441c-9961-90b5672791e7",
         "partitions": [
           {
             "name": "Estimate",
@@ -1655,128 +1760,128 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "bfb4fa79-b242-4cb4-9784-c4bea7e6bd17",
+            "lineageTag": "d79388a8-23de-4408-b315-f2b4888779b7",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "origin_quarter",
             "dataType": "string",
-            "lineageTag": "00bba3af-7b4c-49fd-99ec-80c4d094e623",
+            "lineageTag": "1e24976a-8ecd-49b2-b26f-91280e6ac5b9",
             "sourceColumn": "origin_quarter",
             "summarizeBy": "none"
           },
           {
             "name": "actual",
             "dataType": "double",
-            "lineageTag": "f4bda64d-74ac-4f35-9600-9d6563f59859",
+            "lineageTag": "1c7722b6-8832-458a-86e2-c4b91727e81d",
             "sourceColumn": "actual",
             "summarizeBy": "none"
           },
           {
             "name": "origin_dsr",
             "dataType": "double",
-            "lineageTag": "a1493f26-19df-48eb-9d95-788dd93f64d8",
+            "lineageTag": "2f134fbb-d229-4e95-ae88-01415d37abea",
             "sourceColumn": "origin_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "target_mean",
             "dataType": "double",
-            "lineageTag": "754e1410-b785-4fff-acc9-1edd899f7643",
+            "lineageTag": "f5e956eb-08d6-4559-adef-3d1b940bf712",
             "sourceColumn": "target_mean",
             "summarizeBy": "none"
           },
           {
             "name": "target_scale",
             "dataType": "double",
-            "lineageTag": "edfedf07-62cc-40b5-b65f-426c201b4383",
+            "lineageTag": "105cd359-329e-4801-8549-48d7c734e7ff",
             "sourceColumn": "target_scale",
             "summarizeBy": "none"
           },
           {
             "name": "n_train",
             "dataType": "int64",
-            "lineageTag": "5116818c-4f0b-4b93-9265-b9b974f97e69",
+            "lineageTag": "6a3e4980-ad4f-4a94-9626-635b2e2d58d5",
             "sourceColumn": "n_train",
             "summarizeBy": "none"
           },
           {
             "name": "last_train_target",
             "dataType": "string",
-            "lineageTag": "ba09c287-65c7-4bec-9fa6-6b940229a65c",
+            "lineageTag": "cadad202-3ed2-4bc7-b052-1c947f00bc01",
             "sourceColumn": "last_train_target",
             "summarizeBy": "none"
           },
           {
             "name": "prediction",
             "dataType": "double",
-            "lineageTag": "e73ca680-e138-481b-800f-f0d591c22ac9",
+            "lineageTag": "1bab5c13-979a-444d-a279-42c1cac9d537",
             "sourceColumn": "prediction",
             "summarizeBy": "none"
           },
           {
             "name": "baseline",
             "dataType": "double",
-            "lineageTag": "b2ca4232-b995-4fd0-9b52-7b604ef4c578",
+            "lineageTag": "f48e9710-e9c9-4ae9-af46-50b5fecaf4d1",
             "sourceColumn": "baseline",
             "summarizeBy": "none"
           },
           {
             "name": "lower",
             "dataType": "double",
-            "lineageTag": "7487277a-76d4-4950-94fa-86911872a759",
+            "lineageTag": "6ded318e-6401-4688-b9ba-3c50eed677ea",
             "sourceColumn": "lower",
             "summarizeBy": "none"
           },
           {
             "name": "upper",
             "dataType": "double",
-            "lineageTag": "a59f7585-503e-40d4-8622-a91309f35383",
+            "lineageTag": "7556ac46-5f87-4363-a685-85de0a243e2a",
             "sourceColumn": "upper",
             "summarizeBy": "none"
           },
           {
             "name": "seed_p10",
             "dataType": "double",
-            "lineageTag": "aa6b3512-6754-4959-9b5d-940fde17e024",
+            "lineageTag": "8542c339-b6ba-4087-8e97-a009c212ab29",
             "sourceColumn": "seed_p10",
             "summarizeBy": "none"
           },
           {
             "name": "seed_p90",
             "dataType": "double",
-            "lineageTag": "4c031789-7213-4bc9-a19c-31b9e8c93b8b",
+            "lineageTag": "35c963e1-c965-4733-9228-e0383dbacb03",
             "sourceColumn": "seed_p90",
             "summarizeBy": "none"
           },
           {
             "name": "period",
             "dataType": "string",
-            "lineageTag": "1ffae2c8-4e78-48cb-829c-a48f4a8dfde0",
+            "lineageTag": "3394d6ae-6fc4-4f21-855e-664b12ee6a32",
             "sourceColumn": "period",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "d8057cf4-cb1a-411f-81f6-25162c5671d5",
+        "lineageTag": "9477cf91-c23a-490e-a5ac-86ae78a9065e",
         "measures": [
           {
             "name": "Observed ratio",
             "expression": "MAX(GPUBacktest[actual])",
             "formatString": "0.00",
-            "lineageTag": "34c88757-02fd-4bf8-9184-236625eabca8"
+            "lineageTag": "5ea3f894-23da-4738-a8a0-1e18d54f9b13"
           },
           {
             "name": "Neural estimate",
             "expression": "MAX(GPUBacktest[prediction])",
             "formatString": "0.00",
-            "lineageTag": "5b3f743c-a109-439b-b04a-7c5d9bf2ecb5"
+            "lineageTag": "68bf5c21-fea5-4e66-a4db-a3bb0f40c3b2"
           },
           {
             "name": "Persistence comparison",
             "expression": "MAX(GPUBacktest[baseline])",
             "formatString": "0.00",
-            "lineageTag": "b64ea9f3-361c-46cf-b974-45609411d859"
+            "lineageTag": "43203b2a-fdb1-472b-8232-6c44231b6973"
           }
         ],
         "partitions": [
@@ -1802,74 +1907,74 @@
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "cc3df8dc-c3f3-40b3-9072-28247cbee034",
+            "lineageTag": "012056ff-1b28-44f3-9f11-f356f8fa5f27",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "n",
             "dataType": "int64",
-            "lineageTag": "38f148f3-7388-4233-8cf2-1a0f8918be40",
+            "lineageTag": "9a3b306b-fdd7-43c2-88ed-92f624838bfa",
             "sourceColumn": "n",
             "summarizeBy": "none"
           },
           {
             "name": "mae",
             "dataType": "double",
-            "lineageTag": "8cd62297-749e-461b-908c-557f7969d8d5",
+            "lineageTag": "9a577e17-856c-4927-b4d4-11ce94eadd13",
             "sourceColumn": "mae",
             "summarizeBy": "none"
           },
           {
             "name": "rmse",
             "dataType": "double",
-            "lineageTag": "b096610d-188a-4635-9b0e-4f74225b6600",
+            "lineageTag": "8f2d0a43-cf6a-42d7-a527-d78955d34b89",
             "sourceColumn": "rmse",
             "summarizeBy": "none"
           },
           {
             "name": "flagged_quarters",
             "dataType": "int64",
-            "lineageTag": "fa269dc8-17a3-44c4-aa06-794b31dab4fe",
+            "lineageTag": "f24dbd39-ba8d-4972-ac51-4ff7ffe6b1f8",
             "sourceColumn": "flagged_quarters",
             "summarizeBy": "none"
           },
           {
             "name": "true_worsening_quarters",
             "dataType": "int64",
-            "lineageTag": "f641e09f-a415-4f7f-b37b-2283a9d27992",
+            "lineageTag": "d50b623d-d0a2-4597-81ab-8634480410ed",
             "sourceColumn": "true_worsening_quarters",
             "summarizeBy": "none"
           },
           {
             "name": "true_positive",
             "dataType": "int64",
-            "lineageTag": "988ded31-4061-4c83-b18a-98366682cb71",
+            "lineageTag": "e982c076-0402-41ae-bc6d-e169caf097ad",
             "sourceColumn": "true_positive",
             "summarizeBy": "none"
           },
           {
             "name": "precision",
             "dataType": "double",
-            "lineageTag": "61c91f6c-1860-4857-a666-9d92c8243708",
+            "lineageTag": "b00092a8-d004-43ef-9c14-5faf75266410",
             "sourceColumn": "precision",
             "summarizeBy": "none"
           },
           {
             "name": "recall",
             "dataType": "double",
-            "lineageTag": "ee96a563-3c2c-4a21-a6a8-a5f9850b4f59",
+            "lineageTag": "0133357f-94fb-4be6-855b-412045d3e9c5",
             "sourceColumn": "recall",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "742fcf78-e78b-4a63-a10c-f6fdd6927669",
+        "lineageTag": "e53bb6a5-ccf5-4128-bef6-219b374d0c77",
         "measures": [
           {
             "name": "Comparison MAE",
             "expression": "IF(HASONEVALUE(GPUScores[model]), MAX(GPUScores[mae]))",
             "formatString": "0.000",
-            "lineageTag": "a8ff7237-46df-497b-adfb-f9f053d85a39"
+            "lineageTag": "8a12bfdb-9801-4161-9f69-1ed3ae1d1dcb"
           }
         ],
         "partitions": [
@@ -1895,57 +2000,57 @@
           {
             "name": "coverage",
             "dataType": "double",
-            "lineageTag": "623bad7d-90c0-49d7-b11c-8c7c8ac257b0",
+            "lineageTag": "18ae54ab-c135-4523-80e7-87058585fe91",
             "sourceColumn": "coverage",
             "summarizeBy": "none"
           },
           {
             "name": "gpu_cost",
             "dataType": "double",
-            "lineageTag": "d9b43e4f-0ee3-4156-9ee3-fa59c0da95f1",
+            "lineageTag": "d8054a14-3822-49bd-aded-7d88549e2364",
             "sourceColumn": "gpu_cost",
             "summarizeBy": "none"
           },
           {
             "name": "seeds",
             "dataType": "int64",
-            "lineageTag": "0e91af45-3783-483d-8358-4fe60a5976c8",
+            "lineageTag": "a45043a3-f2e2-4587-924f-d3ffe1c139fc",
             "sourceColumn": "seeds",
             "summarizeBy": "none"
           },
           {
             "name": "difference",
             "dataType": "double",
-            "lineageTag": "0f47c909-f498-45c0-bc28-b9e2bd341095",
+            "lineageTag": "3a403c0e-2577-4f85-8001-4045d802d5ca",
             "sourceColumn": "difference",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "1df36a16-2f2c-4c3d-b6c6-4e65028d9648",
+        "lineageTag": "5238dbbc-784b-4742-88a7-b8b601c13e6d",
         "measures": [
           {
             "name": "Empirical coverage",
             "expression": "MAX(GPUAudit[coverage])",
             "formatString": "0.0%",
-            "lineageTag": "c4627b13-cb3f-473a-97b0-8d45f50b55d9"
+            "lineageTag": "49d618e3-216c-4e8c-b732-4b844e6e2d29"
           },
           {
             "name": "GPU runtime cost",
             "expression": "MAX(GPUAudit[gpu_cost])",
             "formatString": "\"$\"0.00",
-            "lineageTag": "e9e30dcb-4c65-43fa-80fc-71d37ade966b"
+            "lineageTag": "e0b6a277-749c-403c-ab82-764684220399"
           },
           {
             "name": "Common seed count",
             "expression": "MAX(GPUAudit[seeds])",
             "formatString": "#,0",
-            "lineageTag": "95934156-eeea-47ed-b03f-71465c0adc8f"
+            "lineageTag": "4e83839e-1b4d-43b5-bc9a-1b1a30fe909b"
           },
           {
             "name": "MAE difference",
             "expression": "MAX(GPUAudit[difference])",
             "formatString": "+0.000;-0.000;0.000",
-            "lineageTag": "a5205e6c-83da-4b45-b84b-64c3aa0ff21d"
+            "lineageTag": "96aed0e4-405b-439a-91af-68365b8cd839"
           }
         ],
         "partitions": [
@@ -1971,52 +2076,60 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "cad74705-e2e0-4a0d-80f5-5006eb933886",
+            "lineageTag": "4a37affe-ae28-4bb0-b092-01509bb04cbb",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "group",
             "dataType": "string",
-            "lineageTag": "848cdaba-cfb1-4a47-b4d4-8ad3cb22e6c8",
+            "lineageTag": "727472df-ebfd-4d38-b148-92c47237fd0c",
+            "sortByColumn": "group_order",
             "sourceColumn": "group",
             "summarizeBy": "none"
           },
           {
             "name": "debt_income_pct",
             "dataType": "double",
-            "lineageTag": "26e45403-41da-4ec7-9236-3b58aedea223",
+            "lineageTag": "27046c7d-fba3-403f-80ce-63db9b23753a",
             "sourceColumn": "debt_income_pct",
             "summarizeBy": "none"
           },
           {
             "name": "income_less_consumption",
             "dataType": "double",
-            "lineageTag": "24aec7e8-d312-4481-9e24-35d75cf6df14",
+            "lineageTag": "c39f51d4-79de-48d6-9ffe-7b3ea06f330f",
             "sourceColumn": "income_less_consumption",
             "summarizeBy": "none"
           },
           {
             "name": "saving",
             "dataType": "double",
-            "lineageTag": "6525ce19-2c39-42d4-ab51-5df99ba8b302",
+            "lineageTag": "6706cd89-f910-4aa4-a4e5-0b7e7bb3263b",
             "sourceColumn": "saving",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "group_order",
+            "dataType": "int64",
+            "lineageTag": "b5cd27b1-fc20-4b6d-88ca-80ddeaa3c7c4",
+            "sourceColumn": "group_order",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "ccb27bda-9b47-4e21-9169-5f9550fe0ba6",
+        "lineageTag": "19593e8a-20ec-4c6a-8765-8638bd7fe353",
         "measures": [
           {
             "name": "TenurePressure debt ratio",
             "expression": "IF(HASONEVALUE(TenurePressure[group]), MAX(TenurePressure[debt_income_pct]))",
             "formatString": "0.0\"%\"",
-            "lineageTag": "4439571f-d6e3-4b91-827e-1da4430744d5"
+            "lineageTag": "f6cb8b27-d9de-4b2b-a925-7ae96853371f"
           },
           {
             "name": "TenurePressure income gap",
             "expression": "IF(HASONEVALUE(TenurePressure[group]), MAX(TenurePressure[income_less_consumption]))",
             "formatString": "#,0;(#,0);0",
-            "lineageTag": "8960c17b-7b5e-4b19-aa18-327b808d1652"
+            "lineageTag": "48c1e907-a61e-4bce-b015-543b9bf095ec"
           }
         ],
         "partitions": [
@@ -2026,8 +2139,8 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiT3duZXIgd2l0aCBtb3J0Z2FnZSIsImRlYnRfaW5jb21lX3BjdCI6MzA2LjEsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjoyNjAzLjAsInNhdmluZyI6NTM5NS4wfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6Ik93bmVyIHdpdGhvdXQgbW9ydGdhZ2UiLCJkZWJ0X2luY29tZV9wY3QiOjU2LjQsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjo2NzEuMCwic2F2aW5nIjotNzU0LjB9LHsicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiUmVudGVyIiwiZGVidF9pbmNvbWVfcGN0Ijo1Ni40LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTU3Mi4wLCJzYXZpbmciOjI2OS4wfV0=\", BinaryEncoding.Base64))),",
-                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}}, \"en-CA\")",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiT3duZXIsIG1vcnRnYWdlIiwiZGVidF9pbmNvbWVfcGN0IjozMDYuMSwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjI2MDMuMCwic2F2aW5nIjo1Mzk1LjAsImdyb3VwX29yZGVyIjowfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6Ik93bmVyLCBubyBtb3J0Z2FnZSIsImRlYnRfaW5jb21lX3BjdCI6NTYuNCwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjY3MS4wLCJzYXZpbmciOi03NTQuMCwiZ3JvdXBfb3JkZXIiOjF9LHsicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiUmVudGVyIiwiZGVidF9pbmNvbWVfcGN0Ijo1Ni40LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTU3Mi4wLCJzYXZpbmciOjI2OS4wLCJncm91cF9vcmRlciI6Mn1d\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}, {\"group_order\", Int64.Type}}, \"en-CA\")",
                 "in",
                 "    Typed"
               ],
@@ -2042,52 +2155,60 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "d99dc182-15fd-452c-b6d7-0832b2e5fa13",
+            "lineageTag": "27f61220-9e20-499d-b571-640af03bafae",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "group",
             "dataType": "string",
-            "lineageTag": "f73b97e4-31c9-4cd0-928a-00ecfa79c759",
+            "lineageTag": "8f601927-9688-4288-88f3-aacb3559f50d",
+            "sortByColumn": "group_order",
             "sourceColumn": "group",
             "summarizeBy": "none"
           },
           {
             "name": "debt_income_pct",
             "dataType": "double",
-            "lineageTag": "3b0d65c3-e0a5-49aa-9c64-b91c0ebe8298",
+            "lineageTag": "23860562-56ed-4742-ba85-1db1bc134d3e",
             "sourceColumn": "debt_income_pct",
             "summarizeBy": "none"
           },
           {
             "name": "income_less_consumption",
             "dataType": "double",
-            "lineageTag": "ddd0bf2c-6f30-4c09-aebc-a358c118d49e",
+            "lineageTag": "c9441532-030e-48dd-b2e1-58c442448772",
             "sourceColumn": "income_less_consumption",
             "summarizeBy": "none"
           },
           {
             "name": "saving",
             "dataType": "double",
-            "lineageTag": "d8910c04-1841-4af5-81f0-0ff08c0b937d",
+            "lineageTag": "6a608e2e-56ac-42bd-bcf4-29b4998e95db",
             "sourceColumn": "saving",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "group_order",
+            "dataType": "int64",
+            "lineageTag": "8c0a0a27-aea6-47bf-87c8-dec2ca4ec982",
+            "sourceColumn": "group_order",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "274c76c5-a0f6-4436-998e-72a161a392dc",
+        "lineageTag": "ee07a09f-fd56-4371-88af-59013e6bc5af",
         "measures": [
           {
             "name": "AgePressure debt ratio",
             "expression": "IF(HASONEVALUE(AgePressure[group]), MAX(AgePressure[debt_income_pct]))",
             "formatString": "0.0\"%\"",
-            "lineageTag": "3708d7ee-3590-4d60-ae26-0ba8e4a81944"
+            "lineageTag": "1c32fe49-1149-49b5-855f-3b05d94603ee"
           },
           {
             "name": "AgePressure income gap",
             "expression": "IF(HASONEVALUE(AgePressure[group]), MAX(AgePressure[income_less_consumption]))",
             "formatString": "#,0;(#,0);0",
-            "lineageTag": "c0c62d1d-7fde-4478-8f99-6ac145a166fb"
+            "lineageTag": "ea5e4707-aaec-4c6c-99dd-e60030de5458"
           }
         ],
         "partitions": [
@@ -2097,8 +2218,8 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiMzUgdG8gNDQgeWVhcnMiLCJkZWJ0X2luY29tZV9wY3QiOjI0NS44LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6MjM2OS4wLCJzYXZpbmciOjYxMDcuMH0seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiI0NSB0byA1NCB5ZWFycyIsImRlYnRfaW5jb21lX3BjdCI6MjIwLjMsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjoxODAuMCwic2F2aW5nIjo0MTc2LjB9LHsicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiNTUgdG8gNjQgeWVhcnMiLCJkZWJ0X2luY29tZV9wY3QiOjE3NC40LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTEyMjQuMCwic2F2aW5nIjotNzIuMH0seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiI2NSB5ZWFycyBhbmQgb3ZlciIsImRlYnRfaW5jb21lX3BjdCI6NzAuMiwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjk4My4wLCJzYXZpbmciOi0yNjEwLjB9LHsicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiTGVzcyB0aGFuIDM1IHllYXJzIiwiZGVidF9pbmNvbWVfcGN0IjoxNjYuMCwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjIzNzkuMCwic2F2aW5nIjo1MDExLjB9XQ==\", BinaryEncoding.Base64))),",
-                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}}, \"en-CA\")",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiMzUgdG8gNDQgeWVhcnMiLCJkZWJ0X2luY29tZV9wY3QiOjI0NS44LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6MjM2OS4wLCJzYXZpbmciOjYxMDcuMCwiZ3JvdXBfb3JkZXIiOjF9LHsicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiNDUgdG8gNTQgeWVhcnMiLCJkZWJ0X2luY29tZV9wY3QiOjIyMC4zLCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6MTgwLjAsInNhdmluZyI6NDE3Ni4wLCJncm91cF9vcmRlciI6Mn0seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiI1NSB0byA2NCB5ZWFycyIsImRlYnRfaW5jb21lX3BjdCI6MTc0LjQsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjotMTIyNC4wLCJzYXZpbmciOi03Mi4wLCJncm91cF9vcmRlciI6M30seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiI2NSB5ZWFycyBhbmQgb3ZlciIsImRlYnRfaW5jb21lX3BjdCI6NzAuMiwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjk4My4wLCJzYXZpbmciOi0yNjEwLjAsImdyb3VwX29yZGVyIjo0fSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6Ikxlc3MgdGhhbiAzNSB5ZWFycyIsImRlYnRfaW5jb21lX3BjdCI6MTY2LjAsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjoyMzc5LjAsInNhdmluZyI6NTAxMS4wLCJncm91cF9vcmRlciI6MH1d\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}, {\"group_order\", Int64.Type}}, \"en-CA\")",
                 "in",
                 "    Typed"
               ],
@@ -2113,52 +2234,60 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "33869700-7acf-4246-9cd7-0b4e80a75a23",
+            "lineageTag": "4b5a8a87-f15f-4dc4-bfcf-ff950e8b20bf",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "group",
             "dataType": "string",
-            "lineageTag": "58cd69ca-c990-409b-81bb-550e2fe6f486",
+            "lineageTag": "37575341-5765-47d1-8809-ab8829b3cacb",
+            "sortByColumn": "group_order",
             "sourceColumn": "group",
             "summarizeBy": "none"
           },
           {
             "name": "debt_income_pct",
             "dataType": "double",
-            "lineageTag": "c1b9f020-303e-452f-9ad4-46fb647e29da",
+            "lineageTag": "980781a4-cdf1-45f9-a47d-1c7c27b436ad",
             "sourceColumn": "debt_income_pct",
             "summarizeBy": "none"
           },
           {
             "name": "income_less_consumption",
             "dataType": "double",
-            "lineageTag": "59e8cfea-dfab-41d2-a2e7-1035925e6765",
+            "lineageTag": "f660606c-4f96-4ec3-89b8-ed54cee6dab4",
             "sourceColumn": "income_less_consumption",
             "summarizeBy": "none"
           },
           {
             "name": "saving",
             "dataType": "double",
-            "lineageTag": "0b781e81-7f0b-4493-9ac0-217d087904a3",
+            "lineageTag": "8cc82128-73b6-4c19-b89d-8353d5be5970",
             "sourceColumn": "saving",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "group_order",
+            "dataType": "int64",
+            "lineageTag": "d7dc838a-04de-4f9c-8866-81d52d5993c2",
+            "sourceColumn": "group_order",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "6997d42a-406b-4e3e-a89e-ebd3652101a3",
+        "lineageTag": "927534af-2e80-43c4-a005-d1a8e1cec9c1",
         "measures": [
           {
             "name": "IncomePressure debt ratio",
             "expression": "IF(HASONEVALUE(IncomePressure[group]), MAX(IncomePressure[debt_income_pct]))",
             "formatString": "0.0\"%\"",
-            "lineageTag": "386e66d2-cb12-4076-a087-d2886bdecf67"
+            "lineageTag": "01ff2bdf-cd52-4e09-9f10-924b820568d8"
           },
           {
             "name": "IncomePressure income gap",
             "expression": "IF(HASONEVALUE(IncomePressure[group]), MAX(IncomePressure[income_less_consumption]))",
             "formatString": "#,0;(#,0);0",
-            "lineageTag": "ae864f42-95eb-403e-becb-5a66c79f5007"
+            "lineageTag": "2e507e33-034d-4087-a459-9d4681a18638"
           }
         ],
         "partitions": [
@@ -2168,8 +2297,8 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiRm91cnRoIGluY29tZSBxdWludGlsZSIsImRlYnRfaW5jb21lX3BjdCI6MTc5LjgsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjo0NTk5LjAsInNhdmluZyI6Njk3OC4wfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6IkhpZ2hlc3QgaW5jb21lIHF1aW50aWxlIiwiZGVidF9pbmNvbWVfcGN0IjoxMzQuNywiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOjE2OTc2LjAsInNhdmluZyI6MjA0MjguMH0seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiJMb3dlc3QgaW5jb21lIHF1aW50aWxlIiwiZGVidF9pbmNvbWVfcGN0Ijo0MzMuNiwiaW5jb21lX2xlc3NfY29uc3VtcHRpb24iOi0xMDQ0Mi4wLCJzYXZpbmciOi0xMDgxNi4wfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6IlNlY29uZCBpbmNvbWUgcXVpbnRpbGUiLCJkZWJ0X2luY29tZV9wY3QiOjE3Mi43LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTQ2MDMuMCwic2F2aW5nIjotNTUyMy4wfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6IlRoaXJkIGluY29tZSBxdWludGlsZSIsImRlYnRfaW5jb21lX3BjdCI6MTY1LjYsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjotMTQyOS4wLCJzYXZpbmciOi0xNTAyLjB9XQ==\", BinaryEncoding.Base64))),",
-                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}}, \"en-CA\")",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMjVRNCIsImdyb3VwIjoiRm91cnRoIGluY29tZSBxdWludGlsZSIsImRlYnRfaW5jb21lX3BjdCI6MTc5LjgsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjo0NTk5LjAsInNhdmluZyI6Njk3OC4wLCJncm91cF9vcmRlciI6M30seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiJIaWdoZXN0IGluY29tZSBxdWludGlsZSIsImRlYnRfaW5jb21lX3BjdCI6MTM0LjcsImluY29tZV9sZXNzX2NvbnN1bXB0aW9uIjoxNjk3Ni4wLCJzYXZpbmciOjIwNDI4LjAsImdyb3VwX29yZGVyIjo0fSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6Ikxvd2VzdCBpbmNvbWUgcXVpbnRpbGUiLCJkZWJ0X2luY29tZV9wY3QiOjQzMy42LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTEwNDQyLjAsInNhdmluZyI6LTEwODE2LjAsImdyb3VwX29yZGVyIjowfSx7InF1YXJ0ZXIiOiIyMDI1UTQiLCJncm91cCI6IlNlY29uZCBpbmNvbWUgcXVpbnRpbGUiLCJkZWJ0X2luY29tZV9wY3QiOjE3Mi43LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTQ2MDMuMCwic2F2aW5nIjotNTUyMy4wLCJncm91cF9vcmRlciI6MX0seyJxdWFydGVyIjoiMjAyNVE0IiwiZ3JvdXAiOiJUaGlyZCBpbmNvbWUgcXVpbnRpbGUiLCJkZWJ0X2luY29tZV9wY3QiOjE2NS42LCJpbmNvbWVfbGVzc19jb25zdW1wdGlvbiI6LTE0MjkuMCwic2F2aW5nIjotMTUwMi4wLCJncm91cF9vcmRlciI6Mn1d\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"group\", type text}, {\"debt_income_pct\", type number}, {\"income_less_consumption\", type number}, {\"saving\", type number}, {\"group_order\", Int64.Type}}, \"en-CA\")",
                 "in",
                 "    Typed"
               ],
@@ -2184,33 +2313,33 @@
           {
             "name": "control",
             "dataType": "string",
-            "lineageTag": "b6bb7837-3328-44c5-a133-0b2a1a9c811c",
+            "lineageTag": "f86839e7-f9a6-40cb-b488-a764adc7651e",
             "sourceColumn": "control",
             "summarizeBy": "none"
           },
           {
             "name": "exceptions",
             "dataType": "int64",
-            "lineageTag": "79f85bfb-2fd5-4baa-86fb-aad0ae27f9dc",
+            "lineageTag": "c26ec74f-502a-4a71-b8b3-d28cb08cda8d",
             "sourceColumn": "exceptions",
             "summarizeBy": "none"
           },
           {
             "name": "tolerance",
             "dataType": "string",
-            "lineageTag": "8a088598-4d69-42aa-801e-75a04e0a5181",
+            "lineageTag": "b5a75cfd-80e9-47bc-9f63-243f30c16038",
             "sourceColumn": "tolerance",
             "summarizeBy": "none"
           },
           {
             "name": "status",
             "dataType": "string",
-            "lineageTag": "47b05388-4e3f-4f04-aa85-a03dddd0a00d",
+            "lineageTag": "c98a4354-8f9e-4db1-ac3c-438b0a8e61a3",
             "sourceColumn": "status",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "e62c4dcc-8f39-44bf-988e-7db18b280e6b",
+        "lineageTag": "ff5a5c90-07f6-4cba-80f0-6ef5ec18efa3",
         "partitions": [
           {
             "name": "ReportingControls",
@@ -2220,6 +2349,166 @@
                 "let",
                 "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3siY29udHJvbCI6IlVuaXF1ZSBxdWFydGVyIGFuZCBncm91cCIsImV4Y2VwdGlvbnMiOjAsInRvbGVyYW5jZSI6Ik5vIGR1cGxpY2F0ZSBrZXlzIiwic3RhdHVzIjoiUGFzcyJ9LHsiY29udHJvbCI6IkNvbXBsZXRlIGFwcGxpY2FibGUgbWVhc3VyZXMiLCJleGNlcHRpb25zIjowLCJ0b2xlcmFuY2UiOiJObyBtaXNzaW5nIHZhbHVlcyIsInN0YXR1cyI6IlBhc3MifSx7ImNvbnRyb2wiOiJQb3NpdGl2ZSBpbmNvbWUgZGVub21pbmF0b3IiLCJleGNlcHRpb25zIjowLCJ0b2xlcmFuY2UiOiJJbmNvbWUgZ3JlYXRlciB0aGFuIHplcm8iLCJzdGF0dXMiOiJQYXNzIn0seyJjb250cm9sIjoiU2F2aW5nIHJlY29uY2lsaWF0aW9uIiwiZXhjZXB0aW9ucyI6MCwidG9sZXJhbmNlIjoiQ0FEIDIgcm91bmRpbmcgYWxsb3dhbmNlIHBlciBob3VzZWhvbGQiLCJzdGF0dXMiOiJQYXNzIn0seyJjb250cm9sIjoiTmV0IHdvcnRoIHJlY29uY2lsaWF0aW9uIiwiZXhjZXB0aW9ucyI6MTQsInRvbGVyYW5jZSI6IkNBRCAyIHJvdW5kaW5nIGFsbG93YW5jZSBwZXIgaG91c2Vob2xkIiwic3RhdHVzIjoiUmV2aWV3In0seyJjb250cm9sIjoiUHVibGlzaGVkIGRlYnQgcmF0aW8gcmVjb25jaWxpYXRpb24iLCJleGNlcHRpb25zIjowLCJ0b2xlcmFuY2UiOiIwLjA1MSBwZXJjZW50YWdlIHBvaW50cyBwbHVzIGlucHV0IHJvdW5kaW5nIGJvdW5kcyIsInN0YXR1cyI6IlBhc3MifV0=\", BinaryEncoding.Base64))),",
                 "    Typed = Table.TransformColumnTypes(Source, {{\"control\", type text}, {\"exceptions\", Int64.Type}, {\"tolerance\", type text}, {\"status\", type text}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "AuditMethods",
+        "columns": [
+          {
+            "name": "method",
+            "dataType": "string",
+            "lineageTag": "81375fe1-60e3-4df0-9933-5b4abbf7e71f",
+            "sourceColumn": "method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cases",
+            "dataType": "int64",
+            "lineageTag": "70109356-ca91-4486-9bc1-1669ca93315c",
+            "sourceColumn": "cases",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unsupported_recall",
+            "dataType": "double",
+            "lineageTag": "4c0c03d7-4f19-43ec-88f2-363858fbdd48",
+            "sourceColumn": "unsupported_recall",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "false_alarm_rate",
+            "dataType": "double",
+            "lineageTag": "cdf7c0c6-cce8-4d99-b7b2-694e614cac96",
+            "sourceColumn": "false_alarm_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "abstention_rate",
+            "dataType": "double",
+            "lineageTag": "d3a3efee-a055-49de-83f1-cbf7d072aa3a",
+            "sourceColumn": "abstention_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "balanced_accuracy",
+            "dataType": "double",
+            "lineageTag": "ef312bd2-94dd-44cc-b7bb-0c488cce535a",
+            "sourceColumn": "balanced_accuracy",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "coverage",
+            "dataType": "double",
+            "lineageTag": "cf8fe7f5-d8a8-43e6-b114-4700605072ff",
+            "sourceColumn": "coverage",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "accuracy_when_answered",
+            "dataType": "double",
+            "lineageTag": "411254c4-3a1d-4c88-bbd9-32f38070d2a5",
+            "sourceColumn": "accuracy_when_answered",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "true_positive",
+            "dataType": "int64",
+            "lineageTag": "29b47a4c-db15-4431-8738-2d7d77d1ff2d",
+            "sourceColumn": "true_positive",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "false_positive",
+            "dataType": "int64",
+            "lineageTag": "67e06273-18c3-4cf4-9289-89835454fbf3",
+            "sourceColumn": "false_positive",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unsupported_cases",
+            "dataType": "int64",
+            "lineageTag": "4a8edbc4-9103-4975-bc0a-8fb541e240ac",
+            "sourceColumn": "unsupported_cases",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "supported_cases",
+            "dataType": "int64",
+            "lineageTag": "45a08e83-1e9b-472e-afc7-19957d8c2dec",
+            "sourceColumn": "supported_cases",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unsupported_recall_lower95",
+            "dataType": "double",
+            "lineageTag": "97f81f5d-b0a8-414d-aeac-adc9736000cd",
+            "sourceColumn": "unsupported_recall_lower95",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unsupported_recall_upper95",
+            "dataType": "double",
+            "lineageTag": "7d6c1712-6654-4b9c-8e94-bef359bbb592",
+            "sourceColumn": "unsupported_recall_upper95",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "false_alarm_rate_lower95",
+            "dataType": "double",
+            "lineageTag": "5cf36908-a052-4aa1-8fcb-d98a587aa049",
+            "sourceColumn": "false_alarm_rate_lower95",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "false_alarm_rate_upper95",
+            "dataType": "double",
+            "lineageTag": "9f2c36db-6d20-43ee-a707-d6a54773918f",
+            "sourceColumn": "false_alarm_rate_upper95",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "84800c86-214d-4449-8726-45703e449157",
+        "measures": [
+          {
+            "name": "Unsupported claims flagged",
+            "expression": "IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[unsupported_recall]))",
+            "formatString": "0.0%",
+            "lineageTag": "49e25b48-e588-4f8e-8ef2-6ec95d0ed023"
+          },
+          {
+            "name": "Supported claims wrongly flagged",
+            "expression": "IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[false_alarm_rate]))",
+            "formatString": "0.0%",
+            "lineageTag": "fef23685-8179-4657-b94a-e1c310fef1a7"
+          },
+          {
+            "name": "Review coverage",
+            "expression": "IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[coverage]))",
+            "formatString": "0.0%",
+            "lineageTag": "ccf627b7-1b76-43e5-b6b2-d569c89f8e30"
+          },
+          {
+            "name": "Review abstentions",
+            "expression": "IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[abstention_rate]))",
+            "formatString": "0.0%",
+            "lineageTag": "1b21f535-b59d-4701-b666-a1464721f1ce"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "AuditMethods",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sibWV0aG9kIjoiRXhhY3QgY2hlY2tzIG9ubHkiLCJjYXNlcyI6NzI4MCwidW5zdXBwb3J0ZWRfcmVjYWxsIjowLjI4NTcxNDI4NTcxNCwiZmFsc2VfYWxhcm1fcmF0ZSI6MC4wLCJhYnN0ZW50aW9uX3JhdGUiOjAuNzE0Mjg1NzE0Mjg2LCJiYWxhbmNlZF9hY2N1cmFjeSI6MC4yODU3MTQyODU3MTQsImNvdmVyYWdlIjowLjI4NTcxNDI4NTcxNCwiYWNjdXJhY3lfd2hlbl9hbnN3ZXJlZCI6MS4wLCJ0cnVlX3Bvc2l0aXZlIjoxMDQwLCJmYWxzZV9wb3NpdGl2ZSI6MCwidW5zdXBwb3J0ZWRfY2FzZXMiOjM2NDAsInN1cHBvcnRlZF9jYXNlcyI6MzY0MCwidW5zdXBwb3J0ZWRfcmVjYWxsX2xvd2VyOTUiOjAuMjg1NzE0Mjg1NzE0LCJ1bnN1cHBvcnRlZF9yZWNhbGxfdXBwZXI5NSI6MC4yODU3MTQyODU3MTQsImZhbHNlX2FsYXJtX3JhdGVfbG93ZXI5NSI6MC4wLCJmYWxzZV9hbGFybV9yYXRlX3VwcGVyOTUiOjAuMH0seyJtZXRob2QiOiJTZWxlY3RlZCBBSSByZXZpZXdlciIsImNhc2VzIjo3MjgwLCJ1bnN1cHBvcnRlZF9yZWNhbGwiOjEuMCwiZmFsc2VfYWxhcm1fcmF0ZSI6MC4wMTQwMTA5ODkwMTEsImFic3RlbnRpb25fcmF0ZSI6MC4wLCJiYWxhbmNlZF9hY2N1cmFjeSI6MC45OTI5OTQ1MDU0OTUsImNvdmVyYWdlIjoxLjAsImFjY3VyYWN5X3doZW5fYW5zd2VyZWQiOjAuOTkyOTk0NTA1NDk1LCJ0cnVlX3Bvc2l0aXZlIjozNjQwLCJmYWxzZV9wb3NpdGl2ZSI6NTEsInVuc3VwcG9ydGVkX2Nhc2VzIjozNjQwLCJzdXBwb3J0ZWRfY2FzZXMiOjM2NDAsInVuc3VwcG9ydGVkX3JlY2FsbF9sb3dlcjk1IjoxLjAsInVuc3VwcG9ydGVkX3JlY2FsbF91cHBlcjk1IjoxLjAsImZhbHNlX2FsYXJtX3JhdGVfbG93ZXI5NSI6MC4wMDcxNDI4NTcxNDMsImZhbHNlX2FsYXJtX3JhdGVfdXBwZXI5NSI6MC4wMjE3MDMyOTY3MDN9LHsibWV0aG9kIjoiRXhhY3QgY2hlY2tzIHBsdXMgQUkiLCJjYXNlcyI6NzI4MCwidW5zdXBwb3J0ZWRfcmVjYWxsIjoxLjAsImZhbHNlX2FsYXJtX3JhdGUiOjAuMDE0MDEwOTg5MDExLCJhYnN0ZW50aW9uX3JhdGUiOjAuMCwiYmFsYW5jZWRfYWNjdXJhY3kiOjAuOTkyOTk0NTA1NDk1LCJjb3ZlcmFnZSI6MS4wLCJhY2N1cmFjeV93aGVuX2Fuc3dlcmVkIjowLjk5Mjk5NDUwNTQ5NSwidHJ1ZV9wb3NpdGl2ZSI6MzY0MCwiZmFsc2VfcG9zaXRpdmUiOjUxLCJ1bnN1cHBvcnRlZF9jYXNlcyI6MzY0MCwic3VwcG9ydGVkX2Nhc2VzIjozNjQwLCJ1bnN1cHBvcnRlZF9yZWNhbGxfbG93ZXI5NSI6MS4wLCJ1bnN1cHBvcnRlZF9yZWNhbGxfdXBwZXI5NSI6MS4wLCJmYWxzZV9hbGFybV9yYXRlX2xvd2VyOTUiOjAuMDA3MTQyODU3MTQzLCJmYWxzZV9hbGFybV9yYXRlX3VwcGVyOTUiOjAuMDIxNzAzMjk2NzAzfV0=\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"method\", type text}, {\"cases\", Int64.Type}, {\"unsupported_recall\", type number}, {\"false_alarm_rate\", type number}, {\"abstention_rate\", type number}, {\"balanced_accuracy\", type number}, {\"coverage\", type number}, {\"accuracy_when_answered\", type number}, {\"true_positive\", Int64.Type}, {\"false_positive\", Int64.Type}, {\"unsupported_cases\", Int64.Type}, {\"supported_cases\", Int64.Type}, {\"unsupported_recall_lower95\", type number}, {\"unsupported_recall_upper95\", type number}, {\"false_alarm_rate_lower95\", type number}, {\"false_alarm_rate_upper95\", type number}}, \"en-CA\")",
                 "in",
                 "    Typed"
               ],

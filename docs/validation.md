@@ -33,3 +33,16 @@ The latest tenure rows pass all six controls. Deliberate corruptions verify that
 Power BI Desktop was refreshed and the household groups page was checked against Python values. The reporting controls page shows five passing checks and one review status containing fourteen historical CAD 3 differences. The renter example displays income 18,326, consumption 18,898, pension adjustment 841 and net saving 269. Native report previews are saved as 13_powerbi_groups.png and 14_powerbi_controls.png.
 
 The initial six page report passed 56 schema checks. The AI reviewer scorer separately tests strict boolean parsing, deterministic rule coverage and the treatment of abstentions. The full inference inputs and protocol were frozen in commit 00953ab before running the comparison.
+
+
+## Completed reporting review and project handoff
+
+On November 15, 2026 the full Python and SQL pipeline ran again in the desktop VS Code terminal using the saved source snapshots and completed Modal outputs. No additional GPU inference was launched for this validation. All **28 tests passed**, and **63 Power BI JSON files** passed their Microsoft schema checks with valid semantic field references. The checks also confirmed that every benchmark evidence value agrees with the StatCan group panel and the frozen input digest.
+
+The saved review experiment contains eight H100 model and prompt configurations. Development data selected Qwen3-32B with the checklist prompt. Evaluation covers 1,456 unique 2024 and 2025 excerpts across five matched repetitions. The selected reviewer flagged all deliberately unsupported excerpts and had a 1.40% false alarm rate on supported excerpts. These are controlled, balanced template cases; they do not establish reliability on arbitrary real reports or superiority over a comprehensive rules baseline.
+
+The seven-page report was loaded and refreshed in Power BI Desktop. Each page's expected heading and visual state was checked, and cropped native previews were saved in reports/figures. The AI page shows detection, false alarms and abstentions. Selecting payments +10% and income -2% returned **16.30%** in the actual Desktop matrix. Both selections were cleared after checking. The household groups page is the starting point for the interview demo.
+
+The completed runs imply approximately US$10.09 for the earlier neural experiment and US$20.02 for the reporting review experiment in GPU runtime at list price. These are estimates rather than invoices and exclude other usage charges. Reproducing the committed analysis uses saved outputs and does not launch paid Modal work.
+
+The [plain-language walkthrough](project_walkthrough.md) gives the main question, renter arithmetic and a five-minute dashboard demo. GitHub Actions repeats the pipeline, tests and report schema validation on a clean Linux checkout.

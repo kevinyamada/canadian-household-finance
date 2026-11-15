@@ -41,9 +41,9 @@ What would improve it? A real reporting sample with independently reviewed label
 
 ## Relevance to internships
 
-TD data science and business intelligence role examples researched in November 2026 included Python, SQL, data preparation, Power BI, data quality and communication. This project gives concrete examples of those skills. It does not imply TD endorsement or production banking experience.
+TD data science and business intelligence role examples researched on November 15, 2026 included Python, SQL, data preparation, Power BI, data quality and communication. The indexed AI2 Data Science description specifically mentions Python/SQL queries, cleaning, feature engineering and Tableau/Power BI. These are role examples, not a claim that applications remain open. This project gives concrete examples of those skills. It does not imply TD endorsement or production banking experience.
 
-[TD Data Science role example](https://ca.linkedin.com/jobs/view/data-science-intern-co-op-winter-2027-at-td-4464483120)
+[TD Data Science role example](https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/AI2-Data-Science-Co-op_R_1506702)
 
 [TD Business Intelligence role example](https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/AI2-Business-Intelligence-Co-op-Intern--WINTER-2027-_R_1506122)
 

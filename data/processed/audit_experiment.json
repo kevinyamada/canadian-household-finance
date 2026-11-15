@@ -1,0 +1,42 @@
+{
+  "cases_sha256": "e43f86e0e8a3cd5ce247f60e36512de770460ee468b14bdfc36e9682a18468ed",
+  "selected_config": 6,
+  "model": {
+    "model": "Qwen/Qwen3-32B",
+    "prompt": "checklist"
+  },
+  "common_complete_repetitions": 5,
+  "unique_evaluation_cases": 1456,
+  "main_estimated_gpu_cost_usd": 20.016860958623102,
+  "discarded_tail_responses": [
+    74864,
+    52640,
+    15280,
+    43248,
+    2752,
+    8272,
+    2752,
+    4688
+  ],
+  "worker_elapsed_seconds": [
+    2280.695458111,
+    2280.3954476119998,
+    2281.464487484,
+    2280.414865243,
+    2280.0516858319997,
+    2280.973205375,
+    2280.5385418449996,
+    2282.3769362310004
+  ],
+  "model_revisions": [
+    "b968826d9c46dd6066d109eabc6255188de91218",
+    "b968826d9c46dd6066d109eabc6255188de91218",
+    "b968826d9c46dd6066d109eabc6255188de91218",
+    "b968826d9c46dd6066d109eabc6255188de91218",
+    "9216db5781bf21249d130ec9da846c4624c16137",
+    "9216db5781bf21249d130ec9da846c4624c16137",
+    "9216db5781bf21249d130ec9da846c4624c16137",
+    "9216db5781bf21249d130ec9da846c4624c16137"
+  ],
+  "limitation": "Controlled templates and balanced simulated errors, not real audit prevalence or fraud labels."
+}

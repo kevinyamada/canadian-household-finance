@@ -4,6 +4,8 @@ A Python, SQL and Power BI project about household financial pressure and the qu
 
 **Question:** Which household groups face different financial pressures, and can reporting controls catch misleading conclusions about them?
 
+**Start here:** [Plain-language explanation and a five-minute Power BI demo](docs/project_walkthrough.md). The main result is the household group comparison and reporting checks. Forecasting and the Modal AI benchmark are additional experiments.
+
 ![Household group comparison](reports/figures/11_segment_pressure.png)
 
 ## What the analysis found
@@ -38,7 +40,7 @@ The original random forest had test MAE **0.250 percentage points**, versus **0.
 | :--- | :--- |
 | Python pipeline | Downloads sources, checks data quality, builds features, runs models and generates figures |
 | SQLite | Joins quarterly series, calculates changes within groups and creates a reporting review view |
-| Power BI | Six pages covering household groups, reporting controls, national pressure, model evaluation, scenarios and the neural experiment |
+| Power BI | Seven pages covering household groups, reporting controls, AI review, national pressure, model evaluation, scenarios and the neural experiment |
 | Model validation | Expanding time windows, frozen model selection, simple baselines, empirical bands and shock sensitivity |
 | Reproducibility | Source snapshots, file hashes, processed data and automated tests |
 

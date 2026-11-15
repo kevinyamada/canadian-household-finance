@@ -15,3 +15,5 @@ ui_*
 .powerbi_cache_backup/
 
 experiments/input.json
+
+work/

@@ -3,6 +3,7 @@
   "pageOrder": [
     "segments",
     "controls",
+    "audit",
     "overview",
     "models",
     "scenarios",
