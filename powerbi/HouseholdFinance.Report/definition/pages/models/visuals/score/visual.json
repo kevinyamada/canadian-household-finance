@@ -28,7 +28,8 @@
               },
               "queryRef": "Scores.model",
               "nativeQueryRef": "model",
-              "active": true
+              "active": true,
+              "displayName": "model"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Scores.Mean absolute error",
-              "nativeQueryRef": "Mean absolute error"
+              "nativeQueryRef": "Mean absolute error",
+              "displayName": "Mean absolute error"
             }
           ]
         }

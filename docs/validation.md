@@ -23,3 +23,13 @@ Eight H100 workers completed the bounded experiment. Saved predictions were conv
 ## Scope of these checks
 
 These checks establish internal consistency and successful execution. They do not establish real time forecasting performance, causal effects, or suitability for customer credit decisions. Revised historical data and national aggregation remain material limits. No Power BI service deployment was performed.
+
+## Household groups and reporting controls
+
+The November 15 extension joins Statistics Canada tables 36-10-0662, 0660 and 0664 at quarter and household group grain. All source key sets agree before merging. The panel contains 936 rows across 39 groups and 24 quarters. Structural missingness in joint income and age pension and saving cells remains missing.
+
+The latest tenure rows pass all six controls. Deliberate corruptions verify that duplicates, missing values, zero denominators, incorrect saving, incorrect assets and changed published ratios are caught. Same quarter prior year comparisons and the pension adjustment example are tested explicitly. Source ZIP hashes match the saved manifest.
+
+Power BI Desktop was refreshed and the household groups page was checked against Python values. The reporting controls page shows five passing checks and one review status containing fourteen historical CAD 3 differences. The renter example displays income 18,326, consumption 18,898, pension adjustment 841 and net saving 269. Native report previews are saved as 13_powerbi_groups.png and 14_powerbi_controls.png.
+
+The initial six page report passed 56 schema checks. The AI reviewer scorer separately tests strict boolean parsing, deterministic rule coverage and the treatment of abstentions. The full inference inputs and protocol were frozen in commit 00953ab before running the comparison.

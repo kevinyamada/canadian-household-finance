@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "Household.Income growth",
-              "nativeQueryRef": "Income growth"
+              "nativeQueryRef": "Income growth",
+              "displayName": "Income growth"
             }
           ]
         }

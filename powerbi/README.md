@@ -4,12 +4,14 @@ Open HouseholdFinance.pbip in Power BI Desktop, then select Refresh to load the 
 
 ## Pages
 
-1. Household pressure: four KPI cards, the ratio history, an accounting decomposition and a quarter slicer. The decomposition always shows the latest published quarter.
-2. Model evaluation: observed and estimated ratios, test MAE, interval coverage and a results table.
-3. Payment scenarios: an interactive matrix and slicers for assumed income and payment changes.
-4. GPU experiment: neural model comparison, uncertainty coverage, matched seed count and recorded GPU runtime cost.
+1. Household groups: debt ratios and income less consumption by tenure, income and age, with the group reference period shown separately.
+2. Reporting controls: six control results, retained reconciliation exceptions and the renter pension adjustment example.
+3. Household pressure: national ratio history, payment and income contributions, and a quarter slicer.
+4. Model evaluation: observed and estimated ratios, test MAE, interval coverage and a results table.
+5. Payment scenarios: an interactive matrix and slicers for assumed income and payment changes.
+6. GPU experiment: the earlier neural forecasting comparison, uncertainty coverage and runtime cost.
 
-The report uses 10 tables and 3 relationships. Quarter filters Household, Backtest and GPUBacktest in one direction. Scores, Contributions, Estimate and Scenarios are separate tables with their own grain. The headline ratio is the latest value within the selected quarters. It is never summed across quarters.
+The model uses 14 tables and 3 relationships. Quarter filters Household, Backtest and GPUBacktest in one direction. Group tables contain the latest 2025Q4 snapshot and are intentionally separate from the national quarter slicer. Income, age and tenure describe overlapping populations; they must not be added together. Measure names are unique across the semantic model.
 
 Power Query imports embedded JSON created from the validated Python outputs. DAX measures calculate current context values and model errors. There are no credentials, absolute file paths, custom visuals, external cloud connections, or service publishing requirements.
 
@@ -28,3 +30,7 @@ Generated JSON is checked against Microsoft's public PBIR schemas, and visual fi
 ![Payment scenarios](../reports/figures/08_powerbi_scenarios.png)
 
 ![GPU experiment](../reports/figures/10_powerbi_gpu.png)
+
+![Household groups](../reports/figures/13_powerbi_groups.png)
+
+![Reporting controls](../reports/figures/14_powerbi_controls.png)

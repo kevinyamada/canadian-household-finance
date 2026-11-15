@@ -1,6 +1,6 @@
 # Methodology
 
-## Question
+## National analysis question
 
 How has the payment burden of Canadian households changed, and can a model improve an estimate of the next unpublished quarter? A retail banking analytics team could use the result to decide which aggregate indicators need closer review. This is a public data portfolio project and has no affiliation with TD.
 
@@ -32,10 +32,24 @@ A circular moving block bootstrap uses four quarter blocks and 4,000 replicates 
 
 ## Accounting decomposition
 
-For payments P and income I, R = 100P/I. The payment contribution between periods 0 and 1 is 50(P1 − P0)(1/I0 + 1/I1). The income contribution is 50(P0 + P1)(1/I1 − 1/I0). Their sum equals R1 − R0. This is the symmetric average of the two possible orders of changing the inputs.
+For payments P and income I, R = 100P/I. The payment contribution between periods 0 and 1 is 50(P1 - P0)(1/I0 + 1/I1). The income contribution is 50(P0 + P1)(1/I1 - 1/I0). Their sum equals R1 - R0. This is the symmetric average of the two possible orders of changing the inputs.
 
 ## Limits that affect interpretation
 
 This is a revised vintage retrospective evaluation. Archived releases are not available in the project. Data for quarter t are normally released during t+1, so the next quarter estimate is a nowcast of the next unpublished quarter. Historical real time forecast accuracy could be different.
 
 The national aggregate is not the average of individual household ratios. It cannot identify vulnerable borrowers, estimate default, measure TD portfolio risk, or support individual credit decisions. Policy rate movements are contextual and do not identify a causal payment effect. Scenario shocks are transparent accounting assumptions.
+
+## Household group analysis
+
+The main reporting extension asks which forms of pressure the national average can hide. The grain is one quarter and one household group. The selected 39 groups comprise five age groups, five income groups, three tenure groups, all households and 25 joint income and age cells. Other categories in the source files are explicitly excluded before joining. Selected source key sets must agree; joins must be one to one.
+
+The three DHEA tables supply quarterly per household income, consumption, pension adjustments and saving; assets, debt and net worth; and the published debt to annualized disposable income ratio. These are modeled distribution estimates in nominal dollars, not seasonally adjusted. Changes compare the same quarter a year earlier. Age is that of the major income earner, and income quintiles use equivalized disposable income. Overlapping group views cannot be added together.
+
+The published debt ratio is checked against 100 times debt divided by four times quarterly disposable income, with allowance for published rounding. Income less consumption is shown separately from net saving. Consumption includes national accounts imputations; neither measure is an individual account balance or default probability. Joint income and age cells do not publish the pension and saving components used in the broad groups, so those missing values remain missing.
+
+SQLite stores the group panel, calculates changes within each group with partitioned window functions, and exposes a view of pension related sign reversals for reporting review. The latest SQL changes are checked against the Python calculation.
+
+## Reporting review experiment
+
+See [the frozen protocol](audit_protocol.md) for the controlled AI experiment. It uses real StatCan evidence with explicitly simulated reporting mistakes. Model inputs exclude answer labels. Configuration selection uses development years, and the later evaluation years remain separate. The benchmark is a demonstration of reviewer behavior, not a claim of fraud detection or professional audit assurance.

@@ -28,7 +28,8 @@
               },
               "queryRef": "Contributions.driver",
               "nativeQueryRef": "driver",
-              "active": true
+              "active": true,
+              "displayName": "driver"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Contributions.Contribution",
-              "nativeQueryRef": "Contribution"
+              "nativeQueryRef": "Contribution",
+              "displayName": "Contribution"
             }
           ]
         }

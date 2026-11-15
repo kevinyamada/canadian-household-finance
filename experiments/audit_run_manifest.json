@@ -1,0 +1,42 @@
+{
+  "cases_sha256": "e43f86e0e8a3cd5ce247f60e36512de770460ee468b14bdfc36e9682a18468ed",
+  "configs": [
+    {
+      "model": "Qwen/Qwen3-8B",
+      "prompt": "plain"
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "prompt": "definitions"
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "prompt": "checklist"
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "prompt": "python"
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "prompt": "plain"
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "prompt": "definitions"
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "prompt": "checklist"
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "prompt": "python"
+    }
+  ],
+  "revisions": {
+    "Qwen/Qwen3-32B": "9216db5781bf21249d130ec9da846c4624c16137",
+    "Qwen/Qwen3-8B": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "seconds_per_worker": 2280
+}

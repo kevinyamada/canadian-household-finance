@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "Backtest.Band coverage",
-              "nativeQueryRef": "Band coverage"
+              "nativeQueryRef": "Band coverage",
+              "displayName": "Band coverage"
             }
           ]
         }

@@ -1,36 +1,48 @@
 # Canadian Household Finance
 
-A Python, SQL and Power BI project helping a banking analyst distinguish real payment relief from a ratio that falls because income grows faster.
+A Python, SQL and Power BI project about household financial pressure and the quality of the reporting used to describe it.
 
-**Question:** Is the payment burden easing, what explains the change, and can a model improve the estimate of the next unpublished quarter?
+**Question:** Which household groups face different financial pressures, and can reporting controls catch misleading conclusions about them?
 
-![Power BI household pressure page](reports/figures/06_powerbi_overview.png)
+![Household group comparison](reports/figures/11_segment_pressure.png)
 
-## Main findings
+## What the analysis found
 
-In 2026Q2, the debt service ratio fell to **14.52%**, down **0.16 percentage points** from the previous quarter. Required payments still increased **0.97%**. Income grew faster at **2.06%**, explaining the lower ratio.
+The national average hides different forms of pressure. In **2025Q4**, owners with mortgages had debt equal to **306.1% of annualized disposable income**. Renters had a much lower ratio of **56.4%**, but average income was **CAD 572 below consumption** for the quarter.
 
-Since 2019Q4, the mortgage component rose **0.53 percentage points**, while the other debt component fell **0.96**. The national total hides different movements within borrowing types.
+Renters still had positive reported net saving of **CAD 269**, because that measure includes a **CAD 841 pension entitlement adjustment**. Calling net saving “money left after spending” would therefore be misleading. The dashboard shows these measures separately and the Python pipeline checks the accounting identity.
 
-A small random forest won the 2007 to 2018 model selection period. On the untouched 2019Q1 to 2026Q2 test, it recorded **0.250 percentage points MAE**, compared with **0.245** for persistence. It did not improve on the simple benchmark. This result is retained and discussed rather than tuning on the test period.
+This supports a concrete reporting decision: review leverage and income relative to consumption separately, and verify the meaning of saving before drawing conclusions. These are group averages, not individual borrower risk scores or bank account cash flows.
 
-[Problem and decision](docs/problem_statement.md) · [Read the analysis](reports/analysis.md) · [Methodology](docs/methodology.md) · [Interview notes](docs/interview_notes.md)
+[Group findings](reports/segment_findings.md) · [Problem and decision](docs/problem_statement.md) · [Interview explanation](docs/interview_notes.md)
 
-## GPU extension
+## Reporting controls and AI review
 
-A separate Modal H100 experiment tested whether a neural ensemble improves the next quarter estimate and whether its result is stable across random seeds. Its MAE was **0.387 percentage points**, versus **0.245** for persistence, so the recommendation remains to keep the simple benchmark. Eight H100 workers completed the experiment, with roughly **US$10.09 of GPU runtime** before other usage charges. It is an exploratory extension because the original test results were already known. See the [GPU findings](reports/gpu_experiment.md) and [reproduction instructions](experiments/README.md). Reprocessing saved GPU results does not launch paid compute.
+Six controls check keys, completeness, income denominators, saving identities, net worth identities and published debt ratios. Fourteen historical joint group rows have small CAD 3 net worth reconciliation differences. They remain visible as review exceptions; they are not evidence of fraud or material misstatement.
+
+A separate Modal experiment compares Qwen3 8B and 32B under four review prompts on H100 GPUs. The evidence comes from StatCan; only the deliberately misleading report excerpts are simulated. The benchmark has 4,368 labeled cases, including 1,456 reserved evaluation cases. It compares exact checks, an AI reviewer and a combination, reporting false alarms and abstentions as well as detection.
+
+[Benchmark protocol](docs/audit_protocol.md) · [Saved benchmark findings](reports/audit_benchmark.md)
+
+## Earlier forecasting result
+
+The national analysis remains included. In **2026Q2**, debt service fell to **14.52%** because income grew faster than required payments; payments themselves still rose. The national and group reference periods are different and are labeled separately.
+
+The original random forest had test MAE **0.250 percentage points**, versus **0.245** for persistence. A later neural experiment had MAE **0.387**. Neither improved on the simple benchmark. These results are retained rather than presented as a forecasting success.
+
+[National analysis](reports/analysis.md) · [Neural experiment](reports/gpu_experiment.md) · [Methodology](docs/methodology.md)
 
 ## What is included
 
 | Part | What it does |
 | :--- | :--- |
 | Python pipeline | Downloads sources, checks data quality, builds features, runs models and generates figures |
-| SQLite | Joins quarterly series and uses window functions for changes |
-| Power BI | Four pages covering household pressure, model evaluation, payment scenarios and the GPU experiment |
+| SQLite | Joins quarterly series, calculates changes within groups and creates a reporting review view |
+| Power BI | Six pages covering household groups, reporting controls, national pressure, model evaluation, scenarios and the neural experiment |
 | Model validation | Expanding time windows, frozen model selection, simple baselines, empirical bands and shock sensitivity |
 | Reproducibility | Source snapshots, file hashes, processed data and automated tests |
 
-There are **146 national quarters**, from 1990Q1 through 2026Q2. This is a small time series analysis, not a customer level credit model. No TD data is used.
+There are **936 household group and quarter rows** from 2020Q1 through 2025Q4, alongside **146 national quarters** from 1990Q1 through 2026Q2. This is a small time series analysis, not a customer level credit model. No TD data is used.
 
 ## Run in VS Code
 
@@ -63,12 +75,12 @@ The pipeline was run in the desktop VS Code terminal. Automated tests cover the 
 
 ```text
 src/                 Data preparation, models, figures and Power BI generation
-sql/analysis.sql     SQLite views and quarterly changes
-data/raw/            Original source snapshots and checksums
+sql/                 SQLite views, group changes and reporting review
+data/raw/            Original source snapshots, group tables and checksums
 data/processed/      Analysis tables, SQLite database and model results
 powerbi/             Editable Power BI project and semantic model
 reports/             Analysis, GPU findings, figures and Power BI previews
-experiments/         Modal GPU training, saved results and CPU summarizer
+experiments/         Modal experiments, saved responses and CPU summarizers
 tests/               Data integrity and forecast timing tests
 docs/                Methodology and interview explanation
 ```
@@ -80,6 +92,11 @@ Historical values are revised, so this is a revised vintage retrospective evalua
 National aggregates cannot identify vulnerable borrowers or estimate TD losses. Payment scenarios are accounting assumptions and do not model the causal effect of policy rate changes. Dollar series are CAD millions at annual rates, not actual quarterly cash totals.
 
 ## Sources
+
+The primary source is the [Statistics Canada data portal](https://www150.statcan.gc.ca/n1/en/type/data?HPA=1) used to select these tables:
+
+[36-10-0662-01: household income, consumption and saving](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066201), [36-10-0660-01: wealth](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066001), and [36-10-0664-01: wealth indicators](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066401). The group tables cover through 2025Q4 in the April 13, 2026 release. They are nominal and not seasonally adjusted, so changes compare the same quarter across years. Age, income and tenure views overlap and must not be added together.
+
 
 [Statistics Canada table 11-10-0065-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110006501), September 11, 2026 release, downloaded November 14, 2026. [Debt service methodology](https://www150.statcan.gc.ca/n1/pub/13-605-x/2015006/article/14219-eng.htm).
 

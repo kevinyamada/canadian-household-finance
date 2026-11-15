@@ -28,7 +28,8 @@
               },
               "queryRef": "Quarter.date",
               "nativeQueryRef": "date",
-              "active": true
+              "active": true,
+              "displayName": "date"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Household.Debt service ratio",
-              "nativeQueryRef": "Debt service ratio"
+              "nativeQueryRef": "Debt service ratio",
+              "displayName": "Debt service ratio"
             },
             {
               "field": {
@@ -60,7 +62,8 @@
                 }
               },
               "queryRef": "Household.Mortgage ratio",
-              "nativeQueryRef": "Mortgage ratio"
+              "nativeQueryRef": "Mortgage ratio",
+              "displayName": "Mortgage ratio"
             },
             {
               "field": {
@@ -74,7 +77,8 @@
                 }
               },
               "queryRef": "Household.Other debt ratio",
-              "nativeQueryRef": "Other debt ratio"
+              "nativeQueryRef": "Other debt ratio",
+              "displayName": "Debt to income (%)"
             }
           ]
         }

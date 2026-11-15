@@ -117,10 +117,15 @@ def summarize():
     axs[0].set_xlim(0,105);axs[0].set_xlabel('Unsupported claims flagged (%)');axs[0].invert_yaxis()
     axs[1].barh(comparison.method,comparison.false_alarm_rate*100,color=['#6579A4','#D38136','#176B61'])
     axs[1].set_xlabel('Supported claims incorrectly flagged (%)');axs[1].invert_yaxis()
+    maximum=max(1,float(comparison.false_alarm_rate.max()*100)*1.3)
+    axs[1].set_xlim(0,maximum)
+    for i,row in enumerate(comparison.itertuples()):
+        axs[0].text(row.unsupported_recall*100+.6,i,f'{row.unsupported_recall:.1%}',va='center',fontsize=9)
+        axs[1].text(row.false_alarm_rate*100+maximum*.02,i,f'{row.false_alarm_rate:.2%}',va='center',fontsize=9)
     fig.suptitle('Reporting review: detection and false alarms',x=.02,ha='left',fontsize=15)
     fig.text(.02,.02,'Controlled StatCan excerpts. Exact checks abstain outside their supported formats. Repeated answers are not new cases.',fontsize=8)
     fig.tight_layout(rect=[0,.06,1,.94]);fig.savefig(ROOT/'reports/figures/12_audit_benchmark.png',dpi=170);plt.close(fig)
-    lines='\n'.join(f'| {r.method} | {r.unsupported_recall:.1%} | {r.false_alarm_rate:.1%} | {r.abstention_rate:.1%} |' for r in comparison.itertuples())
+    lines='\n'.join(f'| {r.method} | {r.unsupported_recall:.2%} | {r.false_alarm_rate:.2%} | {r.abstention_rate:.2%} |' for r in comparison.itertuples())
     report=f'''# Can AI help review financial reporting?
 
 The selected configuration was {audit['model']}, chosen using development results only. Evaluation uses {audit['unique_evaluation_cases']:,} unique supported and deliberately corrupted excerpts from 2024 and 2025 StatCan group data, with {repeats} matched generation repetitions.
@@ -135,7 +140,7 @@ Exact checks cover explicit ratio numbers and period statements; they send other
 
 Use deterministic checks for facts they can validate directly. Treat AI flags as review suggestions that need a person to resolve them. The benchmark does not establish that AI can replace an auditor. Review examples of wrong or invalid model answers in audit_review_examples.json.
 
-The source data are real Statistics Canada estimates. The incorrect excerpts are deliberately generated and labeled. Seven error families cover numbers, periods, units, ratio meaning, pension adjustments, individual claims and causality. Error prevalence is balanced by design, so precision would differ in real reports. Templates repeat across years; this is not a test of arbitrary new writing, and repeated generations do not increase the number of independent cases.
+The source data are real Statistics Canada estimates. The incorrect excerpts are deliberately generated and labeled. Seven error families cover numbers, periods, units, ratio meaning, pension adjustments, individual claims and causality. Error prevalence is balanced by design, so precision would differ in real reports. Templates repeat across years; this is not a test of arbitrary new writing, and repeated generations do not increase the number of independent cases. The exact baseline is deliberately narrow. Rules could be written for all seven known templates, so beating this baseline does not prove that an LLM is necessary or better than a comprehensive rules system. A useful next validation would use independently reviewed real report excerpts and an expanded rules baseline.
 
 The main workers imply US${audit['main_estimated_gpu_cost_usd']:.2f} in GPU usage from runtime at the published H100 rate. CPU model preparation, storage, setup, smoke tests and other charges are additional. This is an estimate, not an invoice. Saved outputs can be summarized without another paid run.
 

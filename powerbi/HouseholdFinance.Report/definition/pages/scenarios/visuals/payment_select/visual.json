@@ -28,7 +28,8 @@
               },
               "queryRef": "Scenarios.payment_change_pct",
               "nativeQueryRef": "payment_change_pct",
-              "active": true
+              "active": true,
+              "displayName": "payment_change_pct"
             }
           ]
         }

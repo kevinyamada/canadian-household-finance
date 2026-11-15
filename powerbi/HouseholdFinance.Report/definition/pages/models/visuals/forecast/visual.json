@@ -28,7 +28,8 @@
               },
               "queryRef": "Quarter.date",
               "nativeQueryRef": "date",
-              "active": true
+              "active": true,
+              "displayName": "date"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Backtest.Observed",
-              "nativeQueryRef": "Observed"
+              "nativeQueryRef": "Observed",
+              "displayName": "Observed"
             },
             {
               "field": {
@@ -60,7 +62,8 @@
                 }
               },
               "queryRef": "Backtest.Model estimate",
-              "nativeQueryRef": "Model estimate"
+              "nativeQueryRef": "Model estimate",
+              "displayName": "Model estimate"
             },
             {
               "field": {
@@ -74,7 +77,8 @@
                 }
               },
               "queryRef": "Backtest.Persistence estimate",
-              "nativeQueryRef": "Persistence estimate"
+              "nativeQueryRef": "Persistence estimate",
+              "displayName": "Persistence estimate"
             }
           ]
         }

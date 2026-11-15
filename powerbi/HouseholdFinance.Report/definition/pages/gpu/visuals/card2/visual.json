@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "GPUAudit.Common seed count",
-              "nativeQueryRef": "Common seed count"
+              "nativeQueryRef": "Common seed count",
+              "displayName": "Common seed count"
             }
           ]
         }

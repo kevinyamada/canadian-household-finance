@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "Household.Quarterly change",
-              "nativeQueryRef": "Quarterly change"
+              "nativeQueryRef": "Quarterly change",
+              "displayName": "Quarterly change"
             }
           ]
         }

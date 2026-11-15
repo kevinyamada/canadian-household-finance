@@ -28,7 +28,8 @@
               },
               "queryRef": "GPUScores.model",
               "nativeQueryRef": "model",
-              "active": true
+              "active": true,
+              "displayName": "model"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "GPUScores.Comparison MAE",
-              "nativeQueryRef": "Comparison MAE"
+              "nativeQueryRef": "Comparison MAE",
+              "displayName": "Comparison MAE"
             }
           ]
         }

@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "Household.Payment growth",
-              "nativeQueryRef": "Payment growth"
+              "nativeQueryRef": "Payment growth",
+              "displayName": "Payment growth"
             }
           ]
         }

@@ -43,3 +43,32 @@ The main run requests H100 exactly, up to eight containers, one requested CPU co
 Runtime based GPU cost estimates exclude startup, image builds, CPU and memory. Modal billing remains authoritative. The initial smoke attempt trained successfully but failed to deserialize the Torch version object locally; that was fixed by returning it as plain text. Its roughly 30 seconds of GPU work are additional to the saved successful smoke test.
 
 [Modal pricing](https://modal.com/pricing) · [GPU configuration](https://modal.com/docs/guide/gpu)
+
+## Reporting review experiment
+
+This is a separate task from the neural forecast experiment. It checks whether supported and deliberately misleading report excerpts agree with real StatCan group evidence.
+
+To regenerate the benchmark inputs without GPU spending:
+
+```powershell
+.\.venv\Scripts\python.exe src\segments.py
+.\.venv\Scripts\python.exe experiments\prepare_audit.py
+```
+
+To summarize the saved results on the CPU:
+
+```powershell
+.\.venv\Scripts\python.exe experiments\summarize_audit.py
+```
+
+The summarizer verifies a canonical SHA256 hash of the cases and uses the same completed repetitions from every configuration. It selects the configuration using development results, then measures evaluation performance. Full response files retain partial tails even when those tails are excluded from the matched comparison.
+
+The following command launches paid Modal work. It is not part of run.py or CI. Do not run it just to reproduce the published tables.
+
+```powershell
+.\.venv\Scripts\python.exe -m modal run experiments\modal_audit.py
+```
+
+The full experiment uses eight H100 workers with 2,280 second work budgets. Each worker evaluates a model and prompt combination across repeated generation seeds. Model download occurs in a CPU function first. The dedicated model cache volume can be removed after results are safely saved to avoid retaining unnecessary storage. A new run will download the public weights again if the volume has been removed.
+
+The protocol was committed before the full run. Model revisions, the canonical input digest, response text, timing and estimated GPU cost are recorded with the outputs. The experiment measures controlled reporting mistakes, not actual fraud, audit assurance or production staff time saved.

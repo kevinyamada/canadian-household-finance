@@ -1,0 +1,7 @@
+control,exceptions,passed,tolerance
+Unique quarter and group,0,True,No duplicate keys
+Complete applicable measures,0,True,No missing values
+Positive income denominator,0,True,Income greater than zero
+Saving reconciliation,0,True,CAD 2 rounding allowance per household
+Net worth reconciliation,14,False,CAD 2 rounding allowance per household
+Published debt ratio reconciliation,0,True,0.051 percentage points plus input rounding bounds

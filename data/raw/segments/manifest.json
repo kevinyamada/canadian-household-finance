@@ -1,0 +1,20 @@
+[
+  {
+    "table": "36100662",
+    "url": "https://www150.statcan.gc.ca/n1/en/tbl/csv/36100662-eng.zip",
+    "sha256": "56c443cb277ef0411f490a9b2b91cd6b29484739f27f0a7e8aee1a8c6be2484f",
+    "latest_quarter": "2025Q4"
+  },
+  {
+    "table": "36100660",
+    "url": "https://www150.statcan.gc.ca/n1/en/tbl/csv/36100660-eng.zip",
+    "sha256": "af1182dc0b145b5571cf73bc4ee0324b4c1473e6eed65763a2adee0c9bbfa32d",
+    "latest_quarter": "2025Q4"
+  },
+  {
+    "table": "36100664",
+    "url": "https://www150.statcan.gc.ca/n1/en/tbl/csv/36100664-eng.zip",
+    "sha256": "048b57219d99a72894e5ea25d0f745e4a100e5fb6e909173917d91ec4b9519ba",
+    "latest_quarter": "2025Q4"
+  }
+]

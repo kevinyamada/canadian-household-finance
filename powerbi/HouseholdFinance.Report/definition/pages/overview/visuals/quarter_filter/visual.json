@@ -28,7 +28,8 @@
               },
               "queryRef": "Quarter.quarter",
               "nativeQueryRef": "quarter",
-              "active": true
+              "active": true,
+              "displayName": "quarter"
             }
           ]
         }

@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "GPUAudit.Empirical coverage",
-              "nativeQueryRef": "Empirical coverage"
+              "nativeQueryRef": "Empirical coverage",
+              "displayName": "Empirical coverage"
             }
           ]
         }

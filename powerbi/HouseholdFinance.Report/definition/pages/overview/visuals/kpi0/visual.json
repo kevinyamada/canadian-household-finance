@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "Household.Debt service ratio",
-              "nativeQueryRef": "Debt service ratio"
+              "nativeQueryRef": "Debt service ratio",
+              "displayName": "Debt service ratio"
             }
           ]
         }

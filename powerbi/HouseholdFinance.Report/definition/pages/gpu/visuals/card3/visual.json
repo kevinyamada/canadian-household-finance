@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "GPUAudit.GPU runtime cost",
-              "nativeQueryRef": "GPU runtime cost"
+              "nativeQueryRef": "GPU runtime cost",
+              "displayName": "GPU runtime cost"
             }
           ]
         }

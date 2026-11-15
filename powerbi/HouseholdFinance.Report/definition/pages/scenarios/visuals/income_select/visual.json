@@ -28,7 +28,8 @@
               },
               "queryRef": "Scenarios.income_change_pct",
               "nativeQueryRef": "income_change_pct",
-              "active": true
+              "active": true,
+              "displayName": "income_change_pct"
             }
           ]
         }

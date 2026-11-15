@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "age",
+  "position": {
+    "x": 650,
+    "y": 400,
+    "width": 600,
+    "height": 210,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Age of major income earner'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AgePressure"
+                    }
+                  },
+                  "Property": "group"
+                }
+              },
+              "queryRef": "AgePressure.group",
+              "nativeQueryRef": "group",
+              "displayName": "Household group"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AgePressure"
+                    }
+                  },
+                  "Property": "AgePressure debt ratio"
+                }
+              },
+              "queryRef": "AgePressure.AgePressure debt ratio",
+              "nativeQueryRef": "AgePressure debt ratio",
+              "displayName": "Debt to income (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AgePressure"
+                    }
+                  },
+                  "Property": "AgePressure income gap"
+                }
+              },
+              "queryRef": "AgePressure.AgePressure income gap",
+              "nativeQueryRef": "AgePressure income gap",
+              "displayName": "Income less consumption (CAD)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

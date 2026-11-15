@@ -98,7 +98,8 @@
                 }
               },
               "queryRef": "GPUAudit.MAE difference",
-              "nativeQueryRef": "MAE difference"
+              "nativeQueryRef": "MAE difference",
+              "displayName": "MAE difference"
             }
           ]
         }

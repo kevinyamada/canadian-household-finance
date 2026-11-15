@@ -46,7 +46,10 @@ def field(table_name,col,kind='Column'):
 
 
 def projection(table_name,col,kind='Column'):
-    return {'field':field(table_name,col,kind),'queryRef':table_name+'.'+col,'nativeQueryRef':col}
+    label={'group':'Household group','control':'Control','exceptions':'Exceptions','status':'Status','tolerance':'Review threshold'}.get(col,col)
+    if col.endswith(' debt ratio'):label='Debt to income (%)'
+    if col.endswith(' income gap'):label='Income less consumption (CAD)'
+    return {'field':field(table_name,col,kind),'queryRef':table_name+'.'+col,'nativeQueryRef':col,'displayName':label}
 
 
 def literal(value):
@@ -137,6 +140,33 @@ def build():
                 measure('MAE difference','MAX(GPUAudit[difference])','+0.000;-0.000;0.000')])])
         relationships.append({'name':'GPUBacktest_Quarter','fromTable':'GPUBacktest','fromColumn':'quarter',
             'toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'})
+    segments_ready=(OUT/'segment_latest.csv').exists()
+    if segments_ready:
+        from segments import AGES, INCOMES, TENURES
+        segment=pd.read_csv(OUT/'segment_latest.csv')
+        group_orders={'AgePressure':AGES,'IncomePressure':INCOMES,'TenurePressure':TENURES}
+        for entity,view in [('TenurePressure','Housing tenure'),('AgePressure','Age'),('IncomePressure','Income')]:
+            frame=segment[segment.view==view][['quarter','group','debt_income_pct','income_less_consumption','saving']]
+            frame=frame.copy()
+            frame['group_order']=frame.group.map({name:i for i,name in enumerate(group_orders[entity])}).astype(int)
+            if entity=='TenurePressure':frame['group']=frame.group.replace({'Owner with mortgage':'Owner, mortgage','Owner without mortgage':'Owner, no mortgage'})
+            item=table(entity,frame,[
+                measure(entity+' debt ratio',f'IF(HASONEVALUE({entity}[group]), MAX({entity}[debt_income_pct]))','0.0"%"'),
+                measure(entity+' income gap',f'IF(HASONEVALUE({entity}[group]), MAX({entity}[income_less_consumption]))','#,0;(#,0);0')])
+            next(c for c in item['columns'] if c['name']=='group')['sortByColumn']='group_order'
+            tables.append(item)
+        controls=pd.read_csv(OUT/'segment_controls.csv')
+        controls['status']=controls.passed.map({True:'Pass',False:'Review'})
+        controls=controls.drop(columns='passed')
+        tables.append(table('ReportingControls',controls))
+    audit_ready=(OUT/'audit_experiment.json').exists()
+    if audit_ready:
+        review_audit=json.loads((OUT/'audit_experiment.json').read_text())
+        tables.append(table('AuditMethods',pd.read_csv(OUT/'audit_method_comparison.csv'),[
+            measure('Unsupported claims flagged','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[unsupported_recall]))','0.0%'),
+            measure('Supported claims wrongly flagged','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[false_alarm_rate]))','0.0%'),
+            measure('Review coverage','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[coverage]))','0.0%'),
+            measure('Review abstentions','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[abstention_rate]))','0.0%')]))
     write(MODEL/'model.bim',{'name':'HouseholdFinance','compatibilityLevel':1600,'model':{'culture':'en-US','defaultPowerBIDataSourceVersion':'powerBI_V3',
                    'sourceQueryCulture':'en-CA','tables':tables,'relationships':relationships,'annotations':[{'name':'PBI_QueryOrder','value':json.dumps([x['name'] for x in tables])}]}})
     write(MODEL/'definition.pbism',{'version':'1.0','settings':{}})
@@ -148,7 +178,9 @@ def build():
     write(REPORT/'definition/version.json',{'$schema':BASE+'item/report/definition/versionMetadata/1.0.0/schema.json','version':'2.0.0'})
     pages=[('overview','Household pressure'),('models','Model evaluation'),('scenarios','Payment scenarios')]
     if gpu_ready:pages.append(('gpu','GPU experiment'))
-    write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'overview'})
+    if segments_ready:pages=[('segments','Household groups'),('controls','Reporting controls')]+pages
+    if audit_ready:pages.insert(2,('audit','AI reporting review'))
+    write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'segments' if segments_ready else 'overview'})
     for name,label in pages:
         write(REPORT/'definition/pages'/name/'page.json',{'$schema':BASE+'item/report/definition/page/1.0.0/schema.json','name':name,'displayName':label,
                   'displayOption':'FitToPage','width':1280,'height':720,
@@ -193,6 +225,33 @@ def build():
         answer='Neural MAE is lower in this retrospective comparison. Validate on future releases before changing the benchmark.' if gpu_audit['mae_difference_pp']<0 else 'The neural ensemble did not beat persistence on MAE. Keep the simple benchmark for now.'
         text('gpu','answer',24,560,1210,50,answer,14)
         text('gpu','limits',24,620,1210,70,'More seeds measure training stability, not more economic observations. Revised data; no live validation. Cost is GPU runtime times list price, excluding startup, CPU and memory. Detailed protocol and results: reports/gpu_experiment.md.',11)
+    if segments_ready:
+        reference=segment.quarter.max()
+        text('segments','header',24,10,1210,55,'Where does the national average hide pressure?',25)
+        text('segments','subtitle',24,65,1210,55,f'{reference} group estimates. Mortgage owners have higher leverage; renters have income below consumption. These are different pressures.',12)
+        visual('segments','debt','clusteredBarChart',24,140,600,235,'Debt relative to annualized disposable income (%)',
+            {'Category':[projection('TenurePressure','group')],'Y':[projection('TenurePressure','TenurePressure debt ratio','Measure')]})
+        visual('segments','gap','clusteredBarChart',650,140,600,235,'Income less consumption, CAD per household in quarter',
+            {'Category':[projection('TenurePressure','group')],'Y':[projection('TenurePressure','TenurePressure income gap','Measure')]})
+        for entity,name,x,title in [('IncomePressure','income',24,'Income groups'),('AgePressure','age',650,'Age of major income earner')]:
+            visual('segments',name,'tableEx',x,400,600,210,title,{'Values':[projection(entity,'group'),projection(entity,entity+' debt ratio','Measure'),projection(entity,entity+' income gap','Measure')]},sort=field(entity,'group'),objects={'total':[{'properties':{'totals':literal(False)}}]})
+        text('segments','note',24,630,1210,65,'Group averages do not identify individual borrowers. Income less consumption is not bank account cash flow. Views overlap and must not be added. Sources: StatCan 36-10-0660, 0662 and 0664. Compare the same quarter across years.',11)
+        text('controls','header',24,10,1210,55,'Can the reporting be trusted?',25)
+        text('controls','subtitle',24,65,1210,55,'Check the numbers and the meaning of the measures. This is a controls demonstration, not a professional audit opinion.',12)
+        visual('controls','checks','tableEx',24,140,1230,280,'Source reconciliation and data controls',{'Values':[projection('ReportingControls',c) for c in ['control','exceptions','status','tolerance']]})
+        text('controls','example',24,445,1210,105,'Renters: income 18,326 minus consumption 18,898 = negative CAD 572. Adding the CAD 841 pension entitlement adjustment gives positive CAD 269 net saving. Do not describe that net saving as income left after spending.',16)
+        text('controls','review',24,575,1210,115,'Review exceptions: fourteen historical joint group net worth rows differ by CAD 3. They are retained for review, not called fraud or material errors. No such exception occurs in the latest quarter. The separate AI benchmark checks deliberately altered reporting excerpts against trusted StatCan evidence.',12)
+    if audit_ready:
+        text('audit','header',24,10,1210,55,'Can AI catch misleading reporting?',25)
+        selected=review_audit['model']
+        text('audit','subtitle',24,65,1210,65,f"{selected['model']} with {selected['prompt']} prompt, chosen on development data. Evaluation: {review_audit['unique_evaluation_cases']:,} unique 2024 and 2025 excerpts, {review_audit['common_complete_repetitions']} matched repetitions.",12)
+        visual('audit','recall','clusteredBarChart',24,150,600,250,'Unsupported statements flagged',
+            {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Unsupported claims flagged','Measure')]})
+        visual('audit','alarms','clusteredBarChart',650,150,600,250,'Supported statements incorrectly flagged',
+            {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Supported claims wrongly flagged','Measure')]})
+        visual('audit','coverage','tableEx',24,425,1230,130,'Coverage matters: an abstention is sent for review',
+            {'Values':[projection('AuditMethods','method'),projection('AuditMethods','Review coverage','Measure'),projection('AuditMethods','Review abstentions','Measure')]})
+        text('audit','meaning',24,575,1210,115,'Real StatCan evidence, deliberately simulated reporting errors. Exact checks cover two statement formats; rules could cover all seven known templates. This does not prove AI is necessary or reliable on arbitrary reports. Invalid responses require review. Repeated answers are not new independent cases.',12)
     write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}})
     write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',json.loads((BI/'theme.json').read_text()))
     print('Power BI project generated:',BI/'HouseholdFinance.pbip')

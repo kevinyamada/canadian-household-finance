@@ -28,7 +28,8 @@
               },
               "queryRef": "Quarter.date",
               "nativeQueryRef": "date",
-              "active": true
+              "active": true,
+              "displayName": "date"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "GPUBacktest.Observed ratio",
-              "nativeQueryRef": "Observed ratio"
+              "nativeQueryRef": "Observed ratio",
+              "displayName": "Observed ratio"
             },
             {
               "field": {
@@ -60,7 +62,8 @@
                 }
               },
               "queryRef": "GPUBacktest.Neural estimate",
-              "nativeQueryRef": "Neural estimate"
+              "nativeQueryRef": "Neural estimate",
+              "displayName": "Neural estimate"
             },
             {
               "field": {
@@ -74,7 +77,8 @@
                 }
               },
               "queryRef": "GPUBacktest.Persistence comparison",
-              "nativeQueryRef": "Persistence comparison"
+              "nativeQueryRef": "Persistence comparison",
+              "displayName": "Persistence comparison"
             }
           ]
         }
