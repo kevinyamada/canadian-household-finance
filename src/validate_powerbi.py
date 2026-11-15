@@ -33,6 +33,8 @@ def validate():
             raise ValueError(str(path.relative_to(ROOT))+': '+errors[0].message)
         count+=1
     model=json.loads((ROOT/'powerbi/HouseholdFinance.SemanticModel/model.bim').read_text())['model']
+    measure_names=[m['name'].casefold() for t in model['tables'] for m in t.get('measures',[])]
+    assert len(measure_names)==len(set(measure_names)), 'Measure names must be unique across the model'
     entities={t['name']:{c['name'] for c in t['columns']}|{m['name'] for m in t.get('measures',[])} for t in model['tables']}
     for table in model['tables']:
         names=[c['name'].casefold() for c in table['columns']]+[m['name'].casefold() for m in table.get('measures',[])]

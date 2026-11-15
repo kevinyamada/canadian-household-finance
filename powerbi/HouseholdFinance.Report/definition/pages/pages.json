@@ -3,7 +3,8 @@
   "pageOrder": [
     "overview",
     "models",
-    "scenarios"
+    "scenarios",
+    "gpu"
   ],
   "activePageName": "overview"
 }

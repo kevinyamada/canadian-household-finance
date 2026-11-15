@@ -15,5 +15,10 @@ download(refresh=args.refresh)
 panel=prepare()
 audit=run_models(panel)
 summary=run_report(panel,audit)
+gpu_summary=Path(__file__).resolve().parent/'experiments/input_metadata.json'
+if gpu_summary.exists():
+    sys.path.insert(0,str(gpu_summary.parent))
+    from summarize_gpu import summarize
+    summarize()
 build()
 print(json.dumps({'selected_model':audit['selected_model'],**summary},indent=2))

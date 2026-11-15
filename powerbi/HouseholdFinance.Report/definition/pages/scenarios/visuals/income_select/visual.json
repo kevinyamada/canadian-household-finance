@@ -34,13 +34,6 @@
         }
       }
     },
-    "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ]
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -112,23 +105,5 @@
         }
       ]
     }
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2e07603640471a8dcc37",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Scenarios"
-              }
-            },
-            "Property": "income_change_pct"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,0 +1,20 @@
+{
+  "run_date": "2026-11-14",
+  "workspace": "kevinyamada-ky",
+  "main_run_url": "https://modal.com/apps/kevinyamada-ky/main/ap-c1xEqUXJdmQVQ0JjzgBC92",
+  "successful_smoke_url": "https://modal.com/apps/kevinyamada-ky/main/ap-8kJyF8RA46ToXGq7bN19M5",
+  "authorization": "User requested a fast GPU experiment with at least $10 Modal usage. Target total discussed was $10 to $12.",
+  "main_gpu_count": 8,
+  "requested_gpu": "H100!",
+  "worker_work_budget_seconds": 1150,
+  "worker_timeout_seconds": 1180,
+  "retries": 0,
+  "published_gpu_usd_per_second": 0.001097,
+  "price_source": "https://modal.com/pricing",
+  "main_estimated_gpu_usd": 10.09265962975115,
+  "successful_smoke_estimated_gpu_usd": 0.032914644825252005,
+  "failed_smoke_approximate_gpu_usd": 0.033,
+  "all_apps_stopped_verified": true,
+  "billing_note": "Runtime based estimates, not an invoice. Startup, image build, CPU, RAM and billing adjustments are additional.",
+  "storage_note": "Prediction arrays converted losslessly from JSON float representations to float32 NPZ. Original training outputs were float32; exact array equality was checked before removing redundant JSON archives."
+}

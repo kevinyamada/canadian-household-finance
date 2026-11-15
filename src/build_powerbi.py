@@ -117,6 +117,26 @@ def build():
             table('Estimate',pd.read_csv(OUT/'next_estimate.csv'))]
     relationships=[{'name':'Household_Quarter','fromTable':'Household','fromColumn':'quarter','toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'},
                    {'name':'Backtest_Quarter','fromTable':'Backtest','fromColumn':'quarter','toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'}]
+    gpu_ready=(OUT/'gpu_audit.json').exists()
+    if gpu_ready:
+        gpu_audit=json.loads((OUT/'gpu_audit.json').read_text())
+        gpu_summary=pd.DataFrame([{'coverage':gpu_audit['coverage_90_band'],
+                                   'gpu_cost':gpu_audit['main_estimated_gpu_cost_usd'],
+                                   'seeds':gpu_audit['common_seeds_per_config'],
+                                   'difference':gpu_audit['mae_difference_pp']}])
+        tables.extend([
+            table('GPUBacktest',pd.read_csv(OUT/'gpu_backtest.csv'),[
+                measure('Observed ratio','MAX(GPUBacktest[actual])'),
+                measure('Neural estimate','MAX(GPUBacktest[prediction])'),
+                measure('Persistence comparison','MAX(GPUBacktest[baseline])')]),
+            table('GPUScores',pd.read_csv(OUT/'gpu_comparison.csv'),[
+                measure('Comparison MAE','IF(HASONEVALUE(GPUScores[model]), MAX(GPUScores[mae]))','0.000')]),
+            table('GPUAudit',gpu_summary,[measure('Empirical coverage','MAX(GPUAudit[coverage])','0.0%'),
+                measure('GPU runtime cost','MAX(GPUAudit[gpu_cost])','"$"0.00'),
+                measure('Common seed count','MAX(GPUAudit[seeds])','#,0'),
+                measure('MAE difference','MAX(GPUAudit[difference])','+0.000;-0.000;0.000')])])
+        relationships.append({'name':'GPUBacktest_Quarter','fromTable':'GPUBacktest','fromColumn':'quarter',
+            'toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'})
     write(MODEL/'model.bim',{'name':'HouseholdFinance','compatibilityLevel':1600,'model':{'culture':'en-US','defaultPowerBIDataSourceVersion':'powerBI_V3',
                    'sourceQueryCulture':'en-CA','tables':tables,'relationships':relationships,'annotations':[{'name':'PBI_QueryOrder','value':json.dumps([x['name'] for x in tables])}]}})
     write(MODEL/'definition.pbism',{'version':'1.0','settings':{}})
@@ -127,12 +147,13 @@ def build():
             'settings':{'useEnhancedTooltips':True}})
     write(REPORT/'definition/version.json',{'$schema':BASE+'item/report/definition/versionMetadata/1.0.0/schema.json','version':'2.0.0'})
     pages=[('overview','Household pressure'),('models','Model evaluation'),('scenarios','Payment scenarios')]
+    if gpu_ready:pages.append(('gpu','GPU experiment'))
     write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'overview'})
     for name,label in pages:
         write(REPORT/'definition/pages'/name/'page.json',{'$schema':BASE+'item/report/definition/page/1.0.0/schema.json','name':name,'displayName':label,
                   'displayOption':'FitToPage','width':1280,'height':720,
                   'objects':{'background':[{'properties':{'color':{'solid':{'color':literal('#F2F5F4')}},'transparency':literal(0)}}]}})
-    text('overview','header',24,10,950,55,'Canadian household borrowing pressure',25)
+    text('overview','header',24,10,950,55,'Is household payment pressure easing?',25)
     text('overview','subtitle',24,65,1210,45,'Income growth eased the latest ratio even as required payments rose. Canada | Quarterly | 1990 to 2026Q2',12)
     for index,(name,title) in enumerate([('Debt service ratio','Debt service ratio'),('Quarterly change','Quarterly change, pp'),('Income growth','Income growth, QoQ'),('Payment growth','Payment growth, QoQ')]):
         visual('overview','kpi'+str(index),'card',24+index*310,120,296,100,title,{'Values':[projection('Household',name,'Measure')]})
@@ -158,6 +179,20 @@ def build():
     visual('scenarios','payment_select','slicer',830,150,420,180,'Assumed payment change (%)',{'Values':[projection('Scenarios','payment_change_pct')]})
     visual('scenarios','income_select','slicer',830,350,420,180,'Assumed income change (%)',{'Values':[projection('Scenarios','income_change_pct')]})
     text('scenarios','equation',24,610,1210,75,'Scenario ratio = 100 × current payments × (1 + payment change) / [current income × (1 + income change)]. No causal link from policy rates is assumed. Clear slicers to show every scenario.',12)
+    if gpu_ready:
+        text('gpu','header',24,10,1210,55,'Did GPU training improve the estimate?',25)
+        text('gpu','subtitle',24,65,1210,55,'Exploratory extension: eight neural configurations, selected on 2007 to 2018. The original test period had already been examined.',12)
+        for index,(name,title) in enumerate([('MAE difference','Neural minus persistence MAE, pp'),
+                    ('Empirical coverage','90% band: observed coverage'),('Common seed count','Matched seeds per configuration'),
+                    ('GPU runtime cost','Main GPU runtime estimate, USD')]):
+            visual('gpu','card'+str(index),'card',24+index*310,130,296,100,title,{'Values':[projection('GPUAudit',name,'Measure')]})
+        visual('gpu','trend','lineChart',24,250,780,290,'Observed and estimated ratios, retrospective period',
+            {'Category':[projection('Quarter','date')],'Y':[projection('GPUBacktest',m,'Measure') for m in ['Observed ratio','Neural estimate','Persistence comparison']]},field('Quarter','date'))
+        visual('gpu','score','clusteredBarChart',824,250,432,290,'MAE, percentage points: lower is better',
+            {'Category':[projection('GPUScores','model')],'Y':[projection('GPUScores','Comparison MAE','Measure')]})
+        answer='Neural MAE is lower in this retrospective comparison. Validate on future releases before changing the benchmark.' if gpu_audit['mae_difference_pp']<0 else 'The neural ensemble did not beat persistence on MAE. Keep the simple benchmark for now.'
+        text('gpu','answer',24,560,1210,50,answer,14)
+        text('gpu','limits',24,620,1210,70,'More seeds measure training stability, not more economic observations. Revised data; no live validation. Cost is GPU runtime times list price, excluding startup, CPU and memory. Detailed protocol and results: reports/gpu_experiment.md.',11)
     write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}})
     write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',json.loads((BI/'theme.json').read_text()))
     print('Power BI project generated:',BI/'HouseholdFinance.pbip')

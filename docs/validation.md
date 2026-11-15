@@ -1,10 +1,10 @@
 # Validation record
 
-Checked on November 14, 2026 using Python 3.12 and Power BI Desktop 2.154.956.0 on Windows.
+Original analysis checked on November 14, 2026; GPU extension checked on November 15, 2026 using Python 3.12 and Power BI Desktop 2.154.956.0 on Windows.
 
 ## Python and SQL
 
-The full analysis ran in the VS Code terminal. The 11 automated tests cover complete quarterly grain, accounting identities, source snapshot hashes, rate joins, temporal separation, future data perturbation, validation based model selection, persistence predictions, scenario arithmetic and Power BI snapshot agreement.
+The full analysis ran in the VS Code terminal. The 16 automated tests cover complete quarterly grain, accounting identities, source snapshot hashes, rate joins, temporal separation, future data perturbation, validation based model selection, persistence predictions, scenario arithmetic and Power BI snapshot agreement. Added checks verify GPU training inputs, future data isolation, configuration selection, reconstruction from saved seeds and runtime cost arithmetic.
 
 The committed raw source files match their recorded SHA256 hashes. Git preserves those bytes through .gitattributes. The tested package versions are recorded in requirements-lock.txt. GitHub Actions repeats the pipeline, tests and Power BI schema checks on a clean checkout.
 
@@ -15,6 +15,10 @@ The project was opened and refreshed from its embedded snapshot. The overview sh
 All 20 scenario combinations were checked against the generated Python table. Selecting payments +10% and income -2% reduced the matrix to 16.30%. Clearing both slicers restored the full matrix. The project was saved on the overview page.
 
 Report JSON was checked against Microsoft schemas and visual field references were checked against the semantic model. Native Desktop checks are recorded separately because schemas cannot prove that DAX and Power Query execute correctly. Previews in reports/figures are cropped from the actual Desktop report.
+
+## Modal extension
+
+Eight H100 workers completed the bounded experiment. Saved predictions were converted losslessly to compressed NumPy arrays, with exact equality checks. Reprocessing requires no GPU calls. The selected ensemble had MAE 0.387 and empirical interval coverage 70%. The fourth Power BI page was refreshed and checked against these results. The main runtime estimate is US$10.09 in GPU charges; this is not a verified invoice. Modal reported no running apps after completion.
 
 ## Scope of these checks
 

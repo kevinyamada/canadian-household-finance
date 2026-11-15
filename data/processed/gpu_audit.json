@@ -1,0 +1,56 @@
+{
+  "selected_config": 2,
+  "configuration": {
+    "width": 32,
+    "decay": 0.1,
+    "epochs": 250
+  },
+  "selection_metric": "2007Q1 to 2018Q4 ensemble MAE only",
+  "common_seeds_per_config": 12768,
+  "completed_fits": 15652112,
+  "matched_fits_used": 8069376,
+  "test_quarters": 30,
+  "test_mae": 0.38689734647473567,
+  "persistence_mae": 0.24466666666666673,
+  "relative_mae_improvement_pct": -58.13243043926522,
+  "coverage_90_band": 0.7,
+  "calibration_radius_pp": 0.38579886818062903,
+  "mae_difference_pp": 0.14223067980806897,
+  "block4_interval": [
+    0.028663559403744217,
+    0.287115542118533
+  ],
+  "block8_interval": [
+    0.03593753068664751,
+    0.2864702034792284
+  ],
+  "individual_seed_test_mae_p10_p90": [
+    0.37033341090677147,
+    0.46039927286001425
+  ],
+  "source_sha256": "3037f412e14a7522d89b004a238910dda2e91608b332d75a5727e321317f3f23",
+  "gpu_devices": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "worker_elapsed_seconds": [
+    1150.025012657,
+    1150.110113019,
+    1150.0167286610001,
+    1150.0465790879998,
+    1150.004680543,
+    1150.004273562,
+    1150.012119875,
+    1150.017165112
+  ],
+  "main_estimated_gpu_cost_usd": 10.09265962975115,
+  "including_smoke_estimated_gpu_cost_usd": 10.125574274576403,
+  "cost_basis": "Runtime times published H100 rate 0.001097 USD per second; excludes startup, image build, CPU, RAM and billing adjustments. This is an estimate, not an invoice.",
+  "experiment_status": "Exploratory extension designed after the original test was observed; not a new untouched holdout."
+}

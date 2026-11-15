@@ -1,0 +1,2705 @@
+{
+  "config": {
+    "width": 32,
+    "decay": 0.01,
+    "epochs": 25
+  },
+  "trace": [
+    {
+      "batch": 1,
+      "elapsed_seconds": 1.8650231430000002,
+      "mean_training_loss": 0.7021071314811707,
+      "gpu_utilization_and_memory": "9, 893"
+    },
+    {
+      "batch": 2,
+      "elapsed_seconds": 1.9522186719999999,
+      "mean_training_loss": 0.7038053870201111,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 3,
+      "elapsed_seconds": 2.014055926,
+      "mean_training_loss": 0.7035556435585022,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 4,
+      "elapsed_seconds": 2.0728803550000006,
+      "mean_training_loss": 0.7018773555755615,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 5,
+      "elapsed_seconds": 2.133300478,
+      "mean_training_loss": 0.7022650241851807,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 6,
+      "elapsed_seconds": 2.1942864880000004,
+      "mean_training_loss": 0.7030229568481445,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 7,
+      "elapsed_seconds": 2.2550313100000006,
+      "mean_training_loss": 0.7021098732948303,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 8,
+      "elapsed_seconds": 2.312238892,
+      "mean_training_loss": 0.7022128701210022,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 9,
+      "elapsed_seconds": 2.370587757,
+      "mean_training_loss": 0.7025169134140015,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 10,
+      "elapsed_seconds": 2.4745261540000003,
+      "mean_training_loss": 0.7021229863166809,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 11,
+      "elapsed_seconds": 2.5312049940000003,
+      "mean_training_loss": 0.7025758028030396,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 12,
+      "elapsed_seconds": 2.58238123,
+      "mean_training_loss": 0.7034791707992554,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 13,
+      "elapsed_seconds": 2.6315839710000004,
+      "mean_training_loss": 0.704652726650238,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 14,
+      "elapsed_seconds": 2.685726679,
+      "mean_training_loss": 0.7026749849319458,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 15,
+      "elapsed_seconds": 2.736081005,
+      "mean_training_loss": 0.7030827403068542,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 16,
+      "elapsed_seconds": 2.790747154,
+      "mean_training_loss": 0.7028940320014954,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 17,
+      "elapsed_seconds": 2.842136439,
+      "mean_training_loss": 0.7013465166091919,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 18,
+      "elapsed_seconds": 2.8963801060000005,
+      "mean_training_loss": 0.7030673623085022,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 19,
+      "elapsed_seconds": 2.958850161,
+      "mean_training_loss": 0.7019195556640625,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 20,
+      "elapsed_seconds": 3.019082654,
+      "mean_training_loss": 0.7027254104614258,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 21,
+      "elapsed_seconds": 3.0873315100000003,
+      "mean_training_loss": 0.7024217844009399,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 22,
+      "elapsed_seconds": 3.142080579,
+      "mean_training_loss": 0.7037466168403625,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 23,
+      "elapsed_seconds": 3.297770583,
+      "mean_training_loss": 0.7023548483848572,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 24,
+      "elapsed_seconds": 3.413019211,
+      "mean_training_loss": 0.7029263377189636,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 25,
+      "elapsed_seconds": 3.486022053,
+      "mean_training_loss": 0.7023745179176331,
+      "gpu_utilization_and_memory": "4, 895"
+    },
+    {
+      "batch": 26,
+      "elapsed_seconds": 3.562035504,
+      "mean_training_loss": 0.7039453387260437,
+      "gpu_utilization_and_memory": "4, 895"
+    },
+    {
+      "batch": 27,
+      "elapsed_seconds": 3.613194194,
+      "mean_training_loss": 0.7034469842910767,
+      "gpu_utilization_and_memory": "4, 895"
+    },
+    {
+      "batch": 28,
+      "elapsed_seconds": 3.6634055610000003,
+      "mean_training_loss": 0.7017672061920166,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 29,
+      "elapsed_seconds": 3.715032161,
+      "mean_training_loss": 0.7031335830688477,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 30,
+      "elapsed_seconds": 3.773265779,
+      "mean_training_loss": 0.702682375907898,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 31,
+      "elapsed_seconds": 3.8268771710000005,
+      "mean_training_loss": 0.7022452354431152,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 32,
+      "elapsed_seconds": 3.8804004680000004,
+      "mean_training_loss": 0.7015261054039001,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 33,
+      "elapsed_seconds": 3.9319546140000003,
+      "mean_training_loss": 0.7035188674926758,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 34,
+      "elapsed_seconds": 3.9814025940000004,
+      "mean_training_loss": 0.7029684782028198,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 35,
+      "elapsed_seconds": 4.0363660040000005,
+      "mean_training_loss": 0.7017456293106079,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 36,
+      "elapsed_seconds": 4.085029104,
+      "mean_training_loss": 0.7019248604774475,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 37,
+      "elapsed_seconds": 4.140597266,
+      "mean_training_loss": 0.7028011083602905,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 38,
+      "elapsed_seconds": 4.1900712570000005,
+      "mean_training_loss": 0.7033494710922241,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 39,
+      "elapsed_seconds": 4.239682429,
+      "mean_training_loss": 0.7031422257423401,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 40,
+      "elapsed_seconds": 4.2886112700000005,
+      "mean_training_loss": 0.7025861740112305,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 41,
+      "elapsed_seconds": 4.342559683,
+      "mean_training_loss": 0.7029690742492676,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 42,
+      "elapsed_seconds": 4.395563673,
+      "mean_training_loss": 0.7018030285835266,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 43,
+      "elapsed_seconds": 4.471806863,
+      "mean_training_loss": 0.7032647132873535,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 44,
+      "elapsed_seconds": 4.524375696,
+      "mean_training_loss": 0.7015851140022278,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 45,
+      "elapsed_seconds": 4.575249555,
+      "mean_training_loss": 0.7033848166465759,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 46,
+      "elapsed_seconds": 4.624067538,
+      "mean_training_loss": 0.7028695940971375,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 47,
+      "elapsed_seconds": 4.674458577,
+      "mean_training_loss": 0.7037087082862854,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 48,
+      "elapsed_seconds": 4.728961955,
+      "mean_training_loss": 0.7030847668647766,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 49,
+      "elapsed_seconds": 4.780818716,
+      "mean_training_loss": 0.7025881409645081,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 50,
+      "elapsed_seconds": 4.833895589000001,
+      "mean_training_loss": 0.703557550907135,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 51,
+      "elapsed_seconds": 4.887194525,
+      "mean_training_loss": 0.7020674347877502,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 52,
+      "elapsed_seconds": 4.941878838000001,
+      "mean_training_loss": 0.7024080753326416,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 53,
+      "elapsed_seconds": 4.997053292,
+      "mean_training_loss": 0.702572226524353,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 54,
+      "elapsed_seconds": 5.050597746999999,
+      "mean_training_loss": 0.7018246650695801,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 55,
+      "elapsed_seconds": 5.1052804169999995,
+      "mean_training_loss": 0.7029039859771729,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 56,
+      "elapsed_seconds": 5.160292083,
+      "mean_training_loss": 0.7013131976127625,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 57,
+      "elapsed_seconds": 5.337373346,
+      "mean_training_loss": 0.7034929394721985,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 58,
+      "elapsed_seconds": 5.428008782000001,
+      "mean_training_loss": 0.7026526927947998,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 59,
+      "elapsed_seconds": 5.506024676000001,
+      "mean_training_loss": 0.7034672498703003,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 60,
+      "elapsed_seconds": 5.578440435000001,
+      "mean_training_loss": 0.7030027508735657,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 61,
+      "elapsed_seconds": 5.630480164,
+      "mean_training_loss": 0.7025895714759827,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 62,
+      "elapsed_seconds": 5.681839385,
+      "mean_training_loss": 0.7023306488990784,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 63,
+      "elapsed_seconds": 5.736654054000001,
+      "mean_training_loss": 0.7026298642158508,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 64,
+      "elapsed_seconds": 5.788255889,
+      "mean_training_loss": 0.7039069533348083,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 65,
+      "elapsed_seconds": 5.840956716000001,
+      "mean_training_loss": 0.7032275795936584,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 66,
+      "elapsed_seconds": 5.890005231,
+      "mean_training_loss": 0.7023905515670776,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 67,
+      "elapsed_seconds": 5.942049314,
+      "mean_training_loss": 0.7023844718933105,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 68,
+      "elapsed_seconds": 5.991988014,
+      "mean_training_loss": 0.7031477093696594,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 69,
+      "elapsed_seconds": 6.044743371000001,
+      "mean_training_loss": 0.7027632594108582,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 70,
+      "elapsed_seconds": 6.098309212,
+      "mean_training_loss": 0.7020593285560608,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 71,
+      "elapsed_seconds": 6.150025176,
+      "mean_training_loss": 0.7022315859794617,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 72,
+      "elapsed_seconds": 6.203466319,
+      "mean_training_loss": 0.7021813988685608,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 73,
+      "elapsed_seconds": 6.2561416990000005,
+      "mean_training_loss": 0.7018239498138428,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 74,
+      "elapsed_seconds": 6.306936970000001,
+      "mean_training_loss": 0.7030258178710938,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 75,
+      "elapsed_seconds": 6.358277949,
+      "mean_training_loss": 0.7024869322776794,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 76,
+      "elapsed_seconds": 6.443631319,
+      "mean_training_loss": 0.7028249502182007,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 77,
+      "elapsed_seconds": 6.500012925,
+      "mean_training_loss": 0.7032462954521179,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 78,
+      "elapsed_seconds": 6.558933982000001,
+      "mean_training_loss": 0.7035365104675293,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 79,
+      "elapsed_seconds": 6.611496681,
+      "mean_training_loss": 0.7037259340286255,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 80,
+      "elapsed_seconds": 6.671204940000001,
+      "mean_training_loss": 0.7031755447387695,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 81,
+      "elapsed_seconds": 6.724017255,
+      "mean_training_loss": 0.702194333076477,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 82,
+      "elapsed_seconds": 6.794054609,
+      "mean_training_loss": 0.7019381523132324,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 83,
+      "elapsed_seconds": 6.869078119999999,
+      "mean_training_loss": 0.7032375335693359,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 84,
+      "elapsed_seconds": 6.92437374,
+      "mean_training_loss": 0.7024675607681274,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 85,
+      "elapsed_seconds": 6.98192852,
+      "mean_training_loss": 0.7039243578910828,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 86,
+      "elapsed_seconds": 7.040918388,
+      "mean_training_loss": 0.7016581296920776,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 87,
+      "elapsed_seconds": 7.097924518000001,
+      "mean_training_loss": 0.7029436230659485,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 88,
+      "elapsed_seconds": 7.156912557,
+      "mean_training_loss": 0.7029111385345459,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 89,
+      "elapsed_seconds": 7.3432506449999995,
+      "mean_training_loss": 0.7030491828918457,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 90,
+      "elapsed_seconds": 7.4186092850000005,
+      "mean_training_loss": 0.7035207748413086,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 91,
+      "elapsed_seconds": 7.4987883669999995,
+      "mean_training_loss": 0.702567994594574,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 92,
+      "elapsed_seconds": 7.567348321000001,
+      "mean_training_loss": 0.7025545239448547,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 93,
+      "elapsed_seconds": 7.620596917,
+      "mean_training_loss": 0.7030304670333862,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 94,
+      "elapsed_seconds": 7.674944072000001,
+      "mean_training_loss": 0.7033347487449646,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 95,
+      "elapsed_seconds": 7.729840437,
+      "mean_training_loss": 0.7021219730377197,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 96,
+      "elapsed_seconds": 7.7807001289999995,
+      "mean_training_loss": 0.702734649181366,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 97,
+      "elapsed_seconds": 7.834777617,
+      "mean_training_loss": 0.7025258541107178,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 98,
+      "elapsed_seconds": 7.885232554,
+      "mean_training_loss": 0.702728271484375,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 99,
+      "elapsed_seconds": 7.9369348209999995,
+      "mean_training_loss": 0.7021962404251099,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 100,
+      "elapsed_seconds": 7.988941831,
+      "mean_training_loss": 0.7025913596153259,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 101,
+      "elapsed_seconds": 8.042528512,
+      "mean_training_loss": 0.7030335068702698,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 102,
+      "elapsed_seconds": 8.09357467,
+      "mean_training_loss": 0.7025505304336548,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 103,
+      "elapsed_seconds": 8.145307904000001,
+      "mean_training_loss": 0.7023612856864929,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 104,
+      "elapsed_seconds": 8.194612864,
+      "mean_training_loss": 0.7034264206886292,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 105,
+      "elapsed_seconds": 8.24407676,
+      "mean_training_loss": 0.7020564079284668,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 106,
+      "elapsed_seconds": 8.29327067,
+      "mean_training_loss": 0.7023651599884033,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 107,
+      "elapsed_seconds": 8.345321746,
+      "mean_training_loss": 0.70262610912323,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 108,
+      "elapsed_seconds": 8.396192861,
+      "mean_training_loss": 0.7020223736763,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 109,
+      "elapsed_seconds": 8.473931304,
+      "mean_training_loss": 0.7017908692359924,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 110,
+      "elapsed_seconds": 8.527259696,
+      "mean_training_loss": 0.7030234932899475,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 111,
+      "elapsed_seconds": 8.577019120000001,
+      "mean_training_loss": 0.7024693489074707,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 112,
+      "elapsed_seconds": 8.6256771,
+      "mean_training_loss": 0.7030029892921448,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 113,
+      "elapsed_seconds": 8.675555115,
+      "mean_training_loss": 0.7043837308883667,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 114,
+      "elapsed_seconds": 8.725459872,
+      "mean_training_loss": 0.7024983167648315,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 115,
+      "elapsed_seconds": 8.774319413,
+      "mean_training_loss": 0.7028747797012329,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 116,
+      "elapsed_seconds": 8.822542958,
+      "mean_training_loss": 0.7033321857452393,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 117,
+      "elapsed_seconds": 8.879611544,
+      "mean_training_loss": 0.7039541006088257,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 118,
+      "elapsed_seconds": 8.929959975000001,
+      "mean_training_loss": 0.7026282548904419,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 119,
+      "elapsed_seconds": 8.984793967,
+      "mean_training_loss": 0.7030524015426636,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 120,
+      "elapsed_seconds": 9.037979591000001,
+      "mean_training_loss": 0.7038345336914062,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 121,
+      "elapsed_seconds": 9.088248010000001,
+      "mean_training_loss": 0.7027771472930908,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 122,
+      "elapsed_seconds": 9.139165035,
+      "mean_training_loss": 0.7031683325767517,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 123,
+      "elapsed_seconds": 9.291793149,
+      "mean_training_loss": 0.7034575939178467,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 124,
+      "elapsed_seconds": 9.395431494,
+      "mean_training_loss": 0.703190803527832,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 125,
+      "elapsed_seconds": 9.470505257000001,
+      "mean_training_loss": 0.7031306028366089,
+      "gpu_utilization_and_memory": "7, 895"
+    },
+    {
+      "batch": 126,
+      "elapsed_seconds": 9.522373882,
+      "mean_training_loss": 0.7024258971214294,
+      "gpu_utilization_and_memory": "7, 895"
+    },
+    {
+      "batch": 127,
+      "elapsed_seconds": 9.57768614,
+      "mean_training_loss": 0.702880859375,
+      "gpu_utilization_and_memory": "7, 895"
+    },
+    {
+      "batch": 128,
+      "elapsed_seconds": 9.628596436,
+      "mean_training_loss": 0.7013449668884277,
+      "gpu_utilization_and_memory": "7, 895"
+    },
+    {
+      "batch": 129,
+      "elapsed_seconds": 9.681385001,
+      "mean_training_loss": 0.7031197547912598,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 130,
+      "elapsed_seconds": 9.733824577,
+      "mean_training_loss": 0.7028234004974365,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 131,
+      "elapsed_seconds": 9.795376538,
+      "mean_training_loss": 0.7015902400016785,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 132,
+      "elapsed_seconds": 9.847925652,
+      "mean_training_loss": 0.7025277018547058,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 133,
+      "elapsed_seconds": 9.897693462,
+      "mean_training_loss": 0.7014362215995789,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 134,
+      "elapsed_seconds": 9.947830071,
+      "mean_training_loss": 0.7023152112960815,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 135,
+      "elapsed_seconds": 10.000356272,
+      "mean_training_loss": 0.7031290531158447,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 136,
+      "elapsed_seconds": 10.055119648,
+      "mean_training_loss": 0.7035447359085083,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 137,
+      "elapsed_seconds": 10.106360442,
+      "mean_training_loss": 0.7020848393440247,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 138,
+      "elapsed_seconds": 10.161821074,
+      "mean_training_loss": 0.7026954889297485,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 139,
+      "elapsed_seconds": 10.221841106,
+      "mean_training_loss": 0.7030136585235596,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 140,
+      "elapsed_seconds": 10.28107074,
+      "mean_training_loss": 0.7033554911613464,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 141,
+      "elapsed_seconds": 10.337436506,
+      "mean_training_loss": 0.703654944896698,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 142,
+      "elapsed_seconds": 10.395014578,
+      "mean_training_loss": 0.7023462653160095,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 143,
+      "elapsed_seconds": 10.467028547,
+      "mean_training_loss": 0.7034313082695007,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 144,
+      "elapsed_seconds": 10.524123524,
+      "mean_training_loss": 0.7029105424880981,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 145,
+      "elapsed_seconds": 10.583694755,
+      "mean_training_loss": 0.7023922204971313,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 146,
+      "elapsed_seconds": 10.635438754,
+      "mean_training_loss": 0.7026671767234802,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 147,
+      "elapsed_seconds": 10.684330308,
+      "mean_training_loss": 0.701831042766571,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 148,
+      "elapsed_seconds": 10.734136647,
+      "mean_training_loss": 0.7032812833786011,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 149,
+      "elapsed_seconds": 10.786810479,
+      "mean_training_loss": 0.7029417753219604,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 150,
+      "elapsed_seconds": 10.843973945,
+      "mean_training_loss": 0.7032691240310669,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 151,
+      "elapsed_seconds": 10.895668706,
+      "mean_training_loss": 0.7029123306274414,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 152,
+      "elapsed_seconds": 10.947498186,
+      "mean_training_loss": 0.7026402950286865,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 153,
+      "elapsed_seconds": 11.002159442,
+      "mean_training_loss": 0.7036418914794922,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 154,
+      "elapsed_seconds": 11.056422331,
+      "mean_training_loss": 0.7029732465744019,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 155,
+      "elapsed_seconds": 11.107231902,
+      "mean_training_loss": 0.7030061483383179,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 156,
+      "elapsed_seconds": 11.158063122,
+      "mean_training_loss": 0.7024292349815369,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 157,
+      "elapsed_seconds": 11.356076947,
+      "mean_training_loss": 0.7020543813705444,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 158,
+      "elapsed_seconds": 11.431864698,
+      "mean_training_loss": 0.7029640078544617,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 159,
+      "elapsed_seconds": 11.498502707,
+      "mean_training_loss": 0.702186644077301,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 160,
+      "elapsed_seconds": 11.614629225,
+      "mean_training_loss": 0.702106237411499,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 161,
+      "elapsed_seconds": 11.674390938,
+      "mean_training_loss": 0.7026380300521851,
+      "gpu_utilization_and_memory": "3, 895"
+    },
+    {
+      "batch": 162,
+      "elapsed_seconds": 11.732824860000001,
+      "mean_training_loss": 0.704110860824585,
+      "gpu_utilization_and_memory": "3, 895"
+    },
+    {
+      "batch": 163,
+      "elapsed_seconds": 11.804573518,
+      "mean_training_loss": 0.7022100687026978,
+      "gpu_utilization_and_memory": "3, 895"
+    },
+    {
+      "batch": 164,
+      "elapsed_seconds": 11.914579143000001,
+      "mean_training_loss": 0.7033495306968689,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 165,
+      "elapsed_seconds": 11.993097521,
+      "mean_training_loss": 0.7037654519081116,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 166,
+      "elapsed_seconds": 12.061298848,
+      "mean_training_loss": 0.7017288208007812,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 167,
+      "elapsed_seconds": 12.133489358,
+      "mean_training_loss": 0.7028762698173523,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 168,
+      "elapsed_seconds": 12.214801097,
+      "mean_training_loss": 0.7020983099937439,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 169,
+      "elapsed_seconds": 12.273707797,
+      "mean_training_loss": 0.7020809650421143,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 170,
+      "elapsed_seconds": 12.342990309,
+      "mean_training_loss": 0.7037088871002197,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 171,
+      "elapsed_seconds": 12.476507345,
+      "mean_training_loss": 0.7041730880737305,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 172,
+      "elapsed_seconds": 12.538918135,
+      "mean_training_loss": 0.7028477787971497,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 173,
+      "elapsed_seconds": 12.619578593,
+      "mean_training_loss": 0.7020627856254578,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 174,
+      "elapsed_seconds": 12.755924623,
+      "mean_training_loss": 0.7035167217254639,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 175,
+      "elapsed_seconds": 12.817537086,
+      "mean_training_loss": 0.7026686072349548,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 176,
+      "elapsed_seconds": 12.893939885,
+      "mean_training_loss": 0.7031634449958801,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 177,
+      "elapsed_seconds": 13.004096392,
+      "mean_training_loss": 0.7013199329376221,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 178,
+      "elapsed_seconds": 13.062909048,
+      "mean_training_loss": 0.7024515271186829,
+      "gpu_utilization_and_memory": "5, 895"
+    },
+    {
+      "batch": 179,
+      "elapsed_seconds": 13.145264985999999,
+      "mean_training_loss": 0.7020925283432007,
+      "gpu_utilization_and_memory": "5, 895"
+    },
+    {
+      "batch": 180,
+      "elapsed_seconds": 13.440102436000002,
+      "mean_training_loss": 0.7016606330871582,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 181,
+      "elapsed_seconds": 13.513083252,
+      "mean_training_loss": 0.7014027833938599,
+      "gpu_utilization_and_memory": "0, 895"
+    },
+    {
+      "batch": 182,
+      "elapsed_seconds": 13.746477544,
+      "mean_training_loss": 0.7024179697036743,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 183,
+      "elapsed_seconds": 13.806446484,
+      "mean_training_loss": 0.7015758752822876,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 184,
+      "elapsed_seconds": 13.875936454,
+      "mean_training_loss": 0.7028439044952393,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 185,
+      "elapsed_seconds": 13.956323703,
+      "mean_training_loss": 0.7021761536598206,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 186,
+      "elapsed_seconds": 14.038309602,
+      "mean_training_loss": 0.703300952911377,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 187,
+      "elapsed_seconds": 14.091882714999999,
+      "mean_training_loss": 0.7029955983161926,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 188,
+      "elapsed_seconds": 14.154483841,
+      "mean_training_loss": 0.7024261355400085,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 189,
+      "elapsed_seconds": 14.224161759,
+      "mean_training_loss": 0.7026345133781433,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 190,
+      "elapsed_seconds": 14.279223799999999,
+      "mean_training_loss": 0.7021824717521667,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 191,
+      "elapsed_seconds": 14.333657356000002,
+      "mean_training_loss": 0.7019719481468201,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 192,
+      "elapsed_seconds": 14.387153014,
+      "mean_training_loss": 0.7033810615539551,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 193,
+      "elapsed_seconds": 14.464341574,
+      "mean_training_loss": 0.7030974626541138,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 194,
+      "elapsed_seconds": 14.521394349,
+      "mean_training_loss": 0.7013341188430786,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 195,
+      "elapsed_seconds": 14.575115811000002,
+      "mean_training_loss": 0.7019419074058533,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 196,
+      "elapsed_seconds": 14.627996903000001,
+      "mean_training_loss": 0.7033360600471497,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 197,
+      "elapsed_seconds": 14.686222021,
+      "mean_training_loss": 0.7034988403320312,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 198,
+      "elapsed_seconds": 14.740543594,
+      "mean_training_loss": 0.7028526067733765,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 199,
+      "elapsed_seconds": 14.796386008,
+      "mean_training_loss": 0.7031341195106506,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 200,
+      "elapsed_seconds": 14.850707859000002,
+      "mean_training_loss": 0.7005550861358643,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 201,
+      "elapsed_seconds": 14.9057017,
+      "mean_training_loss": 0.7023184299468994,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 202,
+      "elapsed_seconds": 14.961219476000002,
+      "mean_training_loss": 0.702031672000885,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 203,
+      "elapsed_seconds": 15.014260198,
+      "mean_training_loss": 0.7029770612716675,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 204,
+      "elapsed_seconds": 15.069560164,
+      "mean_training_loss": 0.7025384306907654,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 205,
+      "elapsed_seconds": 15.122792511999998,
+      "mean_training_loss": 0.7017030715942383,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 206,
+      "elapsed_seconds": 15.271067735,
+      "mean_training_loss": 0.7026957273483276,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 207,
+      "elapsed_seconds": 15.378262895,
+      "mean_training_loss": 0.7016887664794922,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 208,
+      "elapsed_seconds": 15.455867345,
+      "mean_training_loss": 0.7026514410972595,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 209,
+      "elapsed_seconds": 15.506982062,
+      "mean_training_loss": 0.7026097178459167,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 210,
+      "elapsed_seconds": 15.559452560999999,
+      "mean_training_loss": 0.702791154384613,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 211,
+      "elapsed_seconds": 15.609435057,
+      "mean_training_loss": 0.7027747631072998,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 212,
+      "elapsed_seconds": 15.660056682999999,
+      "mean_training_loss": 0.7029958367347717,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 213,
+      "elapsed_seconds": 15.710906500000002,
+      "mean_training_loss": 0.702867865562439,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 214,
+      "elapsed_seconds": 15.764409963,
+      "mean_training_loss": 0.7019848823547363,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 215,
+      "elapsed_seconds": 15.81601902,
+      "mean_training_loss": 0.7023986577987671,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 216,
+      "elapsed_seconds": 15.874582834,
+      "mean_training_loss": 0.7026733756065369,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 217,
+      "elapsed_seconds": 15.927048399999999,
+      "mean_training_loss": 0.7026697397232056,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 218,
+      "elapsed_seconds": 15.980611212000001,
+      "mean_training_loss": 0.7023108005523682,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 219,
+      "elapsed_seconds": 16.030856053,
+      "mean_training_loss": 0.7038705945014954,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 220,
+      "elapsed_seconds": 16.082651484000003,
+      "mean_training_loss": 0.703101396560669,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 221,
+      "elapsed_seconds": 16.136456119,
+      "mean_training_loss": 0.7027466297149658,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 222,
+      "elapsed_seconds": 16.186044805999998,
+      "mean_training_loss": 0.7021836638450623,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 223,
+      "elapsed_seconds": 16.235753875,
+      "mean_training_loss": 0.7020999789237976,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 224,
+      "elapsed_seconds": 16.287221939,
+      "mean_training_loss": 0.7026382684707642,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 225,
+      "elapsed_seconds": 16.340598842,
+      "mean_training_loss": 0.7020232081413269,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 226,
+      "elapsed_seconds": 16.392662825000002,
+      "mean_training_loss": 0.7020445466041565,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 227,
+      "elapsed_seconds": 16.474781266,
+      "mean_training_loss": 0.7035097479820251,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 228,
+      "elapsed_seconds": 16.528263303000003,
+      "mean_training_loss": 0.7017102241516113,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 229,
+      "elapsed_seconds": 16.587619245,
+      "mean_training_loss": 0.7023014426231384,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 230,
+      "elapsed_seconds": 16.643839755000002,
+      "mean_training_loss": 0.703208863735199,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 231,
+      "elapsed_seconds": 16.693476474,
+      "mean_training_loss": 0.7021262049674988,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 232,
+      "elapsed_seconds": 16.748824501999998,
+      "mean_training_loss": 0.7026155591011047,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 233,
+      "elapsed_seconds": 16.801091478000004,
+      "mean_training_loss": 0.7025452852249146,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 234,
+      "elapsed_seconds": 16.866510974999997,
+      "mean_training_loss": 0.7030376195907593,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 235,
+      "elapsed_seconds": 16.918078989999998,
+      "mean_training_loss": 0.7025734782218933,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 236,
+      "elapsed_seconds": 16.972565674000002,
+      "mean_training_loss": 0.7022786140441895,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 237,
+      "elapsed_seconds": 17.030861121,
+      "mean_training_loss": 0.7032788395881653,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 238,
+      "elapsed_seconds": 17.086554038000003,
+      "mean_training_loss": 0.7024896144866943,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 239,
+      "elapsed_seconds": 17.145091062,
+      "mean_training_loss": 0.7029388546943665,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 240,
+      "elapsed_seconds": 17.331413056000002,
+      "mean_training_loss": 0.7020926475524902,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 241,
+      "elapsed_seconds": 17.411841306,
+      "mean_training_loss": 0.7016563415527344,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 242,
+      "elapsed_seconds": 17.494531979999998,
+      "mean_training_loss": 0.703315019607544,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 243,
+      "elapsed_seconds": 17.555298481999998,
+      "mean_training_loss": 0.703548014163971,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 244,
+      "elapsed_seconds": 17.605266664,
+      "mean_training_loss": 0.7025219798088074,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 245,
+      "elapsed_seconds": 17.656423972,
+      "mean_training_loss": 0.702940821647644,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 246,
+      "elapsed_seconds": 17.705867398000002,
+      "mean_training_loss": 0.7037508487701416,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 247,
+      "elapsed_seconds": 17.759473606,
+      "mean_training_loss": 0.7017496228218079,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 248,
+      "elapsed_seconds": 17.814017329000002,
+      "mean_training_loss": 0.7027994394302368,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 249,
+      "elapsed_seconds": 17.872218286,
+      "mean_training_loss": 0.7032053470611572,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 250,
+      "elapsed_seconds": 17.928994048,
+      "mean_training_loss": 0.702840268611908,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 251,
+      "elapsed_seconds": 17.984784343999998,
+      "mean_training_loss": 0.7023827433586121,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 252,
+      "elapsed_seconds": 18.039584343999998,
+      "mean_training_loss": 0.702663779258728,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 253,
+      "elapsed_seconds": 18.094877154000002,
+      "mean_training_loss": 0.7033520936965942,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 254,
+      "elapsed_seconds": 18.152085079000003,
+      "mean_training_loss": 0.7016685009002686,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 255,
+      "elapsed_seconds": 18.208555857999997,
+      "mean_training_loss": 0.7036948800086975,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 256,
+      "elapsed_seconds": 18.268613471000002,
+      "mean_training_loss": 0.7035975456237793,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 257,
+      "elapsed_seconds": 18.328542902000002,
+      "mean_training_loss": 0.7022600769996643,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 258,
+      "elapsed_seconds": 18.382965641,
+      "mean_training_loss": 0.7028350234031677,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 259,
+      "elapsed_seconds": 18.470633497,
+      "mean_training_loss": 0.7016816139221191,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 260,
+      "elapsed_seconds": 18.52948421,
+      "mean_training_loss": 0.7031432390213013,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 261,
+      "elapsed_seconds": 18.586213704000002,
+      "mean_training_loss": 0.7029927372932434,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 262,
+      "elapsed_seconds": 18.640286375000002,
+      "mean_training_loss": 0.7023987770080566,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 263,
+      "elapsed_seconds": 18.695197118000003,
+      "mean_training_loss": 0.7030120491981506,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 264,
+      "elapsed_seconds": 18.750480432000003,
+      "mean_training_loss": 0.7024716138839722,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 265,
+      "elapsed_seconds": 18.80297703,
+      "mean_training_loss": 0.7031519412994385,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 266,
+      "elapsed_seconds": 18.857927123000003,
+      "mean_training_loss": 0.7027005553245544,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 267,
+      "elapsed_seconds": 18.911943311,
+      "mean_training_loss": 0.7024762034416199,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 268,
+      "elapsed_seconds": 18.966842339000003,
+      "mean_training_loss": 0.7028726935386658,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 269,
+      "elapsed_seconds": 19.022933429,
+      "mean_training_loss": 0.7026100158691406,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 270,
+      "elapsed_seconds": 19.078116579000003,
+      "mean_training_loss": 0.703093409538269,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 271,
+      "elapsed_seconds": 19.131987603,
+      "mean_training_loss": 0.7019780278205872,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 272,
+      "elapsed_seconds": 19.314597401,
+      "mean_training_loss": 0.7023332715034485,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 273,
+      "elapsed_seconds": 19.396452746,
+      "mean_training_loss": 0.7030656933784485,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 274,
+      "elapsed_seconds": 19.466629175,
+      "mean_training_loss": 0.7021775245666504,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 275,
+      "elapsed_seconds": 19.526675026,
+      "mean_training_loss": 0.7020842432975769,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 276,
+      "elapsed_seconds": 19.577573268000002,
+      "mean_training_loss": 0.7022659778594971,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 277,
+      "elapsed_seconds": 19.626752457000002,
+      "mean_training_loss": 0.7035561203956604,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 278,
+      "elapsed_seconds": 19.675374407,
+      "mean_training_loss": 0.7018322944641113,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 279,
+      "elapsed_seconds": 19.726530323,
+      "mean_training_loss": 0.7030516266822815,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 280,
+      "elapsed_seconds": 19.777333050000003,
+      "mean_training_loss": 0.7024393081665039,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 281,
+      "elapsed_seconds": 19.831681144999997,
+      "mean_training_loss": 0.7044522166252136,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 282,
+      "elapsed_seconds": 19.887877295000003,
+      "mean_training_loss": 0.7022848129272461,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 283,
+      "elapsed_seconds": 19.943274686000002,
+      "mean_training_loss": 0.7027850151062012,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 284,
+      "elapsed_seconds": 19.993403577000002,
+      "mean_training_loss": 0.7026954293251038,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 285,
+      "elapsed_seconds": 20.051879866999997,
+      "mean_training_loss": 0.7032621502876282,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 286,
+      "elapsed_seconds": 20.105396553,
+      "mean_training_loss": 0.7027769684791565,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 287,
+      "elapsed_seconds": 20.160677266,
+      "mean_training_loss": 0.7023196220397949,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 288,
+      "elapsed_seconds": 20.211733496,
+      "mean_training_loss": 0.7023500204086304,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 289,
+      "elapsed_seconds": 20.263010264000002,
+      "mean_training_loss": 0.7025001049041748,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 290,
+      "elapsed_seconds": 20.312390280000002,
+      "mean_training_loss": 0.702568769454956,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 291,
+      "elapsed_seconds": 20.361775747000003,
+      "mean_training_loss": 0.701470673084259,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 292,
+      "elapsed_seconds": 20.413780762000002,
+      "mean_training_loss": 0.7019410133361816,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 293,
+      "elapsed_seconds": 20.467424711,
+      "mean_training_loss": 0.7026159763336182,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 294,
+      "elapsed_seconds": 20.521042864,
+      "mean_training_loss": 0.7038300037384033,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 295,
+      "elapsed_seconds": 20.572040612000002,
+      "mean_training_loss": 0.70257169008255,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 296,
+      "elapsed_seconds": 20.624186975,
+      "mean_training_loss": 0.7018669843673706,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 297,
+      "elapsed_seconds": 20.679752483,
+      "mean_training_loss": 0.7027684450149536,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 298,
+      "elapsed_seconds": 20.731409968999998,
+      "mean_training_loss": 0.7031412124633789,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 299,
+      "elapsed_seconds": 20.785081752000004,
+      "mean_training_loss": 0.7021401524543762,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 300,
+      "elapsed_seconds": 20.837994813,
+      "mean_training_loss": 0.7016652226448059,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 301,
+      "elapsed_seconds": 20.890131367000002,
+      "mean_training_loss": 0.7039952278137207,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 302,
+      "elapsed_seconds": 20.942582865,
+      "mean_training_loss": 0.7020904421806335,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 303,
+      "elapsed_seconds": 20.995514945000004,
+      "mean_training_loss": 0.7015461325645447,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 304,
+      "elapsed_seconds": 21.046904049,
+      "mean_training_loss": 0.702165961265564,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 305,
+      "elapsed_seconds": 21.100795943999998,
+      "mean_training_loss": 0.7038538455963135,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 306,
+      "elapsed_seconds": 21.155105878,
+      "mean_training_loss": 0.7020487189292908,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 307,
+      "elapsed_seconds": 21.366554942,
+      "mean_training_loss": 0.7024868726730347,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 308,
+      "elapsed_seconds": 21.441412276999998,
+      "mean_training_loss": 0.7018744945526123,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 309,
+      "elapsed_seconds": 21.523400805,
+      "mean_training_loss": 0.7026357054710388,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 310,
+      "elapsed_seconds": 21.5759222,
+      "mean_training_loss": 0.7028294205665588,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 311,
+      "elapsed_seconds": 21.627439189999997,
+      "mean_training_loss": 0.7026670575141907,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 312,
+      "elapsed_seconds": 21.681544358000004,
+      "mean_training_loss": 0.7032086253166199,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 313,
+      "elapsed_seconds": 21.735120402,
+      "mean_training_loss": 0.7022604942321777,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 314,
+      "elapsed_seconds": 21.787435674999998,
+      "mean_training_loss": 0.7026348114013672,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 315,
+      "elapsed_seconds": 21.855244972999998,
+      "mean_training_loss": 0.7028844356536865,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 316,
+      "elapsed_seconds": 21.911644582,
+      "mean_training_loss": 0.70252925157547,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 317,
+      "elapsed_seconds": 21.966082489,
+      "mean_training_loss": 0.7028590440750122,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 318,
+      "elapsed_seconds": 22.021872260000002,
+      "mean_training_loss": 0.7020214796066284,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 319,
+      "elapsed_seconds": 22.075113412999997,
+      "mean_training_loss": 0.702653169631958,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 320,
+      "elapsed_seconds": 22.129295925,
+      "mean_training_loss": 0.7027437686920166,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 321,
+      "elapsed_seconds": 22.182823264,
+      "mean_training_loss": 0.7037090063095093,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 322,
+      "elapsed_seconds": 22.243074293,
+      "mean_training_loss": 0.7022206783294678,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 323,
+      "elapsed_seconds": 22.300148815,
+      "mean_training_loss": 0.7032065391540527,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 324,
+      "elapsed_seconds": 22.359227711000003,
+      "mean_training_loss": 0.701982319355011,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 325,
+      "elapsed_seconds": 22.411889682,
+      "mean_training_loss": 0.7024853825569153,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 326,
+      "elapsed_seconds": 22.476852914,
+      "mean_training_loss": 0.7044346332550049,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 327,
+      "elapsed_seconds": 22.536532467,
+      "mean_training_loss": 0.7029862403869629,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 328,
+      "elapsed_seconds": 22.590506406000003,
+      "mean_training_loss": 0.7031155228614807,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 329,
+      "elapsed_seconds": 22.645615809,
+      "mean_training_loss": 0.7017263174057007,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 330,
+      "elapsed_seconds": 22.701033993000003,
+      "mean_training_loss": 0.7013833522796631,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 331,
+      "elapsed_seconds": 22.757511748,
+      "mean_training_loss": 0.7031533122062683,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 332,
+      "elapsed_seconds": 22.812034304999997,
+      "mean_training_loss": 0.7015538215637207,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 333,
+      "elapsed_seconds": 22.869510130000002,
+      "mean_training_loss": 0.7014004588127136,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 334,
+      "elapsed_seconds": 22.924846109,
+      "mean_training_loss": 0.7037062048912048,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 335,
+      "elapsed_seconds": 22.983691321000002,
+      "mean_training_loss": 0.7038902044296265,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 336,
+      "elapsed_seconds": 23.037378181999998,
+      "mean_training_loss": 0.7026225328445435,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 337,
+      "elapsed_seconds": 23.092498091000003,
+      "mean_training_loss": 0.7021620869636536,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 338,
+      "elapsed_seconds": 23.149482132000003,
+      "mean_training_loss": 0.7034935355186462,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 339,
+      "elapsed_seconds": 23.329734555,
+      "mean_training_loss": 0.701285183429718,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 340,
+      "elapsed_seconds": 23.401951109000002,
+      "mean_training_loss": 0.7046735882759094,
+      "gpu_utilization_and_memory": "10, 895"
+    },
+    {
+      "batch": 341,
+      "elapsed_seconds": 23.493723357999997,
+      "mean_training_loss": 0.7026788592338562,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 342,
+      "elapsed_seconds": 23.548743858,
+      "mean_training_loss": 0.7031359076499939,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 343,
+      "elapsed_seconds": 23.599701359999997,
+      "mean_training_loss": 0.7025290131568909,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 344,
+      "elapsed_seconds": 23.651492804,
+      "mean_training_loss": 0.7020961046218872,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 345,
+      "elapsed_seconds": 23.704549864999997,
+      "mean_training_loss": 0.7026903629302979,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 346,
+      "elapsed_seconds": 23.755991117,
+      "mean_training_loss": 0.7027826905250549,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 347,
+      "elapsed_seconds": 23.808396369999997,
+      "mean_training_loss": 0.703472912311554,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 348,
+      "elapsed_seconds": 23.858505362000002,
+      "mean_training_loss": 0.7020509243011475,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 349,
+      "elapsed_seconds": 23.906563256,
+      "mean_training_loss": 0.7026756405830383,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 350,
+      "elapsed_seconds": 23.96031711,
+      "mean_training_loss": 0.7014695405960083,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 351,
+      "elapsed_seconds": 24.014362692,
+      "mean_training_loss": 0.7023542523384094,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 352,
+      "elapsed_seconds": 24.065611081,
+      "mean_training_loss": 0.7023770213127136,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 353,
+      "elapsed_seconds": 24.118716229,
+      "mean_training_loss": 0.7032080292701721,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 354,
+      "elapsed_seconds": 24.171204787,
+      "mean_training_loss": 0.7018719911575317,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 355,
+      "elapsed_seconds": 24.223344904,
+      "mean_training_loss": 0.7028582692146301,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 356,
+      "elapsed_seconds": 24.272339121,
+      "mean_training_loss": 0.703374981880188,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 357,
+      "elapsed_seconds": 24.322227671,
+      "mean_training_loss": 0.7039924263954163,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 358,
+      "elapsed_seconds": 24.372733093999997,
+      "mean_training_loss": 0.7021977305412292,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 359,
+      "elapsed_seconds": 24.464337117,
+      "mean_training_loss": 0.7030431032180786,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 360,
+      "elapsed_seconds": 24.523795756,
+      "mean_training_loss": 0.7017038464546204,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 361,
+      "elapsed_seconds": 24.579914709,
+      "mean_training_loss": 0.7029629945755005,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 362,
+      "elapsed_seconds": 24.634642966,
+      "mean_training_loss": 0.7018253803253174,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 363,
+      "elapsed_seconds": 24.691423296000004,
+      "mean_training_loss": 0.7026087045669556,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 364,
+      "elapsed_seconds": 24.746796179,
+      "mean_training_loss": 0.7032219767570496,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 365,
+      "elapsed_seconds": 24.79939117,
+      "mean_training_loss": 0.7027748823165894,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 366,
+      "elapsed_seconds": 24.850515779,
+      "mean_training_loss": 0.7033706903457642,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 367,
+      "elapsed_seconds": 24.909393526000002,
+      "mean_training_loss": 0.7028283476829529,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 368,
+      "elapsed_seconds": 24.965510166999998,
+      "mean_training_loss": 0.702074408531189,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 369,
+      "elapsed_seconds": 25.017410047,
+      "mean_training_loss": 0.7021836042404175,
+      "gpu_utilization_and_memory": "14, 895"
+    },
+    {
+      "batch": 370,
+      "elapsed_seconds": 25.078741333000004,
+      "mean_training_loss": 0.7020444273948669,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 371,
+      "elapsed_seconds": 25.137226282,
+      "mean_training_loss": 0.7021527886390686,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 372,
+      "elapsed_seconds": 25.334447124999997,
+      "mean_training_loss": 0.7021812796592712,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 373,
+      "elapsed_seconds": 25.410722675000002,
+      "mean_training_loss": 0.7038397789001465,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 374,
+      "elapsed_seconds": 25.473965646000003,
+      "mean_training_loss": 0.7029200792312622,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 375,
+      "elapsed_seconds": 25.551056254000002,
+      "mean_training_loss": 0.7024863958358765,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 376,
+      "elapsed_seconds": 25.603341512,
+      "mean_training_loss": 0.7021346688270569,
+      "gpu_utilization_and_memory": "9, 895"
+    },
+    {
+      "batch": 377,
+      "elapsed_seconds": 25.655544321999997,
+      "mean_training_loss": 0.703112006187439,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 378,
+      "elapsed_seconds": 25.711148581000003,
+      "mean_training_loss": 0.703436553478241,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 379,
+      "elapsed_seconds": 25.766829281,
+      "mean_training_loss": 0.7020473480224609,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 380,
+      "elapsed_seconds": 25.818827497,
+      "mean_training_loss": 0.7043026685714722,
+      "gpu_utilization_and_memory": "11, 895"
+    },
+    {
+      "batch": 381,
+      "elapsed_seconds": 25.871255724,
+      "mean_training_loss": 0.702269434928894,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 382,
+      "elapsed_seconds": 25.920288225999997,
+      "mean_training_loss": 0.7019033432006836,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 383,
+      "elapsed_seconds": 25.973637828,
+      "mean_training_loss": 0.7023642063140869,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 384,
+      "elapsed_seconds": 26.024130407,
+      "mean_training_loss": 0.7030206918716431,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 385,
+      "elapsed_seconds": 26.073588295,
+      "mean_training_loss": 0.7023931741714478,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 386,
+      "elapsed_seconds": 26.124568259999997,
+      "mean_training_loss": 0.7025262713432312,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 387,
+      "elapsed_seconds": 26.178780402,
+      "mean_training_loss": 0.7018387317657471,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 388,
+      "elapsed_seconds": 26.233111823,
+      "mean_training_loss": 0.7025930285453796,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 389,
+      "elapsed_seconds": 26.284645507,
+      "mean_training_loss": 0.7023642063140869,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 390,
+      "elapsed_seconds": 26.336941815000003,
+      "mean_training_loss": 0.7025619149208069,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 391,
+      "elapsed_seconds": 26.389072450999997,
+      "mean_training_loss": 0.7041101455688477,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 392,
+      "elapsed_seconds": 26.465844535000002,
+      "mean_training_loss": 0.7028759717941284,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 393,
+      "elapsed_seconds": 26.523739616,
+      "mean_training_loss": 0.702372670173645,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 394,
+      "elapsed_seconds": 26.579413543999998,
+      "mean_training_loss": 0.7030084729194641,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 395,
+      "elapsed_seconds": 26.632276527000002,
+      "mean_training_loss": 0.7029543519020081,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 396,
+      "elapsed_seconds": 26.682752236,
+      "mean_training_loss": 0.7033617496490479,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 397,
+      "elapsed_seconds": 26.733293469000003,
+      "mean_training_loss": 0.7023733258247375,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 398,
+      "elapsed_seconds": 26.783891295000004,
+      "mean_training_loss": 0.7028403282165527,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 399,
+      "elapsed_seconds": 26.855210203,
+      "mean_training_loss": 0.7032153010368347,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 400,
+      "elapsed_seconds": 26.920524524999998,
+      "mean_training_loss": 0.7028809785842896,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 401,
+      "elapsed_seconds": 26.971198692,
+      "mean_training_loss": 0.7038776278495789,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 402,
+      "elapsed_seconds": 27.030295096000003,
+      "mean_training_loss": 0.7020474672317505,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 403,
+      "elapsed_seconds": 27.081325921,
+      "mean_training_loss": 0.70224529504776,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 404,
+      "elapsed_seconds": 27.138752103999998,
+      "mean_training_loss": 0.703385591506958,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 405,
+      "elapsed_seconds": 27.273338836,
+      "mean_training_loss": 0.7026494145393372,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 406,
+      "elapsed_seconds": 27.388015697,
+      "mean_training_loss": 0.7023911476135254,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 407,
+      "elapsed_seconds": 27.467191173000003,
+      "mean_training_loss": 0.7027277946472168,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 408,
+      "elapsed_seconds": 27.536766151000002,
+      "mean_training_loss": 0.7027679085731506,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 409,
+      "elapsed_seconds": 27.597602171,
+      "mean_training_loss": 0.7017988562583923,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 410,
+      "elapsed_seconds": 27.652914687,
+      "mean_training_loss": 0.7029414772987366,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 411,
+      "elapsed_seconds": 27.707502527000003,
+      "mean_training_loss": 0.7031000852584839,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 412,
+      "elapsed_seconds": 27.758960903000002,
+      "mean_training_loss": 0.7040390968322754,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 413,
+      "elapsed_seconds": 27.809531272999997,
+      "mean_training_loss": 0.7018280029296875,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 414,
+      "elapsed_seconds": 27.867176815999997,
+      "mean_training_loss": 0.7023730874061584,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 415,
+      "elapsed_seconds": 27.920507524999998,
+      "mean_training_loss": 0.7021639347076416,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 416,
+      "elapsed_seconds": 27.972277724,
+      "mean_training_loss": 0.7029039859771729,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 417,
+      "elapsed_seconds": 28.02796008,
+      "mean_training_loss": 0.7025296092033386,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 418,
+      "elapsed_seconds": 28.079878242,
+      "mean_training_loss": 0.7028740048408508,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 419,
+      "elapsed_seconds": 28.131583411999998,
+      "mean_training_loss": 0.7029480338096619,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 420,
+      "elapsed_seconds": 28.182218555,
+      "mean_training_loss": 0.7033716440200806,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 421,
+      "elapsed_seconds": 28.237208126,
+      "mean_training_loss": 0.7016611695289612,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 422,
+      "elapsed_seconds": 28.318036691000003,
+      "mean_training_loss": 0.7023217678070068,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 423,
+      "elapsed_seconds": 28.370713703,
+      "mean_training_loss": 0.70283043384552,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 424,
+      "elapsed_seconds": 28.461207639,
+      "mean_training_loss": 0.7021387219429016,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 425,
+      "elapsed_seconds": 28.517758669000003,
+      "mean_training_loss": 0.7024766802787781,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 426,
+      "elapsed_seconds": 28.570203910000004,
+      "mean_training_loss": 0.7026529312133789,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 427,
+      "elapsed_seconds": 28.625000997,
+      "mean_training_loss": 0.702075183391571,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 428,
+      "elapsed_seconds": 28.677099384999998,
+      "mean_training_loss": 0.7028474807739258,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 429,
+      "elapsed_seconds": 28.734833369,
+      "mean_training_loss": 0.7021228671073914,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 430,
+      "elapsed_seconds": 28.788971746,
+      "mean_training_loss": 0.7026023268699646,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 431,
+      "elapsed_seconds": 28.844677914000002,
+      "mean_training_loss": 0.7012598514556885,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 432,
+      "elapsed_seconds": 28.897256467,
+      "mean_training_loss": 0.7034713625907898,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 433,
+      "elapsed_seconds": 28.951440597999998,
+      "mean_training_loss": 0.70290607213974,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 434,
+      "elapsed_seconds": 29.007210229000002,
+      "mean_training_loss": 0.7038463950157166,
+      "gpu_utilization_and_memory": "16, 895"
+    },
+    {
+      "batch": 435,
+      "elapsed_seconds": 29.059247854999995,
+      "mean_training_loss": 0.7031216621398926,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 436,
+      "elapsed_seconds": 29.112786031,
+      "mean_training_loss": 0.7028221487998962,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 437,
+      "elapsed_seconds": 29.19426972,
+      "mean_training_loss": 0.7025635838508606,
+      "gpu_utilization_and_memory": "13, 895"
+    },
+    {
+      "batch": 438,
+      "elapsed_seconds": 29.385560241999997,
+      "mean_training_loss": 0.7014015316963196,
+      "gpu_utilization_and_memory": "15, 895"
+    },
+    {
+      "batch": 439,
+      "elapsed_seconds": 29.455779,
+      "mean_training_loss": 0.702147901058197,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 440,
+      "elapsed_seconds": 29.549809970999995,
+      "mean_training_loss": 0.7035226821899414,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 441,
+      "elapsed_seconds": 29.601820564999997,
+      "mean_training_loss": 0.7030656933784485,
+      "gpu_utilization_and_memory": "8, 895"
+    },
+    {
+      "batch": 442,
+      "elapsed_seconds": 29.65756741,
+      "mean_training_loss": 0.7023266553878784,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 443,
+      "elapsed_seconds": 29.712515709999998,
+      "mean_training_loss": 0.7031100392341614,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 444,
+      "elapsed_seconds": 29.769479409999995,
+      "mean_training_loss": 0.7033499479293823,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 445,
+      "elapsed_seconds": 29.823449157999995,
+      "mean_training_loss": 0.702960729598999,
+      "gpu_utilization_and_memory": "12, 895"
+    },
+    {
+      "batch": 446,
+      "elapsed_seconds": 29.881762576,
+      "mean_training_loss": 0.7027276754379272,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 447,
+      "elapsed_seconds": 29.939448284,
+      "mean_training_loss": 0.7026278972625732,
+      "gpu_utilization_and_memory": "17, 895"
+    },
+    {
+      "batch": 448,
+      "elapsed_seconds": 30.003826026999995,
+      "mean_training_loss": 0.7022746801376343,
+      "gpu_utilization_and_memory": "17, 895"
+    }
+  ],
+  "elapsed_seconds": 30.004234116,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch_version": "2.6.0+cu124",
+  "cuda_version": "12.4",
+  "seeds_per_batch": 8,
+  "complete_batches": 448,
+  "estimated_gpu_cost_usd": 0.032914644825252005,
+  "source_sha256": "3037f412e14a7522d89b004a238910dda2e91608b332d75a5727e321317f3f23"
+}

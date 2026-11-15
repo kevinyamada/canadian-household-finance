@@ -1,6 +1,6 @@
 # Canadian Household Finance
 
-A Python, SQL and Power BI project examining household debt payments in Canada.
+A Python, SQL and Power BI project helping a banking analyst distinguish real payment relief from a ratio that falls because income grows faster.
 
 **Question:** Is the payment burden easing, what explains the change, and can a model improve the estimate of the next unpublished quarter?
 
@@ -14,7 +14,11 @@ Since 2019Q4, the mortgage component rose **0.53 percentage points**, while the 
 
 A small random forest won the 2007 to 2018 model selection period. On the untouched 2019Q1 to 2026Q2 test, it recorded **0.250 percentage points MAE**, compared with **0.245** for persistence. It did not improve on the simple benchmark. This result is retained and discussed rather than tuning on the test period.
 
-[Read the analysis](reports/analysis.md) · [Methodology](docs/methodology.md) · [Interview notes](docs/interview_notes.md)
+[Problem and decision](docs/problem_statement.md) · [Read the analysis](reports/analysis.md) · [Methodology](docs/methodology.md) · [Interview notes](docs/interview_notes.md)
+
+## GPU extension
+
+A separate Modal H100 experiment tested whether a neural ensemble improves the next quarter estimate and whether its result is stable across random seeds. Its MAE was **0.387 percentage points**, versus **0.245** for persistence, so the recommendation remains to keep the simple benchmark. Eight H100 workers completed the experiment, with roughly **US$10.09 of GPU runtime** before other usage charges. It is an exploratory extension because the original test results were already known. See the [GPU findings](reports/gpu_experiment.md) and [reproduction instructions](experiments/README.md). Reprocessing saved GPU results does not launch paid compute.
 
 ## What is included
 
@@ -22,7 +26,7 @@ A small random forest won the 2007 to 2018 model selection period. On the untouc
 | :--- | :--- |
 | Python pipeline | Downloads sources, checks data quality, builds features, runs models and generates figures |
 | SQLite | Joins quarterly series and uses window functions for changes |
-| Power BI | Three pages covering household pressure, model evaluation and payment scenarios |
+| Power BI | Four pages covering household pressure, model evaluation, payment scenarios and the GPU experiment |
 | Model validation | Expanding time windows, frozen model selection, simple baselines, empirical bands and shock sensitivity |
 | Reproducibility | Source snapshots, file hashes, processed data and automated tests |
 
@@ -53,7 +57,7 @@ See [Power BI notes](powerbi/README.md) for the page descriptions and validation
 
 ## Validation
 
-The pipeline was run in the desktop VS Code terminal. All 11 automated tests pass, covering source hashes, accounting identities, forecast timing and embedded report data. The report was opened, refreshed and checked in Power BI Desktop, including its scenario slicers. See the [validation record](docs/validation.md) and [GitHub Actions](https://github.com/kevinyamada/canadian-household-finance/actions).
+The pipeline was run in the desktop VS Code terminal. Automated tests cover the core analysis and GPU preparation, including source hashes, accounting identities, forecast timing and embedded report data. The report was opened, refreshed and checked in Power BI Desktop, including its scenario slicers. See the [validation record](docs/validation.md) and [GitHub Actions](https://github.com/kevinyamada/canadian-household-finance/actions).
 
 ## Files
 
@@ -63,7 +67,8 @@ sql/analysis.sql     SQLite views and quarterly changes
 data/raw/            Original source snapshots and checksums
 data/processed/      Analysis tables, SQLite database and model results
 powerbi/             Editable Power BI project and semantic model
-reports/             Analysis, five figures and three Power BI previews
+reports/             Analysis, GPU findings, figures and Power BI previews
+experiments/         Modal GPU training, saved results and CPU summarizer
 tests/               Data integrity and forecast timing tests
 docs/                Methodology and interview explanation
 ```

@@ -13,3 +13,5 @@ ui_*
 .schema_cache/
 
 .powerbi_cache_backup/
+
+experiments/input.json

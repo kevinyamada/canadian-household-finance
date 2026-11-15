@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Quarter\", \"Household\", \"Backtest\", \"Scores\", \"Scenarios\", \"Contributions\", \"Estimate\"]"
+        "value": "[\"Quarter\", \"Household\", \"Backtest\", \"Scores\", \"Scenarios\", \"Contributions\", \"Estimate\", \"GPUBacktest\", \"GPUScores\", \"GPUAudit\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -31,6 +31,13 @@
         "fromTable": "Backtest",
         "toColumn": "quarter",
         "toTable": "Quarter"
+      },
+      {
+        "name": "GPUBacktest_Quarter",
+        "fromColumn": "quarter",
+        "fromTable": "GPUBacktest",
+        "toColumn": "quarter",
+        "toTable": "Quarter"
       }
     ],
     "sourceQueryCulture": "en-CA",
@@ -41,33 +48,33 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "3a201ec4-3e4c-4607-9184-c425a7d10535",
+            "lineageTag": "c0811968-f10f-42e8-814f-ac65c6d3df0b",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "lineageTag": "4fe3c392-2de9-4c97-be72-357ad684e630",
+            "lineageTag": "44df99a9-b8d6-44de-9a08-2759bf780ad0",
             "sourceColumn": "date",
             "summarizeBy": "none"
           },
           {
             "name": "year",
             "dataType": "int64",
-            "lineageTag": "dc71a9c7-d5c9-41af-823a-5f5d04bbb797",
+            "lineageTag": "6f9668f1-f255-4011-8486-783253105a5b",
             "sourceColumn": "year",
             "summarizeBy": "none"
           },
           {
             "name": "quarter_number",
             "dataType": "int64",
-            "lineageTag": "d48842fa-f942-407d-b4f9-c22a818a01bb",
+            "lineageTag": "8b8cb44c-e637-4187-a93a-9f817fe9e4d7",
             "sourceColumn": "quarter_number",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "7ac059ee-3772-459d-ad47-05842122848a",
+        "lineageTag": "e6b1bfc7-336a-4154-8882-aff84f343d9d",
         "partitions": [
           {
             "name": "Quarter",
@@ -91,232 +98,232 @@
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "eaafe999-3095-4532-9133-808968b76b3f",
+            "lineageTag": "462fe1ee-6c1a-4335-a19a-9dea734f40d0",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "dsr",
             "dataType": "double",
-            "lineageTag": "0d688fcb-3f45-466e-b117-b2081e7faabc",
+            "lineageTag": "f7c8faeb-141a-4dd0-a87f-733ece11a7ae",
             "sourceColumn": "dsr",
             "summarizeBy": "none"
           },
           {
             "name": "interest_dsr",
             "dataType": "double",
-            "lineageTag": "4126074e-dd5b-489b-a0c2-3a031168e40e",
+            "lineageTag": "4ffd7bbe-94b3-43d3-96fd-d5ef202ff0e3",
             "sourceColumn": "interest_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "disposable_income",
             "dataType": "double",
-            "lineageTag": "8d72f6a4-98ff-469b-9175-251543e3ed22",
+            "lineageTag": "e757b538-1a29-40bd-b50f-94d8b283b989",
             "sourceColumn": "disposable_income",
             "summarizeBy": "none"
           },
           {
             "name": "income",
             "dataType": "double",
-            "lineageTag": "5845df5e-eb3f-46d8-adda-bc22aab2daf7",
+            "lineageTag": "2b5213b9-3670-4e46-9796-a9fcda4f2431",
             "sourceColumn": "income",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_payments",
             "dataType": "double",
-            "lineageTag": "3440183c-12e9-478a-8e76-2cb0b74c0eb0",
+            "lineageTag": "cdf3c13a-df24-48f2-addb-5a2b852e23df",
             "sourceColumn": "mortgage_payments",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_dsr",
             "dataType": "double",
-            "lineageTag": "7bdf3b05-745e-4aab-a3f0-62b9812f5d65",
+            "lineageTag": "cc190387-12ab-4d11-856c-4c5d5a220090",
             "sourceColumn": "mortgage_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_interest",
             "dataType": "double",
-            "lineageTag": "3cbeaee5-0514-4c3b-9fa3-5f65fb2b55b2",
+            "lineageTag": "acf27e49-38b8-442c-bdf4-9ecf7d3a9267",
             "sourceColumn": "mortgage_interest",
             "summarizeBy": "none"
           },
           {
             "name": "other_payments",
             "dataType": "double",
-            "lineageTag": "514bece5-57b2-4e29-b2a7-4db5c703e1a4",
+            "lineageTag": "34596140-6a88-4326-aa3d-c11fbec3003b",
             "sourceColumn": "other_payments",
             "summarizeBy": "none"
           },
           {
             "name": "other_dsr",
             "dataType": "double",
-            "lineageTag": "64a70631-fa37-4436-b415-224f7bbf997b",
+            "lineageTag": "fda943cb-e17f-4a07-b30b-8ef856ed4696",
             "sourceColumn": "other_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "other_interest",
             "dataType": "double",
-            "lineageTag": "9c314a92-49b5-4e50-a323-517ad3d79de3",
+            "lineageTag": "754e6d0b-41ce-4fd0-82cb-c028bfcf8137",
             "sourceColumn": "other_interest",
             "summarizeBy": "none"
           },
           {
             "name": "payments",
             "dataType": "double",
-            "lineageTag": "47e987be-47af-46a9-a0cc-0ce44ce939ec",
+            "lineageTag": "cf70277f-5f14-42e9-ad2b-ec65a6b11462",
             "sourceColumn": "payments",
             "summarizeBy": "none"
           },
           {
             "name": "interest",
             "dataType": "double",
-            "lineageTag": "8d3bded0-b588-49c5-a299-af8238fbdfce",
+            "lineageTag": "816d31c0-3a97-49e4-9c84-1053f890074e",
             "sourceColumn": "interest",
             "summarizeBy": "none"
           },
           {
             "name": "principal",
             "dataType": "double",
-            "lineageTag": "1100c784-47b7-48a2-91e5-713bb627b6cf",
+            "lineageTag": "65310e01-0059-4edd-bcff-575c23bcbf57",
             "sourceColumn": "principal",
             "summarizeBy": "none"
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "lineageTag": "64463556-a9e7-4838-994f-f4eabbb96e26",
+            "lineageTag": "fda29548-4c42-4574-8e25-ae10426ea4ef",
             "sourceColumn": "date",
             "summarizeBy": "none"
           },
           {
             "name": "income_growth",
             "dataType": "double",
-            "lineageTag": "bb1452e8-4276-4961-ba0d-b958af793f7a",
+            "lineageTag": "5af16d8c-3334-447e-9725-35ceab7f03ec",
             "sourceColumn": "income_growth",
             "summarizeBy": "none"
           },
           {
             "name": "payment_growth",
             "dataType": "double",
-            "lineageTag": "4f4163ed-966f-4061-9074-916b8e1bfd10",
+            "lineageTag": "b52a3e87-5aea-40c8-907f-54ba0bc6c086",
             "sourceColumn": "payment_growth",
             "summarizeBy": "none"
           },
           {
             "name": "mortgage_share",
             "dataType": "double",
-            "lineageTag": "42be7903-8d83-4a06-927a-10f23b40e8a5",
+            "lineageTag": "39caeeac-bd73-4703-8504-cb5058f6da1a",
             "sourceColumn": "mortgage_share",
             "summarizeBy": "none"
           },
           {
             "name": "principal_dsr",
             "dataType": "double",
-            "lineageTag": "709cb87e-8e91-4f72-9eaf-bb819f35bc28",
+            "lineageTag": "8c845fdd-afa4-4eb4-984a-969a56e80900",
             "sourceColumn": "principal_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "policy_rate",
             "dataType": "double",
-            "lineageTag": "8a914a18-4223-4c2e-a606-6dc56ade3f15",
+            "lineageTag": "2ea29f1e-3779-42a0-8381-2a64191d2a12",
             "sourceColumn": "policy_rate",
             "summarizeBy": "none"
           },
           {
             "name": "policy_business_days",
             "dataType": "double",
-            "lineageTag": "cf8451eb-d2d2-4e36-98ea-40fc792c4716",
+            "lineageTag": "9975820c-ab76-46db-b4bb-3106263aba36",
             "sourceColumn": "policy_business_days",
             "summarizeBy": "none"
           },
           {
             "name": "policy_last_date",
             "dataType": "string",
-            "lineageTag": "a0743b2e-da45-46c2-948e-5ca54e805fe1",
+            "lineageTag": "8d33ebf6-c820-4e14-8039-c146d8fc6ef2",
             "sourceColumn": "policy_last_date",
             "summarizeBy": "none"
           },
           {
             "name": "dsr_qoq_pp",
             "dataType": "double",
-            "lineageTag": "390888fd-63f1-41a8-98ee-1ad4e5c6b53a",
+            "lineageTag": "ca66b6e3-ec90-493a-a7f0-4e9b944862ca",
             "sourceColumn": "dsr_qoq_pp",
             "summarizeBy": "none"
           },
           {
             "name": "dsr_yoy_pp",
             "dataType": "double",
-            "lineageTag": "dfd64287-2b93-4b3c-bd93-99b9dd82cc9b",
+            "lineageTag": "fc748555-0cdb-4100-be83-a377dd0eb031",
             "sourceColumn": "dsr_yoy_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "317e6436-abe6-4095-8d29-c98d7f7d3de9",
+        "lineageTag": "b3364b2f-4b81-4f75-aa22-723b2a0dbe0a",
         "measures": [
           {
             "name": "Debt service ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "c873feab-6a25-49fe-a03c-ee21c3284b8e"
+            "lineageTag": "8283d4f2-6686-4fe9-a82a-62218c413324"
           },
           {
             "name": "Mortgage ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[mortgage_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "8bbccdcf-4358-4e81-bc5c-8b96d03a8d19"
+            "lineageTag": "c5c09c07-4f46-40f1-8c31-d19f610bfd06"
           },
           {
             "name": "Other debt ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[other_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "7c440640-0e83-4964-a481-cfd6db708f71"
+            "lineageTag": "c008e747-e5a6-4d00-9f43-ca1afe7d60c5"
           },
           {
             "name": "Income growth",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[income_growth])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "86075b90-f5a4-44e8-9f31-10366827e853"
+            "lineageTag": "39422719-3317-4210-94cd-939cd27c3f8d"
           },
           {
             "name": "Payment growth",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[payment_growth])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "860095cb-bf50-4b5c-9468-afd1b1723ac9"
+            "lineageTag": "f78142e5-f855-48d8-853c-12247e6c09f1"
           },
           {
             "name": "Quarterly change",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[dsr_qoq_pp])",
             "formatString": "+0.00;-0.00;0.00",
-            "lineageTag": "91491c77-099a-4a18-94b2-4a55e9824073"
+            "lineageTag": "afd4f962-2918-4788-a2d1-3642ed8b0c67"
           },
           {
             "name": "Interest ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[interest_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "d9bc8f27-adf7-4ee6-a097-cbff5d331c5f"
+            "lineageTag": "5e599bba-edf0-42af-8906-e36641b93c73"
           },
           {
             "name": "Principal ratio",
             "expression": "MAXX(TOPN(1, Household, Household[quarter], DESC), Household[principal_dsr])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "a0fbc81c-c693-4e9c-a3db-0d7a454af97d"
+            "lineageTag": "13bffd60-f7e1-4c91-b675-92b174ee826a"
           },
           {
             "name": "Latest quarter",
             "expression": "MAX(Household[quarter])",
-            "lineageTag": "337d1f6c-926f-4279-8210-02cd468af3d1"
+            "lineageTag": "26445019-ce6e-4979-a12c-e82e49a272f7"
           },
           {
             "name": "Policy rate",
             "expression": "MAX(Household[policy_rate])",
             "formatString": "0.00\"%\"",
-            "lineageTag": "7eee84d6-ba6d-4b6d-8320-0644325759ac"
+            "lineageTag": "d074339b-da2b-4531-86e6-c96e975aa30f"
           }
         ],
         "partitions": [
@@ -342,126 +349,126 @@
           {
             "name": "origin_quarter",
             "dataType": "string",
-            "lineageTag": "c56c5fd9-0c1d-45bf-8089-b0a5dd078d94",
+            "lineageTag": "5fc3b37b-bbea-4187-a1e0-86ed2755cd15",
             "sourceColumn": "origin_quarter",
             "summarizeBy": "none"
           },
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "12f08325-1e61-465b-8db9-01a36d08788a",
+            "lineageTag": "5fd400de-00ce-4e9c-85ae-b8df5a44c0b8",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "0a824f27-027f-4bc4-ab84-1c38c472b53f",
+            "lineageTag": "5d581dfe-c165-4941-9d86-5b4f6a5cdab9",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "actual",
             "dataType": "double",
-            "lineageTag": "1309e622-45d1-4b29-b279-63acdd2fad6c",
+            "lineageTag": "3f19e9a4-aeff-4ecf-bba1-daa6e262c271",
             "sourceColumn": "actual",
             "summarizeBy": "none"
           },
           {
             "name": "prediction",
             "dataType": "double",
-            "lineageTag": "31c7b8ed-c673-4c13-bed9-ab20fc8bd3ec",
+            "lineageTag": "23715bf3-b85b-46fb-a835-adc1ca9859e1",
             "sourceColumn": "prediction",
             "summarizeBy": "none"
           },
           {
             "name": "error",
             "dataType": "double",
-            "lineageTag": "b158357d-2cfc-45f6-9e39-27dffbc397a4",
+            "lineageTag": "1db3d782-dae9-4983-9815-273863c949b2",
             "sourceColumn": "error",
             "summarizeBy": "none"
           },
           {
             "name": "absolute_error",
             "dataType": "double",
-            "lineageTag": "fae38c50-f5ba-42e3-a94b-a838081c5d7f",
+            "lineageTag": "58b75bb2-13d3-4662-b274-277d0f7a79c8",
             "sourceColumn": "absolute_error",
             "summarizeBy": "none"
           },
           {
             "name": "n_train",
             "dataType": "int64",
-            "lineageTag": "1795fc39-19d5-41a2-b3aa-b0ddb767c378",
+            "lineageTag": "075536f2-b2aa-4efd-a6a8-a88afa3624ac",
             "sourceColumn": "n_train",
             "summarizeBy": "none"
           },
           {
             "name": "last_train_target",
             "dataType": "string",
-            "lineageTag": "4630bbdb-949d-4bbb-b421-35d1f7654e22",
+            "lineageTag": "a7ba4bb0-ec56-403f-a7ef-f954936b8be9",
             "sourceColumn": "last_train_target",
             "summarizeBy": "none"
           },
           {
             "name": "lower",
             "dataType": "double",
-            "lineageTag": "b1bffec3-7b08-4b50-a7c9-bd5c828dfe91",
+            "lineageTag": "bad51ce0-735d-43ff-9fe6-9a55f3e4d128",
             "sourceColumn": "lower",
             "summarizeBy": "none"
           },
           {
             "name": "upper",
             "dataType": "double",
-            "lineageTag": "bc826427-21f8-4119-8896-d45af3103998",
+            "lineageTag": "aee125f4-41fe-4da1-b4a3-fde0ac89d927",
             "sourceColumn": "upper",
             "summarizeBy": "none"
           },
           {
             "name": "covered",
             "dataType": "int64",
-            "lineageTag": "f04c331f-46a7-47a0-b50c-6239d4246bd6",
+            "lineageTag": "5ab15c17-044b-4bf2-a9b4-7b1c238ec3e6",
             "sourceColumn": "covered",
             "summarizeBy": "none"
           },
           {
             "name": "baseline",
             "dataType": "double",
-            "lineageTag": "83cb0f94-e17b-4137-86c4-1e21d945c2a3",
+            "lineageTag": "80fd59aa-0d59-4ec8-9587-dc366e826c26",
             "sourceColumn": "baseline",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "ea4935a2-00c3-4d0b-ac3c-cf6e58f98696",
+        "lineageTag": "99006fdb-c368-4c7d-8076-63c6579d509c",
         "measures": [
           {
             "name": "Observed",
             "expression": "MAX(Backtest[actual])",
             "formatString": "0.00",
-            "lineageTag": "bf62b427-214f-4ed8-92a1-71109222d197"
+            "lineageTag": "697e8429-6ec4-4df9-810f-be38a67d7073"
           },
           {
             "name": "Model estimate",
             "expression": "MAX(Backtest[prediction])",
             "formatString": "0.00",
-            "lineageTag": "5bcf0704-c521-47bf-bc96-1bc5895bac87"
+            "lineageTag": "56b87fba-b891-437c-80f2-b1f4d4efb0b0"
           },
           {
             "name": "Persistence estimate",
             "expression": "MAX(Backtest[baseline])",
             "formatString": "0.00",
-            "lineageTag": "072ddd31-0933-4db5-bfbe-fedd17ca3c4c"
+            "lineageTag": "0ab702e5-07ab-4fed-b2d3-3ee95da23399"
           },
           {
             "name": "Test MAE",
             "expression": "AVERAGE(Backtest[absolute_error])",
             "formatString": "0.00",
-            "lineageTag": "3ac6c893-35f2-4dab-a3e0-22881b066fbc"
+            "lineageTag": "9c0f7f6a-ebfc-403f-86b2-7e4447781f90"
           },
           {
             "name": "Band coverage",
             "expression": "AVERAGE(Backtest[covered])",
             "formatString": "0.0%",
-            "lineageTag": "e88c1918-b1ab-4641-92bb-58eabef4ef5e"
+            "lineageTag": "910e16dc-43a0-4abc-9fe6-e638ae2b6fd8"
           }
         ],
         "partitions": [
@@ -487,52 +494,52 @@
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "e26c71aa-731a-4f05-92ae-55c3ef373c7a",
+            "lineageTag": "5aeae5b1-c94e-4045-9d62-1cde75bfb90c",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "n",
             "dataType": "int64",
-            "lineageTag": "506853cf-c63e-49c9-850e-444eb4d02926",
+            "lineageTag": "f2d3a834-89a3-4054-88b7-14ffa4869f95",
             "sourceColumn": "n",
             "summarizeBy": "none"
           },
           {
             "name": "mae",
             "dataType": "double",
-            "lineageTag": "674b381b-4aa2-45de-a0ca-963f621e8a7f",
+            "lineageTag": "30fdb8fb-8910-4736-834e-da3d2825553f",
             "sourceColumn": "mae",
             "summarizeBy": "none"
           },
           {
             "name": "rmse",
             "dataType": "double",
-            "lineageTag": "a4b66c96-58df-4f7d-b9b7-8ca4091e3158",
+            "lineageTag": "45f352d3-752c-4cb7-8f12-df180f9f726f",
             "sourceColumn": "rmse",
             "summarizeBy": "none"
           },
           {
             "name": "bias",
             "dataType": "double",
-            "lineageTag": "742c0829-4d33-429f-b60d-7595005416a8",
+            "lineageTag": "2277326d-095c-4770-8b49-c891de1a7a23",
             "sourceColumn": "bias",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "21930479-eb35-4feb-9f5a-4cc28996cf27",
+        "lineageTag": "0d091260-452a-4800-9b4a-3f1a45d79719",
         "measures": [
           {
             "name": "Mean absolute error",
             "expression": "IF(HASONEVALUE(Scores[model]), MAX(Scores[mae]))",
             "formatString": "0.000",
-            "lineageTag": "54f0195a-15bf-4244-a2b7-319f078c4414"
+            "lineageTag": "4cfba889-a0a7-4394-82dc-bc3b024334ca"
           },
           {
             "name": "Root mean squared error",
             "expression": "IF(HASONEVALUE(Scores[model]), MAX(Scores[rmse]))",
             "formatString": "0.000",
-            "lineageTag": "41868da9-2bbc-400a-a13c-4ae52e504d07"
+            "lineageTag": "fbcc329a-6af2-4b0d-afa1-772f9f01e6ba"
           }
         ],
         "partitions": [
@@ -558,39 +565,39 @@
           {
             "name": "income_change_pct",
             "dataType": "int64",
-            "lineageTag": "714bf3e6-e3e5-462a-a238-79ee6fd85483",
+            "lineageTag": "6eacf57c-16a5-475b-ae7b-7f790baafcec",
             "sourceColumn": "income_change_pct",
             "summarizeBy": "none"
           },
           {
             "name": "payment_change_pct",
             "dataType": "int64",
-            "lineageTag": "d67f6af0-c749-4c0e-a214-d0c1c64b8712",
+            "lineageTag": "74bf1ccc-a984-4114-a428-1bc9b0e9fba5",
             "sourceColumn": "payment_change_pct",
             "summarizeBy": "none"
           },
           {
             "name": "scenario_dsr",
             "dataType": "double",
-            "lineageTag": "2df3c2f9-755b-4a27-9b1c-9082d27294a4",
+            "lineageTag": "17b320de-ee60-4623-b2c8-6b57a593010f",
             "sourceColumn": "scenario_dsr",
             "summarizeBy": "none"
           },
           {
             "name": "change_pp",
             "dataType": "double",
-            "lineageTag": "f0f92e12-5166-47a4-966a-53321d94641f",
+            "lineageTag": "f135dff2-488b-411e-87f2-81be11b5f7b6",
             "sourceColumn": "change_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "90319f10-33bf-4a9d-817d-09cf97c0ecb1",
+        "lineageTag": "504267cc-6656-4ac2-b091-aed4187732ec",
         "measures": [
           {
             "name": "Scenario ratio",
             "expression": "IF(HASONEVALUE(Scenarios[income_change_pct]) && HASONEVALUE(Scenarios[payment_change_pct]), MAX(Scenarios[scenario_dsr]))",
             "formatString": "0.00\"%\"",
-            "lineageTag": "02346de9-0288-43e4-8f87-f66af58dcea0"
+            "lineageTag": "64601a9e-9548-48bf-9005-7e94b4976f3f"
           }
         ],
         "partitions": [
@@ -616,25 +623,25 @@
           {
             "name": "driver",
             "dataType": "string",
-            "lineageTag": "8f7a028a-7e4c-45fc-ae5c-e10c00af5425",
+            "lineageTag": "1eb7977a-409b-4d1d-be11-194864f4c646",
             "sourceColumn": "driver",
             "summarizeBy": "none"
           },
           {
             "name": "contribution_pp",
             "dataType": "double",
-            "lineageTag": "e067bc10-add1-4ad6-b802-527a21fbb9f1",
+            "lineageTag": "2ee06d5c-b0ab-4f43-a802-8fac25c35adb",
             "sourceColumn": "contribution_pp",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "2a8cde84-82fd-494e-9510-29e87b93aea0",
+        "lineageTag": "af78c344-cafa-44c9-977c-44df4f78353b",
         "measures": [
           {
             "name": "Contribution",
             "expression": "SUM(Contributions[contribution_pp])",
             "formatString": "0.00",
-            "lineageTag": "c918be84-6629-46f8-975f-7106b9974792"
+            "lineageTag": "565c60b1-dc2a-4a24-b445-e96f114ae53e"
           }
         ],
         "partitions": [
@@ -660,54 +667,54 @@
           {
             "name": "origin_quarter",
             "dataType": "string",
-            "lineageTag": "86939206-a200-47f9-bfe3-c0c1480ff067",
+            "lineageTag": "8f558db1-133c-426d-91de-1ae70058fdc9",
             "sourceColumn": "origin_quarter",
             "summarizeBy": "none"
           },
           {
             "name": "quarter",
             "dataType": "string",
-            "lineageTag": "e63224f6-ad4e-4b90-b1e8-727535989f11",
+            "lineageTag": "339811bc-bf58-40dd-950e-f020cb8e7538",
             "sourceColumn": "quarter",
             "summarizeBy": "none"
           },
           {
             "name": "model",
             "dataType": "string",
-            "lineageTag": "0c1e05bb-82f9-4c5a-92a9-b4f1b3ea8bdd",
+            "lineageTag": "0ea083aa-9f72-4b53-a9fe-09561a684d4c",
             "sourceColumn": "model",
             "summarizeBy": "none"
           },
           {
             "name": "prediction",
             "dataType": "double",
-            "lineageTag": "585f34c2-9dfb-498a-bed2-44f28bd0ee43",
+            "lineageTag": "e97e747d-1c83-46e6-886c-042a2ca1af8d",
             "sourceColumn": "prediction",
             "summarizeBy": "none"
           },
           {
             "name": "lower",
             "dataType": "double",
-            "lineageTag": "bbe86af8-1ffb-407e-bc3f-694129f9ac56",
+            "lineageTag": "ad72b1be-9044-4546-b45c-4eb8b529d38b",
             "sourceColumn": "lower",
             "summarizeBy": "none"
           },
           {
             "name": "upper",
             "dataType": "double",
-            "lineageTag": "93b481b8-faa1-4c71-b04a-06c5773bad81",
+            "lineageTag": "5d4f3e89-1b63-4de6-b148-d259f5b15d39",
             "sourceColumn": "upper",
             "summarizeBy": "none"
           },
           {
             "name": "label",
             "dataType": "string",
-            "lineageTag": "a9fb6d9a-4b7c-4e9b-9c1a-739d9454305f",
+            "lineageTag": "a1a0d127-0c89-46ea-a2d8-a05ae3be0aac",
             "sourceColumn": "label",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "bc4f94c4-1d8d-4186-904f-77dbb610d2cc",
+        "lineageTag": "37b80f90-4c86-441a-9622-be20bf667e96",
         "partitions": [
           {
             "name": "Estimate",
@@ -717,6 +724,322 @@
                 "let",
                 "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sib3JpZ2luX3F1YXJ0ZXIiOiIyMDI2UTIiLCJxdWFydGVyIjoiMjAyNlEzIiwibW9kZWwiOiJSYW5kb20gZm9yZXN0IiwicHJlZGljdGlvbiI6MTQuNTIyMDkwMDQ3ODM0LCJsb3dlciI6MTQuMjE0NTAzMzc4NTAzLCJ1cHBlciI6MTQuODI5Njc2NzE3MTY2LCJsYWJlbCI6Ik5leHQgdW5wdWJsaXNoZWQgcXVhcnRlciBlc3RpbWF0ZSB1c2luZyByZXZpc2VkIGRhdGE7IG5vdCBhIGxpdmUgZm9yZWNhc3QgdmFsaWRhdGlvbiJ9XQ==\", BinaryEncoding.Base64))),",
                 "    Typed = Table.TransformColumnTypes(Source, {{\"origin_quarter\", type text}, {\"quarter\", type text}, {\"model\", type text}, {\"prediction\", type number}, {\"lower\", type number}, {\"upper\", type number}, {\"label\", type text}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GPUBacktest",
+        "columns": [
+          {
+            "name": "quarter",
+            "dataType": "string",
+            "lineageTag": "34e52bdb-d428-4974-a0e8-d4abe48b116f",
+            "sourceColumn": "quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "origin_quarter",
+            "dataType": "string",
+            "lineageTag": "090ce1e2-1e97-493b-bac4-476d53d83a0b",
+            "sourceColumn": "origin_quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "actual",
+            "dataType": "double",
+            "lineageTag": "fd8f8c7e-7db0-4c48-994b-74ad5af7237d",
+            "sourceColumn": "actual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "origin_dsr",
+            "dataType": "double",
+            "lineageTag": "76e1d7cc-7ac3-49f7-b06f-23f8de83612e",
+            "sourceColumn": "origin_dsr",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "target_mean",
+            "dataType": "double",
+            "lineageTag": "c977f9a6-767a-4835-a778-0b5f0867476b",
+            "sourceColumn": "target_mean",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "target_scale",
+            "dataType": "double",
+            "lineageTag": "379f3076-5cfb-4e79-8621-6d23e7a5723f",
+            "sourceColumn": "target_scale",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_train",
+            "dataType": "int64",
+            "lineageTag": "19a15c4e-fbc3-43c5-9885-45b3ce620694",
+            "sourceColumn": "n_train",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "last_train_target",
+            "dataType": "string",
+            "lineageTag": "577d2657-ec30-4766-8010-f2874a117eb0",
+            "sourceColumn": "last_train_target",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "prediction",
+            "dataType": "double",
+            "lineageTag": "a4ecf9ea-4c0c-4462-875e-9db663ba01cc",
+            "sourceColumn": "prediction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "baseline",
+            "dataType": "double",
+            "lineageTag": "dc109942-7b06-4a03-b45a-e087b22a4aa0",
+            "sourceColumn": "baseline",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lower",
+            "dataType": "double",
+            "lineageTag": "675e8301-5c3d-4224-b938-3c54e2dc9e48",
+            "sourceColumn": "lower",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "upper",
+            "dataType": "double",
+            "lineageTag": "2e6c63f1-a965-4edb-8429-88f3a1535f7c",
+            "sourceColumn": "upper",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "seed_p10",
+            "dataType": "double",
+            "lineageTag": "04f5b939-6392-4b78-9a8c-918b5d11f9f6",
+            "sourceColumn": "seed_p10",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "seed_p90",
+            "dataType": "double",
+            "lineageTag": "4e70a55e-ff46-41a3-bf8c-1f07620ab04c",
+            "sourceColumn": "seed_p90",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "period",
+            "dataType": "string",
+            "lineageTag": "d5aa1e65-83b2-483f-9ec8-5338f69b3032",
+            "sourceColumn": "period",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "785b99ff-873c-4384-afff-d29f5c016e20",
+        "measures": [
+          {
+            "name": "Observed ratio",
+            "expression": "MAX(GPUBacktest[actual])",
+            "formatString": "0.00",
+            "lineageTag": "5f200542-e344-4dca-a152-292384fbdb6d"
+          },
+          {
+            "name": "Neural estimate",
+            "expression": "MAX(GPUBacktest[prediction])",
+            "formatString": "0.00",
+            "lineageTag": "0c384789-6ad2-4fdc-a74f-cf53e4e456b4"
+          },
+          {
+            "name": "Persistence comparison",
+            "expression": "MAX(GPUBacktest[baseline])",
+            "formatString": "0.00",
+            "lineageTag": "ed7629d4-6593-486c-a6e2-451ee9735c0d"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "GPUBacktest",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicXVhcnRlciI6IjIwMTlRMSIsIm9yaWdpbl9xdWFydGVyIjoiMjAxOFE0IiwiYWN0dWFsIjoxNS4xMSwib3JpZ2luX2RzciI6MTQuOTQsInRhcmdldF9tZWFuIjowLjAyNDc3NDc3NDc3NSwidGFyZ2V0X3NjYWxlIjowLjE3NTc4MDYxMDg0MSwibl90cmFpbiI6MTExLCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMThRNCIsInByZWRpY3Rpb24iOjE0LjkwODUxODY5MzE1MSwiYmFzZWxpbmUiOjE0Ljk0LCJsb3dlciI6MTQuNTIyNzE5ODI0OTcsInVwcGVyIjoxNS4yOTQzMTc1NjEzMzEsInNlZWRfcDEwIjoxNC44MTg4MjAwNjA0NzMsInNlZWRfcDkwIjoxNS4wMDA4OTg1OTIyNjUsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMTlRMiIsIm9yaWdpbl9xdWFydGVyIjoiMjAxOVExIiwiYWN0dWFsIjoxNS4wMywib3JpZ2luX2RzciI6MTUuMTEsInRhcmdldF9tZWFuIjowLjAyNjA3MTQyODU3MSwidGFyZ2V0X3NjYWxlIjowLjE3NTUyNjU0MDIzNCwibl90cmFpbiI6MTEyLCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMTlRMSIsInByZWRpY3Rpb24iOjE1LjMzMzExMjk4OTQzMSwiYmFzZWxpbmUiOjE1LjExLCJsb3dlciI6MTQuOTQ3MzE0MTIxMjUxLCJ1cHBlciI6MTUuNzE4OTExODU3NjEyLCJzZWVkX3AxMCI6MTUuMjQwODY2NjU5NjI1LCJzZWVkX3A5MCI6MTUuNDI3MTI1Njc5NDMxLCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDE5UTMiLCJvcmlnaW5fcXVhcnRlciI6IjIwMTlRMiIsImFjdHVhbCI6MTUuMDYsIm9yaWdpbl9kc3IiOjE1LjAzLCJ0YXJnZXRfbWVhbiI6MC4wMjUxMzI3NDMzNjMsInRhcmdldF9zY2FsZSI6MC4xNzUwMzAyODgzNzQsIm5fdHJhaW4iOjExMywibGFzdF90cmFpbl90YXJnZXQiOiIyMDE5UTIiLCJwcmVkaWN0aW9uIjoxNC45MTE0NTkzNzM1MTYsImJhc2VsaW5lIjoxNS4wMywibG93ZXIiOjE0LjUyNTY2MDUwNTMzNSwidXBwZXIiOjE1LjI5NzI1ODI0MTY5Niwic2VlZF9wMTAiOjE0LjgyMjE2Njk2NzMzMSwic2VlZF9wOTAiOjE0Ljk5ODEzOTE4OTY3NCwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAxOVE0Iiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDE5UTMiLCJhY3R1YWwiOjE0Ljk1LCJvcmlnaW5fZHNyIjoxNS4wNiwidGFyZ2V0X21lYW4iOjAuMDI1MTc1NDM4NTk2LCJ0YXJnZXRfc2NhbGUiOjAuMTc0MjYxNTExNzcsIm5fdHJhaW4iOjExNCwibGFzdF90cmFpbl90YXJnZXQiOiIyMDE5UTMiLCJwcmVkaWN0aW9uIjoxNS4wOTQ4ODI4MDEwOTIsImJhc2VsaW5lIjoxNS4wNiwibG93ZXIiOjE0LjcwOTA4MzkzMjkxMSwidXBwZXIiOjE1LjQ4MDY4MTY2OTI3Mywic2VlZF9wMTAiOjE1LjAxOTk1OTY3ODY4NCwic2VlZF9wOTAiOjE1LjE2OTEyNDMyNjkxNiwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyMFExIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDE5UTQiLCJhY3R1YWwiOjE0LjY0LCJvcmlnaW5fZHNyIjoxNC45NSwidGFyZ2V0X21lYW4iOjAuMDI0LCJ0YXJnZXRfc2NhbGUiOjAuMTczOTU1NTE2NTUzLCJuX3RyYWluIjoxMTUsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAxOVE0IiwicHJlZGljdGlvbiI6MTQuOTExOTgwMTUxNDc0LCJiYXNlbGluZSI6MTQuOTUsImxvd2VyIjoxNC41MjYxODEyODMyOTQsInVwcGVyIjoxNS4yOTc3NzkwMTk2NTUsInNlZWRfcDEwIjoxNC44NTM0NDMzNzA5Nywic2VlZF9wOTAiOjE0Ljk3MDI5NDc3MzY4NiwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyMFEyIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDIwUTEiLCJhY3R1YWwiOjEyLjU2LCJvcmlnaW5fZHNyIjoxNC42NCwidGFyZ2V0X21lYW4iOjAuMDIxMTIwNjg5NjU1LCJ0YXJnZXRfc2NhbGUiOjAuMTc1OTM0ODAxNTU5LCJuX3RyYWluIjoxMTYsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyMFExIiwicHJlZGljdGlvbiI6MTQuNTg1OTA4Njg3NTA2LCJiYXNlbGluZSI6MTQuNjQsImxvd2VyIjoxNC4yMDAxMDk4MTkzMjUsInVwcGVyIjoxNC45NzE3MDc1NTU2ODYsInNlZWRfcDEwIjoxNC40NDkyNTIzMDc3MjYsInNlZWRfcDkwIjoxNC43MTk0MzE2MzUsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjBRMyIsIm9yaWdpbl9xdWFydGVyIjoiMjAyMFEyIiwiYWN0dWFsIjoxMy40Nywib3JpZ2luX2RzciI6MTIuNTYsInRhcmdldF9tZWFuIjowLjAwMzE2MjM5MzE2MiwidGFyZ2V0X3NjYWxlIjowLjI2MDk1Njk4MTY2Miwibl90cmFpbiI6MTE3LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjBRMiIsInByZWRpY3Rpb24iOjEyLjMxMjk4OTU3NDU1NiwiYmFzZWxpbmUiOjEyLjU2LCJsb3dlciI6MTEuOTI3MTkwNzA2Mzc1LCJ1cHBlciI6MTIuNjk4Nzg4NDQyNzM2LCJzZWVkX3AxMCI6MTEuNzM0MDMwMDE1NjQzLCJzZWVkX3A5MCI6MTIuODg5MzkwODk4NDE1LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIwUTQiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjBRMyIsImFjdHVhbCI6MTMuOTQsIm9yaWdpbl9kc3IiOjEzLjQ3LCJ0YXJnZXRfbWVhbiI6MC4wMTA4NDc0NTc2MjcsInRhcmdldF9zY2FsZSI6MC4yNzI4MjEzNDMwMTcsIm5fdHJhaW4iOjExOCwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIwUTMiLCJwcmVkaWN0aW9uIjoxMy4zMDA4OTc0NTc3MDEsImJhc2VsaW5lIjoxMy40NywibG93ZXIiOjEyLjkxNTA5ODU4OTUyLCJ1cHBlciI6MTMuNjg2Njk2MzI1ODgxLCJzZWVkX3AxMCI6MTIuNTQ3MjE0Mjk0NDg5LCJzZWVkX3A5MCI6MTQuMDM1OTg4MjUwMDA1LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIxUTEiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjBRNCIsImFjdHVhbCI6MTMuNTcsIm9yaWdpbl9kc3IiOjEzLjk0LCJ0YXJnZXRfbWVhbiI6MC4wMTQ3MDU4ODIzNTMsInRhcmdldF9zY2FsZSI6MC4yNzQ4ODY3NTU5OTQsIm5fdHJhaW4iOjExOSwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIwUTQiLCJwcmVkaWN0aW9uIjoxNC4zMTUxNTQ1NzMyMTksImJhc2VsaW5lIjoxMy45NCwibG93ZXIiOjEzLjkyOTM1NTcwNTAzOCwidXBwZXIiOjE0LjcwMDk1MzQ0MTM5OSwic2VlZF9wMTAiOjEzLjcxMjk4ODUwNjA0NSwic2VlZF9wOTAiOjE0Ljg5MDYwMjIyNzYzOSwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyMVEyIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDIxUTEiLCJhY3R1YWwiOjEzLjcyLCJvcmlnaW5fZHNyIjoxMy41NywidGFyZ2V0X21lYW4iOjAuMDExNSwidGFyZ2V0X3NjYWxlIjowLjI3NTk2MzkxNjcyMywibl90cmFpbiI6MTIwLCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjFRMSIsInByZWRpY3Rpb24iOjEzLjUxMzc0NjUwODcyLCJiYXNlbGluZSI6MTMuNTcsImxvd2VyIjoxMy4xMjc5NDc2NDA1MzksInVwcGVyIjoxMy44OTk1NDUzNzY5LCJzZWVkX3AxMCI6MTMuMDgzNDM3ODg5MjkxLCJzZWVkX3A5MCI6MTMuOTMyODEyNjg1ODE2LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIxUTMiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjFRMiIsImFjdHVhbCI6MTMuNjgsIm9yaWdpbl9kc3IiOjEzLjcyLCJ0YXJnZXRfbWVhbiI6MC4wMTI2NDQ2MjgwOTksInRhcmdldF9zY2FsZSI6MC4yNzUxMDcwOTczODgsIm5fdHJhaW4iOjEyMSwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIxUTIiLCJwcmVkaWN0aW9uIjoxNC4wMTAwMjcyNDcwNDYsImJhc2VsaW5lIjoxMy43MiwibG93ZXIiOjEzLjYyNDIyODM3ODg2NSwidXBwZXIiOjE0LjM5NTgyNjExNTIyNiwic2VlZF9wMTAiOjEzLjcxMjg2NzkzOTQ0NSwic2VlZF9wOTAiOjE0LjMwOTc2NDE5NjU2NywicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyMVE0Iiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDIxUTMiLCJhY3R1YWwiOjEzLjksIm9yaWdpbl9kc3IiOjEzLjY4LCJ0YXJnZXRfbWVhbiI6MC4wMTIyMTMxMTQ3NTQsInRhcmdldF9zY2FsZSI6MC4yNzQwMTg0MDM5OTgsIm5fdHJhaW4iOjEyMiwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIxUTMiLCJwcmVkaWN0aW9uIjoxMy44NzQ3NDUxODEwNTcsImJhc2VsaW5lIjoxMy42OCwibG93ZXIiOjEzLjQ4ODk0NjMxMjg3NiwidXBwZXIiOjE0LjI2MDU0NDA0OTIzNywic2VlZF9wMTAiOjEzLjY4NTk4NjY4NzYyMywic2VlZF9wOTAiOjE0LjA1NDY2NTM5NDY1NiwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyMlExIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDIxUTQiLCJhY3R1YWwiOjEzLjgxLCJvcmlnaW5fZHNyIjoxMy45LCJ0YXJnZXRfbWVhbiI6MC4wMTM5MDI0MzkwMjQsInRhcmdldF9zY2FsZSI6MC4yNzM1MzkzODUzOTEsIm5fdHJhaW4iOjEyMywibGFzdF90cmFpbl90YXJnZXQiOiIyMDIxUTQiLCJwcmVkaWN0aW9uIjoxNC4xNzc5ODA1MDA4NzQsImJhc2VsaW5lIjoxMy45LCJsb3dlciI6MTMuNzkyMTgxNjMyNjkzLCJ1cHBlciI6MTQuNTYzNzc5MzY5MDU1LCJzZWVkX3AxMCI6MTQuMDIxMjUwNzU0NzY1LCJzZWVkX3A5MCI6MTQuMzM5MzI0NTYxODkyLCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIyUTIiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjJRMSIsImFjdHVhbCI6MTQuMCwib3JpZ2luX2RzciI6MTMuODEsInRhcmdldF9tZWFuIjowLjAxMzA2NDUxNjEyOSwidGFyZ2V0X3NjYWxlIjowLjI3MjU5MjYyMjM3NSwibl90cmFpbiI6MTI0LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjJRMSIsInByZWRpY3Rpb24iOjE0LjI5Mzk4NjM5MDE0MywiYmFzZWxpbmUiOjEzLjgxLCJsb3dlciI6MTMuOTA4MTg3NTIxOTYzLCJ1cHBlciI6MTQuNjc5Nzg1MjU4MzI0LCJzZWVkX3AxMCI6MTQuMTEyMTA4MTE5NzQ2LCJzZWVkX3A5MCI6MTQuNDcwNjYyMzkyMzMsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjJRMyIsIm9yaWdpbl9xdWFydGVyIjoiMjAyMlEyIiwiYWN0dWFsIjoxNC40Mywib3JpZ2luX2RzciI6MTQuMCwidGFyZ2V0X21lYW4iOjAuMDE0NDgsInRhcmdldF9zY2FsZSI6MC4yNzE5NTcyMjAxNjUsIm5fdHJhaW4iOjEyNSwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIyUTIiLCJwcmVkaWN0aW9uIjoxNC4zMDkxMDU5NzQ2MTIsImJhc2VsaW5lIjoxNC4wLCJsb3dlciI6MTMuOTIzMzA3MTA2NDMxLCJ1cHBlciI6MTQuNjk0OTA0ODQyNzkyLCJzZWVkX3AxMCI6MTQuMTIzOTk1NzczMTA3LCJzZWVkX3A5MCI6MTQuNDkyOTkxMzEwMjc3LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIyUTQiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjJRMyIsImFjdHVhbCI6MTQuNjIsIm9yaWdpbl9kc3IiOjE0LjQzLCJ0YXJnZXRfbWVhbiI6MC4wMTc3Nzc3Nzc3NzgsInRhcmdldF9zY2FsZSI6MC4yNzMzNzM2NTgxNDMsIm5fdHJhaW4iOjEyNiwibGFzdF90cmFpbl90YXJnZXQiOiIyMDIyUTMiLCJwcmVkaWN0aW9uIjoxNC41NjYyMjU5OTcwNTgsImJhc2VsaW5lIjoxNC40MywibG93ZXIiOjE0LjE4MDQyNzEyODg3OCwidXBwZXIiOjE0Ljk1MjAyNDg2NTIzOSwic2VlZF9wMTAiOjE0LjMzNDA5NjYyNzIzMiwic2VlZF9wOTAiOjE0Ljc5MTI3Mzk2NDI0LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIzUTEiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjJRNCIsImFjdHVhbCI6MTUuMTcsIm9yaWdpbl9kc3IiOjE0LjYyLCJ0YXJnZXRfbWVhbiI6MC4wMTkxMzM4NTgyNjgsInRhcmdldF9zY2FsZSI6MC4yNzI3MjAzOTczOSwibl90cmFpbiI6MTI3LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjJRNCIsInByZWRpY3Rpb24iOjE0LjY2MDc3NzIzMzUsImJhc2VsaW5lIjoxNC42MiwibG93ZXIiOjE0LjI3NDk3ODM2NTMyLCJ1cHBlciI6MTUuMDQ2NTc2MTAxNjgxLCJzZWVkX3AxMCI6MTQuNDAwMjQzOTgzMjk4LCJzZWVkX3A5MCI6MTQuOTEwNTU1MDQwOTk1LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIzUTIiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjNRMSIsImFjdHVhbCI6MTUuMTQsIm9yaWdpbl9kc3IiOjE1LjE3LCJ0YXJnZXRfbWVhbiI6MC4wMjMyODEyNSwidGFyZ2V0X3NjYWxlIjowLjI3NTY0NDQ0MTk4Nywibl90cmFpbiI6MTI4LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjNRMSIsInByZWRpY3Rpb24iOjE1LjExMjE3MTgyMDk4LCJiYXNlbGluZSI6MTUuMTcsImxvd2VyIjoxNC43MjYzNzI5NTI3OTksInVwcGVyIjoxNS40OTc5NzA2ODkxNjEsInNlZWRfcDEwIjoxNC44NzIxMTcwOTU5ODgsInNlZWRfcDkwIjoxNS4zMzc2OTEzOTE4NDgsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjNRMyIsIm9yaWdpbl9xdWFydGVyIjoiMjAyM1EyIiwiYWN0dWFsIjoxNS4wOSwib3JpZ2luX2RzciI6MTUuMTQsInRhcmdldF9tZWFuIjowLjAyMjg2ODIxNzA1NCwidGFyZ2V0X3NjYWxlIjowLjI3NDYxMzczNTIwNSwibl90cmFpbiI6MTI5LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjNRMiIsInByZWRpY3Rpb24iOjE1LjI1NjUxMDA5OTk1OCwiYmFzZWxpbmUiOjE1LjE0LCJsb3dlciI6MTQuODcwNzExMjMxNzc3LCJ1cHBlciI6MTUuNjQyMzA4OTY4MTM5LCJzZWVkX3AxMCI6MTUuMDA5MDc5NDQ3MjUyLCJzZWVkX3A5MCI6MTUuNTAyOTUyMzc2MDc4LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDIzUTQiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjNRMyIsImFjdHVhbCI6MTUuMTMsIm9yaWdpbl9kc3IiOjE1LjA5LCJ0YXJnZXRfbWVhbiI6MC4wMjIzMDc2OTIzMDgsInRhcmdldF9zY2FsZSI6MC4yNzM2Mjk1NTk5OCwibl90cmFpbiI6MTMwLCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjNRMyIsInByZWRpY3Rpb24iOjE1LjMyODgxOTA0NDE5NSwiYmFzZWxpbmUiOjE1LjA5LCJsb3dlciI6MTQuOTQzMDIwMTc2MDE0LCJ1cHBlciI6MTUuNzE0NjE3OTEyMzc2LCJzZWVkX3AxMCI6MTQuOTk5NzUyNDEyOTU5LCJzZWVkX3A5MCI6MTUuNjMxMTQ1OTg5OTksInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjRRMSIsIm9yaWdpbl9xdWFydGVyIjoiMjAyM1E0IiwiYWN0dWFsIjoxNS4xLCJvcmlnaW5fZHNyIjoxNS4xMywidGFyZ2V0X21lYW4iOjAuMDIyNDQyNzQ4MDkyLCJ0YXJnZXRfc2NhbGUiOjAuMjcyNTg3NTIxMDc1LCJuX3RyYWluIjoxMzEsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyM1E0IiwicHJlZGljdGlvbiI6MTQuOTg5NjUwNDAyODc4LCJiYXNlbGluZSI6MTUuMTMsImxvd2VyIjoxNC42MDM4NTE1MzQ2OTgsInVwcGVyIjoxNS4zNzU0NDkyNzEwNTksInNlZWRfcDEwIjoxNC44MDYwMTQ0OTEyOTIsInNlZWRfcDkwIjoxNS4xNjYzMDAwMjAwNjYsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjRRMiIsIm9yaWdpbl9xdWFydGVyIjoiMjAyNFExIiwiYWN0dWFsIjoxNS4wOSwib3JpZ2luX2RzciI6MTUuMSwidGFyZ2V0X21lYW4iOjAuMDIyMDQ1NDU0NTQ1LCJ0YXJnZXRfc2NhbGUiOjAuMjcxNTkxMDk5Mjc3LCJuX3RyYWluIjoxMzIsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNFExIiwicHJlZGljdGlvbiI6MTQuNTY4OTcyNTE0Njk4LCJiYXNlbGluZSI6MTUuMSwibG93ZXIiOjE0LjE4MzE3MzY0NjUxNywidXBwZXIiOjE0Ljk1NDc3MTM4Mjg3OCwic2VlZF9wMTAiOjE0LjM2OTQxMTIyNTM2OSwic2VlZF9wOTAiOjE0Ljc2MTU2MTE1MDkyMSwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyNFEzIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDI0UTIiLCJhY3R1YWwiOjE0Ljc3LCJvcmlnaW5fZHNyIjoxNS4wOSwidGFyZ2V0X21lYW4iOjAuMDIxODA0NTExMjc4LCJ0YXJnZXRfc2NhbGUiOjAuMjcwNTgyMzE0Mzc0LCJuX3RyYWluIjoxMzMsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNFEyIiwicHJlZGljdGlvbiI6MTUuMzk1NTE5MzEzNjM2LCJiYXNlbGluZSI6MTUuMDksImxvd2VyIjoxNS4wMDk3MjA0NDU0NTUsInVwcGVyIjoxNS43ODEzMTgxODE4MTYsInNlZWRfcDEwIjoxNS4yMTYxMjE5MjczMywic2VlZF9wOTAiOjE1LjU3ODAyMjY5MDc1MSwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyNFE0Iiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDI0UTMiLCJhY3R1YWwiOjE0LjY3LCJvcmlnaW5fZHNyIjoxNC43NywidGFyZ2V0X21lYW4iOjAuMDE5MjUzNzMxMzQzLCJ0YXJnZXRfc2NhbGUiOjAuMjcxMTcxMTExMDAxLCJuX3RyYWluIjoxMzQsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNFEzIiwicHJlZGljdGlvbiI6MTMuMzgwOTA2MDczNTgyLCJiYXNlbGluZSI6MTQuNzcsImxvd2VyIjoxMi45OTUxMDcyMDU0MDIsInVwcGVyIjoxMy43NjY3MDQ5NDE3NjMsInNlZWRfcDEwIjoxMy4wNjE4MzQzMzExMTEsInNlZWRfcDkwIjoxMy43MTQ3OTQ1NTQ4ODgsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjVRMSIsIm9yaWdpbl9xdWFydGVyIjoiMjAyNFE0IiwiYWN0dWFsIjoxNC42OCwib3JpZ2luX2RzciI6MTQuNjcsInRhcmdldF9tZWFuIjowLjAxODM3MDM3MDM3LCJ0YXJnZXRfc2NhbGUiOjAuMjcwMzU4MzU1ODk3LCJuX3RyYWluIjoxMzUsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNFE0IiwicHJlZGljdGlvbiI6MTMuOTM3NDgxMzU2NTEzLCJiYXNlbGluZSI6MTQuNjcsImxvd2VyIjoxMy41NTE2ODI0ODgzMzMsInVwcGVyIjoxNC4zMjMyODAyMjQ2OTQsInNlZWRfcDEwIjoxMy42NzIzODYwNzAyODQsInNlZWRfcDkwIjoxNC4xOTczMzM4NzUxMjIsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjVRMiIsIm9yaWdpbl9xdWFydGVyIjoiMjAyNVExIiwiYWN0dWFsIjoxNC43OCwib3JpZ2luX2RzciI6MTQuNjgsInRhcmdldF9tZWFuIjowLjAxODMwODgyMzUyOSwidGFyZ2V0X3NjYWxlIjowLjI2OTM2MzUwNjcwNywibl90cmFpbiI6MTM2LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjVRMSIsInByZWRpY3Rpb24iOjE0LjgzNzE3NzUxOTQ4LCJiYXNlbGluZSI6MTQuNjgsImxvd2VyIjoxNC40NTEzNzg2NTEyOTksInVwcGVyIjoxNS4yMjI5NzYzODc2Niwic2VlZF9wMTAiOjE0LjcwMjYzMDI4NjAxNywic2VlZF9wOTAiOjE0Ljk3MzU0NDczODcyMSwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyNVEzIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDI1UTIiLCJhY3R1YWwiOjE0LjcxLCJvcmlnaW5fZHNyIjoxNC43OCwidGFyZ2V0X21lYW4iOjAuMDE4OTA1MTA5NDg5LCJ0YXJnZXRfc2NhbGUiOjAuMjY4NDY4NzAxMjQ5LCJuX3RyYWluIjoxMzcsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNVEyIiwicHJlZGljdGlvbiI6MTQuNzkyODE5ODg2Mjk4LCJiYXNlbGluZSI6MTQuNzgsImxvd2VyIjoxNC40MDcwMjEwMTgxMTcsInVwcGVyIjoxNS4xNzg2MTg3NTQ0NzgsInNlZWRfcDEwIjoxNC42NjM3NzAxNDQ5MzksInNlZWRfcDkwIjoxNC45MTc1ODE3OTY3NjQsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9LHsicXVhcnRlciI6IjIwMjVRNCIsIm9yaWdpbl9xdWFydGVyIjoiMjAyNVEzIiwiYWN0dWFsIjoxNC42OCwib3JpZ2luX2RzciI6MTQuNzEsInRhcmdldF9tZWFuIjowLjAxODI2MDg2OTU2NSwidGFyZ2V0X3NjYWxlIjowLjI2NzYwMDQ4Mzc1MSwibl90cmFpbiI6MTM4LCJsYXN0X3RyYWluX3RhcmdldCI6IjIwMjVRMyIsInByZWRpY3Rpb24iOjE0LjYzMjkzOTMyMzkzNSwiYmFzZWxpbmUiOjE0LjcxLCJsb3dlciI6MTQuMjQ3MTQwNDU1NzU0LCJ1cHBlciI6MTUuMDE4NzM4MTkyMTE2LCJzZWVkX3AxMCI6MTQuNDkyODYzMzUwMjk3LCJzZWVkX3A5MCI6MTQuNzYyNjYwNDQyOTQ1LCJwZXJpb2QiOiJSZXRyb3NwZWN0aXZlIHRlc3QifSx7InF1YXJ0ZXIiOiIyMDI2UTEiLCJvcmlnaW5fcXVhcnRlciI6IjIwMjVRNCIsImFjdHVhbCI6MTQuNjgsIm9yaWdpbl9kc3IiOjE0LjY4LCJ0YXJnZXRfbWVhbiI6MC4wMTc5MTM2NjkwNjUsInRhcmdldF9zY2FsZSI6MC4yNjY2NjczNDgxMzUsIm5fdHJhaW4iOjEzOSwibGFzdF90cmFpbl90YXJnZXQiOiIyMDI1UTQiLCJwcmVkaWN0aW9uIjoxNC42OTc0MTk5OTMwNDUsImJhc2VsaW5lIjoxNC42OCwibG93ZXIiOjE0LjMxMTYyMTEyNDg2NSwidXBwZXIiOjE1LjA4MzIxODg2MTIyNiwic2VlZF9wMTAiOjE0LjYzNjUxMDEzMDcyMSwic2VlZF9wOTAiOjE0Ljc1NzkxMjUyMDYyNiwicGVyaW9kIjoiUmV0cm9zcGVjdGl2ZSB0ZXN0In0seyJxdWFydGVyIjoiMjAyNlEyIiwib3JpZ2luX3F1YXJ0ZXIiOiIyMDI2UTEiLCJhY3R1YWwiOjE0LjUyLCJvcmlnaW5fZHNyIjoxNC42OCwidGFyZ2V0X21lYW4iOjAuMDE3Nzg1NzE0Mjg2LCJ0YXJnZXRfc2NhbGUiOjAuMjY1NzE3NTQwMzAzLCJuX3RyYWluIjoxNDAsImxhc3RfdHJhaW5fdGFyZ2V0IjoiMjAyNlExIiwicHJlZGljdGlvbiI6MTQuNjk2MjA4NjgzMzAyLCJiYXNlbGluZSI6MTQuNjgsImxvd2VyIjoxNC4zMTA0MDk4MTUxMjEsInVwcGVyIjoxNS4wODIwMDc1NTE0ODIsInNlZWRfcDEwIjoxNC42NDA0MDcxNTc2LCJzZWVkX3A5MCI6MTQuNzUxMzMxNDU3MjUsInBlcmlvZCI6IlJldHJvc3BlY3RpdmUgdGVzdCJ9XQ==\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"quarter\", type text}, {\"origin_quarter\", type text}, {\"actual\", type number}, {\"origin_dsr\", type number}, {\"target_mean\", type number}, {\"target_scale\", type number}, {\"n_train\", Int64.Type}, {\"last_train_target\", type text}, {\"prediction\", type number}, {\"baseline\", type number}, {\"lower\", type number}, {\"upper\", type number}, {\"seed_p10\", type number}, {\"seed_p90\", type number}, {\"period\", type text}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GPUScores",
+        "columns": [
+          {
+            "name": "model",
+            "dataType": "string",
+            "lineageTag": "dd9d2942-9ee8-4cea-b944-9b9e71bfbe32",
+            "sourceColumn": "model",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n",
+            "dataType": "int64",
+            "lineageTag": "8c2ddd7c-8862-455b-aedb-405545a4e2a0",
+            "sourceColumn": "n",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mae",
+            "dataType": "double",
+            "lineageTag": "ab26287f-6111-4bc0-8b86-8bb7f63981cc",
+            "sourceColumn": "mae",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rmse",
+            "dataType": "double",
+            "lineageTag": "697543ff-89a6-4619-bd01-d90fbf630578",
+            "sourceColumn": "rmse",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flagged_quarters",
+            "dataType": "int64",
+            "lineageTag": "e66d5118-3a9b-43b6-bd9a-d16f0e98eb16",
+            "sourceColumn": "flagged_quarters",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "true_worsening_quarters",
+            "dataType": "int64",
+            "lineageTag": "b52aba95-bae1-41ab-a63f-4b176da91366",
+            "sourceColumn": "true_worsening_quarters",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "true_positive",
+            "dataType": "int64",
+            "lineageTag": "a1057ba4-9668-45fe-8ff4-76fe808ad7a7",
+            "sourceColumn": "true_positive",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "precision",
+            "dataType": "double",
+            "lineageTag": "a7b1c281-a576-4685-8d17-dac1fd36666d",
+            "sourceColumn": "precision",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "recall",
+            "dataType": "double",
+            "lineageTag": "273494a1-255d-497b-a816-63886ad12e1b",
+            "sourceColumn": "recall",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "eb291c3b-b2ab-4039-9289-64f5fafb3573",
+        "measures": [
+          {
+            "name": "Comparison MAE",
+            "expression": "IF(HASONEVALUE(GPUScores[model]), MAX(GPUScores[mae]))",
+            "formatString": "0.000",
+            "lineageTag": "bd6a3653-7319-4b1c-a414-3c3f60afe6bb"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "GPUScores",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sibW9kZWwiOiJQZXJzaXN0ZW5jZSIsIm4iOjMwLCJtYWUiOjAuMjQ0NjY2NjY2NjY3LCJybXNlIjowLjQ2MzkyNTI4MTM0LCJmbGFnZ2VkX3F1YXJ0ZXJzIjowLCJ0cnVlX3dvcnNlbmluZ19xdWFydGVycyI6OSwidHJ1ZV9wb3NpdGl2ZSI6MCwicHJlY2lzaW9uIjpudWxsLCJyZWNhbGwiOjAuMH0seyJtb2RlbCI6Ik9yaWdpbmFsIHJhbmRvbSBmb3Jlc3QiLCJuIjozMCwibWFlIjowLjI1MDIwMzA1NzgzMywicm1zZSI6MC40NTgwNzAyNzI5NTEsImZsYWdnZWRfcXVhcnRlcnMiOjksInRydWVfd29yc2VuaW5nX3F1YXJ0ZXJzIjo5LCJ0cnVlX3Bvc2l0aXZlIjo0LCJwcmVjaXNpb24iOjAuNDQ0NDQ0NDQ0NDQ0LCJyZWNhbGwiOjAuNDQ0NDQ0NDQ0NDQ0fSx7Im1vZGVsIjoiR1BVIG5ldXJhbCBlbnNlbWJsZSIsIm4iOjMwLCJtYWUiOjAuMzg2ODk3MzQ2NDc1LCJybXNlIjowLjU4NjEzNjQ4MzY5OSwiZmxhZ2dlZF9xdWFydGVycyI6MTIsInRydWVfd29yc2VuaW5nX3F1YXJ0ZXJzIjo5LCJ0cnVlX3Bvc2l0aXZlIjo0LCJwcmVjaXNpb24iOjAuMzMzMzMzMzMzMzMzLCJyZWNhbGwiOjAuNDQ0NDQ0NDQ0NDQ0fV0=\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"model\", type text}, {\"n\", Int64.Type}, {\"mae\", type number}, {\"rmse\", type number}, {\"flagged_quarters\", Int64.Type}, {\"true_worsening_quarters\", Int64.Type}, {\"true_positive\", Int64.Type}, {\"precision\", type number}, {\"recall\", type number}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GPUAudit",
+        "columns": [
+          {
+            "name": "coverage",
+            "dataType": "double",
+            "lineageTag": "20191ff1-4c75-4012-852c-b31b371423bc",
+            "sourceColumn": "coverage",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gpu_cost",
+            "dataType": "double",
+            "lineageTag": "50c10af4-8c45-4b96-a70b-948f7d020a8f",
+            "sourceColumn": "gpu_cost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "seeds",
+            "dataType": "int64",
+            "lineageTag": "df4e66c0-a120-4397-94a1-982db6da1d59",
+            "sourceColumn": "seeds",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "difference",
+            "dataType": "double",
+            "lineageTag": "3b1c11a9-e059-4af5-9e6f-8e76c1468f04",
+            "sourceColumn": "difference",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a3807979-014e-41a1-9f67-219b69a75843",
+        "measures": [
+          {
+            "name": "Empirical coverage",
+            "expression": "MAX(GPUAudit[coverage])",
+            "formatString": "0.0%",
+            "lineageTag": "9d7c61df-6433-4154-937f-54043b268a8f"
+          },
+          {
+            "name": "GPU runtime cost",
+            "expression": "MAX(GPUAudit[gpu_cost])",
+            "formatString": "\"$\"0.00",
+            "lineageTag": "8f684c3a-2c28-4705-b69b-5f76615d80ca"
+          },
+          {
+            "name": "Common seed count",
+            "expression": "MAX(GPUAudit[seeds])",
+            "formatString": "#,0",
+            "lineageTag": "0da6041b-1710-4d8a-bb8b-76c87019c960"
+          },
+          {
+            "name": "MAE difference",
+            "expression": "MAX(GPUAudit[difference])",
+            "formatString": "+0.000;-0.000;0.000",
+            "lineageTag": "4bc7b56d-b581-4065-848e-f0d435a281eb"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "GPUAudit",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3siY292ZXJhZ2UiOjAuNywiZ3B1X2Nvc3QiOjEwLjA5MjY1OTYyOTc1MSwic2VlZHMiOjEyNzY4LCJkaWZmZXJlbmNlIjowLjE0MjIzMDY3OTgwOH1d\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"coverage\", type number}, {\"gpu_cost\", type number}, {\"seeds\", Int64.Type}, {\"difference\", type number}}, \"en-CA\")",
                 "in",
                 "    Typed"
               ],
