@@ -96,18 +96,24 @@ def test_raw_snapshots_match_recorded_hashes():
         assert hashlib.sha256((raw/source['file']).read_bytes()).hexdigest()==source['sha256']
 
 
-def test_powerbi_snapshot_matches_python_results(panel):
-    import base64
-    import re
+def test_powerbi_snapshot_matches_saved_housing_audit_results():
+    import base64,re
     root=OUT.parents[1]
     model=json.loads((root/'powerbi/HouseholdFinance.SemanticModel/model.bim').read_text(encoding='utf-8'))['model']
+    expected={'SavingsAnnual':'renter_annual_saving.csv','LatestYearQuarters':'renter_quarterly_saving.csv','AuditChecks':'housing_audit_checks.csv','DraftClaims':'housing_claim_register.csv','PurchaseCases':'home_purchase_cash_cases.csv'}
+    assert set(expected).issubset({t['name'] for t in model['tables']})
     for table in model['tables']:
         names=[x['name'].casefold() for x in table['columns']+table.get('measures',[])]
         assert len(names)==len(set(names))
-        if table['name']!='Household':continue
+        if table['name'] not in expected:continue
         expression='\n'.join(table['partitions'][0]['source']['expression'])
         encoded=re.search(r'Binary.FromText\("([A-Za-z0-9+/=]+)"',expression).group(1)
         embedded=pd.DataFrame(json.loads(base64.b64decode(encoded)))
-        assert embedded.quarter.tolist()==panel.quarter.tolist()
-        np.testing.assert_allclose(embedded.dsr,panel.dsr,rtol=0,atol=1e-10)
-        np.testing.assert_allclose(embedded.income,panel.income,rtol=0,atol=1e-6)
+        saved=pd.read_csv(OUT/expected[table['name']])
+        if table['name']=='LatestYearQuarters':saved=saved[saved.year==saved.year.max()].reset_index(drop=True)
+        assert embedded.columns.tolist()==saved.columns.tolist()
+        assert len(embedded)==len(saved)
+        for column in embedded:
+            if pd.api.types.is_numeric_dtype(saved[column]):
+                np.testing.assert_allclose(embedded[column],saved[column],rtol=0,atol=1e-9)
+            else:assert embedded[column].tolist()==saved[column].tolist()

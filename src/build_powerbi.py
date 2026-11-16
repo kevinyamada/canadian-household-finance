@@ -4,7 +4,6 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 import pandas as pd
-from insights import collect as collect_insights
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'data/processed'
@@ -47,7 +46,7 @@ def field(table_name,col,kind='Column'):
 
 
 def projection(table_name,col,kind='Column'):
-    label={'group':'Household group','control':'Control','exceptions':'Exceptions','status':'Status','tolerance':'Review threshold','income_change_pct':'Income change (%)','payment_change_pct':'Payment change (%)','quarter':'Quarter','method':'Review method'}.get(col,col)
+    label={'group':'Household group','control':'Control','exceptions':'Exceptions','status':'Status','tolerance':'Review threshold','income_change_pct':'Income change (%)','payment_change_pct':'Payment change (%)','quarter':'Quarter','method':'Review method','year':'Year','income_less_consumption':'Income less consumption','pension':'Pension adjustment','saving':'Reported net saving','home_price_label':'Purchase price','closing_allowance_pct':'Closing allowance (%)','closing_allowance_label':'Closing allowance'}.get(col,col)
     if col.endswith(' debt ratio'):label='Debt to income (%)'
     if col.endswith(' income gap'):label='Income less consumption (CAD)'
     return {'field':field(table_name,col,kind),'queryRef':table_name+'.'+col,'nativeQueryRef':col,'displayName':label}
@@ -83,201 +82,101 @@ def text(page,name,x,y,w,h,content,size=13,color='#183D40'):
     visual(page,name,'textbox',x,y,w,h,'',objects=objects)
 
 
-def insight_card(name,x,y,card,index):
-    lines=[(f"{index}. {card['title']}",14,'#183D40',True),
-           (card['period'],10,'#63747D',False),
-           (card['evidence'],16,'#183D40',False),
-           (card['meaning'],12,'#35444A',False),
-           ('Next: '+card['action'],12,'#176B61',True)]
-    paragraphs=[]
-    for value,size,color,bold in lines:
-        style={'fontFamily':'Segoe UI','fontSize':f'{size}pt','color':color}
-        if bold:style['fontWeight']='bold'
-        paragraphs.append({'textRuns':[{'value':value,'textStyle':style}]})
-    visual('insights',name,'textbox',x,y,600,232,'',objects={'general':[{'properties':{'paragraphs':paragraphs}}]})
 
 
 def build():
-    insights=collect_insights(ROOT)
-    caches=[MODEL/'.pbi',REPORT/'.pbi']
-    present=[path for path in caches if path.exists()]
-    if present:
-        backup=ROOT/'.powerbi_cache_backup'/datetime.now().strftime('%Y%m%d_%H%M%S_%f')
-        backup.mkdir(parents=True)
-        for path in present:
-            shutil.move(str(path),str(backup/path.parent.name))
-        print('Preserved the previous Power BI local cache:',backup)
-    panel=pd.read_csv(OUT/'quarterly_panel.csv')
-    changes=pd.read_csv(OUT/'recent_changes.csv')
-    panel=panel.merge(changes[['quarter','dsr_qoq_pp','dsr_yoy_pp']],on='quarter',validate='one_to_one')
-    backtest=pd.read_csv(OUT/'selected_predictions.csv')
-    baseline=pd.read_csv(OUT/'holdout_predictions.csv')
-    baseline=baseline[baseline.model=='Persistence'][['quarter','prediction']].rename(columns={'prediction':'baseline'})
-    backtest=backtest.merge(baseline,on='quarter',validate='one_to_one')
-    backtest['covered']=backtest['covered'].astype(int)
-    dates=pd.DataFrame({'quarter':sorted(set(panel.quarter)|set(backtest.quarter))})
-    dates['date']=pd.PeriodIndex(dates.quarter,freq='Q').to_timestamp().strftime('%Y-%m-%dT00:00:00')
-    dates['year']=dates.quarter.str[:4].astype(int)
-    dates['quarter_number']=dates.quarter.str[-1].astype(int)
-    audit=json.loads((OUT/'model_audit.json').read_text())
-    measures=[]
-    for name,col,fmt in [('Debt service ratio','dsr','0.00"%"'),('Mortgage ratio','mortgage_dsr','0.00"%"'),
-                         ('Other debt ratio','other_dsr','0.00"%"'),('Income growth','income_growth','0.00"%"'),
-                         ('Payment growth','payment_growth','0.00"%"'),('Quarterly change','dsr_qoq_pp','+0.00;-0.00;0.00'),
-                         ('Interest ratio','interest_dsr','0.00"%"'),('Principal ratio','principal_dsr','0.00"%"')]:
-        measures.append(measure(name,f'MAXX(TOPN(1, Household, Household[quarter], DESC), Household[{col}])',fmt))
-    measures.append(measure('Latest quarter','MAX(Household[quarter])',''))
-    measures.append(measure('Policy rate','MAX(Household[policy_rate])','0.00"%"'))
-    tables=[table('Quarter',dates),table('Household',panel,measures),
-            table('Backtest',backtest,[measure('Observed','MAX(Backtest[actual])'),measure('Model estimate','MAX(Backtest[prediction])'),
-                                      measure('Persistence estimate','MAX(Backtest[baseline])'),measure('Test MAE','AVERAGE(Backtest[absolute_error])'),
-                                      measure('Band coverage','AVERAGE(Backtest[covered])','0.0%')]),
-            table('Scores',pd.read_csv(OUT/'holdout_scores.csv'),[measure('Mean absolute error','IF(HASONEVALUE(Scores[model]), MAX(Scores[mae]))','0.000'),measure('Root mean squared error','IF(HASONEVALUE(Scores[model]), MAX(Scores[rmse]))','0.000')]),
-            table('Scenarios',pd.read_csv(OUT/'scenarios.csv'),[measure('Scenario ratio','IF(HASONEVALUE(Scenarios[income_change_pct]) && HASONEVALUE(Scenarios[payment_change_pct]), MAX(Scenarios[scenario_dsr]))','0.00"%"')]),
-            table('Contributions',pd.read_csv(OUT/'latest_decomposition.csv'),[measure('Contribution','SUM(Contributions[contribution_pp])')]),
-            table('Estimate',pd.read_csv(OUT/'next_estimate.csv'))]
-    relationships=[{'name':'Household_Quarter','fromTable':'Household','fromColumn':'quarter','toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'},
-                   {'name':'Backtest_Quarter','fromTable':'Backtest','fromColumn':'quarter','toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'}]
-    gpu_ready=(OUT/'gpu_audit.json').exists()
-    if gpu_ready:
-        gpu_audit=json.loads((OUT/'gpu_audit.json').read_text())
-        gpu_summary=pd.DataFrame([{'coverage':gpu_audit['coverage_90_band'],
-                                   'gpu_cost':gpu_audit['main_estimated_gpu_cost_usd'],
-                                   'seeds':gpu_audit['common_seeds_per_config'],
-                                   'difference':gpu_audit['mae_difference_pp']}])
-        tables.extend([
-            table('GPUBacktest',pd.read_csv(OUT/'gpu_backtest.csv'),[
-                measure('Observed ratio','MAX(GPUBacktest[actual])'),
-                measure('Neural estimate','MAX(GPUBacktest[prediction])'),
-                measure('Persistence comparison','MAX(GPUBacktest[baseline])')]),
-            table('GPUScores',pd.read_csv(OUT/'gpu_comparison.csv'),[
-                measure('Comparison MAE','IF(HASONEVALUE(GPUScores[model]), MAX(GPUScores[mae]))','0.000')]),
-            table('GPUAudit',gpu_summary,[measure('Empirical coverage','MAX(GPUAudit[coverage])','0.0%'),
-                measure('GPU runtime cost','MAX(GPUAudit[gpu_cost])','"$"0.00'),
-                measure('Common seed count','MAX(GPUAudit[seeds])','#,0'),
-                measure('MAE difference','MAX(GPUAudit[difference])','+0.000;-0.000;0.000')])])
-        relationships.append({'name':'GPUBacktest_Quarter','fromTable':'GPUBacktest','fromColumn':'quarter',
-            'toTable':'Quarter','toColumn':'quarter','crossFilteringBehavior':'oneDirection'})
-    segments_ready=(OUT/'segment_latest.csv').exists()
-    if segments_ready:
-        from segments import AGES, INCOMES, TENURES
-        segment=pd.read_csv(OUT/'segment_latest.csv')
-        group_orders={'AgePressure':AGES,'IncomePressure':INCOMES,'TenurePressure':TENURES}
-        for entity,view in [('TenurePressure','Housing tenure'),('AgePressure','Age'),('IncomePressure','Income')]:
-            frame=segment[segment.view==view][['quarter','group','debt_income_pct','income_less_consumption','saving']]
-            frame=frame.copy()
-            frame['group_order']=frame.group.map({name:i for i,name in enumerate(group_orders[entity])}).astype(int)
-            if entity=='TenurePressure':frame['group']=frame.group.replace({'Owner with mortgage':'Owner, mortgage','Owner without mortgage':'Owner, no mortgage'})
-            item=table(entity,frame,[
-                measure(entity+' debt ratio',f'IF(HASONEVALUE({entity}[group]), MAX({entity}[debt_income_pct]))','0.0"%"'),
-                measure(entity+' income gap',f'IF(HASONEVALUE({entity}[group]), MAX({entity}[income_less_consumption]))','#,0;(#,0);0')])
-            next(c for c in item['columns'] if c['name']=='group')['sortByColumn']='group_order'
-            tables.append(item)
-        controls=pd.read_csv(OUT/'segment_controls.csv')
-        controls['status']=controls.passed.map({True:'Pass',False:'Review'})
-        controls=controls.drop(columns='passed')
-        tables.append(table('ReportingControls',controls))
-    audit_ready=(OUT/'audit_experiment.json').exists()
-    if audit_ready:
-        review_audit=json.loads((OUT/'audit_experiment.json').read_text())
-        tables.append(table('AuditMethods',pd.read_csv(OUT/'audit_method_comparison.csv'),[
-            measure('Unsupported claims flagged','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[unsupported_recall]))','0.0%'),
-            measure('Supported claims wrongly flagged','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[false_alarm_rate]))','0.0%'),
-            measure('Review coverage','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[coverage]))','0.0%'),
-            measure('Review abstentions','IF(HASONEVALUE(AuditMethods[method]), MAX(AuditMethods[abstention_rate]))','0.0%')]))
-    write(MODEL/'model.bim',{'name':'HouseholdFinance','compatibilityLevel':1600,'model':{'culture':'en-US','defaultPowerBIDataSourceVersion':'powerBI_V3',
-                   'sourceQueryCulture':'en-CA','tables':tables,'relationships':relationships,'annotations':[{'name':'PBI_QueryOrder','value':json.dumps([x['name'] for x in tables])}]}})
+    from housing_audit import generate as generate_audit
+    summary = generate_audit(ROOT)
+    backup = ROOT / '.powerbi_cache_backup' / ('housing_' + datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
+    backup.mkdir(parents=True)
+    for cache in [MODEL/'.pbi', REPORT/'.pbi']:
+        if cache.exists():shutil.move(str(cache),str(backup/(cache.parent.name+'_cache')))
+    pages_root=REPORT/'definition/pages'
+    if pages_root.exists():shutil.move(str(pages_root),str(backup/'previous_pages'))
+    annual=pd.read_csv(OUT/'renter_annual_saving.csv')
+    quarters=pd.read_csv(OUT/'renter_quarterly_saving.csv')
+    quarters=quarters[quarters.year==summary['latest_year']]
+    purchase=pd.read_csv(OUT/'home_purchase_cash_cases.csv')
+    controls=pd.read_csv(OUT/'housing_audit_checks.csv')
+    claims=pd.read_csv(OUT/'housing_claim_register.csv')
+    summary_frame=pd.DataFrame([{k:summary[k] for k in [
+        'latest_year','annual_income','annual_consumption','annual_income_less_consumption','annual_pension','annual_net_saving',
+        'quarterly_net_saving','minimum_down_payment','upfront_cash_scenario']}])
+    money='"CAD "#,0;("CAD "#,0)'
+    tables=[
+        table('AuditSummary',summary_frame,[
+            measure('Annual reported saving','MAX(AuditSummary[annual_net_saving])',money),
+            measure('Latest quarter saving','MAX(AuditSummary[quarterly_net_saving])',money),
+            measure('Illustrative minimum down','MAX(AuditSummary[minimum_down_payment])',money)]),
+        table('SavingsAnnual',annual,[measure('Reported net saving','MAX(SavingsAnnual[saving])',money)]),
+        table('LatestYearQuarters',quarters),
+        table('AuditChecks',controls),
+        table('DraftClaims',claims),
+        table('PurchaseCases',purchase,[
+            measure('Minimum down payment','IF(HASONEVALUE(PurchaseCases[home_price]), MAX(PurchaseCases[minimum_down_payment]))',money),
+            measure('Closing cost allowance','IF(HASONEVALUE(PurchaseCases[home_price]) && HASONEVALUE(PurchaseCases[closing_allowance_pct]), MAX(PurchaseCases[closing_allowance]))',money),
+            measure('Upfront cash scenario','IF(HASONEVALUE(PurchaseCases[home_price]) && HASONEVALUE(PurchaseCases[closing_allowance_pct]), MAX(PurchaseCases[upfront_cash_scenario]))',money)])]
+    money_columns={'income','consumption','pension','saving','income_less_consumption','rounding_residual','home_price','minimum_down_payment','closing_allowance','upfront_cash_scenario'}
+    for t in tables:
+        for column in t['columns']:
+            if column['name'] in money_columns and column['dataType']!='string':column['formatString']=money
+            if column['name']=='year':column['formatString']='0'
+        if t['name']=='PurchaseCases':
+            next(c for c in t['columns'] if c['name']=='home_price_label')['sortByColumn']='home_price'
+            next(c for c in t['columns'] if c['name']=='closing_allowance_label')['sortByColumn']='closing_allowance_pct'
+    write(MODEL/'model.bim',{'name':'HouseholdFinance','compatibilityLevel':1600,'model':{
+        'culture':'en-US','defaultPowerBIDataSourceVersion':'powerBI_V3','sourceQueryCulture':'en-CA',
+        'tables':tables,'relationships':[],'annotations':[{'name':'PBI_QueryOrder','value':json.dumps([x['name'] for x in tables])}]}})
     write(MODEL/'definition.pbism',{'version':'1.0','settings':{}})
     write(REPORT/'definition.pbir',{'$schema':BASE+'item/report/definitionProperties/2.0.0/schema.json','version':'4.0','datasetReference':{'byPath':{'path':'../HouseholdFinance.SemanticModel'}}})
     write(BI/'HouseholdFinance.pbip',{'$schema':BASE+'pbip/pbipProperties/1.0.0/schema.json','version':'1.0','artifacts':[{'report':{'path':'HouseholdFinance.Report'}}],'settings':{'enableAutoRecovery':True}})
-    write(REPORT/'definition/report.json',{'$schema':BASE+'item/report/definition/report/1.0.0/schema.json','layoutOptimization':'None','themeCollection':{'customTheme':{'name':'HouseholdTheme','reportVersionAtImport':'5.59','type':'RegisteredResources'}},
-            'resourcePackages':[{'name':'RegisteredResources','type':'RegisteredResources','items':[{'name':'HouseholdTheme','path':'HouseholdTheme.json','type':'CustomTheme'}]}],
-            'settings':{'useEnhancedTooltips':True}})
+    write(REPORT/'definition/report.json',{'$schema':BASE+'item/report/definition/report/1.0.0/schema.json','layoutOptimization':'None',
+        'themeCollection':{'customTheme':{'name':'HouseholdTheme','reportVersionAtImport':'5.59','type':'RegisteredResources'}},
+        'resourcePackages':[{'name':'RegisteredResources','type':'RegisteredResources','items':[{'name':'HouseholdTheme','path':'HouseholdTheme.json','type':'CustomTheme'}]}],
+        'settings':{'useEnhancedTooltips':True}})
     write(REPORT/'definition/version.json',{'$schema':BASE+'item/report/definition/versionMetadata/1.0.0/schema.json','version':'2.0.0'})
-    pages=[('overview','Household pressure'),('models','Model evaluation'),('scenarios','Payment scenarios')]
-    if gpu_ready:pages.append(('gpu','GPU experiment'))
-    if segments_ready:pages=[('segments','Household groups'),('controls','Reporting controls')]+pages
-    if audit_ready:pages.insert(2,('audit','AI reporting review'))
-    pages.insert(0,('insights','Key insights'))
-    write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'insights'})
+    pages=[('conclusion','Audit conclusion'),('saving','Savings evidence'),('purchase','Purchase cash check')]
+    write(pages_root/'pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'conclusion'})
     for name,label in pages:
-        write(REPORT/'definition/pages'/name/'page.json',{'$schema':BASE+'item/report/definition/page/1.0.0/schema.json','name':name,'displayName':label,
-                  'displayOption':'FitToPage','width':1280,'height':720,
-                  'objects':{'background':[{'properties':{'color':{'solid':{'color':literal('#F2F5F4')}},'transparency':literal(0)}}]}})
-    text('insights','header',24,2,1230,66,'What should an analyst do next?',24)
-    text('insights','subtitle',24,73,1230,37,'Four findings, their evidence and the next action. Use the detail pages to investigate each one.',12)
-    for i,card in enumerate(insights['cards']):
-        insight_card('finding'+str(i+1),24 if i%2==0 else 650,120 if i<2 else 366,card,i+1)
-    text('insights','scope',24,620,1230,78,'Group dollars are CAD per household for the quarter. Group and national dates differ. Public averages identify questions to investigate; they do not identify which individual borrowers will miss payments.',11)
-    text('overview','header',24,10,950,55,'Is household payment pressure easing?',25)
-    text('overview','subtitle',24,65,1210,45,'Income growth eased the latest ratio even as required payments rose. Canada | Quarterly | 1990 to 2026Q2',12)
-    for index,(name,title) in enumerate([('Debt service ratio','Debt service ratio'),('Quarterly change','Quarterly change, pp'),('Income growth','Income growth, QoQ'),('Payment growth','Payment growth, QoQ')]):
-        visual('overview','kpi'+str(index),'card',24+index*310,120,296,100,title,{'Values':[projection('Household',name,'Measure')]})
-    visual('overview','history','lineChart',24,240,780,270,'Share of income devoted to debt payments',
-           {'Category':[projection('Quarter','date')],'Y':[projection('Household',m,'Measure') for m in ['Debt service ratio','Mortgage ratio','Other debt ratio']]},field('Quarter','date'))
-    visual('overview','decomp','clusteredColumnChart',824,240,432,270,'Latest change: accounting contributions, pp',
-           {'Category':[projection('Contributions','driver')],'Y':[projection('Contributions','Contribution','Measure')]})
-    visual('overview','quarter_filter','slicer',24,530,380,125,'Choose quarters',{'Values':[projection('Quarter','quarter')]})
-    text('overview','note',425,535,810,105,'National aggregates, not TD customer data. Ratios use income before interest. Contributions always show the latest quarter. Dollar series are annual rates in CAD millions. Sources: Statistics Canada 11-10-0065-01; Bank of Canada V39079.',11)
-    text('models','header',24,10,1200,55,'Can a model beat the previous quarter?',25)
-    text('models','subtitle',24,65,1210,60,f'{audit["selected_model"]} was selected using 2007 to 2018. The final test is 2019Q1 to 2026Q2. Persistence had slightly lower test MAE; the difference is uncertain.',12)
-    visual('models','forecast','lineChart',24,145,800,340,'Observed and estimated debt service ratio (%)',
-           {'Category':[projection('Quarter','date')],'Y':[projection('Backtest',m,'Measure') for m in ['Observed','Model estimate','Persistence estimate']]},field('Quarter','date'))
-    visual('models','score','clusteredBarChart',844,145,412,235,'Test MAE, percentage points',
-           {'Category':[projection('Scores','model')],'Y':[projection('Scores','Mean absolute error','Measure')]})
-    visual('models','coverage','card',844,400,412,85,'Calibration band: observed test coverage',{'Values':[projection('Backtest','Band coverage','Measure')]})
-    visual('models','detail','tableEx',24,505,680,160,'Test results',{'Values':[projection('Scores','model'),projection('Scores','n'),projection('Scores','Mean absolute error','Measure'),projection('Scores','Root mean squared error','Measure')]})
-    text('models','limit',730,520,505,145,'Revised vintage retrospective test. Household releases arrive in the following quarter. This is not a real time validation. A 90% calibration band has no guaranteed coverage. No borrower default predictions.',12)
-    text('scenarios','header',24,10,1200,55,'What if payments grow faster than income?',25)
-    text('scenarios','subtitle',24,65,1220,60,'Illustrative accounting scenarios based on 2026Q2. These are assumptions, not policy rate forecasts.',13)
-    visual('scenarios','scenario_matrix','pivotTable',24,150,780,440,'Debt service ratio (%) by assumed income and payment changes',
-           {'Rows':[projection('Scenarios','income_change_pct')],'Columns':[projection('Scenarios','payment_change_pct')],'Values':[projection('Scenarios','Scenario ratio','Measure')]})
-    visual('scenarios','payment_select','slicer',830,150,420,180,'Assumed payment change (%)',{'Values':[projection('Scenarios','payment_change_pct')]})
-    visual('scenarios','income_select','slicer',830,350,420,180,'Assumed income change (%)',{'Values':[projection('Scenarios','income_change_pct')]})
-    text('scenarios','equation',24,610,1210,75,'Scenario ratio = 100 × current payments × (1 + payment change) / [current income × (1 + income change)]. No causal link from policy rates is assumed. Clear slicers to show every scenario.',12)
-    if gpu_ready:
-        text('gpu','header',24,10,1210,55,'Did GPU training improve the estimate?',25)
-        text('gpu','subtitle',24,65,1210,55,'Exploratory extension: eight neural configurations, selected on 2007 to 2018. The original test period had already been examined.',12)
-        for index,(name,title) in enumerate([('MAE difference','Neural minus persistence MAE, pp'),
-                    ('Empirical coverage','90% band: observed coverage'),('Common seed count','Matched seeds per configuration'),
-                    ('GPU runtime cost','Main GPU runtime estimate, USD')]):
-            visual('gpu','card'+str(index),'card',24+index*310,130,296,100,title,{'Values':[projection('GPUAudit',name,'Measure')]})
-        visual('gpu','trend','lineChart',24,250,780,290,'Observed and estimated ratios, retrospective period',
-            {'Category':[projection('Quarter','date')],'Y':[projection('GPUBacktest',m,'Measure') for m in ['Observed ratio','Neural estimate','Persistence comparison']]},field('Quarter','date'))
-        visual('gpu','score','clusteredBarChart',824,250,432,290,'MAE, percentage points: lower is better',
-            {'Category':[projection('GPUScores','model')],'Y':[projection('GPUScores','Comparison MAE','Measure')]})
-        answer='Neural MAE is lower in this retrospective comparison. Validate on future releases before changing the benchmark.' if gpu_audit['mae_difference_pp']<0 else 'The neural ensemble did not beat persistence on MAE. Keep the simple benchmark for now.'
-        text('gpu','answer',24,560,1210,50,answer,14)
-        text('gpu','limits',24,620,1210,70,'More seeds measure training stability, not more economic observations. Revised data; no live validation. Cost is GPU runtime times list price, excluding startup, CPU and memory. Detailed protocol and results: reports/gpu_experiment.md.',11)
-    if segments_ready:
-        reference=segment.quarter.max()
-        text('segments','header',24,10,1210,55,'Where does the national average hide pressure?',25)
-        text('segments','subtitle',24,65,1210,55,f'{reference} group estimates. Mortgage owners have higher leverage; renters have income below consumption. These are different pressures.',12)
-        visual('segments','debt','clusteredBarChart',24,140,600,235,'Debt relative to annualized disposable income (%)',
-            {'Category':[projection('TenurePressure','group')],'Y':[projection('TenurePressure','TenurePressure debt ratio','Measure')]})
-        visual('segments','gap','clusteredBarChart',650,140,600,235,'Income less consumption, CAD per household in quarter',
-            {'Category':[projection('TenurePressure','group')],'Y':[projection('TenurePressure','TenurePressure income gap','Measure')]})
-        for entity,name,x,title in [('IncomePressure','income',24,'Income groups'),('AgePressure','age',650,'Age of major income earner')]:
-            visual('segments',name,'tableEx',x,400,600,210,title,{'Values':[projection(entity,'group'),projection(entity,entity+' debt ratio','Measure'),projection(entity,entity+' income gap','Measure')]},sort=field(entity,'group'),objects={'total':[{'properties':{'totals':literal(False)}}]})
-        text('segments','note',24,630,1210,65,'Group averages do not identify individual borrowers. Income less consumption is not bank account cash flow. Views overlap and must not be added. Sources: StatCan 36-10-0660, 0662 and 0664. Compare the same quarter across years.',11)
-        text('controls','header',24,10,1210,55,'Can the reporting be trusted?',25)
-        text('controls','subtitle',24,65,1210,55,'Check the numbers and the meaning of the measures. This is a controls demonstration, not a professional audit opinion.',12)
-        visual('controls','checks','tableEx',24,140,1230,280,'Source reconciliation and data controls',{'Values':[projection('ReportingControls',c) for c in ['control','exceptions','status','tolerance']]})
-        text('controls','example',24,445,1210,105,'Renters: income 18,326 minus consumption 18,898 = negative CAD 572. Adding the CAD 841 pension entitlement adjustment gives positive CAD 269 net saving. Do not describe that net saving as income left after spending.',16)
-        text('controls','review',24,575,1210,115,'Review exceptions: fourteen historical joint group net worth rows differ by CAD 3. They are retained for review, not called fraud or material errors. No such exception occurs in the latest quarter. The separate AI benchmark checks deliberately altered reporting excerpts against trusted StatCan evidence.',12)
-    if audit_ready:
-        text('audit','header',24,10,1210,55,'Can AI catch misleading reporting?',25)
-        selected=review_audit['model']
-        text('audit','subtitle',24,65,1210,65,f"{selected['model']} with {selected['prompt']} prompt, chosen on development data. Evaluation: {review_audit['unique_evaluation_cases']:,} unique 2024 and 2025 excerpts, {review_audit['common_complete_repetitions']} matched repetitions.",12)
-        visual('audit','recall','clusteredBarChart',24,150,600,250,'Unsupported statements flagged',
-            {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Unsupported claims flagged','Measure')]})
-        visual('audit','alarms','clusteredBarChart',650,150,600,250,'Supported statements incorrectly flagged',
-            {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Supported claims wrongly flagged','Measure')]})
-        visual('audit','coverage','tableEx',24,425,1230,170,'Coverage matters: an abstention is sent for review',
-            {'Values':[projection('AuditMethods','method'),projection('AuditMethods','Review coverage','Measure'),projection('AuditMethods','Review abstentions','Measure')]},objects={'total':[{'properties':{'totals':literal(False)}}]})
-        text('audit','meaning',24,615,1210,85,'Real StatCan evidence, deliberately simulated reporting errors. Exact checks cover two statement formats; rules could cover all seven known templates. This does not prove AI is necessary or reliable on arbitrary reports. Invalid responses require review. Repeated answers are not new independent cases.',12)
-    write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}})
-    write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',json.loads((BI/'theme.json').read_text()))
-    print('Power BI project generated:',BI/'HouseholdFinance.pbip')
+        write(pages_root/name/'page.json',{'$schema':BASE+'item/report/definition/page/1.0.0/schema.json','name':name,'displayName':label,'displayOption':'FitToPage','width':1280,'height':720,
+            'objects':{'background':[{'properties':{'color':{'solid':{'color':literal('#F2F5F4')}},'transparency':literal(0)}}]}})
+    text('conclusion','question',24,14,1232,100,summary['question'],27)
+    text('conclusion','purpose',24,119,1232,60,'Audit whether the public saving figures support a claim that renters are building a down payment.',15)
+    visual('conclusion','summary','tableEx',24,196,1232,109,
+        f"{summary['latest_year']} annual saving | {summary['latest_quarter']} saving | CAD 600,000 example minimum down",
+        {'Values':[projection('AuditSummary',name,'Measure') for name in ['Annual reported saving','Latest quarter saving','Illustrative minimum down']]},
+        objects={'total':[{'properties':{'totals':literal(False)}}]})
+    text('conclusion','verdict',24,331,1232,90,summary['verdict'],23)
+    text('conclusion','reason',24,432,1232,98,'The annual total uses all four observed quarters. Net saving includes pension entitlements, and these national accounts are not a bank-account cash budget. A group average cannot establish an individual buyer\'s funds.',15)
+    text('conclusion','action',24,547,1232,76,'Audit action: verify liquid funds, the full purchase budget and mortgage eligibility before signing off on a readiness claim.',17)
+    text('conclusion','scope',24,640,1232,57,'Public renter group estimates, 2020–2025. No customer-level buying date or approval is estimated. The purchase price and closing-cost allowances are explicit scenarios.',11)
+    text('saving','header',24,12,1232,58,'Does the saving claim survive reconciliation?',25)
+    text('saving','subtitle',24,76,1232,55,'Full calendar years; nominal CAD per household. A positive final quarter does not establish positive annual saving or liquid funds.',13)
+    visual('saving','annual','clusteredColumnChart',24,151,725,290,'Reported renter net saving, calendar-year sum (CAD)',
+        {'Category':[projection('SavingsAnnual','year')],'Y':[projection('SavingsAnnual','Reported net saving','Measure')]},field('SavingsAnnual','year'))
+    visual('saving','checks','tableEx',772,151,482,290,'Audit checks and missing evidence',
+        {'Values':[projection('AuditChecks','control'),projection('AuditChecks','status')]},objects={'total':[{'properties':{'totals':literal(False)}}]})
+    visual('saving','quarters','tableEx',24,469,725,194,f"{summary['latest_year']}: the four observed quarters",
+        {'Values':[projection('LatestYearQuarters',c) for c in ['quarter','income_less_consumption','pension','saving']]},
+        objects={'total':[{'properties':{'totals':literal(False)}}]})
+    text('saving','bridge',772,469,482,115,f"{summary['latest_quarter']} example: CAD {summary['quarterly_income_less_consumption']:+,.0f} income less consumption + CAD {summary['quarterly_pension']:,.0f} pension adjustment = CAD {summary['quarterly_net_saving']:,.0f} net saving.",17)
+    text('saving','meaning',772,592,482,92,'Pension entitlements are not verified deposit cash. Minor published rounding residuals are retained. Draft claim tests and source references are in the repository.',11)
+    text('purchase','header',24,12,1232,58,'How much upfront cash does the purchase scenario need?',25)
+    text('purchase','subtitle',24,78,1232,62,'Choose one price and one closing-cost allowance. Prices are illustrative, and the allowance is an assumption. This checks upfront cash only.',13)
+    visual('purchase','price','slicer',24,159,389,190,'Choose one purchase price',{'Values':[projection('PurchaseCases','home_price_label')]})
+    visual('purchase','allowance','slicer',438,159,389,190,'Choose one closing allowance (%)',{'Values':[projection('PurchaseCases','closing_allowance_label')]})
+    visual('purchase','cash','tableEx',24,377,1232,107,'Selected scenario, CAD',
+        {'Values':[projection('PurchaseCases',name,'Measure') for name in ['Minimum down payment','Closing cost allowance','Upfront cash scenario']]},
+        objects={'total':[{'properties':{'totals':literal(False)}}]})
+    text('purchase','rule',850,160,403,190,'Minimum down: 5% of the first CAD 500,000, then 10% of the balance below CAD 1.5 million. At CAD 1.5 million or more: 20%. Rules checked as of '+summary['rule_date']+'.',14)
+    text('purchase','example',24,510,1232,78,'Example: CAD 600,000 price → CAD 35,000 minimum down. An assumed 2.5% closing allowance adds CAD 15,000 → CAD 50,000 in this cash scenario.',18)
+    text('purchase','limits',24,612,1232,80,'This is not mortgage approval or a complete closing statement. Verified funds, borrower gross income, debts, credit, property-specific taxes, insurance and loan terms need separate evidence. Sources: CMHC, Finance Canada and FCAC; see the rule record.',12)
+    theme={'name':'Household Finance','dataColors':['#176B61','#9D5C42','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{
+        'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}}
+    write(BI/'theme.json',theme)
+    write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',theme)
+    print('Generated the three-page housing-readiness audit:',BI/'HouseholdFinance.pbip')
 
-if __name__=='__main__':build()
+
+if __name__=='__main__':
+    build()

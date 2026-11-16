@@ -1,0 +1,9 @@
+claim_id,draft_claim,verdict,reason,evidence_ref
+C1,Renters added CAD 269 to down-payment cash in 2025Q4.,Unsupported,Reported net saving includes pension entitlements and is not verified cash accumulation.,Renter quarterly accounting identity
+C2,Annual saving equals four times the final quarter's saving.,Incorrect,Use the four actual quarterly observations; the source is not seasonally adjusted.,Renter annual total 2025
+C3,Every Canadian renter is unable to buy a home.,Unsupported,"A group average cannot identify individual resources, gifts, existing assets or loan eligibility.",Population and liquidity limits
+C4,Average renter net worth is money available for a deposit.,Unsupported,Net worth is a stock including assets with different liquidity; it is not verified available funds.,StatCan wealth definitions
+C5,"A CAD 600,000 home requires only CAD 30,000 minimum down.",Incorrect,"The rule applies 5% to the first CAD 500,000 and 10% to the balance: CAD 35,000.",Purchase rules as of 2026-11-16
+C6,An improving national housing affordability index proves renters have a deposit.,Unsupported,The index models representative housing costs relative to income; it does not observe a renter's liquid funds.,Bank of Canada index definition
+C7,"Minimum down payment for a CAD 600,000 purchase is CAD 35,000.",Supported,Matches the current price-tier calculation. Closing costs and loan qualification remain separate.,Purchase rules as of 2026-11-16
+C8,Reported net saving includes the pension-entitlement adjustment.,Supported,The quarterly accounting components reconcile within published rounding.,StatCan saving definition

@@ -1,55 +1,49 @@
-# Methodology
+# Methodology: housing-readiness audit
 
-## National analysis question
+**Why does buying a home still feel out of reach?**
 
-How has the payment burden of Canadian households changed, and can a model improve an estimate of the next unpublished quarter? A retail banking analytics team could use the result to decide which aggregate indicators need closer review. This is a public data portfolio project and has no affiliation with TD.
+The study audits one part of that problem: whether public saving figures and upfront-cost assumptions support a homebuying-readiness claim. It does not measure all causes of affordability, survey people's feelings or choose a personal buying date.
 
-## Data contract
+## Data and definitions
 
-One row is one Canadian calendar quarter. The source is Statistics Canada table 11-10-0065-01, filtered to Canada and seasonally adjusted at annual rates. The pipeline selects 13 named indicators, checks duplicate keys and missing values, and checks units before pivoting. Original zip bytes and metadata are kept with SHA256 hashes.
+The main observations are renter household averages from Statistics Canada's Distributions of Household Economic Accounts, 2020Q1–2025Q4. Income, consumption, pension-entitlement changes and net saving come from table 36-10-0662-01.
 
-Ratios are reported in percent, so a move from 14.68 to 14.52 is a decrease of 0.16 percentage points. Dollar series are CAD millions at annual rates. Income is disposable income before interest payments. The reported ratio is rounded to two decimals; accounting checks allow 0.0051 percentage points of rounding error.
+Amounts are nominal CAD per household for the quarter and are not seasonally adjusted. The households represented by an average can change over time. Consumption includes national-accounts imputations. These are not individual bank-account budgets.
 
-Bank of Canada V39079 is the business daily policy target rate. Its available history in this download starts in 2009. The last observed business day in each quarter supplies the contextual rate. It is left joined through SQLite. Missing earlier policy rates stay missing. Rates are never backfilled and are not used by the primary model.
+Reported net saving equals disposable income plus the change in pension entitlements minus consumption, subject to published rounding. A pension entitlement is not verified money available for a down payment. Income less consumption is also an accounting measure, not measured deposit cash flow.
 
-## Forecast protocol
+## Controls and annual totals
 
-Features from quarter t predict the change in the debt service ratio from t to t+1. The features are the current ratio, its changes over one, two and four quarters, quarterly income and payment growth, the mortgage share of payments, and the interest share of payments. The target level is recovered by adding the predicted change to the current ratio.
+The pipeline requires unique renter quarters and complete accounting measures. It checks the quarterly saving identity with a CAD 2 rounding allowance. A year must contain all four distinct observed quarters before it enters the annual analysis. The annual values sum those four quarterly per-household estimates; minor rounding residuals remain visible.
 
-Initial training uses earlier complete observations. The selection period is 2007Q1 through 2018Q4. Every validation prediction uses an expanding training window with the last observed target no later than its origin quarter. All scaling is fitted within that window.
+SQLite independently calculates annual income, consumption, saving and the residual in `renter_annual_audit`. Those totals must agree with Python. The project does not multiply a favorable final quarter by four.
 
-Candidate settings are fixed before evaluating the final test: persistence, drift equal to the last four quarter change divided by four, ridge with alpha 1, 10 or 100, and a random forest with 160 trees, maximum depth 3, minimum leaf size 8 and seed 469. A deliberately small search is appropriate for 146 quarterly observations.
+The public data do not observe verified deposit balances or the gross borrower income, debts, credit and loan terms needed for mortgage qualification. Those are recorded as **Needs evidence**, rather than filled in from group averages.
 
-The candidate with the lowest selection period MAE is frozen before testing. The final test starts in 2019Q1. It compares that selected candidate with the two simple baselines. Parameters are refitted as each actual quarter becomes observable, but the model family and settings are not retuned using test errors. Random train/test splitting would violate time order here.
+## Purchase-cash scenarios
 
-MAE and RMSE are in percentage points. Bias is predicted minus actual. A sensitivity result removes 2020Q2 and 2020Q3, but the main score includes both. This cut diagnoses shock sensitivity and is not used to select a model.
+The calculation uses the rule record dated November 16, 2026, with CMHC and Finance Canada sources:
 
-## Uncertainty
+- Up to CAD 500,000: 5% minimum down.
+- Above CAD 500,000 and below CAD 1.5 million: 5% on the first CAD 500,000 and 10% on the remainder.
+- At CAD 1.5 million or more: 20% minimum down.
 
-A nominal 90% symmetric calibration band uses the finite sample adjusted 90th percentile of the selected model's absolute validation errors. The calibration period was also used for selection, and time series errors are dependent, so this is an empirical band without a conformal coverage guarantee. Actual test coverage is reported.
+The 30 scenarios combine ten illustrative purchase prices with three separately assumed closing-cost allowances, 1.5%, 2.5% and 4%. These are not measured national home prices, tax calculations or recommended budgets.
 
-A circular moving block bootstrap uses four quarter blocks and 4,000 replicates to describe uncertainty in the mean paired MAE difference from persistence. It is descriptive, depends on the block choice, and has limited power with only 30 test quarters. It does not establish future performance or a causal effect.
+For CAD 600,000, minimum down is CAD 35,000. A 2.5% allowance adds CAD 15,000, giving CAD 50,000 in that upfront-cash scenario. Mortgage approval, property-specific taxes, insurance and a complete closing statement remain separate.
 
-## Accounting decomposition
+The source record notes an inconsistent legacy insurance-limit sentence on the FCAC page; the insurance boundary is taken from the current CMHC requirements and the Finance Canada reform record.
 
-For payments P and income I, R = 100P/I. The payment contribution between periods 0 and 1 is 50(P1 - P0)(1/I0 + 1/I1). The income contribution is 50(P0 + P1)(1/I1 - 1/I0). Their sum equals R1 - R0. This is the symmetric average of the two possible orders of changing the inputs.
+## Claim review
 
-## Limits that affect interpretation
+The register contains eight deliberately drafted claims. It demonstrates how to distinguish a supported accounting statement from an incorrect calculation or an unsupported interpretation. These are not identified errors in published StatCan reports and are not a sample for estimating real-world misstatement rates.
 
-This is a revised vintage retrospective evaluation. Archived releases are not available in the project. Data for quarter t are normally released during t+1, so the next quarter estimate is a nowcast of the next unpublished quarter. Historical real time forecast accuracy could be different.
+Examples include treating net saving as deposit cash, treating net worth as liquid funds, annualizing one quarter and applying a flat 5% rule above CAD 500,000. The review produces a reason and evidence reference. It is not a professional audit opinion, fraud detector or automated loan decision.
 
-The national aggregate is not the average of individual household ratios. It cannot identify vulnerable borrowers, estimate default, measure TD portfolio risk, or support individual credit decisions. Policy rate movements are contextual and do not identify a causal payment effect. Scenario shocks are transparent accounting assumptions.
+## Reproducibility
 
-## Household group analysis
+`src/housing_audit.py` regenerates the summary, tables, brief, SQLite views and Python figure from preserved snapshots. `src/build_powerbi.py` then embeds those outputs in the three-page report. Tests verify rule boundaries, invalid inputs, complete years, reconciliation, SQL agreement and embedded report data.
 
-The main reporting extension asks which forms of pressure the national average can hide. The grain is one quarter and one household group. The selected 39 groups comprise five age groups, five income groups, three tenure groups, all households and 25 joint income and age cells. Other categories in the source files are explicitly excluded before joining. Selected source key sets must agree; joins must be one to one.
+The Bank of Canada affordability index is preserved for the matched 2020–2025 period as context. Its representative-household cost ratio does not measure a renter's deposit funds and is not rescaled into borrower eligibility.
 
-The three DHEA tables supply quarterly per household income, consumption, pension adjustments and saving; assets, debt and net worth; and the published debt to annualized disposable income ratio. These are modeled distribution estimates in nominal dollars, not seasonally adjusted. Changes compare the same quarter a year earlier. Age is that of the major income earner, and income quintiles use equivalized disposable income. Overlapping group views cannot be added together.
-
-The published debt ratio is checked against 100 times debt divided by four times quarterly disposable income, with allowance for published rounding. Income less consumption is shown separately from net saving. Consumption includes national accounts imputations; neither measure is an individual account balance or default probability. Joint income and age cells do not publish the pension and saving components used in the broad groups, so those missing values remain missing.
-
-SQLite stores the group panel, calculates changes within each group with partitioned window functions, and exposes a view of pension related sign reversals for reporting review. The latest SQL changes are checked against the Python calculation.
-
-## Reporting review experiment
-
-See [the frozen protocol](audit_protocol.md) for the controlled AI experiment. It uses real StatCan evidence with explicitly simulated reporting mistakes. Model inputs exclude answer labels. Configuration selection uses development years, and the later evaluation years remain separate. The benchmark is a demonstration of reviewer behavior, not a claim of fraud detection or professional audit assurance.
+[Audit brief](../reports/housing_audit.md) · [Purchase rule record](../data/raw/housing/purchase_rules.json) · [Supporting-study methods](supporting_methodology.md)

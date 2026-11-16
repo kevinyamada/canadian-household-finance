@@ -1,0 +1,163 @@
+{
+    "terms": {
+        "url": "https://www.bankofcanada.ca/terms/"
+    },
+    "seriesDetail": {
+        "INDINF_AFFORD_Q": {
+            "label": "INDINF_AFFORD",
+            "description": "Housing affordability index",
+            "dimension": {
+                "key": "d",
+                "name": "Date"
+            },
+            "dateFormat": "quarterly",
+            "metadata": {}
+        }
+    },
+    "observations": [
+        {
+            "d": "2020-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.365"
+            }
+        },
+        {
+            "d": "2020-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.317"
+            }
+        },
+        {
+            "d": "2020-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.332"
+            }
+        },
+        {
+            "d": "2020-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.357"
+            }
+        },
+        {
+            "d": "2021-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.359"
+            }
+        },
+        {
+            "d": "2021-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.384"
+            }
+        },
+        {
+            "d": "2021-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.394"
+            }
+        },
+        {
+            "d": "2021-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.416"
+            }
+        },
+        {
+            "d": "2022-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.453"
+            }
+        },
+        {
+            "d": "2022-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.514"
+            }
+        },
+        {
+            "d": "2022-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.515"
+            }
+        },
+        {
+            "d": "2022-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.502"
+            }
+        },
+        {
+            "d": "2023-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.500"
+            }
+        },
+        {
+            "d": "2023-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.508"
+            }
+        },
+        {
+            "d": "2023-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.545"
+            }
+        },
+        {
+            "d": "2023-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.540"
+            }
+        },
+        {
+            "d": "2024-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.512"
+            }
+        },
+        {
+            "d": "2024-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.504"
+            }
+        },
+        {
+            "d": "2024-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.483"
+            }
+        },
+        {
+            "d": "2024-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.466"
+            }
+        },
+        {
+            "d": "2025-01-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.453"
+            }
+        },
+        {
+            "d": "2025-04-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.437"
+            }
+        },
+        {
+            "d": "2025-07-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.436"
+            }
+        },
+        {
+            "d": "2025-10-01",
+            "INDINF_AFFORD_Q": {
+                "v": "0.431"
+            }
+        }
+    ]
+}

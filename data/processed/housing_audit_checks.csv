@@ -1,0 +1,8 @@
+control,status,evidence
+Unique renter quarters,Pass,24 distinct quarters
+Complete calendar years,Pass,"6 years, four observed quarters each"
+Saving identity,Pass,"Income + pension change - consumption = net saving, within published rounding"
+Annual totals from all quarters,Pass,Do not multiply the final quarter by four
+Household and money units,Pass,Per-household nominal CAD; not seasonally adjusted
+Verified deposit cash,Needs evidence,Not observed in these public group averages
+Mortgage qualification inputs,Needs evidence,"Gross borrower income, debts, credit, property and loan terms are not observed"

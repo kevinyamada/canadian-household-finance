@@ -1,26 +1,26 @@
-# Open the dashboard without the project-format prompts
+# Open the housing-readiness audit
 
 ## Everyday viewing
 
-Use **CanadianHouseholdFinance.pbix** from the project's [GitHub Releases](https://github.com/kevinyamada/canadian-household-finance/releases). Open it in a current Power BI Desktop version. It includes the imported snapshot and opens on Key insights. A Power BI service account is not required to view these local pages.
+Download **CanadianHouseholdFinance.pbix** from [v2.0.0](https://github.com/kevinyamada/canadian-household-finance/releases/tag/v2.0.0). Open it in a current Power BI Desktop on Windows. It includes its imported data; a Power BI service account is not needed.
 
-The eight pages show the findings, household groups, reporting checks, AI review, national trends, forecast comparisons, scenarios and the neural experiment. Start with the four conclusions and their next actions, then use the detail pages to inspect the evidence.
+The report has three pages: **Audit conclusion**, **Savings evidence** and **Purchase cash check**. In the cash check, choose one price and one closing allowance. CAD 600,000 and 2.5% produce CAD 35,000 minimum down, CAD 15,000 assumed costs and CAD 50,000 in the scenario.
 
-## Rebuilding from source
+The [v1.0.0 release](https://github.com/kevinyamada/canadian-household-finance/releases/tag/v1.0.0) preserves the earlier eight-page study.
 
-The editable project is `powerbi/HouseholdFinance.pbip`. Close Power BI before running the Python pipeline. Reopen the project and select Refresh to import the generated snapshot. Then use File → Save as and choose the Power BI `.pbix` file type to create the everyday viewing copy.
+## Rebuild from source
 
-Refresh in Desktop reloads the embedded snapshot. It does not download new StatCan releases. The Python pipeline handles source updates; `run.py --refresh` deliberately changes the study vintage, so review the conclusions after using it.
+Close the editable project, then run `python src/build_powerbi.py` in the VS Code terminal. Open `powerbi/HouseholdFinance.pbip` and select Refresh to import the generated snapshot. Check the backed saving and cash visuals before exporting a regular PBIX.
 
-## What the prompts mean
+Refresh in Desktop reloads the generated snapshot; it does not download new source releases. The regular PBIX is the viewing copy. The PBIP is for rebuilding and editing.
 
-| Message | Meaning | What to do |
-| :--- | :--- | :--- |
-| View recovered files | Power BI found recovery data from a previous session | Inspect or preserve the recovery copy before clearing the notice. During this repair, existing copies were preserved under the local ignored `.powerbi_cache_backup` folder. Recovery remains enabled. |
-| Upgrade the semantic model to TMDL | The editable project can be converted to a newer model file format | This is a project-format choice. The Python generator currently writes `model.bim`; keep that source format for the documented rebuild workflow. Use the regular `.pbix` for everyday viewing. |
-| Some tables have incomplete or no data | A newly generated project has not yet loaded its embedded snapshot, or a refresh failed | Select Refresh and check that it completes. A failed refresh needs investigation; a screenshot of the text-only summary alone does not establish that the detail pages work. |
-| A newer Power BI Desktop version is available | The installed application has a newer supported release | Use Microsoft's [official download](https://www.microsoft.com/en-us/download/details.aspx?id=58494). App updates and project-format conversion are different actions. |
+## Prompts
 
-Keep the source project and the everyday copy separate in your workflow: rebuild the project with Python, verify it in Desktop, then export a fresh `.pbix`. The binary viewing file is distributed as a release asset; source code and validated data remain in Git.
+| Message | Meaning and action |
+| :--- | :--- |
+| View recovered files | Inspect or preserve recovery data before clearing the notice. Existing repair copies were preserved locally; recovery remains enabled. |
+| Upgrade the model to TMDL | This is a source-format conversion, separate from an app update. The documented generator writes model.bim. Use the regular PBIX for viewing. |
+| Tables have incomplete or no data | A new source project may not have imported its snapshot yet, or a refresh failed. Select Refresh and verify the data-backed visuals. |
+| A newer Desktop version is available | Use Microsoft's [official download](https://www.microsoft.com/en-us/download/details.aspx?id=58494). |
 
-[Four findings and actions](../reports/key_insights.md) · [Next-step plan](next_steps.md) · [Validation record](validation.md)
+[Three-minute demo](project_walkthrough.md) · [Audit brief](../reports/housing_audit.md) · [Validation record](validation.md)

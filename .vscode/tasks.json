@@ -1,9 +1,67 @@
 {
   "version": "2.0.0",
   "tasks": [
-    {"label": "Run full analysis", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["run.py"], "group": "build", "problemMatcher": []},
-    {"label": "Generate insight brief", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["src/insights.py"], "group": "build", "problemMatcher": []},
-    {"label": "Run validation", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["-m", "pytest", "-q"], "group": "test", "problemMatcher": []},
-    {"label": "Validate Power BI", "type": "shell", "command": "${workspaceFolder}/.venv/Scripts/python.exe", "args": ["src/validate_powerbi.py"], "group": "test", "problemMatcher": []}
+    {
+      "label": "Run full analysis",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "run.py"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate housing audit",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "src/housing_audit.py"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Rebuild focused Power BI",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "src/build_powerbi.py"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate supporting insight brief",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "src/insights.py"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run validation",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Validate Power BI",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "src/validate_powerbi.py"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    }
   ]
 }

@@ -1,29 +1,37 @@
 {
   "file": "CanadianHouseholdFinance.pbix",
-  "bytes": 247907,
-  "sha256": "cf1c4645816705acd3cdf5ba1b7e7d9041bff5c3b85a651c6948563e27d89388",
+  "release_tag": "v2.0.0",
+  "bytes": 77165,
+  "sha256": "4af9cdb717791026b922bd4c8d0b0145d61638a134eaab157ab698f4c1648b7c",
   "pages": [
-    "Key insights",
-    "Household groups",
-    "Reporting controls",
-    "AI reporting review",
-    "Household pressure",
-    "Model evaluation",
-    "Payment scenarios",
-    "GPU experiment"
+    "Audit conclusion",
+    "Savings evidence",
+    "Purchase cash check"
   ],
   "power_bi_desktop_version": "2.159.1231.0",
   "validation": {
-    "python_tests_passed": 32,
-    "source_schema_files_validated": 71,
-    "opened_and_saved_without_recovery_or_model_format_prompts": true,
-    "mortgage_group_ratio_pct": 306.1,
-    "scenario_ratio_pct": 16.3,
-    "scenario_selections_cleared": true,
-    "execution": "Local VS Code terminal"
+    "python_tests_passed": 48,
+    "source_schema_files_validated": 30,
+    "opened_on_audit_conclusion": true,
+    "reopened_annual_saving_cad": -557,
+    "cash_scenario_2_5_pct_cad": 50000,
+    "cash_scenario_4_pct_cad": 59000,
+    "restored_closing_allowance_pct": 2.5,
+    "no_model_format_prompt_on_open_or_save": true,
+    "website_widths": [
+      1440,
+      768,
+      390,
+      320
+    ],
+    "dark_mode_and_persistence_checked": true,
+    "execution": "Local VS Code integrated terminal",
+    "new_gpu_runs": false,
+    "hosted_financial_analysis": false
   },
   "reference_periods": {
-    "household_groups": "2025Q4",
-    "national_debt_service": "2026Q2"
-  }
+    "renter_data": "2020Q1\u20132025Q4",
+    "purchase_rule_date": "2026-11-16"
+  },
+  "scope": "Public group accounting estimates and explicit purchase-cash scenarios; no borrower eligibility or buying date estimated"
 }

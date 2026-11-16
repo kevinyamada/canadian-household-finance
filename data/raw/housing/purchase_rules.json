@@ -1,0 +1,29 @@
+{
+  "as_of": "2026-11-16",
+  "effective_from": "2024-12-15",
+  "jurisdiction": "Canada",
+  "minimum_down_payment": {
+    "up_to_500000_pct": 5,
+    "portion_over_500000_below_1500000_pct": 10,
+    "at_or_above_1500000_pct": 20
+  },
+  "sources": [
+    {
+      "url": "https://www.cmhc-schl.gc.ca/consumers/home-buying/mortgage-loan-insurance-for-consumers/what-are-the-general-requirements-to-qualify-for-homeowner-mortgage-loan-insurance",
+      "purpose": "Current insured-loan purchase-price limit and minimum down payment"
+    },
+    {
+      "url": "https://www.canada.ca/en/department-finance/news/2024/09/delivering-the-boldest-mortgage-reforms-in-decades.html",
+      "purpose": "Effective date and government mortgage-insurance reform"
+    },
+    {
+      "url": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/down-payment.html",
+      "purpose": "Consumer minimum-down-payment table; do not rely on the page's inconsistent legacy insurance-limit sentence"
+    }
+  ],
+  "notes": [
+    "A minimum down payment is not mortgage approval.",
+    "Closing-cost percentages in the model are explicit illustrative allowances, not measured costs or province-specific tax calculations.",
+    "The report does not treat pension entitlements, net worth or published net saving as verified deposit cash."
+  ]
+}

@@ -1,56 +1,41 @@
-# Explaining the project in an interview
+# Interview notes
 
-## Thirty second explanation
+## Headline
 
-I built a household finance reporting project using Statistics Canada data, Python, SQL and Power BI. I wanted to see what national averages hide and whether the reporting could be checked automatically. One finding was that mortgage owners had much higher debt relative to income, while renters had income below consumption despite positive reported net saving. I traced that difference to the pension adjustment, built reconciliation checks, and tested AI reviewers on deliberately misleading excerpts.
+**Why does buying a home still feel out of reach?**
 
-## The recommendation to lead with
-
-Monitor leverage and income relative to consumption separately. Explain the pension adjustment before interpreting net saving. Track payment growth alongside income growth. Keep the previous-quarter forecast as the benchmark while collecting new evidence. The opening Key insights page shows the measured evidence for each recommendation.
-
-[Four findings and actions](../reports/key_insights.md) · [Further validation plan](next_steps.md)
+The technical work audits the saving figures and upfront-cost assumptions behind a homebuying-readiness claim. It does not model every cause of housing affordability.
 
 ## The problem and solution
 
-The problem is that correct numbers can still lead to a misleading conclusion. For example, calling net saving money left after spending ignores the pension entitlement adjustment. My solution keeps income, consumption, pension adjustments and net saving separate, checks their accounting relationship, and flags unsupported reporting claims for review.
+A report can have correct arithmetic and an unsupported conclusion. Published net saving includes pension entitlements, so it does not establish money available for a deposit. A single quarter also does not establish a full-year saving rate.
 
-## One example I can explain
+I built source and period checks, an independent SQL reconciliation, a versioned purchase-rule calculation and a claim register. Power BI follows the audit from conclusion to evidence and cash scenarios.
 
-For renters in 2025Q4, average disposable income was CAD 18,326 and consumption was CAD 18,898. Subtracting them gives negative CAD 572. Adding the CAD 841 pension adjustment gives positive CAD 269 net saving. Both numbers are correct, but they answer different questions. This is a group average and includes national accounts concepts, so it is not an individual cash budget.
+## Questions to prepare for
 
-## What I actually built
+**What is the main finding?** Reported renter net saving was positive CAD 269 in 2025Q4, but its components were −572 income less consumption and +841 pension adjustment. The four-quarter sum of reported saving was −557 for 2025. Neither figure proves a renter's liquid funds.
 
-| Skill | Concrete evidence |
-| :--- | :--- |
-| Python | Three group tables joined at quarter and household group grain, with one to one merge validation |
-| SQL | Quarterly joins, changes within each household group and a reporting review view |
-| Power BI | Group comparisons, reporting controls, national trends, model results and scenarios |
-| Data quality | Source hashes, unit checks, missingness rules and accounting reconciliations |
-| AI evaluation | Two models, four prompts, development based selection, a later evaluation period and explicit abstentions |
-| Communication | Findings tied to a decision, with source dates and limits stated clearly |
+**Why does a bank care?** An analyst reviewing a housing-readiness report needs to know which conclusions are supported before using it for decisions. The audit makes the source definitions, assumptions and missing evidence visible.
 
-## How auditing fits
+**Is this a real audit opinion?** No. It demonstrates reporting controls and review of deliberately drafted claims using real public data. It does not allege fraud or misstatement by Statistics Canada or a bank.
 
-This demonstrates data lineage, reconciliation, exception handling and review of whether claims agree with evidence. It is a reporting controls project, not a professional audit opinion or a fraud detector. The benchmark labels are simulated mistakes added to excerpts based on real StatCan observations.
+**Why use four quarters?** The source is not seasonally adjusted. I sum the four observed quarterly household estimates and reject incomplete years. I do not multiply one favorable quarter by four.
 
-## Questions I should be ready to answer
+**What does the purchase example show?** At CAD 600,000, the minimum down payment is 25,000 on the first 500,000 plus 10,000 on the balance. An assumed 2.5% closing allowance adds 15,000. That is an illustrative 50,000 upfront-cash scenario, not a complete closing statement.
 
-Why not just forecast? The original forest and later neural model did not improve on persistence. I kept that result and focused the main project on a reporting question with observable, useful findings.
+**Can you say whether a particular renter should buy?** No. Verified liquid funds, gross income, debts, credit, property costs and loan terms are not observed. Group averages cannot establish an individual's eligibility.
 
-Why use a GPU? The reporting experiment runs Qwen3 8B and 32B locally on Modal H100 GPUs to compare reviewer prompts and repeated answers. Saved results allow CPU reproduction. A GPU is not needed to calculate the household ratios, and the extended compute budget is not a requirement for routine reporting.
+**How do you know the calculation works?** Tests cover the price-tier boundaries, invalid inputs, missing quarters, saving reconciliation, SQL/Python agreement and the data embedded in Power BI.
 
-How did I avoid leakage? The reviewer configuration is chosen using 2020 through 2023 excerpts. The 2024 and 2025 excerpts are reserved for evaluation. Prompts receive evidence and the claim, never its label. Templates repeat across years, so I do not claim this measures performance on arbitrary new writing.
+**Why are the report tables separate?** Annual estimates, quarter observations, claim checks and hypothetical purchase cases have different grains. I keep the evidence and assumptions separate to prevent invalid joins or totals.
 
-Why not add more rules? That is a fair alternative. Rules could cover all seven fixed templates. This benchmark tests reviewer behavior under controlled mistakes, not whether AI is necessary. A stronger comparison would use real report wording and a broader rules baseline.
+**Where do the GPU experiments fit?** Earlier saved H100 work tested AI review of deliberately misleading financial excerpts. It is supporting evidence about a controlled prototype, not production audit reliability. It is not needed for the main calculation, and no new paid run was launched for this update.
 
-What would improve it? A real reporting sample with independently reviewed labels and approved bank portfolio data. That would test whether the public aggregate patterns and controlled error examples matter in an actual workflow.
+## Skills to demonstrate
 
-## Relevance to internships
+Python preparation and controls, SQL aggregation and reconciliation, source lineage, accounting definitions, rule boundaries, explicit missing evidence and clear Power BI communication.
 
-TD data science and business intelligence role examples researched on November 15, 2026 included Python, SQL, data preparation, Power BI, data quality and communication. The indexed AI2 Data Science description specifically mentions Python/SQL queries, cleaning, feature engineering and Tableau/Power BI. These are role examples, not a claim that applications remain open. This project gives concrete examples of those skills. It does not imply TD endorsement or production banking experience.
+Understand the scripts and limits before presenting. Describe assistance honestly if asked.
 
-[TD Data Science role example](https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/AI2-Data-Science-Co-op_R_1506702)
-
-[TD Business Intelligence role example](https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/AI2-Business-Intelligence-Co-op-Intern--WINTER-2027-_R_1506122)
-
-Understand and rerun the scripts before presenting the work. Describe assistance honestly if asked. Use the measured benchmark results in reports/audit_benchmark.md rather than assuming the larger model performed better.
+[Three-minute walkthrough](project_walkthrough.md) · [Method and sources](methodology.md)

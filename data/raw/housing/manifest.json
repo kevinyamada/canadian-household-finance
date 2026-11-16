@@ -1,0 +1,7 @@
+{
+  "url": "https://www.bankofcanada.ca/valet/observations/INDINF_AFFORD_Q/json?start_date=2020-01-01&end_date=2025-12-31",
+  "file": "boc_affordability_2020_2025.json",
+  "sha256": "4e6957a43ab851f27d4e54c394de2c04ff77f2193163662a2ea45b08e5884560",
+  "downloaded_utc": "2026-11-16T04:11:25.226502+00:00",
+  "scope": "Matched 2020Q1 to 2025Q4 context; not a measure of renter-specific purchase readiness"
+}

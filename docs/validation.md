@@ -1,3 +1,29 @@
+# Current validation: housing-readiness audit
+
+The v2.0.0 report asks **Why does buying a home still feel out of reach?** It audits the saving figures and upfront-cost assumptions behind a readiness claim. The earlier, broader study remains available in v1.0.0.
+
+## Local checks
+
+The audit generation, SQL reconciliation, report build and checks ran in the user's **local VS Code integrated terminal**. **48 tests** and **30 source-report schema checks** passed. Test discovery is limited to the product's tests directory so archived scratch work is not collected.
+
+Tests cover complete annual periods, quarterly saving identities, price-tier boundaries, invalid prices, cash assumptions, SQL/Python agreement, missing borrower evidence and the report's embedded tables.
+
+## Native Power BI viewing file
+
+The three-page PBIX was exported in Power BI Desktop 2.159.1231.0, reopened on Audit conclusion and saved without a model-format conversion prompt. The imported annual saving table showed **negative CAD 557**. Selecting CAD 600,000 and a 2.5% allowance returned **CAD 50,000**. Changing the allowance to 4% returned **CAD 59,000**, then the 2.5% case and opening page were restored.
+
+The file has an imported DataModel and these pages: Audit conclusion, Savings evidence and Purchase cash check. Its exact bytes and SHA256 are recorded in reports/viewing_copy_manifest.json.
+
+Desktop may serialize newer source schemas when saving. Native metadata was preserved locally, and the Python generator regenerated the published editable source with the supported public schemas before validation. The PBIX and source project are separately checked artifacts.
+
+## Website
+
+A separate headless browser on the user's PC checked widths 1440, 768, 390 and 320 pixels. The displayed figures matched the saved audit summary, navigation and keyboard access worked, and there was no horizontal overflow. Light/dark switching and saved preference after reload passed. Desktop and phone screenshots were reviewed.
+
+This update does not launch a new GPU job or a hosted financial-analysis run. GitHub Pages only publishes static website files.
+
+## Earlier validation records
+
 # Validation record
 
 Original analysis checked on November 14, 2026; GPU extension checked on November 15, 2026 using Python 3.12 and Power BI Desktop 2.154.956.0 on Windows.

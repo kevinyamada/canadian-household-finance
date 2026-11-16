@@ -68,16 +68,14 @@ def test_trend_and_model_actions_change_with_contrary_evidence(snapshot):
     assert cards['forecast']['metrics']['selected_mae_pp'] == .1
 
 
-def test_generated_summary_and_opening_page_agree_with_current_evidence():
-    current = collect()
-    saved = json.loads((ROOT / 'data/processed/key_insights.json').read_text())
-    assert saved == current
+def test_supporting_summary_and_housing_opening_page_match_the_evidence():
+    assert json.loads((ROOT / 'data/processed/key_insights.json').read_text()) == collect()
+    audit = json.loads((ROOT / 'data/processed/housing_audit_summary.json').read_text())
     pages = ROOT / 'powerbi/HouseholdFinance.Report/definition/pages'
-    assert json.loads((pages / 'pages.json').read_text())['pageOrder'][0] == 'insights'
-    for index, card in enumerate(current['cards'], 1):
-        visual = json.loads((pages / f'insights/visuals/finding{index}/visual.json').read_text())
-        paragraphs = visual['visual']['objects']['general'][0]['properties']['paragraphs']
-        text = '\n'.join(run['value'] for paragraph in paragraphs for run in paragraph['textRuns'])
-        assert card['period'] in text
-        assert card['evidence'] in text
-        assert card['action'] in text
+    metadata = json.loads((pages / 'pages.json').read_text())
+    assert metadata['pageOrder'] == ['conclusion', 'saving', 'purchase']
+    assert metadata['activePageName'] == 'conclusion'
+    content = '\n'.join(path.read_text(encoding='utf-8') for path in (pages / 'conclusion').rglob('visual.json'))
+    assert audit['question'] in content
+    assert audit['verdict'] in content
+    assert 'Four findings' not in content
