@@ -1,6 +1,10 @@
 # Canadian Household Finance
 
-A Python, SQL and Power BI project about household financial pressure and the quality of the reporting used to describe it.
+A Python, SQL and Power BI project using public data to compare Canadian household debt, income and spending.
+
+**[View the project website](https://kevinyamada.github.io/canadian-household-finance/)** · **[Download the Power BI report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v1.0.0/CanadianHouseholdFinance.pbix)**
+
+**The short answer:** Income grew faster than required debt payments, lowering the national payment ratio. Renters' positive net saving included a pension adjustment, even though consumption exceeded income. The tested complex forecasts did not beat the previous-quarter benchmark.
 
 **Question:** Which household groups face different financial pressures, and can reporting controls catch misleading conclusions about them?
 
