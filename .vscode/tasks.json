@@ -32,6 +32,23 @@
       "problemMatcher": []
     },
     {
+      "label": "Generate website map and charts",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["src/site_visuals.py"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check project website",
+      "type": "shell",
+      "command": "node",
+      "args": ["tests/check_website.mjs"],
+      "options": {"env": {"HOUSEHOLD_FINANCE_VSCODE": "1"}},
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
       "label": "Generate supporting insight brief",
       "type": "shell",
       "command": "${workspaceFolder}/.venv/Scripts/python.exe",

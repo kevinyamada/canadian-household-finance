@@ -40,6 +40,10 @@ The register contains eight deliberately drafted claims. It demonstrates how to 
 
 Examples include treating net saving as deposit cash, treating net worth as liquid funds, annualizing one quarter and applying a flat 5% rule above CAD 500,000. The review produces a reason and evidence reference. It is not a professional audit opinion, fraud detector or automated loan decision.
 
+## Website map and graphs
+
+The website adds published renter core-housing-need estimates from Statistics Canada 46-10-0085-01 for the ten provinces, survey years 2018, 2021, 2022 and 2024. It preserves published confidence intervals, uses the published national benchmark and marks the territories outside coverage. The national income/consumption graph and purchase-cash chart use the existing audit outputs. These measures have different definitions and periods; selecting a province does not turn national averages into provincial values. See [source selection, geometry, units and browser checks](website_visuals.md).
+
 ## Reproducibility
 
 `src/housing_audit.py` regenerates the summary, tables, brief, SQLite views and Python figure from preserved snapshots. `src/build_powerbi.py` then embeds those outputs in the three-page report. Tests verify rule boundaries, invalid inputs, complete years, reconciliation, SQL agreement and embedded report data.

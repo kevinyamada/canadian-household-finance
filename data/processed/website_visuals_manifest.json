@@ -1,0 +1,19 @@
+{
+  "file": "docs/assets/visuals-data.json",
+  "sha256": "2754eedab97a878cc288d2ad44969d27fde27a2d53a249b1d39c1ba9614371b0",
+  "bytes": 103447,
+  "map_source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610008501",
+  "housing_release_date": "2026-09-21",
+  "survey_years": [
+    2018,
+    2021,
+    2022,
+    2024
+  ],
+  "regions_with_geometry": 13,
+  "covered_provinces": 10,
+  "uncovered_territories": 3,
+  "boundary_year": 2021,
+  "map_vertices": 5968,
+  "execution": "Prepared with local Python in VS Code; browser interaction displays saved figures and coordinates"
+}

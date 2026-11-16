@@ -20,7 +20,9 @@ Desktop may serialize newer source schemas when saving. Native metadata was pres
 
 A separate headless browser on the user's PC checked widths 1440, 768, 390 and 320 pixels. The displayed figures matched the saved audit summary, navigation and keyboard access worked, and there was no horizontal overflow. Light/dark switching and saved preference after reload passed. Desktop and phone screenshots were reviewed.
 
-This update does not launch a new GPU job or a hosted financial-analysis run. GitHub Pages only publishes static website files.
+The map-and-graphs update passed **55 tests locally in VS Code**. Seven new data checks verify the renter-household dimension and published intervals, direct national benchmark, missing territories versus valid zeros, retained finite geometry, national annual values, all 30 saved cash cases and the asset hash. The browser checks passed all four widths after correcting a narrow-phone map overflow. Map/year/bar selections, zoom, missing coverage, chart selections, the CAD 1.5 million boundary and keyboard map selection passed. Fresh visits remained light while the browser emulated a dark system preference.
+
+Data preparation and browser checks for this update ran in the local VS Code terminal. The Power BI viewing file was not changed. No new GPU job or hosted financial-analysis run was launched. GitHub Pages only publishes static website files.
 
 ## Earlier validation records
 

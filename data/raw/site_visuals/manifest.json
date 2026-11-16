@@ -1,0 +1,31 @@
+{
+  "downloaded_utc": "2026-11-16T16:39:38.631455+00:00",
+  "housing_table": "46-10-0085-01",
+  "housing_release_date": "2026-09-21",
+  "boundary_year": 2021,
+  "projection": "EPSG:3347",
+  "display_simplification_px": 0.55,
+  "licence_url": "https://www.statcan.gc.ca/en/reference/licence",
+  "sources": [
+    {
+      "file": "46100085-eng.zip",
+      "url": "https://www150.statcan.gc.ca/n1/en/tbl/csv/46100085-eng.zip",
+      "sha256": "75c918cec750307e11ee315de59d4236ec06be171d7dfa3111406ae7354b4e23"
+    },
+    {
+      "file": "provinces_2021_3347.json.gz",
+      "url": "https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer/0/query",
+      "params": {
+        "where": "1=1",
+        "outFields": "PRUID,PRENAME,PREABBR",
+        "outSR": "3347",
+        "returnGeometry": "true",
+        "f": "json",
+        "maxAllowableOffset": "7500",
+        "geometryPrecision": "1"
+      },
+      "compression": "gzip",
+      "sha256": "db681ee517e79219adcafdd1b2b876e036bb27f2ae8149caffd5a135f9575904"
+    }
+  ]
+}

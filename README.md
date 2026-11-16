@@ -33,10 +33,12 @@ The claim register contains eight deliberately drafted examples. It does not all
 | Python in VS Code | Reconcile the source measures, require complete years, apply price-tier rules and preserve assumptions |
 | SQL / SQLite | Independently calculate annual renter totals and retain the claim register and scenarios |
 | Power BI Desktop | Follow the audit conclusion, inspect the saving evidence and change the purchase-cash assumptions |
-| GitHub Pages | Explain the project plainly, link the evidence and report, and offer a small dark-mode switch |
+| GitHub Pages | Explore a provincial housing-need map, national renter income and consumption, and interactive purchase-cash scenarios; light by default with a small dark-mode switch |
 | Tests | Check accounting, time periods, price boundaries, missing evidence, SQL agreement and report data |
 
-The main renter analysis covers **24 quarters, 2020Q1–2025Q4**. The wider saved household study includes 39 groups. Source hashes and the current purchase-rule record are retained.
+The main renter analysis covers **24 quarters, 2020Q1–2025Q4**. The website also maps published renter core-housing-need estimates for **ten provinces across four survey years**, with source confidence intervals and an explicit no-coverage state for territories. Its national budget chart and purchase scenarios remain separate from the provincial survey. [Map and graph methods](docs/website_visuals.md).
+
+The wider saved household study includes 39 groups. Source hashes and the current purchase-rule record are retained.
 
 ## Power BI
 
@@ -64,7 +66,7 @@ This rebuild uses the saved analysis outputs and does not retrain the earlier mo
 
 VS Code tasks include **Generate housing audit**, **Rebuild focused Power BI**, **Run validation** and **Validate Power BI**. The current audit checks ran in the user's local VS Code terminal.
 
-The current release passed **48 tests and 30 source-report schema checks locally in VS Code**. Its Power BI viewing copy was reopened and its cash scenario was tested. The website was checked at four widths in both themes.
+The report release passed **48 tests and 30 source-report schema checks locally in VS Code**. Its Power BI viewing copy was reopened and its cash scenario was tested. The website map-and-graphs update brings the local suite to **55 passing tests**. Browser checks passed at four widths, including map/year selection, territory coverage, zoom, chart controls, the purchase-rule boundary, keyboard access and both themes. Fresh visits start light even when the operating system prefers dark.
 
 [Methodology and definitions](docs/methodology.md) · [Validation record](docs/validation.md) · [Further evidence needed](docs/next_steps.md)
 
