@@ -3,9 +3,9 @@
   "name": "meaning",
   "position": {
     "x": 24,
-    "y": 575,
+    "y": 615,
     "width": 1210,
-    "height": 115,
+    "height": 85,
     "z": 0,
     "tabOrder": 0
   },
@@ -18,7 +18,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

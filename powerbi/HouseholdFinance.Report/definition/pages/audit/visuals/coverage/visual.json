@@ -5,7 +5,7 @@
     "x": 24,
     "y": 425,
     "width": 1230,
-    "height": 130,
+    "height": 170,
     "z": 0,
     "tabOrder": 0
   },
@@ -99,7 +99,7 @@
               },
               "queryRef": "AuditMethods.method",
               "nativeQueryRef": "method",
-              "displayName": "method"
+              "displayName": "Review method"
             },
             {
               "field": {
@@ -134,6 +134,21 @@
           ]
         }
       }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

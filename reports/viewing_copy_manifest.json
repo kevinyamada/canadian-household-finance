@@ -1,0 +1,29 @@
+{
+  "file": "CanadianHouseholdFinance.pbix",
+  "bytes": 247907,
+  "sha256": "cf1c4645816705acd3cdf5ba1b7e7d9041bff5c3b85a651c6948563e27d89388",
+  "pages": [
+    "Key insights",
+    "Household groups",
+    "Reporting controls",
+    "AI reporting review",
+    "Household pressure",
+    "Model evaluation",
+    "Payment scenarios",
+    "GPU experiment"
+  ],
+  "power_bi_desktop_version": "2.159.1231.0",
+  "validation": {
+    "python_tests_passed": 32,
+    "source_schema_files_validated": 71,
+    "opened_and_saved_without_recovery_or_model_format_prompts": true,
+    "mortgage_group_ratio_pct": 306.1,
+    "scenario_ratio_pct": 16.3,
+    "scenario_selections_cleared": true,
+    "execution": "Local VS Code terminal"
+  },
+  "reference_periods": {
+    "household_groups": "2025Q4",
+    "national_debt_service": "2026Q2"
+  }
+}

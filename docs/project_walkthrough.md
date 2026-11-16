@@ -2,6 +2,8 @@
 
 The project helps a banking analyst answer two questions: **where is household financial pressure different, and could a report describe that pressure incorrectly?**
 
+Start with the **Key insights** page: each conclusion has a dated number, an explanation and a next action. The [four-insight brief](../reports/key_insights.md) is the written version, and the [next-step plan](next_steps.md) explains what further evidence is needed.
+
 ## One example explains the problem
 
 For the average renter household in 2025Q4, Statistics Canada reported:
@@ -37,12 +39,12 @@ The forecasting experiments did not beat the simple prediction that the next qua
 
 ## Five-minute Power BI demo
 
-Open `powerbi/HouseholdFinance.pbip` in Power BI Desktop and refresh if prompted.
+Open the regular `CanadianHouseholdFinance.pbix` in Power BI Desktop. It contains the loaded snapshot. The `.pbip` is the editable source project used when rebuilding. See the [opening guide](powerbi_usage.md).
 
 | Time | Page | What to show |
 | :--- | :--- | :--- |
-| First minute | Household groups | Mortgage owners have higher leverage; renters have a negative income less consumption measure. |
-| Second minute | Reporting controls | Walk through the renter arithmetic and the six checks. Explain the fourteen small retained historical exceptions. |
+| First minute | Key insights | Read the four findings and the action under each. Explain that the group and national dates differ. |
+| Second minute | Household groups and Reporting controls | Compare mortgage owners and renters, then explain -572 + 841 = 269 and the six checks. |
 | Third minute | AI reporting review | Compare detection, false alarms and abstentions. Explain that the incorrect statements were deliberately generated. |
 | Fourth minute | Household pressure and Model evaluation | Show 14.52% in 2026Q2 and why income growth lowered it. Explain why the forest did not justify replacing persistence. |
 | Fifth minute | Payment scenarios | Select payment change 10 and income change -2. The assumed ratio becomes 16.30%. Clear both slicers afterwards. |

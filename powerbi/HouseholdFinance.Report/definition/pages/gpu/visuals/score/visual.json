@@ -1,59 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "score",
   "position": {
     "x": 824,
     "y": 250,
-    "z": 0,
-    "height": 290,
     "width": 432,
+    "height": 290,
+    "z": 0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredBarChart",
-    "query": {
-      "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "GPUScores"
-                    }
-                  },
-                  "Property": "model"
-                }
-              },
-              "queryRef": "GPUScores.model",
-              "nativeQueryRef": "model",
-              "active": true,
-              "displayName": "model"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "GPUScores"
-                    }
-                  },
-                  "Property": "Comparison MAE"
-                }
-              },
-              "queryRef": "GPUScores.Comparison MAE",
-              "nativeQueryRef": "Comparison MAE",
-              "displayName": "Comparison MAE"
-            }
-          ]
-        }
-      }
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -124,6 +81,48 @@
           }
         }
       ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GPUScores"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "GPUScores.model",
+              "nativeQueryRef": "model",
+              "displayName": "model"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GPUScores"
+                    }
+                  },
+                  "Property": "Comparison MAE"
+                }
+              },
+              "queryRef": "GPUScores.Comparison MAE",
+              "nativeQueryRef": "Comparison MAE",
+              "displayName": "Comparison MAE"
+            }
+          ]
+        }
+      }
     }
   }
 }

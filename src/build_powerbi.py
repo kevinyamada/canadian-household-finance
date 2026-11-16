@@ -4,6 +4,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 import pandas as pd
+from insights import collect as collect_insights
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'data/processed'
@@ -46,7 +47,7 @@ def field(table_name,col,kind='Column'):
 
 
 def projection(table_name,col,kind='Column'):
-    label={'group':'Household group','control':'Control','exceptions':'Exceptions','status':'Status','tolerance':'Review threshold'}.get(col,col)
+    label={'group':'Household group','control':'Control','exceptions':'Exceptions','status':'Status','tolerance':'Review threshold','income_change_pct':'Income change (%)','payment_change_pct':'Payment change (%)','quarter':'Quarter','method':'Review method'}.get(col,col)
     if col.endswith(' debt ratio'):label='Debt to income (%)'
     if col.endswith(' income gap'):label='Income less consumption (CAD)'
     return {'field':field(table_name,col,kind),'queryRef':table_name+'.'+col,'nativeQueryRef':col,'displayName':label}
@@ -65,6 +66,8 @@ def visual(page,name,kind,x,y,w,h,title,roles=None,sort=None,objects=None):
     if roles:
         v['query']={'queryState':{role:{'projections':items} for role,items in roles.items()}}
         if sort:v['query']['sortDefinition']={'sort':[{'field':sort,'direction':'Ascending'}]}
+    if kind=='textbox':
+        v['visualContainerObjects']['title'][0]['properties']['show']=literal(False)
     if kind=='card':
         v['objects']={'categoryLabels':[{'properties':{'show':literal(False)}}]}
     if kind=='lineChart':
@@ -80,7 +83,22 @@ def text(page,name,x,y,w,h,content,size=13,color='#183D40'):
     visual(page,name,'textbox',x,y,w,h,'',objects=objects)
 
 
+def insight_card(name,x,y,card,index):
+    lines=[(f"{index}. {card['title']}",14,'#183D40',True),
+           (card['period'],10,'#63747D',False),
+           (card['evidence'],16,'#183D40',False),
+           (card['meaning'],12,'#35444A',False),
+           ('Next: '+card['action'],12,'#176B61',True)]
+    paragraphs=[]
+    for value,size,color,bold in lines:
+        style={'fontFamily':'Segoe UI','fontSize':f'{size}pt','color':color}
+        if bold:style['fontWeight']='bold'
+        paragraphs.append({'textRuns':[{'value':value,'textStyle':style}]})
+    visual('insights',name,'textbox',x,y,600,232,'',objects={'general':[{'properties':{'paragraphs':paragraphs}}]})
+
+
 def build():
+    insights=collect_insights(ROOT)
     caches=[MODEL/'.pbi',REPORT/'.pbi']
     present=[path for path in caches if path.exists()]
     if present:
@@ -180,11 +198,17 @@ def build():
     if gpu_ready:pages.append(('gpu','GPU experiment'))
     if segments_ready:pages=[('segments','Household groups'),('controls','Reporting controls')]+pages
     if audit_ready:pages.insert(2,('audit','AI reporting review'))
-    write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'segments' if segments_ready else 'overview'})
+    pages.insert(0,('insights','Key insights'))
+    write(REPORT/'definition/pages/pages.json',{'$schema':BASE+'item/report/definition/pagesMetadata/1.0.0/schema.json','pageOrder':[p[0] for p in pages],'activePageName':'insights'})
     for name,label in pages:
         write(REPORT/'definition/pages'/name/'page.json',{'$schema':BASE+'item/report/definition/page/1.0.0/schema.json','name':name,'displayName':label,
                   'displayOption':'FitToPage','width':1280,'height':720,
                   'objects':{'background':[{'properties':{'color':{'solid':{'color':literal('#F2F5F4')}},'transparency':literal(0)}}]}})
+    text('insights','header',24,2,1230,66,'What should an analyst do next?',24)
+    text('insights','subtitle',24,73,1230,37,'Four findings, their evidence and the next action. Use the detail pages to investigate each one.',12)
+    for i,card in enumerate(insights['cards']):
+        insight_card('finding'+str(i+1),24 if i%2==0 else 650,120 if i<2 else 366,card,i+1)
+    text('insights','scope',24,620,1230,78,'Group dollars are CAD per household for the quarter. Group and national dates differ. Public averages identify questions to investigate; they do not identify which individual borrowers will miss payments.',11)
     text('overview','header',24,10,950,55,'Is household payment pressure easing?',25)
     text('overview','subtitle',24,65,1210,45,'Income growth eased the latest ratio even as required payments rose. Canada | Quarterly | 1990 to 2026Q2',12)
     for index,(name,title) in enumerate([('Debt service ratio','Debt service ratio'),('Quarterly change','Quarterly change, pp'),('Income growth','Income growth, QoQ'),('Payment growth','Payment growth, QoQ')]):
@@ -249,9 +273,9 @@ def build():
             {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Unsupported claims flagged','Measure')]})
         visual('audit','alarms','clusteredBarChart',650,150,600,250,'Supported statements incorrectly flagged',
             {'Category':[projection('AuditMethods','method')],'Y':[projection('AuditMethods','Supported claims wrongly flagged','Measure')]})
-        visual('audit','coverage','tableEx',24,425,1230,130,'Coverage matters: an abstention is sent for review',
-            {'Values':[projection('AuditMethods','method'),projection('AuditMethods','Review coverage','Measure'),projection('AuditMethods','Review abstentions','Measure')]})
-        text('audit','meaning',24,575,1210,115,'Real StatCan evidence, deliberately simulated reporting errors. Exact checks cover two statement formats; rules could cover all seven known templates. This does not prove AI is necessary or reliable on arbitrary reports. Invalid responses require review. Repeated answers are not new independent cases.',12)
+        visual('audit','coverage','tableEx',24,425,1230,170,'Coverage matters: an abstention is sent for review',
+            {'Values':[projection('AuditMethods','method'),projection('AuditMethods','Review coverage','Measure'),projection('AuditMethods','Review abstentions','Measure')]},objects={'total':[{'properties':{'totals':literal(False)}}]})
+        text('audit','meaning',24,615,1210,85,'Real StatCan evidence, deliberately simulated reporting errors. Exact checks cover two statement formats; rules could cover all seven known templates. This does not prove AI is necessary or reliable on arbitrary reports. Invalid responses require review. Repeated answers are not new independent cases.',12)
     write(BI/'theme.json',{'name':'Household Finance','dataColors':['#176B61','#D38136','#6579A4','#4B5563'],'background':'#F2F5F4','foreground':'#183D40','tableAccent':'#176B61','textClasses':{'title':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'label':{'fontSize':11,'fontFace':'Segoe UI','color':'#35444A'},'header':{'fontSize':12,'fontFace':'Segoe UI','color':'#183D40'},'callout':{'fontSize':28,'fontFace':'Segoe UI','color':'#183D40'}}})
     write(REPORT/'StaticResources/RegisteredResources/HouseholdTheme.json',json.loads((BI/'theme.json').read_text()))
     print('Power BI project generated:',BI/'HouseholdFinance.pbip')

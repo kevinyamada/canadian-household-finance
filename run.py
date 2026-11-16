@@ -27,5 +27,7 @@ if audit_results.exists():
     sys.path.insert(0,str(audit_results.parents[1]))
     from summarize_audit import summarize as summarize_audit
     summarize_audit()
+from insights import generate as generate_insights
+generate_insights()
 build()
 print(json.dumps({'selected_model':audit['selected_model'],**summary},indent=2))

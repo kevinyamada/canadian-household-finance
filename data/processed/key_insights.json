@@ -1,0 +1,78 @@
+{
+  "group_quarter": "2025Q4",
+  "national_quarter": "2026Q2",
+  "cards": [
+    {
+      "id": "groups",
+      "title": "Compare different kinds of household pressure",
+      "period": "Household groups | 2025Q4",
+      "evidence": "Debt / annualized disposable income: mortgage owners 306.1%; renters 56.4%.",
+      "meaning": "Debt relative to income and income relative to consumption measure different kinds of pressure.",
+      "action": "Review leverage and income relative to consumption separately.",
+      "metrics": {
+        "mortgage_debt_income_pct": 306.1,
+        "renter_debt_income_pct": 56.4
+      },
+      "source": "data/processed/segment_latest.csv",
+      "detail_page": "Household groups"
+    },
+    {
+      "id": "saving",
+      "title": "Positive saving can hide an income gap",
+      "period": "Renter average | 2025Q4",
+      "evidence": "Income less consumption: CAD -572. Pension adjustment: CAD +841. Net saving: CAD +269.",
+      "meaning": "The pension adjustment changes the sign. Positive net saving does not mean income covered consumption.",
+      "action": "Show all three components before describing household saving.",
+      "metrics": {
+        "income": 18326.0,
+        "consumption": 18898.0,
+        "income_less_consumption": -572.0,
+        "pension_adjustment": 841.0,
+        "net_saving": 269.0
+      },
+      "source": "data/processed/segment_latest.csv",
+      "detail_page": "Reporting controls"
+    },
+    {
+      "id": "national",
+      "title": "Payments rose while the ratio fell",
+      "period": "National payment ratio | 2026Q2",
+      "evidence": "Ratio 14.52%. Payments +0.97%; income +2.06% quarter over quarter.",
+      "meaning": "Income grew faster than required payments. The lower ratio does not mean payments fell.",
+      "action": "Monitor payment growth alongside income growth.",
+      "metrics": {
+        "latest_dsr": 14.52,
+        "qoq_change_pp": -0.16000000000000014,
+        "payment_growth_pct": 0.9669433920975967,
+        "income_growth_pct": 2.064706035896924
+      },
+      "source": "data/processed/summary.json",
+      "detail_page": "Household pressure"
+    },
+    {
+      "id": "forecast",
+      "title": "Complex models had higher average error",
+      "period": "Forecast test | 2019Q1 to 2026Q2",
+      "evidence": "Average absolute error: previous quarter 0.245; random forest 0.250; neural 0.387 percentage points.",
+      "meaning": "Lower error is better. The small sample does not establish a clear model advantage; the neural extension is exploratory.",
+      "action": "Keep the previous-quarter forecast as the benchmark.",
+      "metrics": {
+        "baseline_mae_pp": 0.24466666666666673,
+        "selected_model": "Random forest",
+        "selected_mae_pp": 0.25020305783341185,
+        "neural_mae_pp": 0.38689734647473567,
+        "test_quarters": 30
+      },
+      "source": "data/processed/holdout_scores.csv; data/processed/gpu_comparison.csv",
+      "detail_page": "Model evaluation and GPU experiment"
+    }
+  ],
+  "review": {
+    "unsupported_recall": 1.0,
+    "false_alarm_rate": 0.014010989010989012,
+    "abstention_rate": 0.0,
+    "unique_evaluation_cases": 1456,
+    "common_complete_repetitions": 5
+  },
+  "scope": "Public household group averages. They support reporting review and investigation, not individual default predictions. Group and national dates differ."
+}

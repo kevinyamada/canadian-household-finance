@@ -4,6 +4,12 @@
 
 I built a household finance reporting project using Statistics Canada data, Python, SQL and Power BI. I wanted to see what national averages hide and whether the reporting could be checked automatically. One finding was that mortgage owners had much higher debt relative to income, while renters had income below consumption despite positive reported net saving. I traced that difference to the pension adjustment, built reconciliation checks, and tested AI reviewers on deliberately misleading excerpts.
 
+## The recommendation to lead with
+
+Monitor leverage and income relative to consumption separately. Explain the pension adjustment before interpreting net saving. Track payment growth alongside income growth. Keep the previous-quarter forecast as the benchmark while collecting new evidence. The opening Key insights page shows the measured evidence for each recommendation.
+
+[Four findings and actions](../reports/key_insights.md) · [Further validation plan](next_steps.md)
+
 ## The problem and solution
 
 The problem is that correct numbers can still lead to a misleading conclusion. For example, calling net saving money left after spending ignores the pension entitlement adjustment. My solution keeps income, consumption, pension adjustments and net saving separate, checks their accounting relationship, and flags unsupported reporting claims for review.

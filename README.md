@@ -4,17 +4,22 @@ A Python, SQL and Power BI project about household financial pressure and the qu
 
 **Question:** Which household groups face different financial pressures, and can reporting controls catch misleading conclusions about them?
 
-**Start here:** [Plain-language explanation and a five-minute Power BI demo](docs/project_walkthrough.md). The main result is the household group comparison and reporting checks. Forecasting and the Modal AI benchmark are additional experiments.
+**Decision:** Review debt relative to income and income relative to consumption separately, explain the saving adjustment, and retain the simple forecast benchmark while collecting new evidence.
 
-![Household group comparison](reports/figures/11_segment_pressure.png)
+**Read first:** [Four insights and their actions](reports/key_insights.md) · [Next-step plan](docs/next_steps.md) · [Five-minute interview demo](docs/project_walkthrough.md)
 
-## What the analysis found
+![Four findings and actions, generated from the validated Python outputs](reports/figures/17_key_insights.png)
 
-The national average hides different forms of pressure. In **2025Q4**, owners with mortgages had debt equal to **306.1% of annualized disposable income**. Renters had a much lower ratio of **56.4%**, but average income was **CAD 572 below consumption** for the quarter.
+## Four findings and what to do
 
-Renters still had positive reported net saving of **CAD 269**, because that measure includes a **CAD 841 pension entitlement adjustment**. Calling net saving “money left after spending” would therefore be misleading. The dashboard shows these measures separately and the Python pipeline checks the accounting identity.
+| Finding | Evidence | What an analyst should do |
+| :--- | :--- | :--- |
+| Household groups face different pressures | **2025Q4:** mortgage-owner debt was **306.1%** of annualized disposable income, versus **56.4%** for renters | Examine leverage separately from whether income covers consumption; investigate approved portfolio evidence before customer action |
+| Positive net saving did not mean renter income covered consumption | **2025Q4:** renter income less consumption was **-CAD 572**; adding the **CAD 841** pension adjustment produced **CAD 269** net saving | Show all three components and correct any description of net saving as income left after spending |
+| The national payment ratio fell while payments rose | **2026Q2:** debt service was **14.52%**; payments grew **0.97%**, while income grew **2.06%** | Monitor payment growth and income growth alongside the ratio |
+| Added model complexity did not lower mean forecast error | **2019Q1–2026Q2:** MAE was **0.245 pp** for the previous-quarter benchmark, **0.250** for the forest and **0.387** for the exploratory neural model | Keep the simple benchmark and assess new releases before changing it |
 
-This supports a concrete reporting decision: review leverage and income relative to consumption separately, and verify the meaning of saving before drawing conclusions. These are group averages, not individual borrower risk scores or bank account cash flows.
+The group and national reference periods differ. Dollar group figures are averages in CAD per household for the quarter. These results identify reporting and investigation priorities, rather than individual borrower default probabilities. The forecast difference is uncertain in a small sample.
 
 [Group findings](reports/segment_findings.md) · [Problem and decision](docs/problem_statement.md) · [Interview explanation](docs/interview_notes.md)
 
@@ -40,7 +45,7 @@ The original random forest had test MAE **0.250 percentage points**, versus **0.
 | :--- | :--- |
 | Python pipeline | Downloads sources, checks data quality, builds features, runs models and generates figures |
 | SQLite | Joins quarterly series, calculates changes within groups and creates a reporting review view |
-| Power BI | Seven pages covering household groups, reporting controls, AI review, national pressure, model evaluation, scenarios and the neural experiment |
+| Power BI | Eight pages, starting with four key insights and actions, followed by group comparisons, controls, AI review, national trends, models and scenarios |
 | Model validation | Expanding time windows, frozen model selection, simple baselines, empirical bands and shock sensitivity |
 | Reproducibility | Source snapshots, file hashes, processed data and automated tests |
 
@@ -59,9 +64,13 @@ py -3.12 -m venv .venv
 
 On macOS or Linux, use `python3 -m venv .venv` and `.venv/bin/python` in place of the Windows executable. Existing raw snapshots are reused. `run.py --refresh` downloads fresh data, so results can change because of revisions or new releases. The study's rate cutoff and date are explicit in `src/data.py`; update those deliberately for a new study vintage. Review the README and interpretation after refreshing.
 
-VS Code also has tasks named `Run full analysis` and `Run validation` for the Windows environment.
+In VS Code, use **Terminal → Run Task**: `Run full analysis`, `Generate insight brief`, `Run validation`, or `Validate Power BI`. Each task uses the project's local Python environment on Windows.
 
 ## Open Power BI
+
+**For everyday viewing:** [Download CanadianHouseholdFinance.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/latest/download/CanadianHouseholdFinance.pbix) and open it in a current Power BI Desktop. It contains the imported snapshot and starts with Key insights. The `.pbix` avoids the editable project's model-format conversion prompt. See the [file and troubleshooting guide](docs/powerbi_usage.md).
+
+**For rebuilding from source:**
 
 Open `powerbi/HouseholdFinance.pbip` in a current Power BI Desktop version that supports Power BI projects. If the model initially has no data, select **Refresh**. The report imports an embedded snapshot generated by Python, so it does not require local file paths or a cloud account. The Power BI Refresh button reloads that snapshot. To update source data, close Power BI Desktop, run the Python pipeline, then reopen the project and refresh. The generator preserves old local caches in an ignored backup folder to prevent stale model data. Rebuilding replaces generated report definitions, so commit any manual report edits first.
 
@@ -71,7 +80,7 @@ See [Power BI notes](powerbi/README.md) for the page descriptions and validation
 
 ## Validation
 
-The pipeline was run in the desktop VS Code terminal. Automated tests cover the core analysis and GPU preparation, including source hashes, accounting identities, forecast timing and embedded report data. The report was opened, refreshed and checked in Power BI Desktop, including its scenario slicers. See the [validation record](docs/validation.md) and [GitHub Actions](https://github.com/kevinyamada/canadian-household-finance/actions).
+The pipeline was run in the desktop VS Code terminal. Automated tests cover the core analysis and GPU preparation, including source hashes, accounting identities, forecast timing and embedded report data. The report was opened, refreshed and checked in Power BI Desktop, including its scenario slicers. The latest release passed **32 tests and 71 source-report schema checks locally in VS Code**. See the [validation record](docs/validation.md). The [GitHub workflow](https://github.com/kevinyamada/canadian-household-finance/actions) is available for a requested hosted reproducibility check; this update uses the local results.
 
 ## Files
 

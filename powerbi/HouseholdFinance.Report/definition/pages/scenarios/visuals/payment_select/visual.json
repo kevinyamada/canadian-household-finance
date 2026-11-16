@@ -1,47 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "payment_select",
   "position": {
     "x": 830,
     "y": 150,
-    "z": 0,
-    "height": 180,
     "width": 420,
+    "height": 180,
+    "z": 0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Scenarios"
-                    }
-                  },
-                  "Property": "payment_change_pct"
-                }
-              },
-              "queryRef": "Scenarios.payment_change_pct",
-              "nativeQueryRef": "payment_change_pct",
-              "active": true,
-              "displayName": "payment_change_pct"
-            }
-          ]
-        }
-      }
-    },
-    "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ]
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -112,24 +81,29 @@
           }
         }
       ]
-    }
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "af34c9ed55602a855ada",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Scenarios"
-              }
-            },
-            "Property": "payment_change_pct"
-          }
-        },
-        "type": "Advanced"
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenarios"
+                    }
+                  },
+                  "Property": "payment_change_pct"
+                }
+              },
+              "queryRef": "Scenarios.payment_change_pct",
+              "nativeQueryRef": "payment_change_pct",
+              "displayName": "Payment change (%)"
+            }
+          ]
+        }
       }
-    ]
+    }
   }
 }

@@ -46,3 +46,16 @@ The seven-page report was loaded and refreshed in Power BI Desktop. Each page's 
 The completed runs imply approximately US$10.09 for the earlier neural experiment and US$20.02 for the reporting review experiment in GPU runtime at list price. These are estimates rather than invoices and exclude other usage charges. Reproducing the committed analysis uses saved outputs and does not launch paid Modal work.
 
 The [plain-language walkthrough](project_walkthrough.md) gives the main question, renter arithmetic and a five-minute dashboard demo. GitHub Actions repeats the pipeline, tests and report schema validation on a clean Linux checkout.
+
+
+## Clear insights and the regular Power BI viewing file
+
+The clarity update adds an opening Key insights page and a generated written brief. Four conclusions have a reference period, measured evidence and an analyst action. The same validated outputs generate the Python summary figure, JSON evidence and Power BI text. Four additional tests check source agreement, date labeling, changed saving and model evidence, and agreement between the opening page and the saved outputs.
+
+The analysis and final packaging checks ran in the local VS Code terminal: **32 Python tests** and **71 source-report schema checks** passed. The upload will use these local results and skip a new hosted analysis run.
+
+Power BI Desktop was updated from 2.154.956.0 to **2.159.1231.0** using Microsoft's signed installer. Two recovery files were preserved in the local ignored backup folder before the notice was cleared; recovery remains enabled. The regular CanadianHouseholdFinance.pbix includes its imported DataModel and eight report pages. It was reopened and saved without a recovery notice or TMDL model-format prompt. The loaded mortgage-owner ratio matched 306.1%, and the interactive payments +10% / income -2% scenario returned **16.30%**. Both selections were cleared and Key insights was restored. A desktop shortcut opens the regular viewing file.
+
+The newer Desktop wrote source metadata with a schema version whose public URL was unavailable during validation. The Python generator regenerated the editable source with published schemas, which passed the 71 checks. The native PBIX is a separately checked viewing artifact; its hash and validation details are in reports/viewing_copy_manifest.json.
+
+The README's opening figure is a labeled **Python-generated insight summary**. Previously validated native detail-page previews were retained when newer desktop captures were blank. Blank captures were excluded from the deliverables. Native data, scenario and prompt checks were performed independently of image capture.

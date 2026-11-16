@@ -1,40 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "quarter_filter",
   "position": {
     "x": 24,
     "y": 530,
-    "z": 0,
-    "height": 125,
     "width": 380,
+    "height": 125,
+    "z": 0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Quarter"
-                    }
-                  },
-                  "Property": "quarter"
-                }
-              },
-              "queryRef": "Quarter.quarter",
-              "nativeQueryRef": "quarter",
-              "active": true,
-              "displayName": "quarter"
-            }
-          ]
-        }
-      }
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -105,6 +81,29 @@
           }
         }
       ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quarter"
+                    }
+                  },
+                  "Property": "quarter"
+                }
+              },
+              "queryRef": "Quarter.quarter",
+              "nativeQueryRef": "quarter",
+              "displayName": "Quarter"
+            }
+          ]
+        }
+      }
     }
   }
 }

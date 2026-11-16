@@ -1,59 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "decomp",
   "position": {
     "x": 824,
     "y": 240,
-    "z": 0,
-    "height": 270,
     "width": 432,
+    "height": 270,
+    "z": 0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredColumnChart",
-    "query": {
-      "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Contributions"
-                    }
-                  },
-                  "Property": "driver"
-                }
-              },
-              "queryRef": "Contributions.driver",
-              "nativeQueryRef": "driver",
-              "active": true,
-              "displayName": "driver"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Contributions"
-                    }
-                  },
-                  "Property": "Contribution"
-                }
-              },
-              "queryRef": "Contributions.Contribution",
-              "nativeQueryRef": "Contribution",
-              "displayName": "Contribution"
-            }
-          ]
-        }
-      }
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -124,6 +81,48 @@
           }
         }
       ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contributions"
+                    }
+                  },
+                  "Property": "driver"
+                }
+              },
+              "queryRef": "Contributions.driver",
+              "nativeQueryRef": "driver",
+              "displayName": "driver"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contributions"
+                    }
+                  },
+                  "Property": "Contribution"
+                }
+              },
+              "queryRef": "Contributions.Contribution",
+              "nativeQueryRef": "Contribution",
+              "displayName": "Contribution"
+            }
+          ]
+        }
+      }
     }
   }
 }
