@@ -23,10 +23,10 @@ Using the remaining cash toward the mortgage, the stressed debt-service screen n
 | Deliverable | What it answers |
 |---|---|
 | [Interactive website](https://kevinyamada.github.io/canadian-household-finance/) | Which constraint binds in each city and buyer example? |
-| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers.pbix) | Six pages: answer, cash/income, what helps, history, waiting and bank audit |
+| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers.pbix) | Six pages: answer, cash/income, what helps, history, waiting and bank audit |
 | [Bank audit working paper](docs/bank_audit_case.md) | Would the mortgage file survive a first review? What evidence is missing? |
 | [Six figures](reports/figures/homebuying/README.md) | Shareable PNG/SVG files and a six-page PDF |
-| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers-Figures.zip) | Figures, source tables and notes for offline review |
+| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers-Figures.zip) | Figures, source tables and notes for offline review |
 | [Methodology](docs/homebuying_methodology.md) | Rules, sources, assumptions, financial formulas and limits |
 
 The website starts in light mode. Its small theme button remembers an explicit choice. City markers, profile/scenario controls and graphs select precomputed Python results; financial rules are not duplicated in browser JavaScript.

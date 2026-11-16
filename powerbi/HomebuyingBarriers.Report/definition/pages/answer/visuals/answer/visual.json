@@ -90,10 +90,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Cash is only one hurdle.\nFour of nine buyer examples have enough cash but fall short of the mortgage income requirement.",
+                    "value": "Four of nine examples have enough cash.\nTheir income still falls short.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "23pt",
+                      "fontSize": "21pt",
                       "color": "#183D40"
                     }
                   }

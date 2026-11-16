@@ -1,6 +1,6 @@
 # Open the Power BI report
 
-1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers.pbix).
+1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers.pbix).
 2. Open it in a current **Power BI Desktop** for Windows.
 3. Begin on **Start here**, then use **Cash and income** to change the city, buyer and one assumption.
 

@@ -108,7 +108,7 @@ def build():
         b.write(pages/name/"page.json",{"$schema":b.BASE+"item/report/definition/page/1.0.0/schema.json","name":name,"displayName":label,"displayOption":"FitToPage","width":1280,"height":720,
              "objects":{"background":[{"properties":{"color":{"solid":{"color":b.literal("#F2F5F4")}},"transparency":b.literal(0)}}]}})
     header("answer","Why does buying a home still feel out of reach?","Question: Is the down payment really the biggest obstacle to buying a home?")
-    text("answer","answer",24,125,1232,88,"Cash is only one hurdle.\nFour of nine buyer examples have enough cash but fall short of the mortgage income requirement.",23)
+    text("answer","answer",24,125,1232,88,"Four of nine examples have enough cash.\nTheir income still falls short.",21)
     table("answer","baseline",24,227,1232,300,"Nine hypothetical buyers | latest comparable transaction benchmark: 2023","Baseline",
           ["city","profile_label","cash_target","profile_cash","required_gross_income","profile_income","barrier"])
     text("answer","bank",24,548,1232,85,"Banking audit: a cash-ready claim is not enough to sign off a mortgage file. Recalculate debt service and verify income, funds, debts, property costs and eligibility.",17)
