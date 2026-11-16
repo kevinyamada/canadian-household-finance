@@ -6,7 +6,7 @@ GitHub Pages serves the main branch's /docs folder. The page follows one housing
 
 - `docs/index.html`: content and accessible navigation.
 - `docs/assets/style.css`: responsive light/dark styles and print styles.
-- `docs/assets/theme.js`: the small theme button. It starts from the saved preference or system setting and remembers the choice in local storage.
+- `docs/assets/theme.js`: the small theme button. Fresh visits start in light mode, regardless of the system setting. A visitor’s explicit choice is remembered in local storage.
 - The main report download is the focused v2.0.0 PBIX.
 - The site has no analytics, external font requests or client-side financial calculations.
 

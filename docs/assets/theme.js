@@ -3,8 +3,7 @@
   const key = "household-finance-theme";
   let saved;
   try { saved = localStorage.getItem(key); } catch {}
-  const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  let theme = saved === "dark" || saved === "light" ? saved : systemDark ? "dark" : "light";
+  let theme = saved === "dark" ? "dark" : "light";
   function apply() {
     root.dataset.theme = theme;
     const button = document.getElementById("theme-toggle");
