@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Why does buying a home still feel out of reach? Explore Canadian renter housing need, income and purchase-cash scenarios. An audit project by Kevin Yamada.">
+  <meta name="description" content="Why does buying a home still feel out of reach? Explore Canadian renter housing need, income and purchase cash scenarios. An audit project by Kevin Yamada.">
   <meta name="theme-color" content="#173d36">
   <title>Buying a Home, Out of Reach | Kevin Yamada</title>
   <link rel="canonical" href="https://kevinyamada.github.io/canadian-household-finance/">
   <script src="assets/theme.js?v=2"></script>
   <link rel="stylesheet" href="assets/style.css?v=4">
-  <script defer src="assets/visuals.js?v=2"></script>
+  <script defer src="assets/visuals.js?v=3"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,7 +34,7 @@
     </section>
 
     <section id="explore" class="explore" aria-labelledby="map-heading">
-      <div class="section-heading"><h2 id="map-heading">Where do renters face housing need?</h2><p>Canadian Housing Survey · 2018–2024</p></div>
+      <div class="section-heading"><h2 id="map-heading">Where do renters face housing need?</h2><p>Canadian Housing Survey · 2018 to 2024</p></div>
       <p class="section-intro">In 2024, <strong>22% of renter households</strong> were in core housing need across the ten provinces. Select a province to see its estimate and compare survey years.</p>
       <p id="map-definition" class="small">Core housing need means housing falls below cost, size or condition standards and an affordable local alternative is out of reach.</p>
       <div class="visual-controls">
@@ -66,8 +66,8 @@
     </section>
 
     <section id="story" class="story" aria-labelledby="story-title">
-      <div class="section-heading"><h2 id="story-title">Income did not keep up with consumption.</h2><p>Canada · Renter averages · 2020–2025</p></div>
-      <p class="section-intro">In 2025, annual income was <strong>CAD 70,099</strong> and consumption was <strong>CAD 73,669</strong> per renter household. The gap was <strong>−CAD 3,570</strong>. These are national-account averages, not a household's bank statement.</p>
+      <div class="section-heading"><h2 id="story-title">Income did not keep up with consumption.</h2><p>Canada · Renter averages · 2020 to 2025</p></div>
+      <p class="section-intro">In 2025, annual income was <strong>CAD 70,099</strong> and consumption was <strong>CAD 73,669</strong> per renter household. The gap was <strong>−CAD 3,570</strong>. These are national account averages, not a household's bank statement.</p>
       <figure class="chart-panel" aria-labelledby="trend-caption">
         <div class="chart-heading"><figcaption id="trend-caption">Income and consumption, year by year</figcaption><label>Year<select id="trend-year" disabled><option>2025</option></select></label></div>
         <div class="chart-legend"><span><i class="line-key income-key"></i>Disposable income</span><span><i class="line-key consumption-key"></i>Consumption</span></div>
@@ -91,7 +91,7 @@
             <div><dt>Pension adjustment</dt><dd data-metric="quarterly_pension">+CAD 841</dd></div>
             <div class="total"><dt>Reported net saving</dt><dd data-metric="quarterly_net_saving">+CAD 269</dd></div>
           </dl>
-          <p class="figure-note">2025 Q4 · CAD per renter household. National accounts include imputations and pension entitlements; these figures are not a bank-account budget.</p>
+          <p class="figure-note">2025 Q4 · CAD per renter household. National accounts include imputations and pension entitlements; these figures are not a bank account budget.</p>
         </figure>
       </div>
 
@@ -105,7 +105,7 @@
         </div>
         <div class="cash-layout">
           <div>
-            <div id="cash-chart" class="svg-chart"><p class="loading-note">Loading the purchase-cash chart…</p></div>
+            <div id="cash-chart" class="svg-chart"><p class="loading-note">Loading the purchase cash chart…</p></div>
             <p class="small threshold-note">At CAD 1.5 million, the minimum down payment changes to 20%. The break in the line shows that rule boundary.</p>
           </div>
           <div id="cash-readout" class="cash-readout" aria-live="polite">
@@ -133,11 +133,11 @@
       <div>
         <p class="eyebrow">Published on GitHub</p>
         <h2 id="figures-title">Take the figures with you.</h2>
-        <p>The provincial map, renter budget, purchase-cash scenarios and saving reconciliation are available as PNG and editable SVG files. Each figure includes its source, period and assumptions.</p>
+        <p>The provincial map, renter budget, purchase cash scenarios and saving reconciliation are available as PNG and editable SVG files. Each figure includes its source, period and assumptions.</p>
       </div>
       <div class="figure-download-links">
         <a class="button" data-download="figure-pack" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.1.0/CanadianHouseholdFinance-Figures.zip">Download all figures · ZIP ↓</a>
-        <a class="text-link" data-download="figure-pdf" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.1.0/CanadianHouseholdFinance-Figures.pdf">Get the four-page PDF ↓</a>
+        <a class="text-link" data-download="figure-pdf" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.1.0/CanadianHouseholdFinance-Figures.pdf">Get the four page PDF ↓</a>
         <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/tree/main/reports/figures/portfolio">Browse the figure gallery ↗</a>
       </div>
     </section>
@@ -153,14 +153,14 @@
         <h3>How it was built</h3>
         <p>Python in VS Code checks the source measures and prepares the map and chart data. SQL independently reconciles annual totals. Power BI shows the audit evidence and assumptions.</p>
         <p class="small">Public group averages cannot establish an individual buyer's finances. This examines part of the homebuying problem; it does not measure all causes of housing affordability or predict prices.</p>
-        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/project_walkthrough.md">Read the three-minute walkthrough ↗</a>
+        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/project_walkthrough.md">Read the three minute walkthrough ↗</a>
       </aside>
     </section>
 
     <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Sources &amp; scope</h2>
       <p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610008501">Statistics Canada core housing need</a>, survey years 2018, 2021, 2022 and 2024; ten provinces. The map uses renter households, not persons, and shows published 95% confidence intervals. <a href="https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer/0">2021 provincial boundaries</a> are simplified for display in the Statistics Canada Lambert projection. Adapted under the <a href="https://www.statcan.gc.ca/en/reference/licence">Statistics Canada Open Licence</a>.</p>
-      <p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066201">Statistics Canada income, consumption and saving</a>, 2020–2025. Purchase rules: <a href="https://www.cmhc-schl.gc.ca/consumers/home-buying/mortgage-loan-insurance-for-consumers/what-are-the-general-requirements-to-qualify-for-homeowner-mortgage-loan-insurance">CMHC</a> and <a href="https://www.canada.ca/en/department-finance/news/2024/09/delivering-the-boldest-mortgage-reforms-in-decades.html">Finance Canada</a>.</p>
+      <p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066201">Statistics Canada income, consumption and saving</a>, 2020 to 2025. Purchase rules: <a href="https://www.cmhc-schl.gc.ca/consumers/home-buying/mortgage-loan-insurance-for-consumers/what-are-the-general-requirements-to-qualify-for-homeowner-mortgage-loan-insurance">CMHC</a> and <a href="https://www.canada.ca/en/department-finance/news/2024/09/delivering-the-boldest-mortgage-reforms-in-decades.html">Finance Canada</a>.</p>
       <p class="small">The survey map, national accounts and purchase scenarios measure different things and periods. Their comparison does not establish causation. The repository preserves source snapshots and assumptions. This is an independent project; no TD customer data is used.</p>
     </section>
   </main>

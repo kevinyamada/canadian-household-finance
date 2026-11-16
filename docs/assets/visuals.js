@@ -72,7 +72,7 @@
         const comparison = difference === 0 ? "Matches the published national estimate." :
           Math.abs(difference).toFixed(1) + " percentage points " + (difference > 0 ? "above" : "below") + " the national estimate.";
         const interval = selected.low === null || selected.high === null ? "Confidence interval unavailable." :
-          "Published 95% interval: " + percent(selected.low) + "–" + percent(selected.high) + ".";
+          "Published 95% interval: " + percent(selected.low) + " to " + percent(selected.high) + ".";
         byId("region-detail").innerHTML = '<p class="detail-period">' + mapYear + ' survey · Renter households</p><h3>' + escape(selected.name) +
           '</h3><p class="region-value">' + percent(selected.value) + '</p><p class="small">' + interval + '</p><p class="region-comparison">' +
           comparison + '</p><p class="small">Canada, ten provinces: ' + percent(national.value) + '.</p>';
@@ -136,7 +136,7 @@
         '</strong></div><div><span>Consumption</span><strong>' + money(record.consumption) +
         '</strong></div><div><span>Income less consumption</span><strong class="' + (record.gap < 0 ? 'negative' : '') + '">' + money(record.gap) +
         '</strong></div><div><span>Reported net saving*</span><strong>' + money(record.saving) + '</strong></div>' +
-        '<p class="readout-footnote">*Includes the pension-entitlement adjustment.</p>';
+        '<p class="readout-footnote">*Includes the pension entitlement adjustment.</p>';
     }
     byId("trend-year").addEventListener("change", event => {trendYear = event.target.value; renderTrend();});
     for (const name of ["click", "keydown"]) byId("trend-chart").addEventListener(name, event => activate(event, "[data-year]", target => {trendYear = target.dataset.year; renderTrend();}));
