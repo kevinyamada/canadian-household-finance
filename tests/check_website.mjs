@@ -116,10 +116,16 @@ try{
       check(el('region-detail').textContent.includes('No estimate')&&el('region-detail').textContent.includes('not a zero'),'territory is missing');
       check(el('canada-map').getAttribute('viewBox')===${JSON.stringify(regionalExpected.map.view_all.join(' '))},'all Canada view for territory');
       change('map-region','11');el('map-zoom').click();
+      const smallView=el('canada-map').getAttribute('viewBox');
+      change('map-region','59');
+      check(el('canada-map').getAttribute('viewBox')!==smallView&&el('region-detail').textContent.includes('British Columbia'),'zoom follows next selection');
       check(el('canada-map').getAttribute('viewBox')!==${JSON.stringify(regionalExpected.map.view_all.join(' '))},'zoom to small province');
       el('map-provinces').click();
       check(el('canada-map').getAttribute('viewBox')===${JSON.stringify(regionalExpected.map.view_provinces.join(' '))},'reset provinces');
+      document.querySelector('.province-bar[data-region="35"]').focus();
       document.querySelector('.province-bar[data-region="35"]').click();
+      check(document.activeElement.classList.contains('province-bar')&&document.activeElement.dataset.region==='35','comparison bar keeps keyboard focus');
+      check(document.querySelectorAll('[data-download]').length===2,'figure download links');
       check(el('map-region').value==='35','bar click selects province');
       change('trend-year','2020');
       check(el('trend-readout').textContent.includes('CAD 59,468')&&el('trend-readout').textContent.includes('CAD 55,088'),'2020 annual values');
@@ -156,6 +162,7 @@ try{
 
     if(await evaluate('document.documentElement.dataset.theme')!=='light')await evaluate('document.getElementById("theme-toggle").click()');
     const light=await evaluate('getComputedStyle(document.body).backgroundColor');
+    const lightMap=await evaluate("getComputedStyle(document.getElementById(\"canada-map\").querySelector(\".selected\")).fill");
     if(width===1440||width===390){
       const s=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
       fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-light.png'),Buffer.from(s.data,'base64'));
@@ -166,6 +173,14 @@ try{
     await load('Page.reload',{ignoreCache:true});
     await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
     if(await evaluate('document.documentElement.dataset.theme')!=='dark')throw new Error('Theme preference did not persist');
+    if(await evaluate("getComputedStyle(document.getElementById(\"canada-map\").querySelector(\".selected\")).fill")===lightMap)throw new Error('Map colours did not follow dark mode');
+    if(width===1440||width===390){
+      await evaluate('document.getElementById("explore").scrollIntoView({block:"start"})');
+      const mapShot=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+      fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-map-dark.png'),Buffer.from(mapShot.data,'base64'));
+      await evaluate('window.scrollTo(0,0)');
+    }
+
     if(width===1440||width===390){
       const s=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
       fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-dark.png'),Buffer.from(s.data,'base64'));

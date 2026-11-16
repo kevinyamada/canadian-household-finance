@@ -87,3 +87,7 @@ Power BI Desktop was updated from 2.154.956.0 to **2.159.1231.0** using Microsof
 The newer Desktop wrote source metadata with a schema version whose public URL was unavailable during validation. The Python generator regenerated the editable source with published schemas, which passed the 71 checks. The native PBIX is a separately checked viewing artifact; its hash and validation details are in reports/viewing_copy_manifest.json.
 
 The README's opening figure is a labeled **Python-generated insight summary**. Previously validated native detail-page previews were retained when newer desktop captures were blank. Blank captures were excluded from the deliverables. Native data, scenario and prompt checks were performed independently of image capture.
+
+## Published figure pack and website polish
+
+The portfolio update passed **57 tests in local VS Code**. Figure checks verify input/output hashes, four PNG/SVG pairs and the four-page PDF. The ZIP was extracted logically and every contained figure matched the repository copy. All four browser widths passed, including zoom following a province change, keyboard focus on comparison bars and map colours in dark mode. Light remains the fresh-visit default. PNG previews were reviewed visually; SVG structure and PDF page count were checked.

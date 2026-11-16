@@ -19,3 +19,7 @@ The page is a published snapshot. After a source or rule update, review figures,
 Preview from VS Code with `python -m http.server 8765 --directory docs`, then visit http://localhost:8765. The **Generate website map and charts** and **Check project website** VS Code tasks prepare and verify the site locally.
 
 The browser check uses a separate headless Chrome or Edge on the user's PC. It checks desktop/phone widths, both themes, light mode on a fresh visit with a dark system preference, reload persistence, map/year/bar selection, missing territory estimates, zoom, chart selections, the purchase-rule boundary and agreement with saved audit data.
+
+## Figure exports
+
+The website links the [published figure gallery](../reports/figures/portfolio/README.md), four-page PDF and ZIP on GitHub. Each figure includes its source, period and assumptions. PNG and SVG files live in reports/figures/portfolio; src/export_figures.py regenerates them from preserved outputs in VS Code. The website keeps the focused v2.0.0 Power BI download.

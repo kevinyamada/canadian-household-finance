@@ -2,7 +2,7 @@
 
 A housing-readiness audit using public Canadian data, Python, SQL and Power BI.
 
-[Project website](https://kevinyamada.github.io/canadian-household-finance/) · [Power BI report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.0.0/CanadianHouseholdFinance.pbix) · [Three-minute walkthrough](docs/project_walkthrough.md)
+[Project website](https://kevinyamada.github.io/canadian-household-finance/) · [Power BI report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.0.0/CanadianHouseholdFinance.pbix) · [Figures and downloads](reports/figures/portfolio/README.md) · [Three-minute walkthrough](docs/project_walkthrough.md)
 
 ## The problem
 
@@ -22,7 +22,9 @@ For an **illustrative CAD 600,000** purchase, the current minimum down payment i
 
 [Audit brief](reports/housing_audit.md) · [Claim register](data/processed/housing_claim_register.csv) · [Cash scenarios](data/processed/home_purchase_cash_cases.csv)
 
-![Annual renter net saving, generated from the validated public estimates](reports/figures/19_housing_audit.png)
+![Published 2024 renter core-housing-need estimates by province, with confidence intervals and survey coverage](reports/figures/portfolio/renter_housing_need.png)
+
+[Browse all four figures](reports/figures/portfolio/README.md) · [Download PNG, SVG and data](https://github.com/kevinyamada/canadian-household-finance/releases/tag/v2.1.0) · [Four-page PDF](reports/figures/portfolio/CanadianHouseholdFinance-Figures.pdf)
 
 The claim register contains eight deliberately drafted examples. It does not allege errors or fraud in Statistics Canada's reporting.
 
@@ -64,9 +66,9 @@ py -3.12 -m venv .venv
 
 This rebuild uses the saved analysis outputs and does not retrain the earlier models. Use `python run.py` for the full original pipeline plus the audit. On macOS/Linux use `python3` and `.venv/bin/python`.
 
-VS Code tasks include **Generate housing audit**, **Rebuild focused Power BI**, **Run validation** and **Validate Power BI**. The current audit checks ran in the user's local VS Code terminal.
+VS Code tasks include **Generate housing audit**, **Rebuild focused Power BI**, **Run validation** and **Validate Power BI**. Website tasks also generate the map, check the site and export the portfolio figures. The current checks ran in the user's local VS Code terminal.
 
-The report release passed **48 tests and 30 source-report schema checks locally in VS Code**. Its Power BI viewing copy was reopened and its cash scenario was tested. The website map-and-graphs update brings the local suite to **55 passing tests**. Browser checks passed at four widths, including map/year selection, territory coverage, zoom, chart controls, the purchase-rule boundary, keyboard access and both themes. Fresh visits start light even when the operating system prefers dark.
+The report release passed **48 tests and 30 source-report schema checks locally in VS Code**. Its Power BI viewing copy was reopened and its cash scenario was tested. The website map-and-graphs update brings the local suite to **57 passing tests**. Browser checks passed at four widths, including map/year selection, territory coverage, zoom, chart controls, the purchase-rule boundary, keyboard access and both themes. Fresh visits start light even when the operating system prefers dark.
 
 [Methodology and definitions](docs/methodology.md) · [Validation record](docs/validation.md) · [Further evidence needed](docs/next_steps.md)
 

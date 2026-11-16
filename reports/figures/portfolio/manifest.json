@@ -1,0 +1,138 @@
+{
+  "generated_utc": "2026-11-16T18:13:08.676295+00:00",
+  "execution": "Python and Matplotlib in the local project VS Code integrated terminal",
+  "generator": "src/export_figures.py",
+  "input_hash_policy": "SHA256 of UTF-8 source bytes with CRLF normalized to LF; outputs hash exact stored bytes",
+  "inputs": [
+    {
+      "path": "docs/assets/visuals-data.json",
+      "sha256": "2754eedab97a878cc288d2ad44969d27fde27a2d53a249b1d39c1ba9614371b0"
+    },
+    {
+      "path": "data/processed/regional_housing_need.csv",
+      "sha256": "d8b0b3ce6a090a082c1ed4d36864fef6cd632bb6f3c68ef5e295bc285bd65b23"
+    },
+    {
+      "path": "data/processed/renter_annual_saving.csv",
+      "sha256": "14da04e1248cfc05f42b059d6701f8e5e6b8ecc852a65a46e123a9ec3ef5998b"
+    },
+    {
+      "path": "data/processed/home_purchase_cash_cases.csv",
+      "sha256": "b109d5b5045711c7080b1b4fc037c82278b404980073b7bef08f3ce72765a067"
+    },
+    {
+      "path": "data/processed/housing_audit_summary.json",
+      "sha256": "2486ebc0aab95e1c008763979708ad2303403a05ffa2e088da537609029cb9fa"
+    },
+    {
+      "path": "data/raw/site_visuals/manifest.json",
+      "sha256": "9800c34533d37085328ac649e2aed20c951efeddb39cb7cc945e18f8cc3b5dfc"
+    },
+    {
+      "path": "data/raw/housing/purchase_rules.json",
+      "sha256": "7b367b766df7df6c8ccc95abc911d633305fddec7c7dc3bcf0e4369d40ea1dad"
+    },
+    {
+      "path": "src/export_figures.py",
+      "sha256": "0e6d04f5a3648cddec637398886ebfeafeea1b3b6e2e33c1de7ec31f7e64a2ca"
+    }
+  ],
+  "selections": {
+    "map_year": 2024,
+    "map_tenure": "Renter",
+    "map_measure": "Percentage of households in core housing need",
+    "national_trend_years": [
+      2020,
+      2025
+    ],
+    "cash_price": 600000,
+    "cash_allowance_pct": 2.5,
+    "saving_quarter": "2025Q4"
+  },
+  "figures": [
+    {
+      "id": "renter_housing_need",
+      "title": "Housing need differs across provinces.",
+      "formats": [
+        "png",
+        "svg"
+      ]
+    },
+    {
+      "id": "renter_income_consumption",
+      "title": "Income did not keep up with consumption.",
+      "formats": [
+        "png",
+        "svg"
+      ]
+    },
+    {
+      "id": "purchase_cash",
+      "title": "The down payment is only the start.",
+      "formats": [
+        "png",
+        "svg"
+      ]
+    },
+    {
+      "id": "saving_reconciliation",
+      "title": "Positive saving is not verified deposit cash.",
+      "formats": [
+        "png",
+        "svg"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/figures/portfolio/CanadianHouseholdFinance-Figures.pdf",
+      "bytes": 116562,
+      "sha256": "1b990bd604bd2a9f1b50fd8931fda164578b68d323be7ad500e49e5760404044"
+    },
+    {
+      "path": "reports/figures/portfolio/purchase_cash.png",
+      "bytes": 212738,
+      "sha256": "4c5560c0cebd35bbea1a6c663d287e77dbd5e696e55995dbecbd9b50a6f71f85"
+    },
+    {
+      "path": "reports/figures/portfolio/purchase_cash.svg",
+      "bytes": 13798,
+      "sha256": "a32584095e59568c52d17583c5e8539e419d6cdcb2f5e9aa33df390b83b32428"
+    },
+    {
+      "path": "reports/figures/portfolio/README.md",
+      "bytes": 3375,
+      "sha256": "057242771ac4f64f2679e5ef250756923714f257176cebbdcebffd3d89ae2c64"
+    },
+    {
+      "path": "reports/figures/portfolio/renter_housing_need.png",
+      "bytes": 355438,
+      "sha256": "64dd68f79be04156b28cffae1203153c4a48abf71907890d3d0f870550d5f8cf"
+    },
+    {
+      "path": "reports/figures/portfolio/renter_housing_need.svg",
+      "bytes": 171475,
+      "sha256": "87248b64441f6e6b12abce94ed9cd47e546b978216ade60fcc6361e447d7325a"
+    },
+    {
+      "path": "reports/figures/portfolio/renter_income_consumption.png",
+      "bytes": 156306,
+      "sha256": "f5a1cb487be6eeb9b31a1a170d63a8485dfaf4cb1ea5892bf08b343fd1339736"
+    },
+    {
+      "path": "reports/figures/portfolio/renter_income_consumption.svg",
+      "bytes": 11831,
+      "sha256": "7c8d8e6b3b66a554b1c7eeb1a9bde4f31078ec3fa262e1058dc477d91397f332"
+    },
+    {
+      "path": "reports/figures/portfolio/saving_reconciliation.png",
+      "bytes": 153136,
+      "sha256": "2030809f2c70f709e4258f5c4f10c466d65d6ead0bd3a8521524cb90c5a10bd9"
+    },
+    {
+      "path": "reports/figures/portfolio/saving_reconciliation.svg",
+      "bytes": 10964,
+      "sha256": "9232b207803f7dfb4763bf02ab402e32d490f53b900eb247723a711f925b62d4"
+    }
+  ]
+}

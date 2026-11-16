@@ -30,8 +30,15 @@
     const regional = data.regional;
     let mapYear = String(regional.latest_year), region = "35", trendYear = "2025";
     let cashPrice = String(data.cash.default_price), allowance = String(data.cash.default_allowance);
-    let mapSvg;
-    const setMapView = box => mapSvg.setAttribute("viewBox", box.join(" "));
+    let mapSvg, mapView = "provinces";
+    const setMapView = (box, mode) => {
+      mapSvg.setAttribute("viewBox", box.join(" ")); mapView = mode;
+    };
+    function zoomToRegion() {
+      const feature = data.map.features.find(f => f.code === region);
+      const [x, y, width, height] = feature.box, pad = Math.max(width, height, 12) * 0.12;
+      setMapView([x - pad, y - pad, Math.max(width, 3) + 2 * pad, Math.max(height, 3) + 2 * pad], "selection");
+    }
     options(byId("map-year"), regional.years.map(year => ({value: year, label: year})), mapYear);
     options(byId("map-region"), data.map.features.map(f => ({value: f.code, label: f.name})), region);
     const paths = data.map.features.map(f =>
@@ -44,6 +51,7 @@
     mapSvg = byId("canada-map");
 
     function renderMap() {
+      byId("map-tooltip").hidden = true;
       const records = regional.records[mapYear], selected = records[region], national = regional.national[mapYear];
       byId("map-region").value = region;
       byId("map-year").value = mapYear;
@@ -79,8 +87,11 @@
       byId("map-zoom").disabled = false;
     }
     function chooseRegion(code) {
+      const focusedBar = document.activeElement?.classList.contains("province-bar");
       region = code; renderMap();
-      if (Number(code) >= 60) setMapView(data.map.view_all);
+      if (Number(code) >= 60) setMapView(data.map.view_all, "all");
+      else if (mapView === "selection") zoomToRegion();
+      if (focusedBar) byId("province-bars").querySelector('[data-region="' + region + '"]').focus({preventScroll: true});
     }
     byId("map-year").addEventListener("change", event => {mapYear = event.target.value; renderMap();});
     byId("map-region").addEventListener("change", event => chooseRegion(event.target.value));
@@ -95,13 +106,9 @@
       tooltip.hidden = false;
     });
     mapSvg.addEventListener("pointerleave", () => {tooltip.hidden = true;});
-    byId("map-provinces").addEventListener("click", () => setMapView(data.map.view_provinces));
-    byId("map-canada").addEventListener("click", () => setMapView(data.map.view_all));
-    byId("map-zoom").addEventListener("click", () => {
-      const feature = data.map.features.find(f => f.code === region);
-      const [x, y, width, height] = feature.box, pad = Math.max(width, height, 12) * 0.12;
-      setMapView([x - pad, y - pad, Math.max(width, 3) + 2 * pad, Math.max(height, 3) + 2 * pad]);
-    });
+    byId("map-provinces").addEventListener("click", () => setMapView(data.map.view_provinces, "provinces"));
+    byId("map-canada").addEventListener("click", () => setMapView(data.map.view_all, "all"));
+    byId("map-zoom").addEventListener("click", zoomToRegion);
     ["map-provinces", "map-canada"].forEach(id => {byId(id).disabled = false;});
     renderMap();
 

@@ -5,3 +5,8 @@ data/raw/manifest.json text eol=lf
 *.sqlite -text
 *.zip -text
 *.pbix -text
+
+reports/figures/portfolio/*.svg text eol=lf
+reports/figures/portfolio/*.json text eol=lf
+reports/figures/portfolio/*.md text eol=lf
+reports/figures/portfolio/*.pdf -text

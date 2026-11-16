@@ -48,3 +48,11 @@ The browser check uses Node 24 and an installed Chrome or Edge on the local PC. 
 Raw source hashes are in `data/raw/site_visuals/manifest.json`. The derived asset hash is in `data/processed/website_visuals_manifest.json`. All new data preparation and verification for this update ran in the user's local VS Code integrated terminal.
 
 Statistics Canada material is adapted under its [Open Licence](https://www.statcan.gc.ca/en/reference/licence). The website loads its own saved SVG/data assets and needs no map service key.
+
+## Published figures
+
+The [figure gallery](../reports/figures/portfolio/README.md) contains four PNG/SVG pairs and a four-page PDF. Python and Matplotlib export the saved map, national trend, purchase scenarios and saving reconciliation; they do not fit a new model. Each figure carries its source, period and assumptions. The export manifest hashes inputs, generator and output files. The ZIP download adds the underlying source tables.
+
+Run python src/export_figures.py from VS Code, or use **Export portfolio figures**. SVGs keep editable text; PNGs are at least 2,520 pixels wide. The map retains the published confidence intervals and national benchmark. The purchase line remains split at CAD 1.5 million.
+
+Input hashes normalize CRLF to LF so that Windows and Linux checkouts validate the same source text. Figure output hashes use the exact stored/downloadable bytes. Exported SVG, Markdown and manifest files use LF line endings, enforced for this folder in Git attributes.

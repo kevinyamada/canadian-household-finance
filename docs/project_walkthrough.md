@@ -12,7 +12,16 @@ The key example is simple: positive saving of CAD 269 in 2025Q4 did not establis
 
 The product is an audit trail in Python, SQL and Power BI. It shows the evidence, corrects the interpretation and records the information needed before calling a buyer ready.
 
-## Three-minute demo
+## One-minute website demo
+
+Open the [project website](https://kevinyamada.github.io/canadian-household-finance/).
+
+1. Select a province on the map. Explain that core housing need measures renter pressure, with published survey uncertainty. It does not measure a buyer's deposit.
+2. Show 2025 on the national budget graph: income was below consumption by CAD 3,570. The accounting measures are not a bank-account budget.
+3. Select a CAD 600,000 purchase. At a 2.5% assumed closing allowance the scenario needs CAD 50,000; at 4% it needs CAD 59,000. Those are transparent assumptions, not mortgage approval.
+4. State the audit action: verify funds, the full purchase budget and eligibility before calling someone ready to buy. Use the [published figures](../reports/figures/portfolio/README.md) when a live demo is unavailable.
+
+## Three-minute Power BI demo
 
 Open the focused v2.0.0 `CanadianHouseholdFinance.pbix` in Power BI Desktop.
 

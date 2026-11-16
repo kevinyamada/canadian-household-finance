@@ -35,7 +35,9 @@
       "label": "Generate website map and charts",
       "type": "shell",
       "command": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "args": ["src/site_visuals.py"],
+      "args": [
+        "src/site_visuals.py"
+      ],
       "group": "build",
       "problemMatcher": []
     },
@@ -43,8 +45,14 @@
       "label": "Check project website",
       "type": "shell",
       "command": "node",
-      "args": ["tests/check_website.mjs"],
-      "options": {"env": {"HOUSEHOLD_FINANCE_VSCODE": "1"}},
+      "args": [
+        "tests/check_website.mjs"
+      ],
+      "options": {
+        "env": {
+          "HOUSEHOLD_FINANCE_VSCODE": "1"
+        }
+      },
       "group": "test",
       "problemMatcher": []
     },
@@ -78,6 +86,16 @@
         "src/validate_powerbi.py"
       ],
       "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Export portfolio figures",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "src/export_figures.py"
+      ],
+      "group": "build",
       "problemMatcher": []
     }
   ]

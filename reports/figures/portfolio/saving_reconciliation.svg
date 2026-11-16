@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="576pt" viewBox="0 0 1008 576" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Positive saving is not verified deposit cash.</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Positive saving is not verified deposit cash.</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Canadian Household Finance</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576 
+L 1008 576 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #fafbf8"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 100.8 423.36 
+L 645.12 423.36 
+L 645.12 141.12 
+L 100.8 141.12 
+z
+" style="fill: #fafbf8"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(170.230391 444.819355)">Income less</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(167.250078 458.022363)">consumption</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(317.735703 444.819355)">Pension-entitlement</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(341.679609 458.022363)">adjustment</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(517.950781 444.819355)">Reported</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(514.289844 458.022363)">net saving</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4">
+      <path d="M 100.8 413.952 
+L 645.12 413.952 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_5"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="418.130711" transform="rotate(-0 88.8 418.130711)">−800</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <path d="M 100.8 376.32 
+L 645.12 376.32 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="380.498711" transform="rotate(-0 88.8 380.498711)">−600</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <path d="M 100.8 338.688 
+L 645.12 338.688 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="342.866711" transform="rotate(-0 88.8 342.866711)">−400</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <path d="M 100.8 301.056 
+L 645.12 301.056 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="305.234711" transform="rotate(-0 88.8 305.234711)">−200</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <path d="M 100.8 263.424 
+L 645.12 263.424 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13"/>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="267.602711" transform="rotate(-0 88.8 267.602711)">0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14">
+      <path d="M 100.8 225.792 
+L 645.12 225.792 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="229.970711" transform="rotate(-0 88.8 229.970711)">200</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_16">
+      <path d="M 100.8 188.16 
+L 645.12 188.16 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="192.338711" transform="rotate(-0 88.8 192.338711)">400</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_18">
+      <path d="M 100.8 150.528 
+L 645.12 150.528 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19"/>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="88.8" y="154.706711" transform="rotate(-0 88.8 154.706711)">600</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="51.943516" y="282.24" transform="rotate(-90 51.943516 282.24)">CAD per renter household</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 154.3815 263.424 
+L 251.3385 263.424 
+L 251.3385 371.05152 
+L 154.3815 371.05152 
+z
+" clip-path="url(#pa18a93acf9)" style="fill: #b3633f"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 324.4815 371.05152 
+L 421.4385 371.05152 
+L 421.4385 212.80896 
+L 324.4815 212.80896 
+z
+" clip-path="url(#pa18a93acf9)" style="fill: #8eae9d"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 494.5815 263.424 
+L 591.5385 263.424 
+L 591.5385 212.80896 
+L 494.5815 212.80896 
+z
+" clip-path="url(#pa18a93acf9)" style="fill: #286c5a"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 251.3385 371.05152 
+L 324.4815 371.05152 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #54635e; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 421.4385 212.80896 
+L 494.5815 212.80896 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #54635e; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 100.8 263.424 
+L 645.12 263.424 
+" clip-path="url(#pa18a93acf9)" style="fill: none; stroke: #54635e; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b3633f" x="202.86" y="393.158873" transform="rotate(-0 202.86 393.158873)">−CAD 572</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1c2d29" x="372.96" y="196.514713" transform="rotate(-0 372.96 196.514713)">+CAD 841</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #286c5a" x="543.06" y="196.514713" transform="rotate(-0 543.06 196.514713)">+CAD 269</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 23px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="55.44" y="54.916406" transform="rotate(-0 55.44 54.916406)">Positive saving is not verified deposit cash.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="55.44" y="80.358281" transform="rotate(-0 55.44 80.358281)">Canada · Renter household averages · 2025 Q4</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="720.72" y="184.32" transform="rotate(-0 720.72 184.32)">Full-year 2025</text>
+  </g>
+  <g id="text_19">
+   <text style="font-weight: 700; font-size: 31px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b3633f" x="720.72" y="239.04" transform="rotate(-0 720.72 239.04)">−CAD 557</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="720.72" y="273.6" transform="rotate(-0 720.72 273.6)">Reported net saving</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #1c2d29" transform="translate(720.72 338.95125)">Sum all four quarters.</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #1c2d29" transform="translate(720.72 360.51375)">Do not annualize the</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; fill: #1c2d29" transform="translate(720.72 379.75125)">positive final quarter.</text>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="100.8" y="478.08" transform="rotate(-0 100.8 478.08)">A pension adjustment changes reported saving; it does not verify deposit cash.</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(55.44 541.945469)">Source: Statistics Canada 36-10-0662-01. Quarterly nominal CAD per household; not seasonally adjusted.</text>
+   <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(55.44 555.545469)">Annual amounts sum quarterly averages over changing groups. National accounts include imputations and pension entitlements, not verified liquid funds.</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="952.56" y="561.6" transform="rotate(-0 952.56 561.6)">Kevin Yamada · Canadian Household Finance</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa18a93acf9">
+   <rect x="100.8" y="141.12" width="544.32" height="282.24"/>
+  </clipPath>
+ </defs>
+</svg>

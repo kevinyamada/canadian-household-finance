@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="576pt" viewBox="0 0 1008 576" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>The down payment is only the start.</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>The down payment is only the start.</dc:title>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Canadian Household Finance</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576 
+L 1008 576 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #fafbf8"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 85.68 417.6 
+L 650.16 417.6 
+L 650.16 135.36 
+L 85.68 135.36 
+z
+" style="fill: #fafbf8"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="92.1312" y="434.958281" transform="rotate(-0 92.1312 434.958281)">300k</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="188.8992" y="434.958281" transform="rotate(-0 188.8992 434.958281)">600k</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="317.9232" y="434.957422" transform="rotate(-0 317.9232 434.957422)">1m</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="479.2032" y="434.957422" transform="rotate(-0 479.2032 434.957422)">1.5m</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="640.4832" y="434.957422" transform="rotate(-0 640.4832 434.957422)">2m</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="367.92" y="457.959141" transform="rotate(-0 367.92 457.959141)">Illustrative purchase price · CAD</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 85.68 417.6 
+L 650.16 417.6 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="421.779141" transform="rotate(-0 76.68 421.779141)">0k</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 85.68 361.152 
+L 650.16 361.152 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9"/>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="365.331141" transform="rotate(-0 76.68 365.331141)">100k</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 85.68 304.704 
+L 650.16 304.704 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11"/>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="308.883141" transform="rotate(-0 76.68 308.883141)">200k</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <path d="M 85.68 248.256 
+L 650.16 248.256 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13"/>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="252.435141" transform="rotate(-0 76.68 252.435141)">300k</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <path d="M 85.68 191.808 
+L 650.16 191.808 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="195.987141" transform="rotate(-0 76.68 195.987141)">400k</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_16">
+      <path d="M 85.68 135.36 
+L 650.16 135.36 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #d7dfda; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="76.68" y="139.539141" transform="rotate(-0 76.68 139.539141)">500k</text>
+     </g>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="33.671484" y="276.48" transform="rotate(-90 33.671484 276.48)">Upfront cash · CAD</text>
+    </g>
+   </g>
+   <g id="line2d_18">
+    <path d="M 92.1312 406.59264 
+L 124.3872 402.92352 
+L 156.6432 399.2544 
+L 188.8992 392.76288 
+L 253.4112 379.77984 
+L 317.9232 366.7968 
+L 398.5632 350.568 
+L 479.202877 334.339265 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke-dasharray: 1.6,2.64; stroke-dashoffset: 0; stroke: #789079; stroke-width: 1.6"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 479.2032 235.5552 
+L 640.4832 174.8736 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke-dasharray: 1.6,2.64; stroke-dashoffset: 0; stroke: #789079; stroke-width: 1.6"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 92.1312 404.8992 
+L 124.3872 400.6656 
+L 156.6432 396.432 
+L 188.8992 389.376 
+L 253.4112 375.264 
+L 317.9232 361.152 
+L 398.5632 343.512 
+L 479.202877 325.872071 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #286c5a; stroke-width: 2.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 479.2032 227.088 
+L 640.4832 163.584 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke: #286c5a; stroke-width: 2.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 92.1312 402.35904 
+L 124.3872 397.27872 
+L 156.6432 392.1984 
+L 188.8992 384.29568 
+L 253.4112 368.49024 
+L 317.9232 352.6848 
+L 398.5632 332.928 
+L 479.202877 313.171279 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #b3633f; stroke-width: 1.6"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 479.2032 214.3872 
+L 640.4832 146.6496 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #b3633f; stroke-width: 1.6"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 479.2032 417.6 
+L 479.2032 135.36 
+" clip-path="url(#pa90e726047)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #54635e; stroke-opacity: 0.6; stroke-width: 0.8"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #286c5a" x="196.8992" y="369.376" transform="rotate(-0 196.8992 369.376)">CAD 50,000</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="mfb3ae10331" d="M 0 4.1833 
+C 1.109424 4.1833 2.173559 3.742521 2.95804 2.95804 
+C 3.742521 2.173559 4.1833 1.109424 4.1833 0 
+C 4.1833 -1.109424 3.742521 -2.173559 2.95804 -2.95804 
+C 2.173559 -3.742521 1.109424 -4.1833 0 -4.1833 
+C -1.109424 -4.1833 -2.173559 -3.742521 -2.95804 -2.95804 
+C -3.742521 -2.173559 -4.1833 -1.109424 -4.1833 0 
+C -4.1833 1.109424 -3.742521 2.173559 -2.95804 2.95804 
+C -2.173559 3.742521 -1.109424 4.1833 0 4.1833 
+z
+" style="stroke: #fafbf8; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#pa90e726047)">
+     <use xlink:href="#mfb3ae10331" x="188.8992" y="389.376" style="fill: #286c5a; stroke: #fafbf8; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_25">
+     <path d="M 88.1352 107.634994 
+L 97.1352 107.634994 
+L 106.1352 107.634994 
+" style="fill: none; stroke-dasharray: 1.6,2.64; stroke-dashoffset: 0; stroke: #789079; stroke-width: 1.6"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="113.3352" y="110.784994" transform="rotate(-0 113.3352 110.784994)">1.5% allowance</text>
+    </g>
+    <g id="line2d_26">
+     <path d="M 202.148325 107.634994 
+L 211.148325 107.634994 
+L 220.148325 107.634994 
+" style="fill: none; stroke: #286c5a; stroke-width: 2.7; stroke-linecap: square"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="227.348325" y="110.784994" transform="rotate(-0 227.348325 110.784994)">2.5% allowance</text>
+    </g>
+    <g id="line2d_27">
+     <path d="M 316.16145 107.634994 
+L 325.16145 107.634994 
+L 334.16145 107.634994 
+" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #b3633f; stroke-width: 1.6"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="341.36145" y="110.784994" transform="rotate(-0 341.36145 110.784994)">4% allowance</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 715.68 443.048727 
+L 877.968 443.048727 
+L 877.968 433.623273 
+L 715.68 433.623273 
+z
+" clip-path="url(#pd715a3dfa1)" style="fill: #286c5a"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 877.968 443.048727 
+L 947.52 443.048727 
+L 947.52 433.623273 
+L 877.968 433.623273 
+z
+" clip-path="url(#pd715a3dfa1)" style="fill: #b3633f"/>
+   </g>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 23px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="55.44" y="54.916406" transform="rotate(-0 55.44 54.916406)">The down payment is only the start.</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="55.44" y="80.358281" transform="rotate(-0 55.44 80.358281)">Illustrative purchase prices and closing allowances · Rules checked November 16, 2026</text>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="715.68" y="155.52" transform="rotate(-0 715.68 155.52)">CAD 600,000 purchase</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="715.68" y="201.6" transform="rotate(-0 715.68 201.6)">Minimum down payment</text>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="715.68" y="233.28" transform="rotate(-0 715.68 233.28)">CAD 35,000</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="715.68" y="270.72" transform="rotate(-0 715.68 270.72)">Assumed closing costs, 2.5%</text>
+  </g>
+  <g id="text_24">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="715.68" y="302.4" transform="rotate(-0 715.68 302.4)">CAD 15,000</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="715.68" y="357.12" transform="rotate(-0 715.68 357.12)">Cash in this scenario</text>
+  </g>
+  <g id="text_26">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #286c5a" x="715.68" y="388.8" transform="rotate(-0 715.68 388.8)">CAD 50,000</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="85.68" y="478.08" transform="rotate(-0 85.68 478.08)">At CAD 1.5 million, minimum down changes to 20%; the line is split at that boundary.</text>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(55.44 542.335273)">Sources: CMHC and Finance Canada; versioned rule record dated November 16, 2026. Values are rounded to the nearest CAD.</text>
+   <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(55.44 555.545469)">Prices and closing allowances are assumptions, not provincial market prices. Upfront cash only; not approval, all taxes or a complete closing budget.</text>
+  </g>
+  <g id="text_29">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="952.56" y="561.6" transform="rotate(-0 952.56 561.6)">Kevin Yamada · Canadian Household Finance</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa90e726047">
+   <rect x="85.68" y="135.36" width="564.48" height="282.24"/>
+  </clipPath>
+  <clipPath id="pd715a3dfa1">
+   <rect x="715.68" y="433.152" width="231.84" height="10.368"/>
+  </clipPath>
+ </defs>
+</svg>
