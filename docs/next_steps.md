@@ -1,4 +1,17 @@
-# What would make the audit usable in a real workflow?
+# Next steps
+
+The project, interactive website, Power BI report and figure downloads are published. The latest local validation passed 57 tests and four browser widths.
+
+## Use it in an interview
+
+1. **Learn the short explanation.** State the problem, the main finding and the action: a positive saving headline does not verify deposit cash; check funds, the complete purchase budget and eligibility.
+2. **Practise the demo.** Follow the one-minute website or three-minute Power BI walkthrough. Be able to explain why −572 + 841 = 269, why the full-year total is −557, and why a CAD 600,000 purchase needs CAD 50,000 in the 2.5% allowance scenario.
+3. **Put it on your resume.** Use the two bullets in the interview notes and link the live website. For each internship, emphasize the work that matches the actual posting: SQL reconciliation, Python controls, Power BI reporting, or source quality and uncertainty.
+
+[Resume bullets and interview questions](interview_notes.md) · [Demo walkthrough](project_walkthrough.md) · [Live website](https://kevinyamada.github.io/canadian-household-finance/)
+
+## Further evidence for a real workflow
+
 
 The completed public-data study demonstrates a traceable review of a housing-readiness claim. Its conclusion is to verify funds and the full purchase budget before using that claim for a decision.
 

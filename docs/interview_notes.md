@@ -32,6 +32,19 @@ I built source and period checks, an independent SQL reconciliation, a versioned
 
 **Where do the GPU experiments fit?** Earlier saved H100 work tested AI review of deliberately misleading financial excerpts. It is supporting evidence about a controlled prototype, not production audit reliability. It is not needed for the main calculation, and no new paid run was launched for this update.
 
+## Resume bullets
+
+- Built a financial-reporting audit with Python and SQLite to reconcile 24 quarters of Statistics Canada renter data, validate annual saving totals and check purchase-price rules.
+- Created a three-page Power BI report and an interactive Canadian housing website with provincial comparisons, purchase-cash scenarios, published figures and 57 automated tests.
+
+Project link: https://kevinyamada.github.io/canadian-household-finance/
+
+## What to practise before an interview
+
+Explain the question and recommendation in 30 seconds without reading. Then use the three-minute Power BI walkthrough. Be ready to explain the difference between reported saving, income less consumption and verified cash.
+
+For a technical follow-up, show one SQL reconciliation, one rule-boundary test and the source record. Use the map to discuss coverage and uncertainty. The provincial survey, national accounts and hypothetical purchase cases have different definitions and periods.
+
 ## Skills to demonstrate
 
 Python preparation and controls, SQL aggregation and reconciliation, source lineage, accounting definitions, rule boundaries, explicit missing evidence and clear Power BI communication.
