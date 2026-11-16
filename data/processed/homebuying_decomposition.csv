@@ -1,0 +1,10 @@
+city,factor,contribution_cad,start_gap_cad,end_gap_cad,scope
+Vancouver,price,14423.772317436466,-3236.465707952244,18331.36454245221,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Vancouver,rates,27144.05793296799,-3236.465707952244,18331.36454245221,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Vancouver,income,-20000.0,-3236.465707952244,18331.36454245221,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Victoria,price,10943.389265731545,-19882.209027780627,-10020.941333640949,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Victoria,rates,18917.878428408134,-19882.209027780627,-10020.941333640949,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Victoria,income,-20000.0,-19882.209027780627,-10020.941333640949,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Halifax,price,18144.650600170055,-31833.909500568145,-14359.437366587284,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Halifax,rates,14329.821533810804,-31833.909500568145,-14359.437366587284,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility
+Halifax,income,-15000.0,-31833.909500568145,-14359.437366587284,Descriptive 2021–2023 comparison to buyer-family income; current rules and tax schedule held fixed; not causal or borrower eligibility

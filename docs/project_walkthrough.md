@@ -1,40 +1,33 @@
-# The project in plain language
+# A three-minute project walkthrough
 
-**Why does buying a home still feel out of reach?**
+## Say this first
 
-This project examines one part of that problem: whether a financial report's saving figures and upfront-cost assumptions actually support a claim that renters are ready to buy.
+“I asked whether the down payment is really the biggest obstacle to buying a home. I used Statistics Canada city transaction data, modeled both purchase cash and mortgage income requirements, and built a reviewable bank audit case.
 
-## What I did
+In my Vancouver example, two earners have CAD 100,000 in cash and CAD 150,000 of annual income. Their cash covers the modeled purchase costs, but income is about CAD 40,000 short of the stressed mortgage screen. A lower rate helps; a 20% cheaper home clears both modeled financial checks.
 
-I used Statistics Canada data to reconcile reported renter saving with income, consumption and pension adjustments. I checked all four quarters before calculating annual totals. Then I built a transparent down-payment and closing-allowance scenario and a register of deliberately drafted claims.
+The audit recommendation is to hold the example file, resolve the income gap and verify the missing evidence. A cash-ready calculation is not a mortgage approval.”
 
-The key example is simple: positive saving of CAD 269 in 2025Q4 did not establish deposit cash. It included a pension adjustment. The full-year sum was negative CAD 557 per household.
+Prices and baseline rates are 2023 benchmarks. Rules were reviewed November 16, 2026. The buyers are hypothetical.
 
-The product is an audit trail in Python, SQL and Power BI. It shows the evidence, corrects the interpretation and records the information needed before calling a buyer ready.
+## Website demo
 
-## One-minute website demo
+1. Open the [site](https://kevinyamada.github.io/canadian-household-finance/). The default case is Vancouver / Two earners / Baseline.
+2. Point to the separate cash and annual gross-income bars. Explain why CAD 100,000 cash can coexist with a CAD 40,014 income shortfall.
+3. Choose **Price 20% lower**. Both modeled checks fit. Return to Baseline.
+4. Open **Would this mortgage file pass a first review?** Show the income exception and missing evidence.
+5. If there is time, show a different city and the waiting chart. Explain that paths are scenarios, not price forecasts.
 
-Open the [project website](https://kevinyamada.github.io/canadian-household-finance/).
+## Power BI demo
 
-1. Select a province on the map. Explain that core housing need measures renter pressure, with published survey uncertainty. It does not measure a buyer's deposit.
-2. Show 2025 on the national budget graph: income was below consumption by CAD 3,570. The accounting measures are not a bank-account budget.
-3. Select a CAD 600,000 purchase. At a 2.5% assumed closing allowance the scenario needs CAD 50,000; at 4% it needs CAD 59,000. Those are transparent assumptions, not mortgage approval.
-4. State the audit action: verify funds, the full purchase budget and eligibility before calling someone ready to buy. Use the [published figures](../reports/figures/portfolio/README.md) when a live demo is unavailable.
+Start on **Start here** for the finding and nine cases. On **Cash and income**, select one city, buyer and scenario. Use **What helps** for one-change comparisons, then finish on **Bank audit**.
 
-## Three-minute Power BI demo
+The audit page reviews the selected baseline, not a scenario selected elsewhere. The six pages contain imported data and do not need the author's local folders.
 
-Open the focused v2.0.0 `CanadianHouseholdFinance.pbix` in Power BI Desktop.
+## Technical follow-up
 
-| Time | Page | What to explain |
-| :--- | :--- | :--- |
-| First minute | Audit conclusion | State the problem: a saving headline is not verified deposit money |
-| Second minute | Savings evidence | Reconcile −572 + 841 = 269, then explain why the full-year total is −557 |
-| Third minute | Purchase cash check | Select CAD 600,000 and 2.5%; show 35,000 down + 15,000 assumed closing allowance = 50,000 in the scenario |
+Show [the SQL](../sql/homebuying.sql) and one [boundary test](../tests/test_homebuying.py). Explain semiannual interest compounding, financed insurance, the stress-test rate and why property assessment is an assumption.
 
-Keep the scope clear: the price and allowance are assumptions, the data are group averages, and a cash scenario is not mortgage approval.
+Explain the source grain: city first-time-buyer transaction medians, hypothetical borrower profiles, national mortgage-rate benchmarks, and a geography-vintage boundary in 2020. These cannot establish an actual borrower's income, a matched-house price trend or current loan approval.
 
-## Thirty-second interview explanation
-
-> I built an audit project around the financial claims used to describe homebuying readiness. A positive saving figure could be mistaken for money available for a deposit, so I reconciled the public renter data, checked the full year and tested the purchase-cost calculation. Python and SQL produce the audit trail, and Power BI lets someone inspect the evidence and assumptions. The result shows what must be corrected or verified before a readiness claim can be trusted.
-
-[Interview questions](interview_notes.md) · [Problem statement](problem_statement.md) · [Audit brief](../reports/housing_audit.md)
+[Findings](../reports/homebuying_findings.md) · [Audit working paper](bank_audit_case.md) · [Methodology](homebuying_methodology.md)

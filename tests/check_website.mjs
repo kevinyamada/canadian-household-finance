@@ -79,7 +79,7 @@ try{
   for(const [width,height] of [[1440,1000],[768,1024],[390,844],[320,780]]){
     await command('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600});
     await load('Page.navigate',{url:base});
-    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
+    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
     if(await evaluate('document.documentElement.dataset.theme')!=='light')throw new Error('Fresh visit must start light despite dark system preference');
     const check=await evaluate(`(()=>{
       const expected=${JSON.stringify(expected)};
@@ -91,12 +91,54 @@ try{
       const clipped=[...document.querySelectorAll('.calculation>div,.button,figcaption,.header-tools')].filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.textContent);
       return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,badMetrics,brokenAnchors,clipped,question:document.querySelector('h1').textContent,figures:document.querySelectorAll('figure').length,metricCount:document.querySelectorAll('[data-metric]').length,font:getComputedStyle(document.body).fontFamily};
     })()`);
-    if(check.scrollWidth>width||check.badMetrics.length||check.brokenAnchors.length||check.clipped.length||check.question!==expected.question||check.figures!==4||check.metricCount<8||!check.font.includes('system-ui'))throw new Error('Page check failed '+JSON.stringify(check));
+    if(check.scrollWidth>width||check.badMetrics.length||check.brokenAnchors.length||check.clipped.length||check.question!==expected.question||check.figures<7||check.metricCount<8||!check.font.includes('system-ui'))throw new Error('Page check failed '+JSON.stringify(check));
     await command('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
     await command('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
     if(await evaluate('document.activeElement.className')!=='skip-link')throw new Error('Skip link is not first');
     await evaluate('document.activeElement.blur();window.scrollTo(0,0)');
 
+    // Homebuying case checks use the saved desktop outputs as the independent UI oracle.
+    const hbExpected=JSON.parse(fs.readFileSync(path.join(root,'docs/assets/homebuying-data.json'),'utf8'));
+    const hbCheck=await evaluate(`(()=>{
+      const data=${JSON.stringify({"cases": []})};
+      const failures=[],el=id=>document.getElementById(id);
+      const change=(id,value)=>{el(id).value=value;el(id).dispatchEvent(new Event('change',{bubbles:true}));};
+      const check=(v,label)=>{if(!v)failures.push(label);};
+      check(el('hb-city').value==='Vancouver'&&el('hb-profile').value==='couple','default city/profile');
+      check(el('hb-bars').textContent.includes('CAD 190,014')&&el('hb-bars').textContent.includes('CAD 40,014'),'baseline income values');
+      check(el('hb-verdict').textContent==='Cash is enough. Income is the hurdle.','clear baseline verdict');
+      check(document.querySelectorAll('.hb-city-marker').length===3,'three official city markers');
+      change('hb-scenario','price20');
+      check(el('hb-verdict').textContent==='Both modeled checks are within limits.','cheaper home clears example');
+      check(el('hb-audit-conclusion').textContent.includes('income shortfall'),'audit remains baseline');
+      change('hb-scenario','baseline');change('hb-profile','single');
+      check(el('hb-income-scope').textContent.includes('If minimum cash were available'),'cash-short conditional income');
+      change('hb-city','Victoria');
+      check(el('hb-verdict').textContent==='Cash is enough. Income is the hurdle.','Victoria cash/income split');
+      change('hb-profile','couple');
+      check(el('hb-verdict').textContent==='Both modeled checks are within limits.','Victoria two earners');
+      document.querySelector('.hb-city-marker[data-city="Halifax"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));
+      check(el('hb-city').value==='Halifax'&&el('hb-history-caption').textContent.startsWith('Halifax'),'marker links comparison and history');
+      change('hb-program','HBP existing RRSP');
+      check(el('hb-program-result').textContent.includes('No increase in total assets')&&el('hb-program-result').textContent.includes('repayment'),'HBP tradeoff');
+      change('hb-program','FHSA one-year illustration');
+      check(el('hb-program-result').textContent.includes('counted once'),'FHSA accounting');
+      const before=el('hb-wait-readout').textContent;change('hb-rent','0.06');
+      check(el('hb-wait-readout').textContent!==before,'rent sensitivity changes result');
+      check(el('hb-audit-controls').querySelectorAll('article').length===8,'eight bank audit objectives');
+      check(el('hb-audit-conclusion').textContent.includes('Hold:'),'no approval without evidence');
+      change('hb-city','Vancouver');change('hb-profile','couple');change('hb-scenario','baseline');
+      change('hb-program','30-year amortization');change('hb-rent','0.03');
+      check(el('hb-program-result').textContent.includes('CAD 196,837'),'30-year interest tradeoff');
+      // Expand archived context so its keyboard controls and plots remain testable.
+      el('renter-context').open=true;
+      return {failures,city_map:true,cash_income:true,sensitivities:true,programs:true,waiting:true,bank_audit:true};
+    })()`);
+    if(hbCheck.failures.length)throw new Error('Homebuying checks failed '+JSON.stringify(hbCheck));
+    const displayedIncome=await evaluate('document.getElementById("hb-bars").textContent');
+    const oracle=hbExpected.cases.find(r=>r.city==='Vancouver'&&r.profile==='couple'&&r.year===2023&&r.scenario==='baseline');
+    if(!displayedIncome.includes(Math.round(oracle.required_gross_income).toLocaleString('en-CA')))throw new Error('Saved-data/UI mismatch');
+    result.homebuying??=[];result.homebuying.push({width,...hbCheck});
     const interactions=await evaluate(`(()=>{
       const failures=[];
       const el=id=>document.getElementById(id);
@@ -152,7 +194,7 @@ try{
     await evaluate('document.querySelector(\'#canada-map [data-region="35"]\').dispatchEvent(new MouseEvent("click",{bubbles:true}));document.activeElement.blur();window.scrollTo(0,0)');
     result.interactions??=[];result.interactions.push({width,...interactions,keyboard_map:true});
     if(width===1440||width===390){
-      for(const [id,name] of [['explore','map'],['story','trend'],['cash-heading','cash']]){
+      for(const [id,name] of [['buying','buyers'],['bank-audit','bank-audit'],['history','history'],['waiting','waiting'],['explore','map'],['story','trend'],['cash-heading','cash']]){
         await evaluate('document.getElementById('+JSON.stringify(id)+').scrollIntoView({block:"start"});');
         const shot=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
         fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-'+name+'.png'),Buffer.from(shot.data,'base64'));
@@ -171,11 +213,11 @@ try{
     const dark=await evaluate('({theme:document.documentElement.dataset.theme,pressed:document.getElementById("theme-toggle").getAttribute("aria-pressed"),label:document.getElementById("theme-toggle").getAttribute("aria-label"),background:getComputedStyle(document.body).backgroundColor})');
     if(dark.theme!=='dark'||dark.pressed!=='true'||dark.label!=='Switch to light mode'||dark.background===light)throw new Error('Dark theme failed '+JSON.stringify(dark));
     await load('Page.reload',{ignoreCache:true});
-    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
+    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
     if(await evaluate('document.documentElement.dataset.theme')!=='dark')throw new Error('Theme preference did not persist');
     if(await evaluate("getComputedStyle(document.getElementById(\"canada-map\").querySelector(\".selected\")).fill")===lightMap)throw new Error('Map colours did not follow dark mode');
     if(width===1440||width===390){
-      await evaluate('document.getElementById("explore").scrollIntoView({block:"start"})');
+      await evaluate('document.getElementById("renter-context").open=true;document.getElementById("explore").scrollIntoView({block:"start"})');
       const mapShot=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
       fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-map-dark.png'),Buffer.from(mapShot.data,'base64'));
       await evaluate('window.scrollTo(0,0)');

@@ -1,0 +1,703 @@
+{
+  "endpoint": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromCubePidCoordAndLatestNPeriods",
+  "queries": [
+    {
+      "productId": 46100099,
+      "coordinate": "6.1.1.2.1.1.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "6.1.1.2.1.5.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "6.1.1.2.1.7.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "6.1.1.2.1.9.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "619.1.1.2.1.1.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "619.1.1.2.1.5.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "619.1.1.2.1.7.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "619.1.1.2.1.9.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "640.1.1.2.1.1.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "640.1.1.2.1.5.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "640.1.1.2.1.7.0.0.0.0",
+      "latestN": 10
+    },
+    {
+      "productId": 46100099,
+      "coordinate": "640.1.1.2.1.9.0.0.0.0",
+      "latestN": 10
+    }
+  ],
+  "responses": [
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "6.1.1.2.1.1.0.0.0.0",
+        "vectorId": 1778438001,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 3880.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 2690.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 2750.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "6.1.1.2.1.5.0.0.0.0",
+        "vectorId": 1778438007,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 120000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 125000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 135000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "6.1.1.2.1.7.0.0.0.0",
+        "vectorId": 1778438009,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 380000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 450000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 460000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "6.1.1.2.1.9.0.0.0.0",
+        "vectorId": 1778438011,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 3.2,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 3.5,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 3.2,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "619.1.1.2.1.1.0.0.0.0",
+        "vectorId": 1784269233,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 3630.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 2585.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 2450.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "619.1.1.2.1.5.0.0.0.0",
+        "vectorId": 1784269239,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 155000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 170000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 175000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "619.1.1.2.1.7.0.0.0.0",
+        "vectorId": 1784269241,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 775000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 835000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 849000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "619.1.1.2.1.9.0.0.0.0",
+        "vectorId": 1784269243,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 5.1,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 5.1,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 4.8,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "640.1.1.2.1.1.0.0.0.0",
+        "vectorId": 1784524785,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 725.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 415.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 530.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "640.1.1.2.1.5.0.0.0.0",
+        "vectorId": 1784524791,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 130000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 135000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 150000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "640.1.1.2.1.7.0.0.0.0",
+        "vectorId": 1784524793,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 530000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 626000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 585000.0,
+            "decimals": 0,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "object": {
+        "responseStatusCode": 0,
+        "productId": 46100099,
+        "coordinate": "640.1.1.2.1.9.0.0.0.0",
+        "vectorId": 1784524795,
+        "vectorDataPoint": [
+          {
+            "refPer": "2021-01-01",
+            "refPer2": "",
+            "refPerRaw": "2021-01-01",
+            "refPerRaw2": "",
+            "value": 4.3,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2022-01-01",
+            "refPer2": "",
+            "refPerRaw": "2022-01-01",
+            "refPerRaw2": "",
+            "value": 4.5,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2025-12-08T08:30",
+            "frequencyCode": 12
+          },
+          {
+            "refPer": "2023-01-01",
+            "refPer2": "",
+            "refPerRaw": "2023-01-01",
+            "refPerRaw2": "",
+            "value": 4.0,
+            "decimals": 1,
+            "scalarFactorCode": 0,
+            "symbolCode": 0,
+            "statusCode": 0,
+            "securityLevelCode": 0,
+            "releaseTime": "2026-08-26T08:30",
+            "frequencyCode": 12
+          }
+        ]
+      }
+    }
+  ]
+}

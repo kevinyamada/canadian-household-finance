@@ -1,0 +1,12 @@
+control,status,detail
+Published FCAC example discrepancy,Exception explained,"At 4%, the monthly cell says 1587.06 while its total interest and the standard formula imply 1578.06. Eight other monthly examples and the 5-year interest example are independently checked."
+Official source policy and hashes,Pass,"Selected WDS responses, metadata, Bank of Canada rates and government tax sources verified"
+Unique market/year and case keys,Pass,No joins across CMA and city geography; three selected CSDs
+Twelve monthly rate observations,Pass,Funds-advanced fixed 5-years-and-over rates; outstanding-balance rates rejected
+Source vintages,Scope note,2020 is SGC 2016; 2021–2023 uses SGC 2021. Overlap retained separately; no causal claims
+Property assessment and tax bill,Needs evidence,Price used as explicit assessment proxy; Halifax urban-rate scenario; actual property bill and local charges required
+Closing and ongoing cost estimates,Needs evidence,"CAD 4,000 closing allowance, CAD 10,000 reserve and monthly heat/fees/insurance/maintenance are assumptions"
+Borrower and program eligibility,Needs evidence,"Income, liquid cash, RRSP balances, credit, residency, ownership history and property conditions not verified"
+Waiting and program scenarios,Scope note,No forecast probabilities; FHSA tax rate/timing assumed; HBP moves existing assets
+Historical policy comparison,Scope note,2026 rules and 2023 tax schedule held constant; not historical mortgage approvals
+Independent SQL reconciliation,Pass,468 cash and income calculations agree with SQLite

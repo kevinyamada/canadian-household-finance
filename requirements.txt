@@ -5,3 +5,5 @@ matplotlib>=3.9,<4
 requests>=2.32,<3
 pytest>=8,<10
 jsonschema>=4.23,<5
+pypdf>=7.1,<8
+pyproj>=3.8,<4

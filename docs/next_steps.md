@@ -1,26 +1,21 @@
-# Next steps
+# Project status and next evidence
 
-The project, interactive website, Power BI report and figure downloads are published. The latest local validation passed 57 tests and four browser widths.
+The homebuying extension completes the five improvements: regional transaction benchmarks and costs, mortgage-income screening, explicit buyer profiles, sensitivities and an auditable source/review trail.
 
-## Use it in an interview
+It also completes the three research comparisons: historical price/rate/income inputs, first-time-buyer measures and saving while prices/rent change. The website, Power BI project, source tables and shareable figures follow the same question.
 
-1. **Learn the short explanation.** State the problem, the main finding and the action: a positive saving headline does not verify deposit cash; check funds, the complete purchase budget and eligibility.
-2. **Practise the demo.** Follow the one-minute website or three-minute Power BI walkthrough. Be able to explain why −572 + 841 = 269, why the full-year total is −557, and why a CAD 600,000 purchase needs CAD 50,000 in the 2.5% allowance scenario.
-3. **Put it on your resume.** Use the two bullets in the interview notes and link the live website. For each internship, emphasize the work that matches the actual posting: SQL reconciliation, Python controls, Power BI reporting, or source quality and uncertainty.
+[Findings](../reports/homebuying_findings.md) · [Bank audit case](bank_audit_case.md) · [Methodology](homebuying_methodology.md)
 
-[Resume bullets and interview questions](interview_notes.md) · [Demo walkthrough](project_walkthrough.md) · [Live website](https://kevinyamada.github.io/canadian-household-finance/)
+## Evidence needed for an actual mortgage decision
 
-## Further evidence for a real workflow
+This public-data project cannot verify a real borrower's income, liquid funds, debts, credit or eligibility. The fictional audit files remain on hold pending evidence. A real review would need permitted borrower records, a specific property, current offered terms and the lender's actual policy.
 
+## What a later research refresh would require
 
-The completed public-data study demonstrates a traceable review of a housing-readiness claim. Its conclusion is to verify funds and the full purchase budget before using that claim for a decision.
+Comparable post-2023 city transaction prices and buyer incomes are not in the selected source. The 2025 rate replay is therefore a rate-only scenario. A later release would need source-vintage checks and a fresh review of the findings, tax rules and native Power BI file.
 
-For an actual borrower, the next evidence would be approved records of liquid funds, gifts and restrictions; gross income and existing debt payments; property costs; and the lender's current qualification requirements. Group averages cannot fill those gaps.
+A complete buy-versus-rent investment comparison would also require matched property/rent data, a justified investment return, maintenance paths, selling costs and an explicit holding period. The waiting study does not claim that broader result.
 
-For an actual reporting team, use permitted report excerpts with independent human labels and a documented review process. The current eight drafted claims illustrate the controls; they do not establish a real-world error rate.
+## Before presenting
 
-Keep purchase rules versioned and review them before a new use date. Refresh source releases deliberately, preserving the observation period, file hashes and accounting definitions. A changed source vintage requires reviewing the written conclusion and Power BI viewing copy together.
-
-The saved AI and forecasting studies remain supporting experiments. They do not establish borrower eligibility or professional audit assurance.
-
-[Current audit brief](../reports/housing_audit.md) · [Methodology](methodology.md)
+Use the [walkthrough](project_walkthrough.md) and [interview notes](interview_notes.md). Be able to explain the separate cash/income checks, why all examples still need verification, and why a scenario is not a prediction.

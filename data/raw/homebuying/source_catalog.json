@@ -1,0 +1,60 @@
+[
+  {
+    "id": "fcac_payments",
+    "file": "fcac_payments.html.gz",
+    "url": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/interest-on-mortgages.html",
+    "sha256": "d4431d44a8f981675a60b4ab4b21831f3b4c95d40112866175c80587663b4718",
+    "downloaded_utc": "2026-11-16T19:09:54.049306+00:00"
+  },
+  {
+    "id": "fcac_amortization",
+    "file": "fcac_amortization.html.gz",
+    "url": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/relief-options.html",
+    "sha256": "9f5a08885632ae66743711336f0dc33a162f21db09e66656ecbbf46a07971aed",
+    "downloaded_utc": "2026-11-16T19:09:57.483218+00:00"
+  },
+  {
+    "id": "ns_tax_rates",
+    "file": "ns_tax_rates.csv",
+    "url": "https://data.novascotia.ca/api/views/ure8-3w7m/rows.csv?accessType=DOWNLOAD",
+    "sha256": "ef6219e8fd02bd27590662224c3a695c091ef8d18015ac168df43a801d162088",
+    "downloaded_utc": "2026-11-16T19:10:08.597853+00:00"
+  },
+  {
+    "id": "victoria_tax_history",
+    "file": "victoria_tax_history.json",
+    "url": "https://www.victoria.ca/media/file/annual-report-2024",
+    "sha256": "5aed7e1b6e383e4a958e7006b2e21368fe68fdb9baea29550f24ebc7eef7b165",
+    "downloaded_utc": "2026-11-16T19:10:12.496955+00:00"
+  },
+  {
+    "id": "geoname_Vancouver",
+    "file": "geoname_Vancouver.json",
+    "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Vancouver&category=O&maxResults=10",
+    "sha256": "f0395466df429db89106b43d429af65883b763ed694f351aac81ae403b4e9ddb"
+  },
+  {
+    "id": "geoname_Victoria",
+    "file": "geoname_Victoria.json",
+    "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Victoria&category=O&maxResults=10",
+    "sha256": "8c5c153783bbd0ea88b080af9d4f671b2a0057a3bf7112089d14f0344f77b3e9"
+  },
+  {
+    "id": "geoname_Halifax",
+    "file": "geoname_Halifax.json",
+    "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Halifax&category=O&maxResults=10",
+    "sha256": "986bc5537e6378741c038d49098782d2c8be62c92891651d3fd898caf00f61a4"
+  },
+  {
+    "id": "wds_codes",
+    "file": "wds_codes.json",
+    "url": "https://www150.statcan.gc.ca/t1/wds/rest/getCodeSets",
+    "sha256": "fe87e8ae2ea3907287caa3725431e43b33587c1704b97e3a1f44568762ec5c8d"
+  },
+  {
+    "file": "osfi_b20.html.gz",
+    "url": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/residential-mortgage-underwriting-practices-procedures-guideline-2017",
+    "retrieved_utc": "2026-11-16",
+    "purpose": "Public underwriting documentation and independent review guidance"
+  }
+]

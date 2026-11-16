@@ -1,0 +1,119 @@
+{
+  "as_of": "2026-11-16",
+  "verified_by": "Official source pages reviewed; selected downloads and structured reference facts retained. Direct HTTP downloads of some CMHC/BC/Vancouver pages were blocked; their official web views were reviewed.",
+  "gds_limit": 0.39,
+  "tds_limit": 0.44,
+  "stress_floor_pct": 5.25,
+  "stress_buffer_pp": 2,
+  "insured_price_cap_exclusive": 1500000,
+  "insured_30_year_surcharge": 0.002,
+  "premium_tiers": [
+    {
+      "max_ltv": 0.85,
+      "premium_rate": 0.028
+    },
+    {
+      "max_ltv": 0.9,
+      "premium_rate": 0.031
+    },
+    {
+      "max_ltv": 0.95,
+      "premium_rate": 0.04
+    }
+  ],
+  "bc_transfer_thresholds": [
+    200000,
+    2000000,
+    3000000
+  ],
+  "bc_first_time": {
+    "full_relief_value_limit": 835000,
+    "partial_relief_value_limit": 860000,
+    "maximum_relief": 8000,
+    "exempt_first_value": 500000
+  },
+  "halifax_deed_transfer_rate": 0.015,
+  "premium_sales_tax_selected_provinces": 0,
+  "sources": {
+    "OSFI mortgage underwriting and audit": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/residential-mortgage-underwriting-practices-procedures-guideline-2017",
+    "CMHC debt service and stress test": "https://www.cmhc-schl.gc.ca/professionals/project-funding-and-mortgage-financing/mortgage-loan-insurance/calculating-gds-tds",
+    "CMHC insurance premiums": "https://www.cmhc-schl.gc.ca/professionals/project-funding-and-mortgage-financing/mortgage-loan-insurance/mortgage-loan-insurance-homeownership-programs/premium-information-for-homeowner-and-small-rental-loans",
+    "CMHC purchase requirements": "https://www.cmhc-schl.gc.ca/consumers/home-buying/mortgage-loan-insurance-for-consumers/what-are-the-general-requirements-to-qualify-for-homeowner-mortgage-loan-insurance",
+    "FCAC payment examples": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/interest-on-mortgages.html",
+    "FCAC 30-year amortization": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/relief-options.html",
+    "BC transfer tax statute": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96378_01",
+    "BC first-time buyer amounts": "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/property-transfer-tax/exemptions/first-time-home-buyers/current-amount",
+    "Halifax transfer tax": "https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/220531rc1517.pdf",
+    "CRA FHSA": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account.html",
+    "CRA HBP": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan.html"
+  },
+  "published_example_discrepancy": {
+    "rate": 4,
+    "published_monthly": 1587.06,
+    "formula_monthly": 1578.06,
+    "note": "The FCAC monthly cell transposes digits. The same row total interest of 173418.18 implies 1578.06; the model retains the standard semiannual-compounding formula."
+  },
+  "fcac_examples": [
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 2.5,
+      "monthly": 1343.9
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 2.9,
+      "monthly": 1404.39
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 3.4,
+      "monthly": 1482.02
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 3.8,
+      "monthly": 1545.7
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 4,
+      "monthly": 1587.06
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 4.5,
+      "monthly": 1660.42
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 4.8,
+      "monthly": 1710.82
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 5,
+      "monthly": 1744.81
+    },
+    {
+      "principal": 300000,
+      "years": 25,
+      "rate": 5.2,
+      "monthly": 1779.13
+    }
+  ],
+  "conditions": [
+    "Hypothetical owner-occupied resale, traditional down-payment funds, first-time buyer and BC relief conditions assumed satisfied; actual eligibility not verified.",
+    "BC relief assumes a qualifying property, eligible citizenship/residence, occupancy, land-size and ownership conditions.",
+    "No foreign-buyer or NS non-resident taxes: profiles assume eligible residents of the purchase province.",
+    "FHSA and HBP limits are not additional wealth. No program funds are added to cash without separate account balances and eligibility.",
+    "2026 rules are held constant over historical inputs; calculations do not reconstruct historical approvals or historical tax benefits."
+  ]
+}

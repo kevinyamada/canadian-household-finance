@@ -1,0 +1,2392 @@
+{
+"links": {
+    "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames?q=Halifax&category=O&maxResults=10" },
+    "alternate": [ 
+         { "mediatype": "application/json", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Halifax&category=O&maxResults=10" },
+         { "mediatype": "text/html", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.html?q=Halifax&category=O&maxResults=10" },
+         { "mediatype": "text/csv", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.csv?q=Halifax&category=O&maxResults=10" }, 
+         { "mediatype": "application/vnd.google-earth.kml+xml", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.kml?q=Halifax&category=O&maxResults=10" },
+         { "mediatype": "application/gml+xml", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.gml?q=Halifax&category=O&maxResults=10" },
+         { "mediatype": "application/vnd.geo+json", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.geojson?q=Halifax&category=O&maxResults=10" }
+         
+     ]
+},
+"items": [
+
+    {   
+        "id": "CAPHL",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CAPHL" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/3cdd11afaf6811d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/UNP" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/121" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "3cdd11afaf6811d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/3cdd11afaf6811d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "UNP",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/UNP" }
+            } 
+        },
+        "generic": {
+            "code": "121",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/121" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.647401,
+        "longitude": -63.590651,
+        "map": ["011D12","C.4000","C.4001","C.4003","C.4006","C.4012","C.4013","C.4202","C.4237","C.4320","C.8007"],
+        "relevance": 30000000,
+        "bbox": [
+            -63.610651,
+            44.627401,
+            -63.570651,
+            44.667401
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.590651,44.647401]},
+        
+        "decision": "1996-04-01"
+    },
+    {   
+        "id": "CBUCG",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBUCG" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/33f6f94caffd11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/408" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "33f6f94caffd11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/33f6f94caffd11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MUN1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" }
+            } 
+        },
+        "generic": {
+            "code": "408",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/408" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.866743,
+        "longitude": -63.71602,
+        "map": ["011D13","011D05","011D10","011D11","011D12","011D14","011D15","011D16","011E01","011E02","011E03","011E07","021A09","021A16","C.4000","C.4001","C.4003","C.4006","C.4010"],
+        "relevance": 1000000,
+        "bbox": [
+            -63.73602,
+            44.846743,
+            -63.69602,
+            44.886743
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.71602,44.866743]},
+        
+        "decision": "1996-04-01"
+    },
+    {   
+        "id": "CBUXC",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBUXC" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2c9436fcaf4311d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada de la Citadelle-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2c9436fcaf4311d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2c9436fcaf4311d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.647222,
+        "longitude": -63.580556,
+        "map": ["011D12"],
+        "relevance": 1000000,
+        "bbox": [
+            -63.5916596,
+            44.6381708,
+            -63.5696627,
+            44.6560969
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.580556,44.647222]},
+        
+        "decision": "2001-01-12"
+    },
+    {   
+        "id": "CBUXB",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBUXB" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2c9436fcaf4311d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Citadel National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2c9436fcaf4311d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2c9436fcaf4311d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.647222,
+        "longitude": -63.580556,
+        "map": ["011D12"],
+        "relevance": 1000000,
+        "bbox": [
+            -63.5916596,
+            44.6381708,
+            -63.5696627,
+            44.6560969
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.580556,44.647222]},
+        
+        "decision": "2001-01-12"
+    },
+    {   
+        "id": "CAPHM",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CAPHM" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/3d11b640af6811d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1405" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Harbour",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "3d11b640af6811d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/3d11b640af6811d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "BAY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" }
+            } 
+        },
+        "generic": {
+            "code": "1405",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1405" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.591066,
+        "longitude": -63.531965,
+        "map": ["011D12","011D11"],
+        "relevance": 1000000,
+        "bbox": [
+            -63.65878,
+            44.4947252,
+            -63.4440603,
+            44.6991399
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.531965,44.591066]},
+        
+        "decision": "2013-05-21"
+    },
+    {   
+        "id": "JCJYE",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JCJYE" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca81784849c20c357eba91f46900be5" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Halifax Creek",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca81784849c20c357eba91f46900be5",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca81784849c20c357eba91f46900be5" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "RIV",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" }
+            } 
+        },
+        "generic": {
+            "code": "602",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" }
+            } 
+        },   
+        "location": "Kootenay Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 50.018611,
+        "longitude": -117.732778,
+        "map": ["082K04","082K00"],
+        "relevance": 250000,
+        "bbox": [
+            -117.7385126,
+            50.0076716,
+            -117.6886481,
+            50.0292908
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-117.732778,50.018611]},
+        
+        "decision": "1961-03-02"
+    },
+    {   
+        "id": "HAEJU",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/HAEJU" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c29edb3849c20c307b12634c1958bd3" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/ISL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2300" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/47" }  
+        },
+        "name": "Halifax Island",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c29edb3849c20c307b12634c1958bd3",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c29edb3849c20c307b12634c1958bd3" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "ISL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/ISL" }
+            } 
+        },
+        "generic": {
+            "code": "2300",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2300" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "47",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/47" }
+            } 
+        },
+        "latitude": 59.360093,
+        "longitude": -109.034829,
+        "map": ["074N06","C.6310"],
+        "relevance": 250000,
+        "bbox": [
+            -109.0460718,
+            59.3504477,
+            -109.0229538,
+            59.3700861
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-109.034829,59.360093]},
+        
+        "decision": "1959-01-15"
+    },
+    {   
+        "id": "FBVUY",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/FBVUY" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0d037f38849c20c36779c4ab67ec264e" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }  
+        },
+        "name": "Halifax Lake",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0d037f38849c20c36779c4ab67ec264e",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0d037f38849c20c36779c4ab67ec264e" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "LAKE",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" }
+            } 
+        },
+        "generic": {
+            "code": "951",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" }
+            } 
+        },   
+        "location": "Sudbury",
+        "province": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }
+            } 
+        },
+        "latitude": 46.2010125,
+        "longitude": -81.0316915,
+        "map": ["041I03","041I00"],
+        "relevance": 250000,
+        "bbox": [
+            -81.051275,
+            46.1909106,
+            -81.012447,
+            46.2155037
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-81.0316915,46.2010125]},
+        
+        "decision": "1949-08-14"
+    },
+    {   
+        "id": "FDUTI",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/FDUTI" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c5ceebe849c20c32200f46559eea57a" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }  
+        },
+        "name": "Halifax Creek",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c5ceebe849c20c32200f46559eea57a",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c5ceebe849c20c32200f46559eea57a" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "RIV",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" }
+            } 
+        },
+        "generic": {
+            "code": "602",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" }
+            } 
+        },   
+        "location": "Sudbury",
+        "province": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }
+            } 
+        },
+        "latitude": 46.2274944,
+        "longitude": -81.0314669,
+        "map": ["041I03","041I00"],
+        "relevance": 250000,
+        "bbox": [
+            -81.0488769,
+            46.2006724,
+            -81.0218024,
+            46.2346156
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-81.0314669,46.2274944]},
+        
+        "decision": "1949-08-14"
+    },
+    {   
+        "id": "JCJYF",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JCJYF" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca81841849c20c392d9b44383dd34d7" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2700" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Halifax Range",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca81841849c20c392d9b44383dd34d7",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca81841849c20c392d9b44383dd34d7" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MTN",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" }
+            } 
+        },
+        "generic": {
+            "code": "2700",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2700" }
+            } 
+        },   
+        "location": "Sayward Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 50.348611,
+        "longitude": -125.592778,
+        "map": ["092K05"],
+        "relevance": 250000,
+        "bbox": [
+            -125.612778,
+            50.328611,
+            -125.572778,
+            50.368611
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-125.592778,50.348611]},
+        
+        "decision": "1952-11-06"
+    },
+    {   
+        "id": "EQMTN",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/EQMTN" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf49f63849c20c3aff24e3c33a44e59" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/VILG" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/14" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }  
+        },
+        "name": "Sainte-Sophie-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cf49f63849c20c3aff24e3c33a44e59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf49f63849c20c3aff24e3c33a44e59" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "VILG",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/VILG" }
+            } 
+        },
+        "generic": {
+            "code": "14",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/14" }
+            } 
+        },   
+        "location": "Sainte-Sophie-d'Halifax; L'Érable",
+        "province": {
+            "code": "24",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }
+            } 
+        },
+        "latitude": 46.15,
+        "longitude": -71.7166666,
+        "map": ["021L04"],
+        "relevance": 250000,
+        "bbox": [
+            -71.8241084,
+            46.0483053,
+            -71.6161616,
+            46.2345569
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-71.7166666,46.15]},
+        
+        "decision": "1998-03-04"
+    },
+    {   
+        "id": "EQNWB",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/EQNWB" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf56ce6849c20c34590e181afdf3e49" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/UNP" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/214" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }  
+        },
+        "name": "Halifax-Nord",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cf56ce6849c20c34590e181afdf3e49",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf56ce6849c20c34590e181afdf3e49" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "UNP",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/UNP" }
+            } 
+        },
+        "generic": {
+            "code": "214",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/214" }
+            } 
+        },   
+        "location": "Sainte-Sophie-d'Halifax; L'Érable",
+        "province": {
+            "code": "24",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }
+            } 
+        },
+        "latitude": 46.1333333,
+        "longitude": -71.7,
+        "map": ["021L04"],
+        "relevance": 145000,
+        "bbox": [
+            -71.72,
+            46.1133333,
+            -71.68,
+            46.1533333
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-71.7,46.1333333]},
+        
+        "decision": "1998-03-04"
+    },
+    {   
+        "id": "EGPNN",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/EGPNN" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/43384d7abe1a11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/495" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }  
+        },
+        "name": "Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "43384d7abe1a11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/43384d7abe1a11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "GEOG",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" }
+            } 
+        },
+        "generic": {
+            "code": "495",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/495" }
+            } 
+        },   
+        "location": "Sainte-Sophie-d'Halifax; L'Érable",
+        "province": {
+            "code": "24",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/24" }
+            } 
+        },
+        "latitude": 46.0833334,
+        "longitude": -71.6666667,
+        "map": ["021L04","C.4000","C.4001"],
+        "relevance": 50000,
+        "bbox": [
+            -71.6866667,
+            46.0633334,
+            -71.6466667,
+            46.1033334
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-71.6666667,46.0833334]},
+        
+        "decision": "1968-12-05"
+    },
+    {   
+        "id": "CBVWG",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWG" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb77a40a0012046b7153464f5ffd16" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax City Hall National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb77a40a0012046b7153464f5ffd16",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb77a40a0012046b7153464f5ffd16" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.648581,
+        "longitude": -63.575161,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.595161,
+            44.628581,
+            -63.555161,
+            44.668581
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.575161,44.648581]},
+        
+        "decision": "2009-09-08"
+    },
+    {   
+        "id": "CBVWJ",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWJ" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb79c40a0012045d333e3ff7fa3163" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada du Palais-de-Justice-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb79c40a0012045d333e3ff7fa3163",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb79c40a0012045d333e3ff7fa3163" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.643606,
+        "longitude": -63.573768,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.593768,
+            44.623606,
+            -63.553768,
+            44.663606
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.573768,44.643606]},
+        
+        "decision": "2009-09-08"
+    },
+    {   
+        "id": "IAIMD",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/IAIMD" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c862db3849c20c35b5f0c6c99a5ab10" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/48" }  
+        },
+        "name": "Halifax Lake",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c862db3849c20c35b5f0c6c99a5ab10",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c862db3849c20c35b5f0c6c99a5ab10" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "LAKE",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" }
+            } 
+        },
+        "generic": {
+            "code": "951",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" }
+            } 
+        },   
+        "location": "6-28-W4",
+        "province": {
+            "code": "48",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/48" }
+            } 
+        },
+        "latitude": 49.4522223,
+        "longitude": -113.7627778,
+        "map": ["082H05"],
+        "relevance": 50000,
+        "bbox": [
+            -113.7827778,
+            49.4322223,
+            -113.7427778,
+            49.4722223
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-113.7627778,49.4522223]},
+        
+        "decision": "1942-10-31"
+    },
+    {   
+        "id": "IAIMC",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/IAIMC" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c862df4849c20c3d2cdf95b64652298" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/VALL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2943" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/48" }  
+        },
+        "name": "Halifax Coulee",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c862df4849c20c3d2cdf95b64652298",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c862df4849c20c3d2cdf95b64652298" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "VALL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/VALL" }
+            } 
+        },
+        "generic": {
+            "code": "2943",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2943" }
+            } 
+        },   
+        "location": "35-5-29-W4",
+        "province": {
+            "code": "48",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/48" }
+            } 
+        },
+        "latitude": 49.4236111,
+        "longitude": -113.795,
+        "map": ["082H05"],
+        "relevance": 50000,
+        "bbox": [
+            -113.815,
+            49.4036111,
+            -113.775,
+            49.4436111
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-113.795,49.4236111]},
+        
+        "decision": "1967-09-27"
+    },
+    {   
+        "id": "CBUDN",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBUDN" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/355d8e46affd11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/506" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "355d8e46affd11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/355d8e46affd11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "GEOG",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" }
+            } 
+        },
+        "generic": {
+            "code": "506",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/506" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.866743,
+        "longitude": -63.71602,
+        "map": ["011D13","011D05","011D10","011D11","011D12","011D14","011D15","011D16","011E01","011E02","011E03","011E07","021A09","021A16","C.4000","C.4001","C.4003","C.4006","C.4010"],
+        "relevance": 50000,
+        "bbox": [
+            -63.73602,
+            44.846743,
+            -63.69602,
+            44.886743
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.71602,44.866743]},
+        
+        "decision": "1908-06-30"
+    },
+    {   
+        "id": "MABZZ",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/MABZZ" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2ff83dfdba1f11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7070" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }  
+        },
+        "name": "Halifax Shoal",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2ff83dfdba1f11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2ff83dfdba1f11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SEAU",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" }
+            } 
+        },
+        "generic": {
+            "code": "7070",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7070" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "72",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }
+            } 
+        },
+        "latitude": 47.616147,
+        "longitude": -58.516225,
+        "map": ["4635","4639","011O10","C.4639"],
+        "relevance": 50000,
+        "bbox": [
+            -58.536225,
+            47.596147,
+            -58.496225,
+            47.636147
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-58.516225,47.616147]},
+        
+        "decision": null
+    },
+    {   
+        "id": "ABHSW",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/ABHSW" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2ff83dfdba1f11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SHL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2005" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/10" }  
+        },
+        "name": "Halifax Shoal",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2ff83dfdba1f11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2ff83dfdba1f11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SHL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SHL" }
+            } 
+        },
+        "generic": {
+            "code": "2005",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2005" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "10",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/10" }
+            } 
+        },
+        "latitude": 47.616147,
+        "longitude": -58.516225,
+        "map": ["4635","4639","011O10","C.4639"],
+        "relevance": 50000,
+        "bbox": [
+            -58.536225,
+            47.596147,
+            -58.496225,
+            47.636147
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-58.516225,47.616147]},
+        
+        "decision": "1968-12-31"
+    },
+    {   
+        "id": "CBVVH",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVVH" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bba9e20a00120474e2ab3a7c93a658" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Dockyard National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bba9e20a00120474e2ab3a7c93a658",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bba9e20a00120474e2ab3a7c93a658" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.658784,
+        "longitude": -63.583799,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.603799,
+            44.638784,
+            -63.563799,
+            44.678784
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.583799,44.658784]},
+        
+        "decision": "2009-09-01"
+    },
+    {   
+        "id": "CBVWK",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWK" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7bcd0a0012045e4443ad45e72475" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Public Gardens National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb7bcd0a0012045e4443ad45e72475",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7bcd0a0012045e4443ad45e72475" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.642885,
+        "longitude": -63.582206,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.602206,
+            44.622885,
+            -63.562206,
+            44.662885
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.582206,44.642885]},
+        
+        "decision": "2009-09-08"
+    },
+    {   
+        "id": "CBVWI",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWI" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb79c40a0012045d333e3ff7fa3163" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Court House National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb79c40a0012045d333e3ff7fa3163",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb79c40a0012045d333e3ff7fa3163" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.643606,
+        "longitude": -63.573768,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.593768,
+            44.623606,
+            -63.553768,
+            44.663606
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.573768,44.643606]},
+        
+        "decision": "2009-09-08"
+    },
+    {   
+        "id": "CBVYE",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVYE" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb69a10a0012045207001ae49f87e9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada de la salle d'exercices de Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb69a10a0012045207001ae49f87e9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb69a10a0012045207001ae49f87e9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.651708,
+        "longitude": -63.586978,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.606978,
+            44.631708,
+            -63.566978,
+            44.671708
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.586978,44.651708]},
+        
+        "decision": "2009-09-10"
+    },
+    {   
+        "id": "CBVYD",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVYD" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb69a10a0012045207001ae49f87e9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Drill Hall National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb69a10a0012045207001ae49f87e9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb69a10a0012045207001ae49f87e9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.651708,
+        "longitude": -63.586978,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.606978,
+            44.631708,
+            -63.566978,
+            44.671708
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.586978,44.651708]},
+        
+        "decision": "2009-09-10"
+    },
+    {   
+        "id": "CBVWL",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWL" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7bcd0a0012045e4443ad45e72475" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada des Jardins-Publics-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb7bcd0a0012045e4443ad45e72475",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7bcd0a0012045e4443ad45e72475" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.642885,
+        "longitude": -63.582206,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.602206,
+            44.622885,
+            -63.562206,
+            44.662885
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.582206,44.642885]},
+        
+        "decision": "2009-09-08"
+    },
+    {   
+        "id": "FBLEX",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/FBLEX" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c3e9f71849c20c3b3952d978da582ec" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/485" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }  
+        },
+        "name": "Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c3e9f71849c20c3b3952d978da582ec",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c3e9f71849c20c3b3952d978da582ec" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "GEOG",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/GEOG" }
+            } 
+        },
+        "generic": {
+            "code": "485",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/485" }
+            } 
+        },   
+        "location": "Sudbury",
+        "province": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }
+            } 
+        },
+        "latitude": 46.2394445,
+        "longitude": -81.0136111,
+        "map": ["041I03","041I02","041I06","041I07","041I00"],
+        "relevance": 50000,
+        "bbox": [
+            -81.0336111,
+            46.2194445,
+            -80.9936111,
+            46.2594445
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-81.0136111,46.2394445]},
+        
+        "decision": "1962-12-31"
+    },
+    {   
+        "id": "CAABY",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CAABY" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2748035eaf4311d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MIL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/4506" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Canadian Forces Base Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2748035eaf4311d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2748035eaf4311d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MIL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MIL" }
+            } 
+        },
+        "generic": {
+            "code": "4506",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/4506" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.658958,
+        "longitude": -63.585698,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.6008038,
+            44.6457544,
+            -63.5684452,
+            44.6723515
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.585698,44.658958]},
+        
+        "decision": "1990-12-31"
+    },
+    {   
+        "id": "CBVVI",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVVI" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bba9e20a00120474e2ab3a7c93a658" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada du Chantier-Naval-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bba9e20a00120474e2ab3a7c93a658",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bba9e20a00120474e2ab3a7c93a658" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.658784,
+        "longitude": -63.583799,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.603799,
+            44.638784,
+            -63.563799,
+            44.678784
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.583799,44.658784]},
+        
+        "decision": "2009-09-01"
+    },
+    {   
+        "id": "CBVWM",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWM" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7de70a001204249d35dc32c41e8a" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Halifax Waterfront Buildings National Historic Site of Canada",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb7de70a001204249d35dc32c41e8a",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7de70a001204249d35dc32c41e8a" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "538",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/538" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.649863,
+        "longitude": -63.573712,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.593712,
+            44.629863,
+            -63.553712,
+            44.669863
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.573712,44.649863]},
+        
+        "decision": "2009-09-09"
+    },
+    {   
+        "id": "CAABZ",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CAABZ" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2748035eaf4311d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MIL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/4559" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Base des Forces canadiennes Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "2748035eaf4311d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/2748035eaf4311d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MIL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MIL" }
+            } 
+        },
+        "generic": {
+            "code": "4559",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/4559" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.658958,
+        "longitude": -63.585698,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.6008038,
+            44.6457544,
+            -63.5684452,
+            44.6723515
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.585698,44.658958]},
+        
+        "decision": "1990-12-31"
+    },
+    {   
+        "id": "CBVWN",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWN" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7de70a001204249d35dc32c41e8a" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada de l'Édifices-des-Quais-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb7de70a001204249d35dc32c41e8a",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb7de70a001204249d35dc32c41e8a" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.649863,
+        "longitude": -63.573712,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.593712,
+            44.629863,
+            -63.553712,
+            44.669863
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.573712,44.649863]},
+        
+        "decision": "2009-09-09"
+    },
+    {   
+        "id": "CBVWH",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/CBVWH" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb77a40a0012046b7153464f5ffd16" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }  
+        },
+        "name": "Lieu historique national du Canada de l'Hôtel-de-Ville-d'Halifax",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "11bb77a40a0012046b7153464f5ffd16",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/11bb77a40a0012046b7153464f5ffd16" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "PARK",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/PARK" }
+            } 
+        },
+        "generic": {
+            "code": "539",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/539" }
+            } 
+        },   
+        "location": "Halifax",
+        "province": {
+            "code": "12",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/12" }
+            } 
+        },
+        "latitude": 44.648581,
+        "longitude": -63.575161,
+        "map": ["011D12"],
+        "relevance": 50000,
+        "bbox": [
+            -63.595161,
+            44.628581,
+            -63.555161,
+            44.668581
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-63.575161,44.648581]},
+        
+        "decision": "2009-09-08"
+    }
+]}

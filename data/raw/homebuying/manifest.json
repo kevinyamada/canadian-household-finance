@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-11-16T19:37:16.391383+00:00",
+  "source_policy": "Statistics Canada first; only official Canadian public bodies used",
+  "sources": [
+    {
+      "file": "fcac_payments.html.gz",
+      "url": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/interest-on-mortgages.html",
+      "sha256": "d4431d44a8f981675a60b4ab4b21831f3b4c95d40112866175c80587663b4718"
+    },
+    {
+      "file": "fcac_amortization.html.gz",
+      "url": "https://www.canada.ca/en/financial-consumer-agency/services/mortgages/relief-options.html",
+      "sha256": "9f5a08885632ae66743711336f0dc33a162f21db09e66656ecbbf46a07971aed"
+    },
+    {
+      "file": "ns_tax_rates.csv",
+      "url": "https://data.novascotia.ca/api/views/ure8-3w7m/rows.csv?accessType=DOWNLOAD",
+      "sha256": "ef6219e8fd02bd27590662224c3a695c091ef8d18015ac168df43a801d162088"
+    },
+    {
+      "file": "victoria_tax_history.json",
+      "url": "https://www.victoria.ca/media/file/annual-report-2024",
+      "sha256": "5aed7e1b6e383e4a958e7006b2e21368fe68fdb9baea29550f24ebc7eef7b165"
+    },
+    {
+      "file": "geoname_Vancouver.json",
+      "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Vancouver&category=O&maxResults=10",
+      "sha256": "f0395466df429db89106b43d429af65883b763ed694f351aac81ae403b4e9ddb"
+    },
+    {
+      "file": "geoname_Victoria.json",
+      "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Victoria&category=O&maxResults=10",
+      "sha256": "8c5c153783bbd0ea88b080af9d4f671b2a0057a3bf7112089d14f0344f77b3e9"
+    },
+    {
+      "file": "geoname_Halifax.json",
+      "url": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Halifax&category=O&maxResults=10",
+      "sha256": "986bc5537e6378741c038d49098782d2c8be62c92891651d3fd898caf00f61a4"
+    },
+    {
+      "file": "wds_codes.json",
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getCodeSets",
+      "sha256": "fe87e8ae2ea3907287caa3725431e43b33587c1704b97e3a1f44568762ec5c8d"
+    },
+    {
+      "file": "osfi_b20.html.gz",
+      "url": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/residential-mortgage-underwriting-practices-procedures-guideline-2017",
+      "sha256": "ec96c6d61917c0c3937e8e3c5976f2bb6214b1daec8102c909ba6a50d1aa1073"
+    },
+    {
+      "file": "metadata_46100099.json",
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata",
+      "sha256": "cb844b27bc1010a64e1368cd5ed4f30fad55970eb557aacaffc6bdf2a21da2b0"
+    },
+    {
+      "file": "selected_46100099.json",
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromCubePidCoordAndLatestNPeriods",
+      "sha256": "f31406adbe9ff246e53725a6f7fd524acda3573318439811623e1777a4e4c08e"
+    },
+    {
+      "file": "metadata_46100062.json",
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata",
+      "sha256": "568845d3ab9de188941fe98d5f556b514d10bdf965c50d48117ed7d280b64ced"
+    },
+    {
+      "file": "selected_46100062.json",
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromCubePidCoordAndLatestNPeriods",
+      "sha256": "2593e661c405457bb0ece209e94b08ab521cef2a789ac6d9464f708c636ad9a6"
+    },
+    {
+      "file": "boc_V122667780.json",
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667780/json?start_date=2020-01-01&end_date=2025-12-31",
+      "sha256": "c6594f0b691534e5280ba8d43d3983cc9a1b7ba41d6bb6906e067cf3b6009184"
+    },
+    {
+      "file": "boc_V122667786.json",
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667786/json?start_date=2020-01-01&end_date=2025-12-31",
+      "sha256": "8e1a0254e33aed166b8b817321ab4826c68feb0c1f2e6daf8b13e5a84c7f8a10"
+    }
+  ],
+  "rules_file": "rules.json",
+  "rules_sha256": "b1e64fe3ce67929501710e1f98555b9b7242774f36adad3d2fb8576d777fec5e",
+  "large_bulk_archive": "Unused 350 MB national ZIP retained only in ignored local work/official_downloads; production uses 24 narrowly specified WDS series."
+}

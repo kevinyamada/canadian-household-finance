@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "execution": "Kevin's desktop VS Code integrated terminal",
+  "checked_utc": "2026-11-16T20:07:57.143312+00:00",
+  "tests_passed": 117,
+  "browser_widths": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "native_pages": [
+    "Start here",
+    "Cash and income",
+    "What helps",
+    "Over time",
+    "Waiting to buy",
+    "Bank audit"
+  ],
+  "native_pbix_sha256": "3e37e6ef62fba3552e6becbd0ba2910c66ff462ac5dae64a9e1b1cd3fde965c4",
+  "native_pbix_bytes": 552634,
+  "power_bi_version": "2.159.1231.0",
+  "native_checks": {
+    "reopened_native_file": true,
+    "buyer_selection_changes_values": true,
+    "opens_on_start_here": true,
+    "no_model_format_prompt_on_open_or_save": true
+  },
+  "source_policy": "Statistics Canada and official Canadian public bodies",
+  "limits": "Hypothetical buyer cases; 2023 price/rate baseline; rules reviewed 2026-11-16; not approval or population inference"
+}

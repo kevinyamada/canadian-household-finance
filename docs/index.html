@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Why does buying a home still feel out of reach? Explore Canadian renter housing need, income and purchase cash scenarios. An audit project by Kevin Yamada.">
+  <meta name="description" content="Why does buying a home still feel out of reach? Compare the cash and income needed to buy in three Canadian cities, then review the mortgage file. A banking audit project by Kevin Yamada.">
   <meta name="theme-color" content="#173d36">
   <title>Buying a Home, Out of Reach | Kevin Yamada</title>
   <link rel="canonical" href="https://kevinyamada.github.io/canadian-household-finance/">
   <script src="assets/theme.js?v=2"></script>
   <link rel="stylesheet" href="assets/style.css?v=4">
   <script defer src="assets/visuals.js?v=3"></script>
+  <link rel="stylesheet" href="assets/homebuying.css?v=3">
+  <script defer src="assets/homebuying.js?v=3"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="name" href="#main">Kevin Yamada</a>
     <div class="header-tools">
-      <nav aria-label="Main navigation"><a href="#explore">Explore</a><a href="#report">Report</a><a href="https://github.com/kevinyamada/canadian-household-finance">GitHub ↗</a></nav>
+      <nav aria-label="Main navigation"><a href="#buying">Explore</a><a href="#report">Report</a><a href="https://github.com/kevinyamada/canadian-household-finance">GitHub ↗</a></nav>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">Dark</button>
     </div>
   </header>
@@ -24,15 +26,97 @@
     <section class="intro" aria-labelledby="project-title">
       <p class="eyebrow">Canadian Household Finance / An audit project</p>
       <h1 id="project-title">Why does buying a home still feel out of reach?</h1>
-      <p class="lead">Start with the pressure renters face today. Then check whether the saving figures and purchase budget actually support a claim that someone is ready to buy.</p>
-      <p class="short-answer"><strong>The finding:</strong> reported saving is not proof of money available for a deposit.</p>
+      <p class="lead">A down payment is only part of the check. Compare the cash and income needed to buy, then review the evidence a bank would need.</p>
+      <p class="short-answer"><strong>The finding:</strong> four of nine buyer examples have enough cash to close but still fall short of the mortgage income requirement. These are illustrations, not population estimates.</p>
       <div class="actions">
-        <a class="button" href="#explore">Explore the data ↓</a>
-        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance">View the code ↗</a>
+        <a class="button" href="#buying">Compare the buyers ↓</a>
+        <a class="text-link" href="#bank-audit">Review the mortgage file ↓</a>
       </div>
       <p class="small">Python · SQL · Power BI Desktop · Public Canadian data</p>
     </section>
 
+    <section id="buying" class="buying" aria-labelledby="buying-heading">
+      <div class="section-heading"><h2 id="buying-heading">Is the down payment really the biggest obstacle?</h2><p>Three cities · Three buyer examples</p></div>
+      <p class="section-intro">Saving enough to close and earning enough for the mortgage are separate hurdles. Choose a city and a hypothetical buyer to see which one binds.</p>
+      <p class="hb-dates"><strong>Price and rate benchmark: 2023.</strong> Latest comparable first-time-buyer city data in the selected Statistics Canada tables. Mortgage and tax rules checked November 16, 2026.</p>
+      <div class="visual-controls hb-controls">
+        <label>City<select id="hb-city" disabled><option>Vancouver</option></select></label>
+        <label>Buyer example<select id="hb-profile" disabled><option>Two earners</option></select></label>
+        <label>Change one assumption<select id="hb-scenario" disabled><option>Baseline</option></select></label>
+      </div>
+      <div class="hb-main-grid">
+        <figure class="hb-map-panel">
+          <figcaption>Select a market <span class="small">City-level transaction benchmarks</span></figcaption>
+          <div id="hb-map" class="hb-map"><p class="loading-note">Loading the city map…</p></div>
+          <p class="figure-note">Markers locate Vancouver City, Victoria City and Halifax Regional Municipality. Halifax costs use an explicit urban tax-rate scenario. These are selected case studies, not a national ranking.</p>
+        </figure>
+        <div class="hb-result" aria-live="polite" aria-atomic="true">
+          <p id="hb-place" class="eyebrow"></p><h3 id="hb-verdict">Loading the saved comparison…</h3>
+          <p id="hb-price" class="small"></p>
+          <div id="hb-bars"></div>
+          <p id="hb-income-scope" class="small"></p>
+          <p id="hb-budget" class="small"></p>
+        </div>
+      </div>
+      <details class="hb-assumptions"><summary>What is assumed about this buyer?</summary><div id="hb-assumptions"></div></details>
+      <p class="source-line"><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610009901">Statistics Canada buyer data ↗</a> · <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/data/processed/homebuying_cases.csv">Every saved scenario ↗</a> · <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/homebuying_methodology.md">Method and assumptions ↗</a></p>
+      <p id="hb-error" class="visual-error" role="alert" hidden></p>
+      <noscript><p>The <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/reports/homebuying_findings.md">findings brief</a> and linked CSV files contain the complete results.</p></noscript>
+    </section>
+
+    <section class="hb-section" id="changes" aria-labelledby="changes-heading">
+      <div class="section-heading"><h2 id="changes-heading">What changes the result?</h2><p>One change at a time</p></div>
+      <p class="section-intro">A bigger deposit helps. It may still leave an income shortfall. Compare the same buyer across a cheaper home, a lower rate, more cash and a longer mortgage.</p>
+      <div class="hb-table-scroll"><table class="hb-table" id="hb-sensitivity"><caption class="sr-only">Scenario comparison for the selected city and buyer</caption><thead><tr><th scope="col">Change</th><th scope="col">Cash shortfall</th><th scope="col">Annual income shortfall</th><th scope="col">Result</th></tr></thead><tbody></tbody></table></div>
+      <p class="figure-note">Buyer income and available cash stay fixed unless the scenario explicitly changes them. These changes are illustrations, not predictions. “Within modeled limits” still requires a real lender review.</p>
+    </section>
+
+    <section class="hb-section hb-audit" id="bank-audit" aria-labelledby="bank-heading">
+      <div class="section-heading"><h2 id="bank-heading">Would this mortgage file pass a first review?</h2><p>Banking audit case · Fictional buyer</p></div>
+      <p class="section-intro">A bank needs a defensible loan decision. This practice review checks the calculations and separates a modeled result from evidence that still needs to be collected.</p>
+      <p id="hb-audit-conclusion" class="hb-audit-conclusion" aria-live="polite"></p>
+      <div id="hb-audit-controls" class="hb-audit-controls"></div>
+      <p class="small">The audit always reviews the selected buyer’s <strong>baseline</strong>. It follows public OSFI B-20 documentation and review principles. The 39%/44% debt-service screen is a CMHC-style comparison; an uninsured lender’s limits may differ. This is an independent portfolio exercise, not TD policy, a compliance opinion or a loan approval.</p>
+      <p class="source-line"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/residential-mortgage-underwriting-practices-procedures-guideline-2017">OSFI lending guidance ↗</a> · <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/bank_audit_case.md">Read the audit working paper ↗</a></p>
+    </section>
+
+    <section class="hb-section" id="history" aria-labelledby="history-heading">
+      <div class="section-heading"><h2 id="history-heading">Why did the income hurdle rise?</h2><p>2020–2023 observed inputs</p></div>
+      <p class="section-intro">The line compares income needed at the minimum down payment with the median income of families who actually bought. It provides market context, not a test of whether a typical renter qualifies.</p>
+      <figure class="chart-panel">
+        <figcaption id="hb-history-caption">The income hurdle, over time</figcaption>
+        <div class="chart-legend"><span><i class="line-key hb-required-key"></i>Modeled income needed</span><span><i class="line-key income-key"></i>Observed buyer-family median</span></div>
+        <div id="hb-history" class="svg-chart"></div>
+        <div id="hb-history-readout" class="chart-readout"></div>
+        <p class="figure-note">Annual gross income in CAD. Minimum down; no existing debt; stated heat and condo costs. Current rules and the 2023 property-tax schedule are held fixed. The dashed 2020–2021 segment crosses a geography-vintage boundary. Buyer and property mix can change.</p>
+      </figure>
+      <div class="hb-research-grid">
+        <div><h3>Price, rates or income?</h3><div id="hb-decomposition"></div><p class="figure-note">2021–2023 contribution to the change in modeled required income minus observed buyer-family median income. All six input-replacement orders are averaged. Descriptive accounting, not causal attribution.</p></div>
+        <div><h3>What about the later rate cuts?</h3><p id="hb-rate-replay"></p><p class="figure-note">The observed 2025 national rate averages are applied to the same 2023 price and unchanged profile. This isolates rates; it does not measure observed 2025 affordability.</p></div>
+      </div>
+    </section>
+
+    <section class="hb-section" id="buyer-measures" aria-labelledby="program-heading">
+      <div class="section-heading"><h2 id="program-heading">What do first-time-buyer measures actually change?</h2><p>Cash, payments and trade-offs</p></div>
+      <div class="visual-controls"><label>Measure<select id="hb-program" disabled><option>30-year amortization</option></select></label></div>
+      <div id="hb-program-result" class="hb-program-result" aria-live="polite"></div>
+      <p class="figure-note">Eligibility is assumed, not verified. HBP withdrawals move existing RRSP assets; they are not new wealth. The FHSA illustration counts contributions once and adds only a refund at an assumed 30% marginal rate. The refund timing is also assumed.</p>
+    </section>
+
+    <section class="hb-section" id="waiting" aria-labelledby="waiting-heading">
+      <div class="section-heading"><h2 id="waiting-heading">Does waiting to save put the home closer?</h2><p>A sensitivity test, not a forecast</p></div>
+      <p class="section-intro">More saving reduces the loan. Rising prices or rent can offset the gain. The three lines show what happens under falling, flat and rising prices.</p>
+      <div class="visual-controls"><label>Annual rent growth<select id="hb-rent" disabled><option>3%</option></select></label></div>
+      <figure class="chart-panel">
+        <figcaption id="hb-wait-caption">Income needed after more time saving</figcaption>
+        <div class="chart-legend"><span><i class="line-key income-key"></i>Prices −5% a year</span><span><i class="line-key hb-required-key"></i>Flat prices</span><span><i class="line-key consumption-key"></i>Prices +5% a year</span><span>Dashed: profile income</span></div>
+        <div id="hb-wait-chart" class="svg-chart"></div>
+        <div id="hb-wait-readout" class="chart-readout"></div>
+        <p class="figure-note">Starting from the 2023 benchmark; income and mortgage rates held fixed. Incremental rent increases reduce initially stated net saving; cash earns zero interest. Paths have no assigned probability. This is not a recommendation to buy now or wait.</p>
+      </figure>
+    </section>
+
+    <details class="hb-context" id="renter-context"><summary>More context: housing need, renter budgets and the saving audit</summary>
     <section id="explore" class="explore" aria-labelledby="map-heading">
       <div class="section-heading"><h2 id="map-heading">Where do renters face housing need?</h2><p>Canadian Housing Survey · 2018 to 2024</p></div>
       <p class="section-intro">In 2024, <strong>22% of renter households</strong> were in core housing need across the ten provinces. Select a province to see its estimate and compare survey years.</p>
@@ -129,36 +213,39 @@
       <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/blob/main/data/processed/housing_claim_register.csv">Inspect the claim register ↗</a>
     </section>
 
+    </details>
+
     <section class="figure-downloads" id="figures" aria-labelledby="figures-title">
       <div>
         <p class="eyebrow">Published on GitHub</p>
         <h2 id="figures-title">Take the figures with you.</h2>
-        <p>The provincial map, renter budget, purchase cash scenarios and saving reconciliation are available as PNG and editable SVG files. Each figure includes its source, period and assumptions.</p>
+        <p>Six new figures cover cash and income, the historical hurdle, sensitivity tests, buyer measures and waiting. Download the PNGs, editable SVGs, source tables and notes.</p>
       </div>
       <div class="figure-download-links">
-        <a class="button" data-download="figure-pack" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.1.0/CanadianHouseholdFinance-Figures.zip">Download all figures · ZIP ↓</a>
-        <a class="text-link" data-download="figure-pdf" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.1.0/CanadianHouseholdFinance-Figures.pdf">Get the four page PDF ↓</a>
-        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/tree/main/reports/figures/portfolio">Browse the figure gallery ↗</a>
+        <a class="button" data-download="figure-pack" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers-Figures.zip">Download all figures · ZIP ↓</a>
+        <a class="text-link" data-download="figure-pdf" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers-Figures.pdf">Get the six page PDF ↓</a>
+        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/tree/main/reports/figures/homebuying">Browse the figure gallery ↗</a>
       </div>
     </section>
 
     <section class="report" id="report" aria-labelledby="report-title">
       <div>
-        <p class="eyebrow">Explore the project</p><h2 id="report-title">Follow the audit in Power BI.</h2>
-        <p>Three pages: <strong>Audit conclusion</strong>, <strong>Savings evidence</strong> and <strong>Purchase cash check</strong>. Change the price and closing allowance to inspect the cash scenarios.</p>
-        <a class="button" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.0.0/CanadianHouseholdFinance.pbix">Download the .pbix report ↓</a>
+        <p class="eyebrow">Explore the project</p><h2 id="report-title">Follow the buyer comparison in Power BI.</h2>
+        <p>Six pages: the answer, cash and income, what helps, the historical comparison, waiting to buy and the bank audit. All source data are imported into the file.</p>
+        <a class="button" href="https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.0/HomebuyingBarriers.pbix">Download the .pbix report ↓</a>
         <p class="small">Windows and a current Power BI Desktop required. <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/powerbi_usage.md">Opening guide</a></p>
       </div>
       <aside>
         <h3>How it was built</h3>
-        <p>Python in VS Code checks the source measures and prepares the map and chart data. SQL independently reconciles annual totals. Power BI shows the audit evidence and assumptions.</p>
-        <p class="small">Public group averages cannot establish an individual buyer's finances. This examines part of the homebuying problem; it does not measure all causes of housing affordability or predict prices.</p>
-        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/project_walkthrough.md">Read the three minute walkthrough ↗</a>
+        <p>Python in desktop VS Code prepares the official data, mortgage scenarios and figures. SQL independently checks every cash and income calculation. Power BI shows the results and the evidence still needed.</p>
+        <p class="small">The transaction prices are observed; the buyer profiles and future paths are explicit assumptions. This examines financial barriers to purchase and does not predict prices or approve loans.</p>
+        <a class="text-link" href="https://github.com/kevinyamada/canadian-household-finance/blob/main/docs/homebuying_methodology.md">Read the methodology ↗</a>
       </aside>
     </section>
 
     <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Sources &amp; scope</h2>
+      <p>Buyer benchmarks: <a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610009901">Statistics Canada 46-10-0099-01</a> (2021–2023), and archived 46-10-0062-01 (2020). City/CSD resident first-time buyers; buyer-based transaction medians with changing property mix. Rates: Bank of Canada funds advanced, fixed five years and over; annual means of twelve monthly averages. Tax sources: municipal and provincial governments. Lending/program rules: CMHC, FCAC, CRA, BC law and OSFI. <a href="https://github.com/kevinyamada/canadian-household-finance/blob/main/data/raw/homebuying/manifest.json">Source manifest and checksums ↗</a></p>
       <p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610008501">Statistics Canada core housing need</a>, survey years 2018, 2021, 2022 and 2024; ten provinces. The map uses renter households, not persons, and shows published 95% confidence intervals. <a href="https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer/0">2021 provincial boundaries</a> are simplified for display in the Statistics Canada Lambert projection. Adapted under the <a href="https://www.statcan.gc.ca/en/reference/licence">Statistics Canada Open Licence</a>.</p>
       <p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610066201">Statistics Canada income, consumption and saving</a>, 2020 to 2025. Purchase rules: <a href="https://www.cmhc-schl.gc.ca/consumers/home-buying/mortgage-loan-insurance-for-consumers/what-are-the-general-requirements-to-qualify-for-homeowner-mortgage-loan-insurance">CMHC</a> and <a href="https://www.canada.ca/en/department-finance/news/2024/09/delivering-the-boldest-mortgage-reforms-in-decades.html">Finance Canada</a>.</p>
       <p class="small">The survey map, national accounts and purchase scenarios measure different things and periods. Their comparison does not establish causation. The repository preserves source snapshots and assumptions. This is an independent project; no TD customer data is used.</p>

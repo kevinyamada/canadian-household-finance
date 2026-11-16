@@ -1,0 +1,184 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "compare",
+  "position": {
+    "x": 24,
+    "y": 247,
+    "width": 1232,
+    "height": 240,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'One change at a time'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Comparisons"
+                    }
+                  },
+                  "Property": "scenario_label"
+                }
+              },
+              "queryRef": "Comparisons.scenario_label",
+              "nativeQueryRef": "scenario_label",
+              "displayName": "Change"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Comparisons"
+                    }
+                  },
+                  "Property": "cash_gap"
+                }
+              },
+              "queryRef": "Comparisons.cash_gap",
+              "nativeQueryRef": "cash_gap",
+              "displayName": "Cash shortfall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Comparisons"
+                    }
+                  },
+                  "Property": "income_gap"
+                }
+              },
+              "queryRef": "Comparisons.income_gap",
+              "nativeQueryRef": "income_gap",
+              "displayName": "Income shortfall/year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Comparisons"
+                    }
+                  },
+                  "Property": "required_gross_income"
+                }
+              },
+              "queryRef": "Comparisons.required_gross_income",
+              "nativeQueryRef": "required_gross_income",
+              "displayName": "Income needed/year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Comparisons"
+                    }
+                  },
+                  "Property": "barrier"
+                }
+              },
+              "queryRef": "Comparisons.barrier",
+              "nativeQueryRef": "barrier",
+              "displayName": "Modeled result"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

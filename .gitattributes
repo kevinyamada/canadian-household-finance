@@ -10,3 +10,11 @@ reports/figures/portfolio/*.svg text eol=lf
 reports/figures/portfolio/*.json text eol=lf
 reports/figures/portfolio/*.md text eol=lf
 reports/figures/portfolio/*.pdf -text
+# Preserve official snapshot bytes, including the source's original whitespace.
+data/raw/homebuying/** -text -whitespace
+
+reports/figures/homebuying/*.svg text eol=lf
+reports/figures/homebuying/*.json text eol=lf
+reports/figures/homebuying/*.md text eol=lf
+reports/figures/homebuying/*.pdf -text
+docs/assets/homebuying-data.json text eol=lf

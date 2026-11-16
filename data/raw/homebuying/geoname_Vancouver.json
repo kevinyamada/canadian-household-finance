@@ -1,0 +1,1312 @@
+{
+"links": {
+    "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames?q=Vancouver&category=O&maxResults=10" },
+    "alternate": [ 
+         { "mediatype": "application/json", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Vancouver&category=O&maxResults=10" },
+         { "mediatype": "text/html", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.html?q=Vancouver&category=O&maxResults=10" },
+         { "mediatype": "text/csv", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.csv?q=Vancouver&category=O&maxResults=10" }, 
+         { "mediatype": "application/vnd.google-earth.kml+xml", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.kml?q=Vancouver&category=O&maxResults=10" },
+         { "mediatype": "application/gml+xml", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.gml?q=Vancouver&category=O&maxResults=10" },
+         { "mediatype": "application/vnd.geo+json", "href": "https://geogratis.gc.ca/services/geoname/en/geonames.geojson?q=Vancouver&category=O&maxResults=10" }
+         
+     ]
+},
+"items": [
+
+    {   
+        "id": "JBRIK",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBRIK" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0fef1849c20c3313df3807fa729b2" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CITY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca0fef1849c20c3313df3807fa729b2",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0fef1849c20c3313df3807fa729b2" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "CITY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CITY" }
+            } 
+        },
+        "generic": {
+            "code": "1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.261111,
+        "longitude": -123.113889,
+        "map": ["092G03","092G06","032L00","092G00"],
+        "relevance": 17500000,
+        "bbox": [
+            -123.133889,
+            49.241111,
+            -123.093889,
+            49.281111
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.113889,49.261111]},
+        
+        "decision": "1937-12-07"
+    },
+    {   
+        "id": "JBTVU",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBTVU" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/71568151c6be11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2720" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Island Ranges",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "71568151c6be11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/71568151c6be11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MTN",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" }
+            } 
+        },
+        "generic": {
+            "code": "2720",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2720" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.5,
+        "longitude": -125.5,
+        "map": ["092F12","092B05","092B12","092B13","092C08","092C09","092C10","092C13","092C14","092C15","092C16","092E07","092E08","092E09","092E10","092E14","092E15","092E16","092F01","092F02","092F03","092F04","092F05","092F06","092F07","092F08","092F10","092F11","092F"],
+        "relevance": 5000000,
+        "bbox": [
+            -128.077402,
+            48.0007673,
+            -123.1525845,
+            51.2009687
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-125.5,49.5]},
+        
+        "decision": "1989-10-27"
+    },
+    {   
+        "id": "JBFRV",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBFRV" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cfaf0b0849c20c3c4940e67299b33ab" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CITY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "North Vancouver",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cfaf0b0849c20c3c4940e67299b33ab",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cfaf0b0849c20c3c4940e67299b33ab" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "CITY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CITY" }
+            } 
+        },
+        "generic": {
+            "code": "1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.320556,
+        "longitude": -123.073889,
+        "map": ["092G06","092G00"],
+        "relevance": 2000000,
+        "bbox": [
+            -123.108598,
+            49.2904398,
+            -123.0317137,
+            49.3426084
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.073889,49.320556]},
+        
+        "decision": "1937-12-07"
+    },
+    {   
+        "id": "MAEYV",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/MAEYV" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf12348849c20c3c6de66f1e5d31241" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7025" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }  
+        },
+        "name": "Vancouver Gap",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cf12348849c20c3c6de66f1e5d31241",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf12348849c20c3c6de66f1e5d31241" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SEAU",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" }
+            } 
+        },
+        "generic": {
+            "code": "7025",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7025" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "72",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }
+            } 
+        },
+        "latitude": 49.840858,
+        "longitude": -128.784643,
+        "map": ["15798A","3604"],
+        "relevance": 1000000,
+        "bbox": [
+            -128.804643,
+            49.820858,
+            -128.764643,
+            49.860858
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-128.784643,49.840858]},
+        
+        "decision": "1964-05-13"
+    },
+    {   
+        "id": "JBFRW",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBFRW" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c9aec9b849c20c3fb6b9eeab67189d2" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/35" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "North Vancouver",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c9aec9b849c20c3fb6b9eeab67189d2",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c9aec9b849c20c3fb6b9eeab67189d2" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MUN1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" }
+            } 
+        },
+        "generic": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/35" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.336111,
+        "longitude": -123.078056,
+        "map": ["092G06","092G00","092G07"],
+        "relevance": 1000000,
+        "bbox": [
+            -123.098056,
+            49.316111,
+            -123.058056,
+            49.356111
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.078056,49.336111]},
+        
+        "decision": "1937-12-07"
+    },
+    {   
+        "id": "JBRIP",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBRIP" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0ff33849c20c391b74a2b1112ff22" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/600" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver River",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca0ff33849c20c391b74a2b1112ff22",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0ff33849c20c391b74a2b1112ff22" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "RIV",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" }
+            } 
+        },
+        "generic": {
+            "code": "600",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/600" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.921667,
+        "longitude": -123.869167,
+        "map": ["092G13","C.3589","092G00"],
+        "relevance": 1000000,
+        "bbox": [
+            -123.8764546,
+            49.9088886,
+            -123.6140963,
+            49.9711996
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.869167,49.921667]},
+        
+        "decision": "1945-07-27"
+    },
+    {   
+        "id": "KAGZW",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/KAGZW" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/55ef0f18d05411d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2743" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/60" }  
+        },
+        "name": "Mount Vancouver",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "55ef0f18d05411d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/55ef0f18d05411d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MTN",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MTN" }
+            } 
+        },
+        "generic": {
+            "code": "2743",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2743" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "60",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/60" }
+            } 
+        },
+        "latitude": 60.3361111,
+        "longitude": -139.6947222,
+        "map": ["115B05","115B04"],
+        "relevance": 1000000,
+        "bbox": [
+            -139.7147222,
+            60.3161111,
+            -139.6747222,
+            60.3561111
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-139.6947222,60.3361111]},
+        
+        "decision": "1960-09-01"
+    },
+    {   
+        "id": "MAFMU",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/MAFMU" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf15a2f849c20c3c33c20f0bf2589b2" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7068" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }  
+        },
+        "name": "Vancouver Island Shelf",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cf15a2f849c20c3c33c20f0bf2589b2",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf15a2f849c20c3c33c20f0bf2589b2" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SEAU",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" }
+            } 
+        },
+        "generic": {
+            "code": "7068",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7068" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "72",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }
+            } 
+        },
+        "latitude": 49.683333,
+        "longitude": -127.16667,
+        "map": ["3001"],
+        "relevance": 1000000,
+        "bbox": [
+            -127.18667,
+            49.663333,
+            -127.14667,
+            49.703333
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-127.16667,49.683333]},
+        
+        "decision": "1984-04-27"
+    },
+    {   
+        "id": "JBJYE",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBJYE" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c9d353f849c20c3dcaaa7205b79a8da" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/35" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "West Vancouver",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c9d353f849c20c3dcaaa7205b79a8da",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c9d353f849c20c3dcaaa7205b79a8da" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MUN1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" }
+            } 
+        },
+        "generic": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/35" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.331111,
+        "longitude": -123.159722,
+        "map": ["092G06","092G00"],
+        "relevance": 1000000,
+        "bbox": [
+            -123.3036869,
+            49.3057084,
+            -123.1115013,
+            49.414326
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.159722,49.331111]},
+        
+        "decision": "1937-12-07"
+    },
+    {   
+        "id": "MAFMV",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/MAFMV" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf15a70849c20c312932771289c20d2" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7074" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }  
+        },
+        "name": "Vancouver Island Slope",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cf15a70849c20c312932771289c20d2",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cf15a70849c20c312932771289c20d2" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SEAU",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SEAU" }
+            } 
+        },
+        "generic": {
+            "code": "7074",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/7074" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "72",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/72" }
+            } 
+        },
+        "latitude": 49.333333,
+        "longitude": -127.5,
+        "map": ["3002"],
+        "relevance": 1000000,
+        "bbox": [
+            -127.52,
+            49.313333,
+            -127.48,
+            49.353333
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-127.5,49.333333]},
+        
+        "decision": "1984-04-27"
+    },
+    {   
+        "id": "KAGZV",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/KAGZV" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/37185ac2d05511d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/60" }  
+        },
+        "name": "Vancouver Creek",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "37185ac2d05511d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/37185ac2d05511d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "RIV",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/RIV" }
+            } 
+        },
+        "generic": {
+            "code": "602",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/602" }
+            } 
+        },   
+        "location": null,
+        "province": {
+            "code": "60",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/60" }
+            } 
+        },
+        "latitude": 63.6355385,
+        "longitude": -137.0790804,
+        "map": ["115P11","115P14","115P15"],
+        "relevance": 250000,
+        "bbox": [
+            -137.1356774,
+            63.6277428,
+            -136.9257449,
+            63.8191419
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-137.0790804,63.6355385]},
+        
+        "decision": "1981-02-13"
+    },
+    {   
+        "id": "JBRIM",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBRIM" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cfbdf79849c20c3dbe8f537dc1b678a" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1405" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Harbour",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0cfbdf79849c20c3dbe8f537dc1b678a",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0cfbdf79849c20c3dbe8f537dc1b678a" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "BAY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" }
+            } 
+        },
+        "generic": {
+            "code": "1405",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1405" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.298056,
+        "longitude": -123.071944,
+        "map": ["092G06","092G07","C.3418","C.3433","C.3434","092G00"],
+        "relevance": 250000,
+        "bbox": [
+            -123.1785037,
+            49.2642084,
+            -122.9455609,
+            49.3339123
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.071944,49.298056]},
+        
+        "decision": "1937-12-07"
+    },
+    {   
+        "id": "FCZNI",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/FCZNI" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c53a9bf849c20c33577deeb3267e26c" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }  
+        },
+        "name": "Vancouver Lake",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0c53a9bf849c20c33577deeb3267e26c",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0c53a9bf849c20c33577deeb3267e26c" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "LAKE",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/LAKE" }
+            } 
+        },
+        "generic": {
+            "code": "951",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/951" }
+            } 
+        },   
+        "location": "Thunder Bay",
+        "province": {
+            "code": "35",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/35" }
+            } 
+        },
+        "latitude": 50.152307,
+        "longitude": -87.835634,
+        "map": ["042L04"],
+        "relevance": 250000,
+        "bbox": [
+            -87.8502335,
+            50.1390153,
+            -87.8201596,
+            50.1661006
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-87.835634,50.152307]},
+        
+        "decision": "1956-12-06"
+    },
+    {   
+        "id": "JBRIL",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JBRIL" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0feaf849c20c3b9c4afb35d0f7429" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1400" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Bay",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca0feaf849c20c3b9c4afb35d0f7429",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca0feaf849c20c3b9c4afb35d0f7429" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "BAY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" }
+            } 
+        },
+        "generic": {
+            "code": "1400",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1400" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.916667,
+        "longitude": -123.880278,
+        "map": ["092G13","C.3589","092G00"],
+        "relevance": 250000,
+        "bbox": [
+            -123.9041518,
+            49.8969186,
+            -123.8584571,
+            49.9349964
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123.880278,49.916667]},
+        
+        "decision": "1945-07-27"
+    },
+    {   
+        "id": "JCJVG",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JCJVG" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca80c71849c20c3b2925bb83515151c" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1400" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Bay",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca80c71849c20c3b2925bb83515151c",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca80c71849c20c3b2925bb83515151c" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "BAY",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/BAY" }
+            } 
+        },
+        "generic": {
+            "code": "1400",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1400" }
+            } 
+        },   
+        "location": "Sayward Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 50.420556,
+        "longitude": -125.157222,
+        "map": ["092K06"],
+        "relevance": 50000,
+        "bbox": [
+            -125.177222,
+            50.400556,
+            -125.137222,
+            50.440556
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-125.157222,50.420556]},
+        
+        "decision": "1982-08-31"
+    },
+    {   
+        "id": "JCCZS",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JCCZS" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca721e7849c20c3d5be1a8c693a4da9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SHL" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2024" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Rock",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "0ca721e7849c20c3d5be1a8c693a4da9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/0ca721e7849c20c3d5be1a8c693a4da9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "SHL",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/SHL" }
+            } 
+        },
+        "generic": {
+            "code": "2024",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/2024" }
+            } 
+        },   
+        "location": "Coast Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 52.35,
+        "longitude": -128.5,
+        "map": ["103A07","C.3728"],
+        "relevance": 50000,
+        "bbox": [
+            -128.52,
+            52.33,
+            -128.48,
+            52.37
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-128.5,52.35]},
+        
+        "decision": "1946-06-08"
+    },
+    {   
+        "id": "JDBDZ",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JDBDZ" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/8df51796c6cb11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CAPE" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1604" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Vancouver Point",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "8df51796c6cb11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/8df51796c6cb11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "CAPE",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/CAPE" }
+            } 
+        },
+        "generic": {
+            "code": "1604",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/1604" }
+            } 
+        },   
+        "location": "Renfrew Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 48.583611,
+        "longitude": -124.678056,
+        "map": ["092C10"],
+        "relevance": 50000,
+        "bbox": [
+            -124.698056,
+            48.563611,
+            -124.658056,
+            48.603611
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-124.678056,48.583611]},
+        
+        "decision": "1987-09-13"
+    },
+    {   
+        "id": "JDMAJ",
+        "links": {
+           "self": { "href": "https://geogratis.gc.ca/services/geoname/en/geonames/JDMAJ" },
+           "feature": { "href": "https://geogratis.gc.ca/services/geoname/en/features/7174b7b4c6be11d892e2080020a0f4c9" },"language": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" },
+           "status": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" },
+           "concise": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" },
+           "generic": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/487" },
+           "province": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }  
+        },
+        "name": "Metro Vancouver Regional District",
+        
+        "language": {
+            "code": "und",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/language/und" }
+            } 
+        },
+        "feature": {
+            "id": "7174b7b4c6be11d892e2080020a0f4c9",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/features/7174b7b4c6be11d892e2080020a0f4c9" }
+            }
+        },
+        
+        "category": "O",
+        "status": {
+            "code": "official",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/status/official" }
+            } 
+        },
+        "concise": {
+            "code": "MUN1",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/concise/MUN1" }
+            } 
+        },
+        "generic": {
+            "code": "487",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/generic/487" }
+            } 
+        },   
+        "location": "New Westminster Land District",
+        "province": {
+            "code": "59",
+            
+            "links": {
+                "self": { "href": "https://geogratis.gc.ca/services/geoname/en/codes/province/59" }
+            } 
+        },
+        "latitude": 49.25,
+        "longitude": -123.0,
+        "map": ["092G06","092G04","092G01","092G02","092G03","092G05","092G07","092G08","092G10","092G11"],
+        "relevance": 50000,
+        "bbox": [
+            -123.02,
+            49.23,
+            -122.98,
+            49.27
+        ],
+        "accuracy": 100,
+        "position": {"type":"Point","coordinates":[-123,49.25]},
+        
+        "decision": "2017-02-10"
+    }
+]}

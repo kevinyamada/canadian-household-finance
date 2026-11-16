@@ -1,0 +1,103 @@
+{
+  "question": "Is the down payment really the biggest obstacle to buying a home?",
+  "headline": "Why does buying a home still feel out of reach?",
+  "price_year": 2023,
+  "rule_date": "2026-11-16",
+  "cities": [
+    "Vancouver",
+    "Victoria",
+    "Halifax"
+  ],
+  "profiles": [
+    {
+      "id": "single",
+      "name": "Single earner",
+      "gross_income": 90000,
+      "liquid_cash": 50000,
+      "monthly_debt": 300,
+      "monthly_saving": 1000,
+      "monthly_rent": 2000,
+      "reserve": 10000,
+      "closing_allowance": 4000,
+      "heating": 150,
+      "condo_fee": 250,
+      "home_insurance": 100,
+      "maintenance_monthly": 100,
+      "first_time": true,
+      "bc_relief_eligible": true,
+      "existing_rrsp_outside_liquid_cash": 20000,
+      "eligible_participants": 1
+    },
+    {
+      "id": "couple",
+      "name": "Two earners",
+      "gross_income": 150000,
+      "liquid_cash": 100000,
+      "monthly_debt": 500,
+      "monthly_saving": 2000,
+      "monthly_rent": 3000,
+      "reserve": 10000,
+      "closing_allowance": 4000,
+      "heating": 150,
+      "condo_fee": 250,
+      "home_insurance": 100,
+      "maintenance_monthly": 100,
+      "first_time": true,
+      "bc_relief_eligible": true,
+      "existing_rrsp_outside_liquid_cash": 40000,
+      "eligible_participants": 2
+    },
+    {
+      "id": "deposit",
+      "name": "Larger deposit",
+      "gross_income": 120000,
+      "liquid_cash": 250000,
+      "monthly_debt": 0,
+      "monthly_saving": 1500,
+      "monthly_rent": 2500,
+      "reserve": 10000,
+      "closing_allowance": 4000,
+      "heating": 150,
+      "condo_fee": 250,
+      "home_insurance": 100,
+      "maintenance_monthly": 100,
+      "first_time": true,
+      "bc_relief_eligible": true,
+      "existing_rrsp_outside_liquid_cash": 30000,
+      "eligible_participants": 1
+    }
+  ],
+  "observed_scope": "Resident first-time property buyers; city/CSD transaction benchmarks, not all renters or identical properties",
+  "case_count": 468,
+  "baseline_cases": 9,
+  "barriers": {
+    "Income": 4,
+    "Within modeled limits": 4,
+    "Both cash and income": 1
+  },
+  "cash_ready_but_income_short": 4,
+  "modeled_pass_cases": 4,
+  "scope": "Nine illustrations are not population estimates, mortgage approvals or a personal buying-date recommendation.",
+  "source_tables": [
+    "46-10-0099-01",
+    "46-10-0062-01"
+  ],
+  "rate_series": {
+    "insured": "V122667780",
+    "uninsured": "V122667786"
+  },
+  "history_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "policy_comparison_years": [
+    2021,
+    2023
+  ],
+  "waiting_cases": 162,
+  "program_cases": 36,
+  "source_policy": "Statistics Canada first; official Canadian public bodies only",
+  "execution": "Prepared and checked with Python and SQL in Kevin's local desktop VS Code integrated terminal"
+}
