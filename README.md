@@ -1,5 +1,7 @@
 # Why does buying a home still feel out of reach?
 
+[Kevin Yamada · Portfolio](https://kevinyamada.github.io/)
+
 A housing-readiness audit using public Canadian data, Python, SQL and Power BI.
 
 [Project website](https://kevinyamada.github.io/canadian-household-finance/) · [Power BI report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v2.0.0/CanadianHouseholdFinance.pbix) · [Figures and downloads](reports/figures/portfolio/README.md) · [Three-minute walkthrough](docs/project_walkthrough.md)
