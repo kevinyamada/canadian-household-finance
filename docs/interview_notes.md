@@ -41,7 +41,7 @@ It does not use TD's internal policy, client records or endorsement. The 39%/44%
 ## Resume bullets
 
 - Built a Canadian homebuying study using Python, SQL and official public data to compare cash and mortgage-income constraints across three cities, 468 purchase scenarios and 162 waiting scenarios.
-- Created a nine-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
+- Created a ten-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
 
 Use wording you can explain in your own words. Describe assistance honestly if asked.
 
@@ -61,3 +61,7 @@ Use [the short interview brief](interview_brief.md) for the spoken introduction.
 - Why does missing debt sometimes leave the income requirement unchanged? The GDS constraint may still bind. An unchanged outcome does not validate a missing input.
 - What did the deliberate errors prove? Their financial effect in the saved examples, not the error frequency at TD or any bank.
 - What would a real lender need? Verified income, source of funds, debt records, property value/costs, eligibility and its actual underwriting criteria.
+
+## Complete-file demo
+
+Open File review (Power BI) or the complete mock-file section (website). Follow Submitted claim → Corrected review → Revised request. Explain the one-off bonus, pledged funds and omitted debt. Show why the corrected original request fails, and why financial fit after a lower-price request still does not authenticate real evidence. Use [the eight-page packet and walkthrough](mortgage_file_walkthrough.md).

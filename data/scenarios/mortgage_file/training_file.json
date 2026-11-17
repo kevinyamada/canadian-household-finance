@@ -1,0 +1,136 @@
+{
+  "case_id": "TRAINING-MORTGAGE-001",
+  "synthetic": true,
+  "created_on": "2026-11-17",
+  "title": "Can this mortgage file be signed off?",
+  "notice": "FICTIONAL TRAINING FILE. Constructed application and worksheets; not genuine borrower, bank, employer or property records. No lender approval is represented.",
+  "city": "Vancouver",
+  "province": "BC",
+  "rate_reference_period": "2026-09",
+  "price_scope": "Constructed training price, 10% below the preserved 2023 Vancouver benchmark; not an observed current listing.",
+  "tax_scope": "2023 Vancouver tax schedule; purchase price used as an explicit assessment proxy, not an actual tax bill.",
+  "application": {
+    "evidence_id": "APP-001",
+    "requested_price": 764100,
+    "gross_income": 150000,
+    "liquid_cash": 100000,
+    "monthly_debt": 500,
+    "annual_property_tax": 1800,
+    "heating": 100,
+    "condo_fee": 200,
+    "qualifying_rate_used": 4.15
+  },
+  "income_records": [
+    {
+      "evidence_id": "INC-001-A",
+      "applicant": "Applicant A",
+      "kind": "base",
+      "annual_gross": 84000,
+      "note": "Constructed recurring salary; included for this exercise."
+    },
+    {
+      "evidence_id": "INC-001-B",
+      "applicant": "Applicant B",
+      "kind": "base",
+      "annual_gross": 51000,
+      "note": "Constructed recurring salary; included for this exercise."
+    },
+    {
+      "evidence_id": "INC-001-C",
+      "applicant": "Applicant A",
+      "kind": "one_off_bonus",
+      "annual_gross": 15000,
+      "note": "Constructed isolated bonus; sustainable recurrence not established. Excluded by the exercise's stated treatment, not a claim that all bonuses are ineligible."
+    }
+  ],
+  "fund_records": [
+    {
+      "evidence_id": "FND-001-A",
+      "account": "Savings worksheet",
+      "balance": 60000,
+      "pledged": 0,
+      "note": "Constructed balance assumed accessible before closing."
+    },
+    {
+      "evidence_id": "FND-001-B",
+      "account": "Term-deposit worksheet",
+      "balance": 40000,
+      "pledged": 15000,
+      "note": "CAD 15,000 assumed pledged and unavailable before closing; only the remainder is counted."
+    }
+  ],
+  "debt_records": [
+    {
+      "evidence_id": "DBT-001-A",
+      "obligation": "Vehicle payment",
+      "monthly_payment": 400,
+      "declared": true
+    },
+    {
+      "evidence_id": "DBT-001-B",
+      "obligation": "Line-of-credit payment",
+      "monthly_payment": 100,
+      "declared": true
+    },
+    {
+      "evidence_id": "DBT-001-C",
+      "obligation": "Student-loan payment",
+      "monthly_payment": 250,
+      "declared": false
+    }
+  ],
+  "cost_worksheet": {
+    "evidence_id": "CST-001",
+    "property_tax_rate": 0.0027807,
+    "assessment_ratio": 1.0,
+    "heating": 150,
+    "condo_fee": 250,
+    "home_insurance": 100,
+    "maintenance_monthly": 100,
+    "closing_allowance": 4000,
+    "reserve": 10000,
+    "note": "Constructed cost assumptions; tax amount is recalculated at each price using the historical schedule and explicit price proxy."
+  },
+  "rate_worksheet": {
+    "evidence_id": "RTE-001",
+    "amortization_years": 25,
+    "note": "National September 2026 funds-advanced fixed five-year-and-over observations inform the illustration. This is not a lender rate commitment."
+  },
+  "revised_request": {
+    "evidence_id": "REV-001",
+    "price": 600000,
+    "note": "Separate hypothetical lower-price request. Supported income, available cash, debts and non-tax costs stay unchanged. This is not a price forecast or a real property change."
+  },
+  "open_evidence": [
+    {
+      "control_id": "OPEN-01",
+      "control": "Income and employment authenticity",
+      "needed": "Independently verify actual income, employment, history and the treatment of variable pay."
+    },
+    {
+      "control_id": "OPEN-02",
+      "control": "Ownership and availability of funds",
+      "needed": "Authenticate account histories, source of funds, restrictions and availability before closing."
+    },
+    {
+      "control_id": "OPEN-03",
+      "control": "Complete credit and debt records",
+      "needed": "Obtain an authorized credit review and reconcile all actual recurring obligations."
+    },
+    {
+      "control_id": "OPEN-04",
+      "control": "Subject property and costs",
+      "needed": "Verify agreement, valuation, actual taxes, heating and condo costs for the subject property."
+    },
+    {
+      "control_id": "OPEN-05",
+      "control": "Lender, insurer and program criteria",
+      "needed": "Verify the actual rate commitment, eligibility, insurance, tax relief and applicable lending criteria."
+    },
+    {
+      "control_id": "OPEN-06",
+      "control": "Independent review and sign-off",
+      "needed": "A qualified reviewer must document their actual review; this synthetic exercise supplies no signature or approval."
+    }
+  ]
+}

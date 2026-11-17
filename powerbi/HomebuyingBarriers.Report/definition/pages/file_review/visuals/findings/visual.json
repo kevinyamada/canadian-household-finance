@@ -1,0 +1,184 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "findings",
+  "position": {
+    "x": 24,
+    "y": 334,
+    "width": 1232,
+    "height": 264,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Seven discrepancies reconciled to the mock worksheets'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileFindings"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "FileFindings.finding",
+              "nativeQueryRef": "finding",
+              "displayName": "Input"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileFindings"
+                    }
+                  },
+                  "Property": "declared_label"
+                }
+              },
+              "queryRef": "FileFindings.declared_label",
+              "nativeQueryRef": "declared_label",
+              "displayName": "Application"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileFindings"
+                    }
+                  },
+                  "Property": "supported_label"
+                }
+              },
+              "queryRef": "FileFindings.supported_label",
+              "nativeQueryRef": "supported_label",
+              "displayName": "Mock support"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileFindings"
+                    }
+                  },
+                  "Property": "difference_label"
+                }
+              },
+              "queryRef": "FileFindings.difference_label",
+              "nativeQueryRef": "difference_label",
+              "displayName": "Difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileFindings"
+                    }
+                  },
+                  "Property": "evidence_ids"
+                }
+              },
+              "queryRef": "FileFindings.evidence_ids",
+              "nativeQueryRef": "evidence_ids",
+              "displayName": "Worksheet IDs"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

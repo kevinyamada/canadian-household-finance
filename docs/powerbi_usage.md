@@ -1,18 +1,19 @@
 # Open the Power BI report
 
-1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.2.0/HomebuyingBarriers.pbix).
+1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.3.0/HomebuyingBarriers.pbix).
 2. Open it in a current Power BI Desktop for Windows.
 3. Begin on **Start here**, then change the city, buyer and assumption on **Cash and income**.
 
 The regular .pbix contains imported data. It does not need the author's source folders or a Statistics Canada download to display results. A Power BI Service subscription is not needed for this local report.
 
-## Nine pages
+## Ten pages
 
 - **Start here:** the question, finding and nine hypothetical buyer examples.
 - **Cash and income:** money available, required amounts and signed positions.
 - **What helps:** scenario comparisons and the main effect of buyer measures.
 - **Price limits:** a price within both checks, or extra cash at the benchmark price.
 - **Latest rates:** September 2026 monthly mortgage rates on the unchanged 2023 price, finances and tax schedule.
+- **File review:** a fixed fictional application, seven worksheet discrepancies, corrected finances and a revised request. It is independent of the city/profile selectors.
 - **Calculation audit:** correct and four deliberately flawed calculations, with false passes identified.
 - **Over time:** observed 2020–2023 inputs with current rules held fixed.
 - **Waiting to buy:** 12/24-month scenarios with three price paths and rent growth.

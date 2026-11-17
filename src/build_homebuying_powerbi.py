@@ -1,4 +1,4 @@
-"""Build a portable, imported nine-page Power BI project from the saved desktop study."""
+"""Build a portable, imported ten-page Power BI project from the saved desktop study."""
 from pathlib import Path
 import json
 import shutil
@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data/processed"; BI=ROOT/"powerbi"
 REPORT=BI/"HomebuyingBarriers.Report";MODEL=BI/"HomebuyingBarriers.SemanticModel"
 PAGES=[("answer","Start here"),("cash","Cash and income"),("changes","What helps"),("limits","Price limits"),
-       ("latest","Latest rates"),("history","Over time"),("waiting","Waiting to buy"),("audit","Bank audit"),("calculation_audit","Calculation audit")]
+       ("latest","Latest rates"),("history","Over time"),("waiting","Waiting to buy"),("audit","Bank audit"),("calculation_audit","Calculation audit"),("file_review","File review")]
 MONEY='"CAD "#,0;("CAD "#,0)'
 
 def frame(name):
@@ -35,6 +35,7 @@ def proj(t,c,kind="Column"):
         "benchmark_price":"2023 benchmark price","maximum_price_display":"Price within both checks",
         "additional_cash_display":"Extra cash at benchmark","total_cash_to_fit_at_benchmark":"Total cash needed at benchmark",
         "baseline_required_income":"Income needed: 2023 rates","baseline_monthly_mortgage":"Payment: 2023 rates",
+        "stage_label":"Review stage","financial_result":"Financial result","finding":"Input","declared_label":"Application","supported_label":"Mock support","difference_label":"Difference","evidence_ids":"Worksheet IDs",
         "variant_label":"Calculation","income_understated":"Income understated/year","decision_label":"Audit result",
         "contract_rate":"Contract rate (%)","qualifying_rate":"Qualifying rate (%)",
         "price_growth_label":"Hypothetical price path","rent_growth_label":"Rent growth"}.get(c,c)
@@ -76,6 +77,7 @@ def build():
     latest_limits=frame("homebuying_latest_rate_limits.csv")
     errors=frame("homebuying_calculation_audit.csv")
     errors["scenario_order"]=errors.scenario.map({name:i for i,name in enumerate(order)})
+    file_stages=frame("mortgage_file_stages.csv");file_findings=frame("mortgage_file_findings.csv")
     decomp=frame("homebuying_decomposition.csv")
     summary=json.loads((OUT/"homebuying_summary.json").read_text(encoding="utf-8"))
     profiles=pd.DataFrame(summary["profiles"])[["id","name","gross_income","liquid_cash","monthly_debt"]].rename(columns={"id":"profile","name":"profile_label"})
@@ -94,7 +96,7 @@ def build():
              ("History",history,[b.measure("Modeled income needed","MAX(\'History\'[required_gross_income])",MONEY),b.measure("Observed buyer-family income","MAX(\'History\'[buyer_family_median_income])",MONEY)]),
              ("Programs",programs,None),("Waiting",waiting,[b.measure("Required gross income","MAX(\'Waiting\'[required_gross_income])",MONEY)]),
              ("Audit",audit,None),("Controls",controls,None),("Decomposition",decomp,None),("Limits",limits,None),
-             ("LatestRates",latest,None),("LatestRateLimits",latest_limits,None),("CalculationAudit",errors,None)]
+             ("LatestRates",latest,None),("LatestRateLimits",latest_limits,None),("CalculationAudit",errors,None),("FileStages",file_stages,None),("FileFindings",file_findings,None)]
     for name,df,ms in sources:
         t=b.table(name,df,ms)
         for c in t["columns"]:
@@ -110,6 +112,8 @@ def build():
         if name=="CalculationAudit":
             next(c for c in t["columns"] if c["name"]=="variant_label")["sortByColumn"]="variant_order"
             next(c for c in t["columns"] if c["name"]=="scenario_label")["sortByColumn"]="scenario_order"
+        if name=="FileStages":next(c for c in t["columns"] if c["name"]=="stage_label")["sortByColumn"]="stage_order"
+        if name=="FileFindings":next(c for c in t["columns"] if c["name"]=="finding")["sortByColumn"]="finding_order"
         tables.append(t)
     rel=[]
     for name,df,_ in sources:
@@ -196,6 +200,11 @@ def build():
     table("calculation_audit","error-comparison",24,263,1232,345,"Correct and deliberately flawed income screens","CalculationAudit",["variant_label","required_gross_income","income_understated","decision_label"])
     text("calculation_audit","worked-example",24,614,1232,38,"Try Vancouver / Two earners / Price 10% lower: using the contract rate to qualify creates a false pass.",12)
     foot("calculation_audit","False pass: the flawed result fits both financial checks while the correct one does not. Cash stays unchanged. Demonstrations are not observed bank mistakes or a bank error rate. Actual borrower evidence, property costs and lender/insurer policy still require review.")
+    header("file_review","Can this mortgage file be signed off?","FICTIONAL TRAINING FILE. Constructed application and worksheets; no genuine borrower evidence or lender approval.")
+    table("file_review","stages",24,130,1232,182,"One file: submitted claim, corrected review and a separate lower-price request","FileStages",["stage_label","price","profile_income","required_gross_income","financial_result"])
+    table("file_review","findings",24,334,1232,264,"Seven discrepancies reconciled to the mock worksheets","FileFindings",["finding","declared_label","supported_label","difference_label","evidence_ids"])
+    text("file_review","outcome",24,612,1232,43,"Final review: HOLD. The CAD 600,000 request fits both financial checks; six external-evidence controls remain open.",14)
+    foot("file_review","The revised request changes only the hypothetical price; supported finances stay fixed and the historical tax proxy is recalculated. Original price: 2023 scenario; rate reference: Sep 2026. Mock worksheet agreement is not authentic evidence or sign-off. See the eight-page training packet.")
     # Structural checks before opening the native application.
     model_tables={t["name"]:{c["name"] for c in t["columns"]}|{m["name"] for m in t.get("measures",[])} for t in tables}
     def walk(value):
@@ -209,5 +218,5 @@ def build():
             for v in value:walk(v)
     for path in REPORT.rglob("*.json"):walk(json.loads(path.read_text(encoding="utf-8")))
     (ROOT/"work/homebuying_powerbi_build.json").write_text(json.dumps({"passed":True,"pages":[label for _,label in PAGES],"tables":len(tables),"case_rows":len(cases),"portable_import":True},indent=2),encoding="utf-8")
-    print("Built portable nine-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
+    print("Built portable ten-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
 if __name__=="__main__":build()

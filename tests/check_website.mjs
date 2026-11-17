@@ -79,7 +79,7 @@ try{
   for(const [width,height] of [[1440,1000],[768,1024],[390,844],[320,780]]){
     await command('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600});
     await load('Page.navigate',{url:base});
-    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
+    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'&&document.documentElement.dataset.mortgageFile==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
     if(await evaluate('document.documentElement.dataset.theme')!=='light')throw new Error('Fresh visit must start light despite dark system preference');
     const check=await evaluate(`(()=>{
       const expected=${JSON.stringify(expected)};
@@ -150,6 +150,38 @@ try{
     const oracle=hbExpected.cases.find(r=>r.city==='Vancouver'&&r.profile==='couple'&&r.year===2023&&r.scenario==='baseline');
     if(!displayedIncome.includes(Math.round(oracle.required_gross_income).toLocaleString('en-CA')))throw new Error('Saved-data/UI mismatch');
     result.homebuying??=[];result.homebuying.push({width,...hbCheck});
+    const fileExpected=JSON.parse(fs.readFileSync(path.join(root,'docs/assets/mortgage-file-data.json'),'utf8'));
+    const fileCheck=await evaluate(`(()=>{
+      const data=${JSON.stringify(fileExpected)},el=id=>document.getElementById(id),failures=[];
+      const check=(ok,label)=>{if(!ok)failures.push(label);};
+      const numeric=t=>Number(t.replace(/[^0-9.-]/g,''));
+      check(el('file-review').textContent.includes('Fictional training file'),'visible synthetic notice');
+      for(const r of data.stages){
+        const button=document.querySelector('[data-file-stage="'+r.stage_id+'"]');button.click();
+        check(button.getAttribute('aria-pressed')==='true','selected stage '+r.stage_id);
+        check(el('mf-screen').textContent===r.financial_result,'financial result '+r.stage_id);
+        check(el('mf-outcome').textContent===r.review_outcome&&el('mf-outcome').textContent.startsWith('Hold:'),'hold result '+r.stage_id);
+        check(el('mf-income').textContent===r.income_position_label&&el('mf-cash').textContent===r.cash_position_label,'positions '+r.stage_id);
+        check(el('mf-external').textContent.startsWith('6 external-evidence'),'open evidence '+r.stage_id);
+        check(!el('mf-outcome').textContent.includes('Approved'),'no approval '+r.stage_id);
+        check(el('mf-context').textContent.includes(r.qualifying_rate.toFixed(2)+'%'),'qualifying rate '+r.stage_id);
+      }
+      for(const f of data.findings){
+        const tr=document.querySelector('#mf-findings [data-finding="'+f.finding_id+'"]'),cells=[...tr.querySelectorAll('td')];
+        check(cells[0].textContent===f.declared_label&&cells[1].textContent===f.supported_label&&cells[2].textContent===f.difference_label,'finding amounts '+f.finding_id);
+        check(cells[3].textContent===f.evidence_ids.replaceAll('|',', '),'finding lineage '+f.finding_id);
+      }
+      check(el('mf-checks').querySelectorAll('li').length===6,'six external controls');
+      const before=el('mf-stage-result')?.textContent??el('mf-screen').textContent;
+      el('hb-city').value='Halifax';el('hb-city').dispatchEvent(new Event('change',{bubbles:true}));
+      check(el('mf-screen').textContent===data.stages[2].financial_result,'fixed case independent of city');
+      el('hb-city').value='Vancouver';el('hb-city').dispatchEvent(new Event('change',{bubbles:true}));
+      document.querySelector('[data-file-stage="submitted"]').click();
+      return {failures,stages:data.stages.length,findings:data.findings.length,external_controls:6,synthetic_notice:true};
+    })()`);
+    if(fileCheck.failures.length)throw new Error('Training-file display checks failed '+JSON.stringify(fileCheck));
+    result.mortgage_file??=[];result.mortgage_file.push({width,...fileCheck});
+
     if(width===1440){
       const matrix=hbExpected.cases.filter(r=>r.year===2023).map(({city,profile,scenario,cash_position_label,income_position_label,profile_cash,cash_target,profile_income,required_gross_income})=>({city,profile,scenario,cash_position_label,income_position_label,profile_cash,cash_target,profile_income,required_gross_income}));
       const programMatrix=hbExpected.programs.map(p=>Object.fromEntries(["city","profile","program","applicable","metric_1_label","metric_1_before","metric_1_after","metric_2_label","metric_2_before","metric_2_after","metric_3_label","metric_3_before","metric_3_after"].map(k=>[k,p[k]])));
@@ -265,7 +297,7 @@ try{
     await evaluate('document.querySelector(\'#canada-map [data-region="35"]\').dispatchEvent(new MouseEvent("click",{bubbles:true}));document.activeElement.blur();window.scrollTo(0,0)');
     result.interactions??=[];result.interactions.push({width,...interactions,keyboard_map:true});
     if(width===1440||width===390){
-      for(const [id,name] of [['buying','buyers'],['latest-rates','rates'],['audit-errors','calculation-audit'],['bank-audit','bank-audit'],['limits','limits'],['buyer-measures','programs'],['changes','scenarios'],['history','history'],['waiting','waiting'],['explore','map'],['story','trend'],['cash-heading','cash']]){
+      for(const [id,name] of [['file-review','file-review'],['buying','buyers'],['latest-rates','rates'],['audit-errors','calculation-audit'],['bank-audit','bank-audit'],['limits','limits'],['buyer-measures','programs'],['changes','scenarios'],['history','history'],['waiting','waiting'],['explore','map'],['story','trend'],['cash-heading','cash']]){
         await evaluate('document.getElementById('+JSON.stringify(id)+').scrollIntoView({block:"start"});');
         const shot=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
         fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-'+name+'.png'),Buffer.from(shot.data,'base64'));
@@ -284,7 +316,7 @@ try{
     const dark=await evaluate('({theme:document.documentElement.dataset.theme,pressed:document.getElementById("theme-toggle").getAttribute("aria-pressed"),label:document.getElementById("theme-toggle").getAttribute("aria-label"),background:getComputedStyle(document.body).backgroundColor})');
     if(dark.theme!=='dark'||dark.pressed!=='true'||dark.label!=='Switch to light mode'||dark.background===light)throw new Error('Dark theme failed '+JSON.stringify(dark));
     await load('Page.reload',{ignoreCache:true});
-    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
+    await evaluate(`new Promise((resolve,reject)=>{let count=0;const timer=setInterval(()=>{if(document.documentElement.dataset.visuals==='ready'&&document.documentElement.dataset.homebuying==='ready'&&document.documentElement.dataset.mortgageFile==='ready'){clearInterval(timer);resolve(true);}else if(document.documentElement.dataset.visuals==='error'||++count>150){clearInterval(timer);reject(new Error('Visuals did not become ready'));}},100);})`);
     if(await evaluate('document.documentElement.dataset.theme')!=='dark')throw new Error('Theme preference did not persist');
     if(await evaluate("getComputedStyle(document.getElementById(\"canada-map\").querySelector(\".selected\")).fill")===lightMap)throw new Error('Map colours did not follow dark mode');
     if(width===1440||width===390){

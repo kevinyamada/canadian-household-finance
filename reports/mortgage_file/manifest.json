@@ -1,0 +1,78 @@
+{
+  "synthetic": true,
+  "notice": "FICTIONAL TRAINING FILE \u2014 constructed worksheets, not genuine financial records or a lender approval.",
+  "pages": 8,
+  "assets": [
+    {
+      "file": "reports/mortgage_file/MortgageFile-Audit-Pack.pdf",
+      "sha256": "507804c50656a5be0287941933f7c7fb85a0dedf5ed870423daed9336901574f",
+      "bytes": 75931
+    },
+    {
+      "file": "reports/mortgage_file/README.md",
+      "sha256": "abf859553c6707e3fe9beff513a74aa05251e44f8eceedcdab7f999fef74afeb",
+      "bytes": 797
+    },
+    {
+      "file": "docs/mortgage_file_walkthrough.md",
+      "sha256": "0e55c63c19f7f06023dabe67f76a1d987368339f355c3de864df7f6b21a468f9",
+      "bytes": 5861
+    },
+    {
+      "file": "data/scenarios/mortgage_file/training_file.json",
+      "sha256": "2073c2d53d58c0396fb9ea91e60f6dde57202e200db106e13d71307ddd340561",
+      "bytes": 4821
+    },
+    {
+      "file": "src/mortgage_file_audit.py",
+      "sha256": "ed6c617dbf035ea4b6c727d6727560105024238a2fa4bd971f9509beb4c099ad",
+      "bytes": 16121
+    },
+    {
+      "file": "sql/mortgage_file_audit.sql",
+      "sha256": "b1d727a978b569cb289e2288786885136152bfb3afa7b71b101ef5e8ffb267a7",
+      "bytes": 1734
+    },
+    {
+      "file": "data/processed/mortgage_file_application.csv",
+      "sha256": "518acff118e941a2d99f78043006e63a3eb6253a2cbdd98a769447e19c6b3c88",
+      "bytes": 221
+    },
+    {
+      "file": "data/processed/mortgage_file_cost_worksheet.csv",
+      "sha256": "000548ddce8c07b43b0a0f9595bbaa553c9565aa1412301d651917d1c987f4a4",
+      "bytes": 352
+    },
+    {
+      "file": "data/processed/mortgage_file_debt_records.csv",
+      "sha256": "ea373e297c1dd96ce38963141d3e7de14343ffb75713543e8249c792a94cf39c",
+      "bytes": 265
+    },
+    {
+      "file": "data/processed/mortgage_file_findings.csv",
+      "sha256": "b239fd9162e22a7467d9038ba762c4431dd942de85866b7569f822511a531ba4",
+      "bytes": 2338
+    },
+    {
+      "file": "data/processed/mortgage_file_fund_records.csv",
+      "sha256": "7212943db620495566a25aebbd18af071cec9ea52fc729cfeec2b7f4e539d6e0",
+      "bytes": 341
+    },
+    {
+      "file": "data/processed/mortgage_file_income_records.csv",
+      "sha256": "fdf08affca29b9f0ed32fe909f8dc932b19aec990a483e16703d45045d3afe54",
+      "bytes": 528
+    },
+    {
+      "file": "data/processed/mortgage_file_open_evidence.csv",
+      "sha256": "92ebf0a1ce2f54874296e077f3fdcdc9e7807ac5ae8358109d8ff34b2aea73ed",
+      "bytes": 1044
+    },
+    {
+      "file": "data/processed/mortgage_file_stages.csv",
+      "sha256": "264842a15740618ef83563f422eac0665d381b48cd6485d55c874d64da5524a1",
+      "bytes": 4079
+    }
+  ],
+  "execution": "Exported in desktop VS Code"
+}

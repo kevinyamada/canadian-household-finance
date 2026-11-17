@@ -1,0 +1,2 @@
+evidence_id,property_tax_rate,assessment_ratio,heating,condo_fee,home_insurance,maintenance_monthly,closing_allowance,reserve,note,synthetic,case_id
+CST-001,0.0027807,1.0,150,250,100,100,4000,10000,Constructed cost assumptions; tax amount is recalculated at each price using the historical schedule and explicit price proxy.,True,TRAINING-MORTGAGE-001

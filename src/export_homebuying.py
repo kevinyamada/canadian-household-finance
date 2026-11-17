@@ -166,6 +166,19 @@ def export():
     fig.subplots_adjust(left=.33)
     note(fig,"Each incorrect row introduces one deliberate calculation error; the cash position is held fixed. The correct qualifying rate uses the contract rate plus 2 percentage points or 5.25%, whichever is higher. A false pass means the flawed calculation fits both checks while the correct one does not. These are defined examples, not observed errors at TD or any other lender, and not a bank error-rate estimate. Sources: CMHC debt-service guidance and OSFI B-20.")
     figures.append(("09_calculation_audit","A calculation mistake that changes the result",fig))
+    file_stages=pd.read_csv(OUT/"mortgage_file_stages.csv").sort_values("stage_order")
+    fig,axs=frame("Correct the file before changing the request.",
+        "FICTIONAL TRAINING FILE: application, supporting worksheets and prices are constructed examples; no genuine borrower evidence.")
+    ax=axs[0,0];y=np.arange(3)
+    ax.barh(y-.16,file_stages.profile_income/1000,height=.28,color=GREEN,label="Income stated / supported")
+    ax.barh(y+.16,file_stages.required_gross_income/1000,height=.28,color=BLUE,label="Income required by the stage")
+    ax.set_yticks(y,["Submitted claim*","Corrected review","Revised request"]);ax.invert_yaxis()
+    ax.set_xlim(0,200);ax.set_xlabel("Annual gross income (CAD thousands)");clean(ax)
+    for i,r in enumerate(file_stages.itertuples()):
+        ax.text(max(r.profile_income,r.required_gross_income)/1000+2,i,r.financial_result,va="center",fontsize=9)
+    fig.legend(*ax.get_legend_handles_labels(),loc="upper left",bbox_to_anchor=(.18,.855),ncol=2,fontsize=9,frameon=False)
+    note(fig,"*The submitted screen deliberately uses the contract rate and unreconciled inputs. Seven discrepancies change recurring income to CAD 135,000, usable cash to CAD 85,000, debt to CAD 750/month and the qualifying rate to 6.15%. The revised request changes only the hypothetical price to CAD 600,000, with tax recalculated using the historical proxy. Both financial checks then fit, while six actual-evidence controls remain open. All stages remain on hold. The worksheet packet supplies no real credit decision, signature or approval.")
+    figures.append(("10_mortgage_file_review","The complete fictional file review",fig))
     assets=[]
     pdf=DEST/"HomebuyingBarriers-Figures.pdf"
     with PdfPages(pdf) as book:
@@ -181,18 +194,22 @@ def export():
     manifest={"price_year":2023,"rule_date":"2026-11-16","assets":assets,
               "execution":"Exported with matplotlib in Kevin's desktop VS Code"}
     (DEST/"manifest.json").write_text(json.dumps(manifest,indent=2),encoding="utf-8",newline="\n")
-    gallery="# Homebuying barriers: figure gallery\n\nNine figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
+    gallery="# Homebuying barriers: figure gallery\n\nTen figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
     for stem,title,_ in figures:
         gallery+=f"## {title}\n\n![{title}]({stem}.png)\n\n[PNG]({stem}.png) · [Editable SVG]({stem}.svg)\n\n"
-    gallery+="[Nine-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
+    gallery+="[Ten-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
     (DEST/"README.md").write_text(gallery,encoding="utf-8",newline="\n")
+    from export_mortgage_file import export as export_training_packet
+    export_training_packet()
     archive=ROOT/"work/HomebuyingBarriers-Figures.zip"
     with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
         for path in DEST.iterdir():
             if path.is_file():z.write(path,"figures/"+path.name)
-        for path in OUT.glob("homebuying_*.csv"):z.write(path,"data/"+path.name)
-        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md",ROOT/"reports/calculation_review.md",ROOT/"reports/source_refresh.md",ROOT/"reports/mortgage_calculation_audit.md",ROOT/"docs/interview_brief.md"]:
+        for path in [*OUT.glob("homebuying_*.csv"),*OUT.glob("mortgage_file_*.csv")]:z.write(path,"data/"+path.name)
+        packet=ROOT/"reports/mortgage_file/MortgageFile-Audit-Pack.pdf"
+        z.write(packet,"notes/"+packet.name)
+        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md",ROOT/"reports/calculation_review.md",ROOT/"reports/source_refresh.md",ROOT/"reports/mortgage_calculation_audit.md",ROOT/"docs/interview_brief.md",ROOT/"docs/mortgage_file_walkthrough.md"]:
             if path.exists():z.write(path,"notes/"+path.name)
-    print(f"Published nine PNG/SVG pairs, nine-page PDF and ZIP: {archive}",flush=True)
+    print(f"Published ten PNG/SVG pairs, ten-page PDF and ZIP: {archive}",flush=True)
     return manifest
 if __name__=="__main__":export()

@@ -3587,6 +3587,551 @@
             }
           }
         ]
+      },
+      {
+        "name": "FileStages",
+        "columns": [
+          {
+            "name": "price",
+            "dataType": "double",
+            "sourceColumn": "price",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "minimum_down",
+            "dataType": "double",
+            "sourceColumn": "minimum_down",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "transfer_tax_gross",
+            "dataType": "double",
+            "sourceColumn": "transfer_tax_gross",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "transfer_relief",
+            "dataType": "int64",
+            "sourceColumn": "transfer_relief",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "transfer_tax",
+            "dataType": "double",
+            "sourceColumn": "transfer_tax",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "closing_allowance",
+            "dataType": "int64",
+            "sourceColumn": "closing_allowance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cash_to_close_min",
+            "dataType": "double",
+            "sourceColumn": "cash_to_close_min",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "reserve",
+            "dataType": "int64",
+            "sourceColumn": "reserve",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_target",
+            "dataType": "double",
+            "sourceColumn": "cash_target",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "profile_cash",
+            "dataType": "int64",
+            "sourceColumn": "profile_cash",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_gap",
+            "dataType": "int64",
+            "sourceColumn": "cash_gap",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_pass",
+            "dataType": "int64",
+            "sourceColumn": "cash_pass",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "down_used",
+            "dataType": "double",
+            "sourceColumn": "down_used",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_spent",
+            "dataType": "double",
+            "sourceColumn": "cash_spent",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_feasible",
+            "dataType": "int64",
+            "sourceColumn": "cash_feasible",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "insurance_premium",
+            "dataType": "double",
+            "sourceColumn": "insurance_premium",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mortgage_principal",
+            "dataType": "double",
+            "sourceColumn": "mortgage_principal",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "contract_rate",
+            "dataType": "double",
+            "sourceColumn": "contract_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "qualifying_rate",
+            "dataType": "double",
+            "sourceColumn": "qualifying_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "amortization_years",
+            "dataType": "int64",
+            "sourceColumn": "amortization_years",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "monthly_mortgage",
+            "dataType": "double",
+            "sourceColumn": "monthly_mortgage",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "qualifying_payment",
+            "dataType": "double",
+            "sourceColumn": "qualifying_payment",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "property_tax_rate",
+            "dataType": "double",
+            "sourceColumn": "property_tax_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "assessment_ratio",
+            "dataType": "double",
+            "sourceColumn": "assessment_ratio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "annual_property_tax",
+            "dataType": "double",
+            "sourceColumn": "annual_property_tax",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "monthly_debt",
+            "dataType": "int64",
+            "sourceColumn": "monthly_debt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "heating",
+            "dataType": "int64",
+            "sourceColumn": "heating",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "condo_fee",
+            "dataType": "int64",
+            "sourceColumn": "condo_fee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "home_insurance",
+            "dataType": "int64",
+            "sourceColumn": "home_insurance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "maintenance_monthly",
+            "dataType": "int64",
+            "sourceColumn": "maintenance_monthly",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "modeled_monthly_outgoings",
+            "dataType": "double",
+            "sourceColumn": "modeled_monthly_outgoings",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "required_gross_income",
+            "dataType": "double",
+            "sourceColumn": "required_gross_income",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "profile_income",
+            "dataType": "int64",
+            "sourceColumn": "profile_income",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "income_gap",
+            "dataType": "double",
+            "sourceColumn": "income_gap",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "income_pass",
+            "dataType": "int64",
+            "sourceColumn": "income_pass",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "barrier",
+            "dataType": "string",
+            "sourceColumn": "barrier",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gds",
+            "dataType": "double",
+            "sourceColumn": "gds",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tds",
+            "dataType": "double",
+            "sourceColumn": "tds",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "first_five_years_interest",
+            "dataType": "double",
+            "sourceColumn": "first_five_years_interest",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "five_year_balance",
+            "dataType": "double",
+            "sourceColumn": "five_year_balance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "housing_costs_for_ratios",
+            "dataType": "double",
+            "sourceColumn": "housing_costs_for_ratios",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "income_scope",
+            "dataType": "string",
+            "sourceColumn": "income_scope",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rule_date",
+            "dataType": "string",
+            "sourceColumn": "rule_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "screen_basis",
+            "dataType": "string",
+            "sourceColumn": "screen_basis",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stage_id",
+            "dataType": "string",
+            "sourceColumn": "stage_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stage_label",
+            "dataType": "string",
+            "sourceColumn": "stage_label",
+            "summarizeBy": "none",
+            "sortByColumn": "stage_order"
+          },
+          {
+            "name": "stage_order",
+            "dataType": "int64",
+            "sourceColumn": "stage_order",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "case_id",
+            "dataType": "string",
+            "sourceColumn": "case_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "synthetic",
+            "dataType": "int64",
+            "sourceColumn": "synthetic",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "financial_pass",
+            "dataType": "int64",
+            "sourceColumn": "financial_pass",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "external_evidence_verified",
+            "dataType": "int64",
+            "sourceColumn": "external_evidence_verified",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "actual_approval",
+            "dataType": "int64",
+            "sourceColumn": "actual_approval",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "corrected_discrepancies",
+            "dataType": "int64",
+            "sourceColumn": "corrected_discrepancies",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "open_external_controls",
+            "dataType": "int64",
+            "sourceColumn": "open_external_controls",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "financial_result",
+            "dataType": "string",
+            "sourceColumn": "financial_result",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "review_outcome",
+            "dataType": "string",
+            "sourceColumn": "review_outcome",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stage_explanation",
+            "dataType": "string",
+            "sourceColumn": "stage_explanation",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_period",
+            "dataType": "string",
+            "sourceColumn": "rate_period",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "notice",
+            "dataType": "string",
+            "sourceColumn": "notice",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cash_position",
+            "dataType": "double",
+            "sourceColumn": "cash_position",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "income_position",
+            "dataType": "double",
+            "sourceColumn": "income_position",
+            "summarizeBy": "none",
+            "formatString": "\"CAD \"#,0;(\"CAD \"#,0)"
+          },
+          {
+            "name": "cash_position_label",
+            "dataType": "string",
+            "sourceColumn": "cash_position_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "income_position_label",
+            "dataType": "string",
+            "sourceColumn": "income_position_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "result_label",
+            "dataType": "string",
+            "sourceColumn": "result_label",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FileStages",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3sicHJpY2UiOjc2NDEwMC4wLCJtaW5pbXVtX2Rvd24iOjUxNDEwLjAsInRyYW5zZmVyX3RheF9ncm9zcyI6MTMyODIuMCwidHJhbnNmZXJfcmVsaWVmIjo4MDAwLCJ0cmFuc2Zlcl90YXgiOjUyODIuMCwiY2xvc2luZ19hbGxvd2FuY2UiOjQwMDAsImNhc2hfdG9fY2xvc2VfbWluIjo2MDY5Mi4wLCJyZXNlcnZlIjoxMDAwMCwiY2FzaF90YXJnZXQiOjcwNjkyLjAsInByb2ZpbGVfY2FzaCI6MTAwMDAwLCJjYXNoX2dhcCI6MCwiY2FzaF9wYXNzIjoxLCJkb3duX3VzZWQiOjgwNzE4LjAsImNhc2hfc3BlbnQiOjkwMDAwLjAsImNhc2hfZmVhc2libGUiOjEsImluc3VyYW5jZV9wcmVtaXVtIjoyMTE4NC44NDIwMDAwMDAwMDEsIm1vcnRnYWdlX3ByaW5jaXBhbCI6NzA0NTY2Ljg0MTk5OTk5OTk0NiwiY29udHJhY3RfcmF0ZSI6NC4xNSwicXVhbGlmeWluZ19yYXRlIjo0LjE1LCJhbW9ydGl6YXRpb25feWVhcnMiOjI1LCJtb250aGx5X21vcnRnYWdlIjozNzYzLjY3ODIzNjI5MzMxNywicXVhbGlmeWluZ19wYXltZW50IjozNzYzLjY3ODIzNjI5MzMxNywicHJvcGVydHlfdGF4X3JhdGUiOjAuMDAyMzU1NzEyNjAzLCJhc3Nlc3NtZW50X3JhdGlvIjoxLjAsImFubnVhbF9wcm9wZXJ0eV90YXgiOjE4MDAuMCwibW9udGhseV9kZWJ0Ijo1MDAsImhlYXRpbmciOjEwMCwiY29uZG9fZmVlIjoyMDAsImhvbWVfaW5zdXJhbmNlIjoxMDAsIm1haW50ZW5hbmNlX21vbnRobHkiOjEwMCwibW9kZWxlZF9tb250aGx5X291dGdvaW5ncyI6NDkxMy42NzgyMzYyOTMzMTcsInJlcXVpcmVkX2dyb3NzX2luY29tZSI6MTI2NTc0LjcxNDk2Mjg3MTMwOSwicHJvZmlsZV9pbmNvbWUiOjE1MDAwMCwiaW5jb21lX2dhcCI6MC4wLCJpbmNvbWVfcGFzcyI6MSwiYmFycmllciI6IldpdGhpbiBtb2RlbGVkIGxpbWl0cyIsImdkcyI6MC4zMjkwOTQyNTg5MDMsInRkcyI6MC4zNjkwOTQyNTg5MDMsImZpcnN0X2ZpdmVfeWVhcnNfaW50ZXJlc3QiOjEzNjE5OS40OTQ2MjExMjQ5MzMsImZpdmVfeWVhcl9iYWxhbmNlIjo2MTQ5NDUuNjQyNDQzNTI1ODM4LCJob3VzaW5nX2Nvc3RzX2Zvcl9yYXRpb3MiOjQxMTMuNjc4MjM2MjkzMzE3LCJpbmNvbWVfc2NvcGUiOiJVc2VzIGF2YWlsYWJsZSBjYXNoIGFib3ZlIHJlc2VydmUgYW5kIGNsb3NpbmcgY29zdHMiLCJydWxlX2RhdGUiOiIyMDI2LTExLTE2Iiwic2NyZWVuX2Jhc2lzIjoiQ01IQy1zdHlsZSAzOSUgR0RTIFwvIDQ0JSBURFMgc2NyZWVuIGFwcGxpZWQgY29uc2lzdGVudGx5IGZvciBjb21wYXJpc29uOyB1bmluc3VyZWQgbGVuZGVyIGxpbWl0cyBtYXkgZGlmZmVyLiBOb3QgVEQgcG9saWN5IG9yIGxvYW4gYXBwcm92YWwuIiwic3RhZ2VfaWQiOiJzdWJtaXR0ZWQiLCJzdGFnZV9sYWJlbCI6IlN1Ym1pdHRlZCBjbGFpbSIsInN0YWdlX29yZGVyIjowLCJjYXNlX2lkIjoiVFJBSU5JTkctTU9SVEdBR0UtMDAxIiwic3ludGhldGljIjoxLCJmaW5hbmNpYWxfcGFzcyI6MSwiZXh0ZXJuYWxfZXZpZGVuY2VfdmVyaWZpZWQiOjAsImFjdHVhbF9hcHByb3ZhbCI6MCwiY29ycmVjdGVkX2Rpc2NyZXBhbmNpZXMiOjAsIm9wZW5fZXh0ZXJuYWxfY29udHJvbHMiOjYsImZpbmFuY2lhbF9yZXN1bHQiOiJBcHBhcmVudCBwYXNzIChpbmNvcnJlY3QpIiwicmV2aWV3X291dGNvbWUiOiJIb2xkOiBjbGFpbSBub3QgcmVjb25jaWxlZCIsInN0YWdlX2V4cGxhbmF0aW9uIjoiRGVjbGFyZWQgaW5wdXRzIGFuZCBhIGRlbGliZXJhdGVseSBpbmNvcnJlY3QgY29udHJhY3QtcmF0ZSBzY3JlZW4uIFRoaXMgYXBwYXJlbnQgcmVzdWx0IGlzIG5vdCBzaWduLW9mZi4iLCJyYXRlX3BlcmlvZCI6IjIwMjYtMDkiLCJub3RpY2UiOiJGSUNUSU9OQUwgVFJBSU5JTkcgRklMRSBcdTIwMTQgY29uc3RydWN0ZWQgd29ya3NoZWV0cywgbm90IGdlbnVpbmUgZmluYW5jaWFsIHJlY29yZHMgb3IgYSBsZW5kZXIgYXBwcm92YWwuIiwiY2FzaF9wb3NpdGlvbiI6MjkzMDguMCwiaW5jb21lX3Bvc2l0aW9uIjoyMzQyNS4yODUwMzcxMjg2OTEsImNhc2hfcG9zaXRpb25fbGFiZWwiOiJDQUQgMjksMzA4IGFib3ZlIiwiaW5jb21lX3Bvc2l0aW9uX2xhYmVsIjoiQ0FEIDIzLDQyNSBhYm92ZSIsInJlc3VsdF9sYWJlbCI6IkZpdHMgYm90aCBmaW5hbmNpYWwgY2hlY2tzIn0seyJwcmljZSI6NzY0MTAwLjAsIm1pbmltdW1fZG93biI6NTE0MTAuMCwidHJhbnNmZXJfdGF4X2dyb3NzIjoxMzI4Mi4wLCJ0cmFuc2Zlcl9yZWxpZWYiOjgwMDAsInRyYW5zZmVyX3RheCI6NTI4Mi4wLCJjbG9zaW5nX2FsbG93YW5jZSI6NDAwMCwiY2FzaF90b19jbG9zZV9taW4iOjYwNjkyLjAsInJlc2VydmUiOjEwMDAwLCJjYXNoX3RhcmdldCI6NzA2OTIuMCwicHJvZmlsZV9jYXNoIjo4NTAwMCwiY2FzaF9nYXAiOjAsImNhc2hfcGFzcyI6MSwiZG93bl91c2VkIjo2NTcxOC4wLCJjYXNoX3NwZW50Ijo3NTAwMC4wLCJjYXNoX2ZlYXNpYmxlIjoxLCJpbnN1cmFuY2VfcHJlbWl1bSI6Mjc5MzUuMjc5OTk5OTk5OTk5LCJtb3J0Z2FnZV9wcmluY2lwYWwiOjcyNjMxNy4yODAwMDAwMDAwMjgsImNvbnRyYWN0X3JhdGUiOjQuMTUsInF1YWxpZnlpbmdfcmF0ZSI6Ni4xNSwiYW1vcnRpemF0aW9uX3llYXJzIjoyNSwibW9udGhseV9tb3J0Z2FnZSI6Mzg3OS44NjU0Mzg0ODcwNDEsInF1YWxpZnlpbmdfcGF5bWVudCI6NDcxMS45ODE4MTk3MTc3NiwicHJvcGVydHlfdGF4X3JhdGUiOjAuMDAyNzgwNywiYXNzZXNzbWVudF9yYXRpbyI6MS4wLCJhbm51YWxfcHJvcGVydHlfdGF4IjoyMTI0LjczMjg3LCJtb250aGx5X2RlYnQiOjc1MCwiaGVhdGluZyI6MTUwLCJjb25kb19mZWUiOjI1MCwiaG9tZV9pbnN1cmFuY2UiOjEwMCwibWFpbnRlbmFuY2VfbW9udGhseSI6MTAwLCJtb2RlbGVkX21vbnRobHlfb3V0Z29pbmdzIjo1NDA2LjkyNjUxMDk4NzA0MSwicmVxdWlyZWRfZ3Jvc3NfaW5jb21lIjoxNjEyOTIuMDc4ODc4NjY2MTU4LCJwcm9maWxlX2luY29tZSI6MTM1MDAwLCJpbmNvbWVfZ2FwIjoyNjI5Mi4wNzg4Nzg2NjYxNTgsImluY29tZV9wYXNzIjowLCJiYXJyaWVyIjoiSW5jb21lIiwiZ2RzIjowLjQ1OTAyNjAzNDg2NCwidGRzIjowLjUyNTY5MjcwMTUzLCJmaXJzdF9maXZlX3llYXJzX2ludGVyZXN0IjoxNDA0MDQuMDYxODYyNzIxMTA4LCJmaXZlX3llYXJfYmFsYW5jZSI6NjMzOTI5LjQxNTU1MzQ5ODY2NCwiaG91c2luZ19jb3N0c19mb3JfcmF0aW9zIjo1MTY0LjA0Mjg5MjIxNzc2LCJpbmNvbWVfc2NvcGUiOiJVc2VzIGF2YWlsYWJsZSBjYXNoIGFib3ZlIHJlc2VydmUgYW5kIGNsb3NpbmcgY29zdHMiLCJydWxlX2RhdGUiOiIyMDI2LTExLTE2Iiwic2NyZWVuX2Jhc2lzIjoiQ01IQy1zdHlsZSAzOSUgR0RTIFwvIDQ0JSBURFMgc2NyZWVuIGFwcGxpZWQgY29uc2lzdGVudGx5IGZvciBjb21wYXJpc29uOyB1bmluc3VyZWQgbGVuZGVyIGxpbWl0cyBtYXkgZGlmZmVyLiBOb3QgVEQgcG9saWN5IG9yIGxvYW4gYXBwcm92YWwuIiwic3RhZ2VfaWQiOiJjb3JyZWN0ZWQiLCJzdGFnZV9sYWJlbCI6IkNvcnJlY3RlZCByZXZpZXciLCJzdGFnZV9vcmRlciI6MSwiY2FzZV9pZCI6IlRSQUlOSU5HLU1PUlRHQUdFLTAwMSIsInN5bnRoZXRpYyI6MSwiZmluYW5jaWFsX3Bhc3MiOjAsImV4dGVybmFsX2V2aWRlbmNlX3ZlcmlmaWVkIjowLCJhY3R1YWxfYXBwcm92YWwiOjAsImNvcnJlY3RlZF9kaXNjcmVwYW5jaWVzIjo3LCJvcGVuX2V4dGVybmFsX2NvbnRyb2xzIjo2LCJmaW5hbmNpYWxfcmVzdWx0IjoiSW5jb21lIHN0aWxsIHNob3J0IiwicmV2aWV3X291dGNvbWUiOiJIb2xkOiBpbmNvbWUgZXhjZXB0aW9uIGFuZCBleHRlcm5hbCBldmlkZW5jZSIsInN0YWdlX2V4cGxhbmF0aW9uIjoiU2FtZSBwcmljZS4gUmVjb25jaWxlIHJlY3VycmluZyBpbmNvbWUsIGF2YWlsYWJsZSBmdW5kcywgYWxsIGRlYnRzLCB3b3Jrc2hlZXQgY29zdHMgYW5kIHRoZSBxdWFsaWZ5aW5nIHJhdGUuIiwicmF0ZV9wZXJpb2QiOiIyMDI2LTA5Iiwibm90aWNlIjoiRklDVElPTkFMIFRSQUlOSU5HIEZJTEUgXHUyMDE0IGNvbnN0cnVjdGVkIHdvcmtzaGVldHMsIG5vdCBnZW51aW5lIGZpbmFuY2lhbCByZWNvcmRzIG9yIGEgbGVuZGVyIGFwcHJvdmFsLiIsImNhc2hfcG9zaXRpb24iOjE0MzA4LjAsImluY29tZV9wb3NpdGlvbiI6LTI2MjkyLjA3ODg3ODY2NjE1OCwiY2FzaF9wb3NpdGlvbl9sYWJlbCI6IkNBRCAxNCwzMDggYWJvdmUiLCJpbmNvbWVfcG9zaXRpb25fbGFiZWwiOiJDQUQgMjYsMjkyIHNob3J0IiwicmVzdWx0X2xhYmVsIjoiSW5jb21lIHN0aWxsIHNob3J0In0seyJwcmljZSI6NjAwMDAwLjAsIm1pbmltdW1fZG93biI6MzUwMDAuMCwidHJhbnNmZXJfdGF4X2dyb3NzIjoxMDAwMC4wLCJ0cmFuc2Zlcl9yZWxpZWYiOjgwMDAsInRyYW5zZmVyX3RheCI6MjAwMC4wLCJjbG9zaW5nX2FsbG93YW5jZSI6NDAwMCwiY2FzaF90b19jbG9zZV9taW4iOjQxMDAwLjAsInJlc2VydmUiOjEwMDAwLCJjYXNoX3RhcmdldCI6NTEwMDAuMCwicHJvZmlsZV9jYXNoIjo4NTAwMCwiY2FzaF9nYXAiOjAsImNhc2hfcGFzcyI6MSwiZG93bl91c2VkIjo2OTAwMC4wLCJjYXNoX3NwZW50Ijo3NTAwMC4wLCJjYXNoX2ZlYXNpYmxlIjoxLCJpbnN1cmFuY2VfcHJlbWl1bSI6MTY0NjEuMCwibW9ydGdhZ2VfcHJpbmNpcGFsIjo1NDc0NjEuMCwiY29udHJhY3RfcmF0ZSI6NC4xNSwicXVhbGlmeWluZ19yYXRlIjo2LjE1LCJhbW9ydGl6YXRpb25feWVhcnMiOjI1LCJtb250aGx5X21vcnRnYWdlIjoyOTI0LjQ0NTEwMzEzNjY4MiwicXVhbGlmeWluZ19wYXltZW50IjozNTUxLjY1MjA4MTAzNjEzNCwicHJvcGVydHlfdGF4X3JhdGUiOjAuMDAyNzgwNywiYXNzZXNzbWVudF9yYXRpbyI6MS4wLCJhbm51YWxfcHJvcGVydHlfdGF4IjoxNjY4LjQyLCJtb250aGx5X2RlYnQiOjc1MCwiaGVhdGluZyI6MTUwLCJjb25kb19mZWUiOjI1MCwiaG9tZV9pbnN1cmFuY2UiOjEwMCwibWFpbnRlbmFuY2VfbW9udGhseSI6MTAwLCJtb2RlbGVkX21vbnRobHlfb3V0Z29pbmdzIjo0NDEzLjQ4MDEwMzEzNjY4MSwicmVxdWlyZWRfZ3Jvc3NfaW5jb21lIjoxMjg2MDkuNjQ3NjY0NjIxODUxLCJwcm9maWxlX2luY29tZSI6MTM1MDAwLCJpbmNvbWVfZ2FwIjowLjAsImluY29tZV9wYXNzIjoxLCJiYXJyaWVyIjoiV2l0aGluIG1vZGVsZWQgbGltaXRzIiwiZ2RzIjowLjM1MjUwNTUxODMxNCwidGRzIjowLjQxOTE3MjE4NDk4MSwiZmlyc3RfZml2ZV95ZWFyc19pbnRlcmVzdCI6MTA1ODI5LjQzNjAxNjQ4NDY1OCwiZml2ZV95ZWFyX2JhbGFuY2UiOjQ3NzgyMy43Mjk4MjgyODM3NzMsImhvdXNpbmdfY29zdHNfZm9yX3JhdGlvcyI6Mzk2NS42ODcwODEwMzYxMzQsImluY29tZV9zY29wZSI6IlVzZXMgYXZhaWxhYmxlIGNhc2ggYWJvdmUgcmVzZXJ2ZSBhbmQgY2xvc2luZyBjb3N0cyIsInJ1bGVfZGF0ZSI6IjIwMjYtMTEtMTYiLCJzY3JlZW5fYmFzaXMiOiJDTUhDLXN0eWxlIDM5JSBHRFMgXC8gNDQlIFREUyBzY3JlZW4gYXBwbGllZCBjb25zaXN0ZW50bHkgZm9yIGNvbXBhcmlzb247IHVuaW5zdXJlZCBsZW5kZXIgbGltaXRzIG1heSBkaWZmZXIuIE5vdCBURCBwb2xpY3kgb3IgbG9hbiBhcHByb3ZhbC4iLCJzdGFnZV9pZCI6InJldmlzZWQiLCJzdGFnZV9sYWJlbCI6IlJldmlzZWQgcmVxdWVzdCIsInN0YWdlX29yZGVyIjoyLCJjYXNlX2lkIjoiVFJBSU5JTkctTU9SVEdBR0UtMDAxIiwic3ludGhldGljIjoxLCJmaW5hbmNpYWxfcGFzcyI6MSwiZXh0ZXJuYWxfZXZpZGVuY2VfdmVyaWZpZWQiOjAsImFjdHVhbF9hcHByb3ZhbCI6MCwiY29ycmVjdGVkX2Rpc2NyZXBhbmNpZXMiOjcsIm9wZW5fZXh0ZXJuYWxfY29udHJvbHMiOjYsImZpbmFuY2lhbF9yZXN1bHQiOiJGaXRzIGJvdGggZmluYW5jaWFsIGNoZWNrcyIsInJldmlld19vdXRjb21lIjoiSG9sZDogZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzdGFnZV9leHBsYW5hdGlvbiI6Ik9ubHkgdGhlIGh5cG90aGV0aWNhbCBwcmljZSBjaGFuZ2VzLiBTdXBwb3J0ZWQgZmluYW5jZXMgc3RheSBmaXhlZDsgdGF4IGlzIHJlY2FsY3VsYXRlZCB1c2luZyB0aGUgaGlzdG9yaWNhbCBwcm94eS4iLCJyYXRlX3BlcmlvZCI6IjIwMjYtMDkiLCJub3RpY2UiOiJGSUNUSU9OQUwgVFJBSU5JTkcgRklMRSBcdTIwMTQgY29uc3RydWN0ZWQgd29ya3NoZWV0cywgbm90IGdlbnVpbmUgZmluYW5jaWFsIHJlY29yZHMgb3IgYSBsZW5kZXIgYXBwcm92YWwuIiwiY2FzaF9wb3NpdGlvbiI6MzQwMDAuMCwiaW5jb21lX3Bvc2l0aW9uIjo2MzkwLjM1MjMzNTM3ODE0OSwiY2FzaF9wb3NpdGlvbl9sYWJlbCI6IkNBRCAzNCwwMDAgYWJvdmUiLCJpbmNvbWVfcG9zaXRpb25fbGFiZWwiOiJDQUQgNiwzOTAgYWJvdmUiLCJyZXN1bHRfbGFiZWwiOiJGaXRzIGJvdGggZmluYW5jaWFsIGNoZWNrcyJ9XQ==\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"price\", type number}, {\"minimum_down\", type number}, {\"transfer_tax_gross\", type number}, {\"transfer_relief\", Int64.Type}, {\"transfer_tax\", type number}, {\"closing_allowance\", Int64.Type}, {\"cash_to_close_min\", type number}, {\"reserve\", Int64.Type}, {\"cash_target\", type number}, {\"profile_cash\", Int64.Type}, {\"cash_gap\", Int64.Type}, {\"cash_pass\", Int64.Type}, {\"down_used\", type number}, {\"cash_spent\", type number}, {\"cash_feasible\", Int64.Type}, {\"insurance_premium\", type number}, {\"mortgage_principal\", type number}, {\"contract_rate\", type number}, {\"qualifying_rate\", type number}, {\"amortization_years\", Int64.Type}, {\"monthly_mortgage\", type number}, {\"qualifying_payment\", type number}, {\"property_tax_rate\", type number}, {\"assessment_ratio\", type number}, {\"annual_property_tax\", type number}, {\"monthly_debt\", Int64.Type}, {\"heating\", Int64.Type}, {\"condo_fee\", Int64.Type}, {\"home_insurance\", Int64.Type}, {\"maintenance_monthly\", Int64.Type}, {\"modeled_monthly_outgoings\", type number}, {\"required_gross_income\", type number}, {\"profile_income\", Int64.Type}, {\"income_gap\", type number}, {\"income_pass\", Int64.Type}, {\"barrier\", type text}, {\"gds\", type number}, {\"tds\", type number}, {\"first_five_years_interest\", type number}, {\"five_year_balance\", type number}, {\"housing_costs_for_ratios\", type number}, {\"income_scope\", type text}, {\"rule_date\", type text}, {\"screen_basis\", type text}, {\"stage_id\", type text}, {\"stage_label\", type text}, {\"stage_order\", Int64.Type}, {\"case_id\", type text}, {\"synthetic\", Int64.Type}, {\"financial_pass\", Int64.Type}, {\"external_evidence_verified\", Int64.Type}, {\"actual_approval\", Int64.Type}, {\"corrected_discrepancies\", Int64.Type}, {\"open_external_controls\", Int64.Type}, {\"financial_result\", type text}, {\"review_outcome\", type text}, {\"stage_explanation\", type text}, {\"rate_period\", type text}, {\"notice\", type text}, {\"cash_position\", type number}, {\"income_position\", type number}, {\"cash_position_label\", type text}, {\"income_position_label\", type text}, {\"result_label\", type text}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FileFindings",
+        "columns": [
+          {
+            "name": "finding_id",
+            "dataType": "string",
+            "sourceColumn": "finding_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "field",
+            "dataType": "string",
+            "sourceColumn": "field",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "finding",
+            "dataType": "string",
+            "sourceColumn": "finding",
+            "summarizeBy": "none",
+            "sortByColumn": "finding_order"
+          },
+          {
+            "name": "finding_order",
+            "dataType": "int64",
+            "sourceColumn": "finding_order",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "declared",
+            "dataType": "double",
+            "sourceColumn": "declared",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "supported",
+            "dataType": "double",
+            "sourceColumn": "supported",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "difference",
+            "dataType": "double",
+            "sourceColumn": "difference",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unit",
+            "dataType": "string",
+            "sourceColumn": "unit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "declared_label",
+            "dataType": "string",
+            "sourceColumn": "declared_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "supported_label",
+            "dataType": "string",
+            "sourceColumn": "supported_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "difference_label",
+            "dataType": "string",
+            "sourceColumn": "difference_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "evidence_ids",
+            "dataType": "string",
+            "sourceColumn": "evidence_ids",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "action",
+            "dataType": "string",
+            "sourceColumn": "action",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "resolution_status",
+            "dataType": "string",
+            "sourceColumn": "resolution_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "synthetic",
+            "dataType": "int64",
+            "sourceColumn": "synthetic",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "case_id",
+            "dataType": "string",
+            "sourceColumn": "case_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FileFindings",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.FromRecords(Json.Document(Binary.FromText(\"W3siZmluZGluZ19pZCI6IkYtMDEiLCJmaWVsZCI6Imdyb3NzX2luY29tZSIsImZpbmRpbmciOiJSZWN1cnJpbmcgZ3Jvc3MgaW5jb21lIiwiZmluZGluZ19vcmRlciI6MSwiZGVjbGFyZWQiOjE1MDAwMC4wLCJzdXBwb3J0ZWQiOjEzNTAwMC4wLCJkaWZmZXJlbmNlIjotMTUwMDAuMCwidW5pdCI6IkNBRCBcLyB5ZWFyIiwiZGVjbGFyZWRfbGFiZWwiOiJDQUQgMTUwLDAwMCIsInN1cHBvcnRlZF9sYWJlbCI6IkNBRCAxMzUsMDAwIiwiZGlmZmVyZW5jZV9sYWJlbCI6Ii1DQUQgMTUsMDAwIiwiZXZpZGVuY2VfaWRzIjoiSU5DLTAwMS1BfElOQy0wMDEtQnxJTkMtMDAxLUMiLCJhY3Rpb24iOiJVc2UgcmVjdXJyaW5nIGJhc2Ugc2FsYXJpZXM7IGV4Y2x1ZGUgdGhlIGlzb2xhdGVkIGJvbnVzIHVuZGVyIHRoaXMgZXhlcmNpc2UncyBjb25zZXJ2YXRpdmUgdHJlYXRtZW50LiBUaGlzIGlzIG5vdCBhIHVuaXZlcnNhbCBydWxlIHRoYXQgYm9udXNlcyBhcmUgaW5lbGlnaWJsZS4iLCJyZXNvbHV0aW9uX3N0YXR1cyI6IkNvcnJlY3RlZCBpbiBzaW11bGF0aW9uOyBleHRlcm5hbCB2ZXJpZmljYXRpb24gcmVtYWlucyIsInN5bnRoZXRpYyI6MSwiY2FzZV9pZCI6IlRSQUlOSU5HLU1PUlRHQUdFLTAwMSJ9LHsiZmluZGluZ19pZCI6IkYtMDIiLCJmaWVsZCI6ImxpcXVpZF9jYXNoIiwiZmluZGluZyI6IkF2YWlsYWJsZSBwdXJjaGFzZSBjYXNoIiwiZmluZGluZ19vcmRlciI6MiwiZGVjbGFyZWQiOjEwMDAwMC4wLCJzdXBwb3J0ZWQiOjg1MDAwLjAsImRpZmZlcmVuY2UiOi0xNTAwMC4wLCJ1bml0IjoiQ0FEIiwiZGVjbGFyZWRfbGFiZWwiOiJDQUQgMTAwLDAwMCIsInN1cHBvcnRlZF9sYWJlbCI6IkNBRCA4NSwwMDAiLCJkaWZmZXJlbmNlX2xhYmVsIjoiLUNBRCAxNSwwMDAiLCJldmlkZW5jZV9pZHMiOiJGTkQtMDAxLUF8Rk5ELTAwMS1CIiwiYWN0aW9uIjoiRGVkdWN0IHBsZWRnZWQgZnVuZHMgdW5hdmFpbGFibGUgYmVmb3JlIGNsb3Npbmc7IGNvdW50IGVhY2ggYmFsYW5jZSBvbmNlLiIsInJlc29sdXRpb25fc3RhdHVzIjoiQ29ycmVjdGVkIGluIHNpbXVsYXRpb247IGV4dGVybmFsIHZlcmlmaWNhdGlvbiByZW1haW5zIiwic3ludGhldGljIjoxLCJjYXNlX2lkIjoiVFJBSU5JTkctTU9SVEdBR0UtMDAxIn0seyJmaW5kaW5nX2lkIjoiRi0wMyIsImZpZWxkIjoibW9udGhseV9kZWJ0IiwiZmluZGluZyI6Ik90aGVyIGRlYnQgcGF5bWVudHMiLCJmaW5kaW5nX29yZGVyIjozLCJkZWNsYXJlZCI6NTAwLjAsInN1cHBvcnRlZCI6NzUwLjAsImRpZmZlcmVuY2UiOjI1MC4wLCJ1bml0IjoiQ0FEIFwvIG1vbnRoIiwiZGVjbGFyZWRfbGFiZWwiOiJDQUQgNTAwIiwic3VwcG9ydGVkX2xhYmVsIjoiQ0FEIDc1MCIsImRpZmZlcmVuY2VfbGFiZWwiOiIrQ0FEIDI1MCIsImV2aWRlbmNlX2lkcyI6IkRCVC0wMDEtQXxEQlQtMDAxLUJ8REJULTAwMS1DIiwiYWN0aW9uIjoiSW5jbHVkZSB0aGUgb21pdHRlZCBzdHVkZW50LWxvYW4gcGF5bWVudCBhbmQgcmVjb25jaWxlIGFsbCBsaXN0ZWQgb2JsaWdhdGlvbnMuIiwicmVzb2x1dGlvbl9zdGF0dXMiOiJDb3JyZWN0ZWQgaW4gc2ltdWxhdGlvbjsgZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzeW50aGV0aWMiOjEsImNhc2VfaWQiOiJUUkFJTklORy1NT1JUR0FHRS0wMDEifSx7ImZpbmRpbmdfaWQiOiJGLTA0IiwiZmllbGQiOiJhbm51YWxfcHJvcGVydHlfdGF4IiwiZmluZGluZyI6IlByb3BlcnR5IHRheCBwcm94eSIsImZpbmRpbmdfb3JkZXIiOjQsImRlY2xhcmVkIjoxODAwLjAsInN1cHBvcnRlZCI6MjEyNC43MzI4NywiZGlmZmVyZW5jZSI6MzI0LjczMjg3LCJ1bml0IjoiQ0FEIFwvIHllYXIiLCJkZWNsYXJlZF9sYWJlbCI6IkNBRCAxLDgwMCIsInN1cHBvcnRlZF9sYWJlbCI6IkNBRCAyLDEyNSIsImRpZmZlcmVuY2VfbGFiZWwiOiIrQ0FEIDMyNSIsImV2aWRlbmNlX2lkcyI6IkNTVC0wMDEiLCJhY3Rpb24iOiJVc2UgdGhlIGhpc3RvcmljYWwgbXVuaWNpcGFsIHNjaGVkdWxlIGFuZCBzdGF0ZWQgcHJpY2UtYXMtYXNzZXNzbWVudCBwcm94eS4gQW4gYWN0dWFsIHByb3BlcnR5IGJpbGwgcmVtYWlucyBuZWNlc3NhcnkuIiwicmVzb2x1dGlvbl9zdGF0dXMiOiJDb3JyZWN0ZWQgaW4gc2ltdWxhdGlvbjsgZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzeW50aGV0aWMiOjEsImNhc2VfaWQiOiJUUkFJTklORy1NT1JUR0FHRS0wMDEifSx7ImZpbmRpbmdfaWQiOiJGLTA1IiwiZmllbGQiOiJoZWF0aW5nIiwiZmluZGluZyI6IkhlYXRpbmciLCJmaW5kaW5nX29yZGVyIjo1LCJkZWNsYXJlZCI6MTAwLjAsInN1cHBvcnRlZCI6MTUwLjAsImRpZmZlcmVuY2UiOjUwLjAsInVuaXQiOiJDQUQgXC8gbW9udGgiLCJkZWNsYXJlZF9sYWJlbCI6IkNBRCAxMDAiLCJzdXBwb3J0ZWRfbGFiZWwiOiJDQUQgMTUwIiwiZGlmZmVyZW5jZV9sYWJlbCI6IitDQUQgNTAiLCJldmlkZW5jZV9pZHMiOiJDU1QtMDAxIiwiYWN0aW9uIjoiVXNlIHRoZSBzdXBwb3J0aW5nIGVzdGltYXRlOyBhY3R1YWwgaGVhdCByZWNvcmRzIG9yIGEganVzdGlmaWVkIHByb3BlcnR5IGVzdGltYXRlIHJlbWFpbiBuZWNlc3NhcnkuIiwicmVzb2x1dGlvbl9zdGF0dXMiOiJDb3JyZWN0ZWQgaW4gc2ltdWxhdGlvbjsgZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzeW50aGV0aWMiOjEsImNhc2VfaWQiOiJUUkFJTklORy1NT1JUR0FHRS0wMDEifSx7ImZpbmRpbmdfaWQiOiJGLTA2IiwiZmllbGQiOiJjb25kb19mZWUiLCJmaW5kaW5nIjoiQ29uZG8gZmVlcyIsImZpbmRpbmdfb3JkZXIiOjYsImRlY2xhcmVkIjoyMDAuMCwic3VwcG9ydGVkIjoyNTAuMCwiZGlmZmVyZW5jZSI6NTAuMCwidW5pdCI6IkNBRCBcLyBtb250aCIsImRlY2xhcmVkX2xhYmVsIjoiQ0FEIDIwMCIsInN1cHBvcnRlZF9sYWJlbCI6IkNBRCAyNTAiLCJkaWZmZXJlbmNlX2xhYmVsIjoiK0NBRCA1MCIsImV2aWRlbmNlX2lkcyI6IkNTVC0wMDEiLCJhY3Rpb24iOiJVc2UgdGhlIGZ1bGwgc3VwcG9ydGluZyBmZWU7IGluY2x1ZGUgaGFsZiBpbiBkZWJ0LXNlcnZpY2UgcmF0aW9zIGFuZCB0aGUgZnVsbCBmZWUgaW4gbW9kZWxlZCBvdXRnb2luZ3MuIiwicmVzb2x1dGlvbl9zdGF0dXMiOiJDb3JyZWN0ZWQgaW4gc2ltdWxhdGlvbjsgZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzeW50aGV0aWMiOjEsImNhc2VfaWQiOiJUUkFJTklORy1NT1JUR0FHRS0wMDEifSx7ImZpbmRpbmdfaWQiOiJGLTA3IiwiZmllbGQiOiJxdWFsaWZ5aW5nX3JhdGVfdXNlZCIsImZpbmRpbmciOiJSYXRlIHVzZWQgdG8gcXVhbGlmeSIsImZpbmRpbmdfb3JkZXIiOjcsImRlY2xhcmVkIjo0LjE1LCJzdXBwb3J0ZWQiOjYuMTUsImRpZmZlcmVuY2UiOjIuMCwidW5pdCI6InBlcmNlbnRhZ2UgcG9pbnRzIiwiZGVjbGFyZWRfbGFiZWwiOiI0LjE1JSIsInN1cHBvcnRlZF9sYWJlbCI6IjYuMTUlIiwiZGlmZmVyZW5jZV9sYWJlbCI6IisyLjAwIHBwIiwiZXZpZGVuY2VfaWRzIjoiUlRFLTAwMSIsImFjdGlvbiI6IlVzZSB0aGUgZ3JlYXRlciBvZiBjb250cmFjdCByYXRlIHBsdXMgdHdvIHBlcmNlbnRhZ2UgcG9pbnRzIG9yIDUuMjUlLCByYXRoZXIgdGhhbiB0aGUgcGF5bWVudCdzIGNvbnRyYWN0IHJhdGUuIiwicmVzb2x1dGlvbl9zdGF0dXMiOiJDb3JyZWN0ZWQgaW4gc2ltdWxhdGlvbjsgZXh0ZXJuYWwgdmVyaWZpY2F0aW9uIHJlbWFpbnMiLCJzeW50aGV0aWMiOjEsImNhc2VfaWQiOiJUUkFJTklORy1NT1JUR0FHRS0wMDEifV0=\", BinaryEncoding.Base64))),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"finding_id\", type text}, {\"field\", type text}, {\"finding\", type text}, {\"finding_order\", Int64.Type}, {\"declared\", type number}, {\"supported\", type number}, {\"difference\", type number}, {\"unit\", type text}, {\"declared_label\", type text}, {\"supported_label\", type text}, {\"difference_label\", type text}, {\"evidence_ids\", type text}, {\"action\", type text}, {\"resolution_status\", type text}, {\"synthetic\", Int64.Type}, {\"case_id\", type text}}, \"en-CA\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
       }
     ],
     "relationships": [
@@ -3770,7 +4315,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Markets\", \"Profiles\", \"Cases\", \"Baseline\", \"Comparisons\", \"History\", \"Programs\", \"Waiting\", \"Audit\", \"Controls\", \"Decomposition\", \"Limits\", \"LatestRates\", \"LatestRateLimits\", \"CalculationAudit\"]"
+        "value": "[\"Markets\", \"Profiles\", \"Cases\", \"Baseline\", \"Comparisons\", \"History\", \"Programs\", \"Waiting\", \"Audit\", \"Controls\", \"Decomposition\", \"Limits\", \"LatestRates\", \"LatestRateLimits\", \"CalculationAudit\", \"FileStages\", \"FileFindings\"]"
       }
     ]
   }

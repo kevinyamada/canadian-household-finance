@@ -320,6 +320,8 @@ def generate():
     target.write_text(json.dumps(payload, ensure_ascii=False, allow_nan=False, separators=(",", ":")), encoding="utf-8", newline="\n")
     write_json(OUT/"homebuying_asset_manifest.json", {"file": str(target.relative_to(ROOT)).replace("\\", "/"),
                "sha256": hashlib.sha256(target.read_bytes()).hexdigest(), "bytes": target.stat().st_size, "price_year": latest_year, "rule_date": RULE_DATE})
+    from mortgage_file_audit import build as build_training_file
+    build_training_file()
     print(json.dumps({"summary": summary, "baseline": records(baseline[["city", "profile_label", "price", "cash_target", "cash_gap", "required_gross_income", "income_gap", "barrier"]])}, indent=2), flush=True)
     return payload
 

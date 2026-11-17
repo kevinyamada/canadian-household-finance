@@ -17,3 +17,7 @@ Completed November 17, 2026:
 3. If appropriate borrower evidence is ever available with authorization, test the screen against verified income, debt and source-of-funds records. The present project uses fictional profiles and cannot estimate actual approvals or default rates.
 
 The current portfolio is ready to explain through [the interview brief](interview_brief.md). New work should improve the evidence behind the same question.
+
+## Complete mock-file review added
+
+The fictional application and supporting worksheets now demonstrate the full review workflow. Seven discrepancies are reconciled, the financial exception is resolved only by a separately stated lower-price request, and six real-world evidence controls remain open. See [the walkthrough](mortgage_file_walkthrough.md). Future work should improve independent evidence and data freshness; the synthetic packet is an interview exercise, not an actual underwriting engagement.

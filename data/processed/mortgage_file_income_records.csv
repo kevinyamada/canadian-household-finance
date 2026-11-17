@@ -1,0 +1,4 @@
+evidence_id,applicant,kind,annual_gross,note,synthetic,case_id
+INC-001-A,Applicant A,base,84000,Constructed recurring salary; included for this exercise.,True,TRAINING-MORTGAGE-001
+INC-001-B,Applicant B,base,51000,Constructed recurring salary; included for this exercise.,True,TRAINING-MORTGAGE-001
+INC-001-C,Applicant A,one_off_bonus,15000,"Constructed isolated bonus; sustainable recurrence not established. Excluded by the exercise's stated treatment, not a claim that all bonuses are ineligible.",True,TRAINING-MORTGAGE-001

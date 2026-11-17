@@ -18,3 +18,16 @@ reports/figures/homebuying/*.json text eol=lf
 reports/figures/homebuying/*.md text eol=lf
 reports/figures/homebuying/*.pdf -text
 docs/assets/homebuying-data.json text eol=lf
+
+# Keep the fictional-file packet checksums stable across Windows and Unix checkouts.
+data/raw/homebuying_refresh/** -text
+data/scenarios/mortgage_file/*.json text eol=lf
+data/processed/mortgage_file_*.csv text eol=lf
+data/processed/mortgage_file_manifest.json text eol=lf
+docs/assets/mortgage-file-data.json text eol=lf
+docs/mortgage_file_walkthrough.md text eol=lf
+src/mortgage_file_audit.py text eol=lf
+sql/mortgage_file_audit.sql text eol=lf
+reports/mortgage_file/*.md text eol=lf
+reports/mortgage_file/*.json text eol=lf
+reports/mortgage_file/*.pdf -text

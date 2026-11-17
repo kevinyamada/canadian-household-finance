@@ -1,0 +1,2 @@
+evidence_id,requested_price,gross_income,liquid_cash,monthly_debt,annual_property_tax,heating,condo_fee,qualifying_rate_used,synthetic,case_id
+APP-001,764100,150000,100000,500,1800,100,200,4.15,True,TRAINING-MORTGAGE-001

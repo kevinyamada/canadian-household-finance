@@ -1,0 +1,7 @@
+control_id,control,needed,synthetic,case_id
+OPEN-01,Income and employment authenticity,"Independently verify actual income, employment, history and the treatment of variable pay.",True,TRAINING-MORTGAGE-001
+OPEN-02,Ownership and availability of funds,"Authenticate account histories, source of funds, restrictions and availability before closing.",True,TRAINING-MORTGAGE-001
+OPEN-03,Complete credit and debt records,Obtain an authorized credit review and reconcile all actual recurring obligations.,True,TRAINING-MORTGAGE-001
+OPEN-04,Subject property and costs,"Verify agreement, valuation, actual taxes, heating and condo costs for the subject property.",True,TRAINING-MORTGAGE-001
+OPEN-05,"Lender, insurer and program criteria","Verify the actual rate commitment, eligibility, insurance, tax relief and applicable lending criteria.",True,TRAINING-MORTGAGE-001
+OPEN-06,Independent review and sign-off,A qualified reviewer must document their actual review; this synthetic exercise supplies no signature or approval.,True,TRAINING-MORTGAGE-001

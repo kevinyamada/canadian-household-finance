@@ -1,0 +1,4 @@
+evidence_id,obligation,monthly_payment,declared,synthetic,case_id
+DBT-001-A,Vehicle payment,400,True,True,TRAINING-MORTGAGE-001
+DBT-001-B,Line-of-credit payment,100,True,True,TRAINING-MORTGAGE-001
+DBT-001-C,Student-loan payment,250,False,True,TRAINING-MORTGAGE-001

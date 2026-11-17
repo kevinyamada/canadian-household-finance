@@ -111,3 +111,8 @@
 .hb-table tr.hb-false-pass td:last-child{font-weight:700;color:var(--hb-rust)}
 #hb-latest-context,#hb-error-context{margin-top:22px;line-height:1.8}
 #hb-error-checks p{font-size:13px;line-height:1.8}
+
+/* Fixed fictional mortgage-file exercise. */
+.mf-notice{padding:14px 17px;border-left:3px solid var(--hb-rust);background:var(--wash);font-size:13px;line-height:1.8}
+.mf-stage-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.mf-stage-buttons button{font:inherit;font-size:13px;padding:11px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:3px;color:var(--ink);cursor:pointer}.mf-stage-buttons button.selected{background:var(--green);color:var(--paper);border-color:var(--green)}.mf-stage-buttons button:focus-visible{outline:2px solid var(--hb-rust);outline-offset:3px}
+.mf-stage-result>h3{font:30px/1.25 Georgia,serif;margin:15px 0}.mf-stage-result>p{line-height:1.8}.mf-stage-result>.small{margin-top:18px}.mf-unit{display:block;font-weight:400}.mf-checks{padding-left:20px}.mf-checks li{font-size:13px;line-height:1.8;margin:12px 0}#mf-findings caption{text-align:left;font-weight:600;margin-bottom:12px}#mf-findings td:last-child{font-size:10px;min-width:110px}

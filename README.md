@@ -35,9 +35,9 @@ Four defined mistakes are tested across 117 saved purchase scenarios. All 585 co
 | Deliverable | Contents |
 |---|---|
 | [Interactive website](https://kevinyamada.github.io/canadian-household-finance/) | Coloured Canada map, cash/income comparisons, price limits, newer rates and audit example |
-| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.2.0/HomebuyingBarriers.pbix) | Nine native pages with imported data |
-| [Nine figures](reports/figures/homebuying/README.md) | PNGs, editable SVGs and a nine-page PDF |
-| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.2.0/HomebuyingBarriers-Figures.zip) | Figures, source tables, review notes and interview brief |
+| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.3.0/HomebuyingBarriers.pbix) | Ten native pages with imported data |
+| [Ten figures](reports/figures/homebuying/README.md) | PNGs, editable SVGs and a ten-page PDF |
+| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.3.0/HomebuyingBarriers-Figures.zip) | Figures, source tables, review notes and interview brief |
 | [Calculation review](reports/calculation_review.md) | Budgets, loan schedules, program accounting and thresholds |
 | [Methodology](docs/homebuying_methodology.md) | Sources, assumptions, rules and limitations |
 
@@ -72,3 +72,9 @@ An intentional rate refresh uses src/refresh_homebuying_sources.py with --as-of 
 [Model](src/homebuying_model.py) · [Price/cash search](src/homebuying_limits.py) · [Updates and audit](src/homebuying_updates.py) · [SQL](sql/homebuying_updates.sql) · [Study](src/homebuying_study.py)
 
 Analysis, SQL, plots and checks run in desktop VS Code. Earlier national forecasts and the renter-saving audit remain supporting research. Official data retain their applicable terms, including the [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/reference/licence).
+
+## A complete fictional mortgage-file review
+
+An eight-page packet provides the submitted application, constructed income/funds/debt/cost worksheets, seven traced discrepancies and the resolution. Correcting the file leaves annual income CAD 26,292 short. A separate CAD 600,000 request fits the same supported finances, while six external-evidence controls remain open. No genuine financial records, customer data or approval is represented.
+
+[Walkthrough and findings](docs/mortgage_file_walkthrough.md) · [Packet PDF](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.3.0/MortgageFile-Audit-Pack.pdf) · [Worksheets and code ZIP](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.3.0/MortgageFile-Audit-Pack.zip)

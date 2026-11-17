@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "fixture": "data/scenarios/mortgage_file/training_file.json",
+  "fixture_sha256": "2073c2d53d58c0396fb9ea91e60f6dde57202e200db106e13d71307ddd340561",
+  "asset": "docs/assets/mortgage-file-data.json",
+  "asset_sha256": "e35549f4073505e1c9780207b1ce14c73d87b0313233ca58c8ea2bf210f8a328",
+  "rate_reference_period": "2026-09",
+  "official_rate_source_manifest_sha256": "f3f15d0e4793a68280238f54ddbc180733e07ae4f359da1249f0f4863927e9c7",
+  "notice": "FICTIONAL TRAINING FILE — constructed worksheets, not genuine financial records or a lender approval.",
+  "execution": "Calculated and checked in Kevin's desktop VS Code integrated terminal"
+}

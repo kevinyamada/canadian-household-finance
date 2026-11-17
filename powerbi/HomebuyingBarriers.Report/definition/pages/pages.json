@@ -9,7 +9,8 @@
     "history",
     "waiting",
     "audit",
-    "calculation_audit"
+    "calculation_audit",
+    "file_review"
   ],
   "activePageName": "answer"
 }

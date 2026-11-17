@@ -184,7 +184,7 @@ Correct results reproduce the production income requirement and reconcile to a s
 
 **Refresh:** At unchanged prices and finances, {freshness['rate_period']} mortgage rates reduce that couple's required income to {money(chosen.required_gross_income)}. The gap remains. This is a rate sensitivity, not current-market affordability.
 
-**Banking audit:** In a separate CAD 764,100 worked case, using the contract rate instead of the qualifying rate creates a false pass. Correct annual income required is CAD 167,429; the flawed calculation says CAD 141,543. I mapped four defined mistakes to reviewer checks and required documents.
+**Banking audit:** A complete fictional file traces the application to income, funds, debt and cost worksheets. Seven discrepancies overturn the apparent pass. A lower-price request fits the corrected finances, while six external-evidence controls still prevent actual sign-off. The packet retains the findings, corrections and review conclusion.
 
 **Validation:** Independent SQLite and loan-schedule reconciliations, financial boundary tests, website checks against saved outputs and native Power BI verification. The release validation report records completed checks.
 
@@ -194,7 +194,7 @@ Correct results reproduce the production income requirement and reconcile to a s
 
 ## A short spoken introduction
 
-“I asked why saving a down payment can still leave someone unable to buy. I separated cash from the mortgage-income requirement using official Canadian data. Four of nine examples had enough minimum cash but not enough income. I then showed what price fits and built an audit example where using the wrong qualifying rate changes the result. My recommendation is to identify the actual constraint and verify the evidence before calling a file ready.”
+“I asked why saving a down payment can still leave someone unable to buy. I separated cash from the mortgage-income requirement using official Canadian data. Four of nine examples had enough minimum cash but not enough income. I then reviewed a complete fictional application: corrected the input mismatches, tested a revised request and documented what still prevents sign-off. My recommendation is to identify the actual constraint and verify the evidence before calling a file ready.”
 
 [Interactive project](https://kevinyamada.github.io/canadian-household-finance/) · [Worked audit](../reports/mortgage_calculation_audit.md) · [Source refresh](../reports/source_refresh.md)
 """

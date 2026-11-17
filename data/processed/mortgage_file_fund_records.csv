@@ -1,0 +1,3 @@
+evidence_id,account,balance,pledged,note,synthetic,case_id
+FND-001-A,Savings worksheet,60000,0,Constructed balance assumed accessible before closing.,True,TRAINING-MORTGAGE-001
+FND-001-B,Term-deposit worksheet,40000,15000,"CAD 15,000 assumed pledged and unavailable before closing; only the remainder is counted.",True,TRAINING-MORTGAGE-001

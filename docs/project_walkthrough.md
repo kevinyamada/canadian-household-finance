@@ -22,7 +22,7 @@ The program cards show the variable each measure changes. Thirty years reduces t
 
 ## Power BI demo
 
-Use Start here, Cash and income, What helps, Price limits and Bank audit. The report also has history and waiting pages. All nine pages use imported data.
+Use Start here, Cash and income, What helps, Price limits and Bank audit. The report also has history and waiting pages. All ten pages use imported data.
 
 A positive position is above the requirement; negative is short. Price limits and audit working papers use the selected baseline.
 
@@ -43,3 +43,7 @@ Show Latest rates: the same Vancouver price and finances still leave CAD 25,293 
 Then show Calculation audit, choosing Vancouver / Two earners / Price 10% lower. The wrong qualifying rate creates a false pass. Explain which source document and recalculation a reviewer should require.
 
 [Short interview brief](interview_brief.md) · [Full calculation audit](../reports/mortgage_calculation_audit.md) · [Source refresh](../reports/source_refresh.md)
+
+## Complete-file demo
+
+Open File review (Power BI) or the complete mock-file section (website). Follow Submitted claim → Corrected review → Revised request. Explain the one-off bonus, pledged funds and omitted debt. Show why the corrected original request fails, and why financial fit after a lower-price request still does not authenticate real evidence. Use [the eight-page packet and walkthrough](mortgage_file_walkthrough.md).

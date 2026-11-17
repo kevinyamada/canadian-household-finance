@@ -1,8 +1,8 @@
 {
   "passed": true,
   "execution": "Desktop VS Code integrated terminal",
-  "checked_utc": "2026-11-17T21:24:24.549302+00:00",
-  "tests_passed": 150,
+  "checked_utc": "2026-11-17T22:38:33.416141+00:00",
+  "tests_passed": 167,
   "browser_widths": [
     1440,
     768,
@@ -17,6 +17,40 @@
     "audit_calculations": 585,
     "latest_rate_cases": 9
   },
+  "mortgage_file_display_review": [
+    {
+      "width": 1440,
+      "failures": [],
+      "stages": 3,
+      "findings": 7,
+      "external_controls": 6,
+      "synthetic_notice": true
+    },
+    {
+      "width": 768,
+      "failures": [],
+      "stages": 3,
+      "findings": 7,
+      "external_controls": 6,
+      "synthetic_notice": true
+    },
+    {
+      "width": 390,
+      "failures": [],
+      "stages": 3,
+      "findings": 7,
+      "external_controls": 6,
+      "synthetic_notice": true
+    },
+    {
+      "width": 320,
+      "failures": [],
+      "stages": 3,
+      "findings": 7,
+      "external_controls": 6,
+      "synthetic_notice": true
+    }
+  ],
   "native_pages": [
     "Start here",
     "Cash and income",
@@ -26,10 +60,11 @@
     "Over time",
     "Waiting to buy",
     "Bank audit",
-    "Calculation audit"
+    "Calculation audit",
+    "File review"
   ],
-  "native_pbix_sha256": "7979e4ffa12f11ec185159cccfbc5fef6f65e20d7b9d97c24a7cbdfc4c20f267",
-  "native_pbix_bytes": 854656,
+  "native_pbix_sha256": "f3f47454cb3e19aae4084e11ed8fa6561aba6ba04894e81ef7624d7b0891344f",
+  "native_pbix_bytes": 819731,
   "power_bi_version": "2.159.1231.0",
   "native_checks": {
     "reopened_native_file": true,
@@ -37,7 +72,8 @@
     "opens_on_start_here": true,
     "no_model_format_prompt_on_open_or_save": true,
     "latest_rates_checked_after_reopen": true,
-    "calculation_audit_checked_after_reopen": true
+    "calculation_audit_checked_after_reopen": true,
+    "file_review_checked_after_reopen": true
   },
   "source_freshness": {
     "checked_on": "2026-11-17",
@@ -56,6 +92,15 @@
     "rates_url": "https://www.bankofcanada.ca/rates/banking-and-financial-statistics/interest-rates-for-new-and-existing-lending-by-chartered-banks/",
     "scope": "A publication date, property-stock reference year and sales reference year are different. Partial-year rates are monthly observations, not a full-year average."
   },
-  "source_policy": "Statistics Canada and official Canadian public bodies",
-  "limits": "2023 matched price/income and original rate benchmark; separate 2026-09 monthly-rate sensitivity; rules reviewed 2026-11-16; hypothetical finances/costs; financial screens are not approvals; controlled errors are not observed bank error rates."
+  "mortgage_file": {
+    "synthetic": true,
+    "stages": 3,
+    "findings": 7,
+    "external_controls_open": 6,
+    "packet_pages": 8,
+    "packet_pdf_sha256": "507804c50656a5be0287941933f7c7fb85a0dedf5ed870423daed9336901574f",
+    "packet_zip_sha256": "a11e408cb310887df6e626d22bad197535d735aeb32bda531872d4261fdd8c40"
+  },
+  "source_policy": "Official Canadian public benchmarks; explicitly constructed fictional training worksheets",
+  "limits": "The mock file is not genuine borrower evidence or an actual approval. Matched buyer data remain 2023; separate Sep 2026 rates and historical tax proxy are explicit. Financial fit does not authenticate evidence."
 }
