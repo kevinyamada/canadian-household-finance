@@ -14,6 +14,7 @@ from pyproj import Transformer
 
 from homebuying_data import ROOT, RAW, CITIES, RATE_SERIES, RULE_SOURCES, observed_data, annual_rates, verify_manifest, write_json
 from homebuying_model import Buyer, PROFILES, evaluate, waiting_cash, RULE_DATE
+from homebuying_review import explain_cases, explain_programs, price_limits, independent_review, write_review_report
 
 OUT = ROOT / "data/processed"
 ASSETS = ROOT / "docs/assets"
@@ -44,7 +45,7 @@ def records(frame):
 
 def save_csv(path, frame):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(frame.to_csv(index=False), encoding="utf-8", newline="\n")
+    path.write_text(frame.to_csv(index=False, lineterminator="\n"), encoding="utf-8", newline="\n")
 
 def case_for(city, price, buyer, insured, uninsured, scenario="baseline"):
     spec = CITIES[city]
@@ -178,6 +179,8 @@ def generate():
                     "cash_target_before": before["cash_target"], "cash_target_after": after["cash_target"],
                     "liquid_cash_before": before["profile_cash"], "liquid_cash_after": after["profile_cash"],
                     "cash_gap_before": before["cash_gap"], "cash_gap_after": after["cash_gap"],
+                    "transfer_tax_before": before["transfer_tax"], "transfer_tax_after": after["transfer_tax"],
+                    "loan_before": before["mortgage_principal"], "loan_after": after["mortgage_principal"],
                     "required_income_before": before["required_gross_income"], "required_income_after": after["required_gross_income"],
                     "monthly_payment_before": before["monthly_mortgage"], "monthly_payment_after": after["monthly_mortgage"],
                     "five_year_interest_before": before["first_five_years_interest"], "five_year_interest_after": after["first_five_years_interest"],
@@ -195,12 +198,15 @@ def generate():
                         waiting.append({**row, "months": months, "annual_price_growth": price_growth, "annual_rent_growth": rent_growth,
                                         "saving_added": future_cash-buyer.liquid_cash,
                                         "scope": "Illustrative wait from the 2023 benchmark; fixed income/rates, zero saving interest, rent increases reduce assumed net saving. Not a forecast."})
-    cases = pd.DataFrame(all_cases)
+    cases = explain_cases(pd.DataFrame(all_cases))
     history = pd.DataFrame(history)
     waiting = pd.DataFrame(waiting)
-    programs = pd.DataFrame(programs)
+    programs = explain_programs(pd.DataFrame(programs))
     contributions = pd.DataFrame([r for city in CITIES for r in decomposition(city, observed, rate_lookup)])
     baseline = cases[cases.year.eq(latest_year) & cases.scenario.eq("baseline")].copy()
+    limits = price_limits(baseline, rate_lookup)
+    review = independent_review(cases, programs, waiting, limits)
+    write_review_report(cases, programs, waiting, limits, review, ROOT/"reports/calculation_review.md")
     # Later observed rates, held against the same 2023 prices and profile income: a scenario, not 2025 observed affordability.
     rate_replay = []
     for city in CITIES:
@@ -241,7 +247,7 @@ def generate():
         "source_tables": ["46-10-0099-01", "46-10-0062-01"],
         "rate_series": RATE_SERIES, "history_years": [2020, 2021, 2022, 2023],
         "policy_comparison_years": [2021, 2023],
-        "waiting_cases": len(waiting), "program_cases": len(programs),
+        "waiting_cases": len(waiting), "program_cases": len(programs), "price_limit_cases": len(limits), "review_checks": len(review),
         "source_policy": "Statistics Canada first; official Canadian public bodies only",
         "execution": "Prepared and checked with Python and SQL in Kevin's local desktop VS Code integrated terminal",
     }
@@ -249,6 +255,7 @@ def generate():
                          ("homebuying_source_bridge.csv", bridge), ("homebuying_rates.csv", annual),
                          ("homebuying_cases.csv", cases), ("homebuying_history.csv", history), ("homebuying_rate_replay.csv", rate_replay),
                          ("homebuying_waiting.csv", waiting), ("homebuying_programs.csv", programs),
+                         ("homebuying_price_limits.csv", limits), ("homebuying_review_checks.csv", review),
                          ("homebuying_decomposition.csv", contributions), ("homebuying_controls.csv", pd.DataFrame(controls))]:
         save_csv(OUT/name, frame)
     write_json(OUT/"homebuying_summary.json", summary)
@@ -257,9 +264,11 @@ def generate():
         history.to_sql("market_history", connection, if_exists="replace", index=False)
         programs.to_sql("program_comparisons", connection, if_exists="replace", index=False)
         waiting.to_sql("waiting_cases", connection, if_exists="replace", index=False)
-        connection.executescript((ROOT/"sql/homebuying.sql").read_text())
+        limits.to_sql("price_limits", connection, if_exists="replace", index=False)
+        review.to_sql("review_checks", connection, if_exists="replace", index=False)
+        connection.executescript((ROOT/"sql/homebuying.sql").read_text(encoding="utf-8"))
         check = pd.read_sql_query("SELECT * FROM case_reconciliation", connection)
-        if check.required_income_delta.abs().max() > 1e-7 or check.cash_target_delta.abs().max() > 1e-7:
+        if check[[c for c in check.columns if c.endswith("_delta")]].abs().to_numpy().max() > 1e-7:
             raise ValueError("Independent SQL reconciliation failed")
     controls.append({"control": "Independent SQL reconciliation", "status": "Pass", "detail": f"{len(cases)} cash and income calculations agree with SQLite"})
     save_csv(OUT/"homebuying_controls.csv", pd.DataFrame(controls))
@@ -298,11 +307,11 @@ def generate():
                     series.append({"label": label, "style": style, "points": points, "path": "M"+"L".join(f"{p['x']:.3f},{p['y']:.3f}" for p in points)})
                 income_y = 250-buyer.gross_income/250000*215
                 waiting_lines[f"{city}|{buyer.id}|{rent_growth:g}"] = {"series": series, "profile_path": f"M70,{income_y:.3f}L710,{income_y:.3f}"}
-    payload = {"version": 1, "summary": summary, "cities": CITIES, "profiles": summary["profiles"],
+    payload = {"version": 2, "summary": summary, "cities": CITIES, "profiles": summary["profiles"],
                "scenarios": [{"id": s, "label": label} for s, label in SCENARIOS], "map": map_payload,
                "cases": records(cases), "history": records(history), "history_lines": history_lines,
                "waiting": records(waiting), "waiting_lines": waiting_lines, "programs": records(programs), "rate_replay": records(rate_replay), "decomposition": records(contributions),
-               "controls": controls, "bank_audit": records(audit), "sources": RULE_SOURCES}
+               "controls": controls, "bank_audit": records(audit), "price_limits": records(limits), "review_checks": records(review), "sources": RULE_SOURCES}
     target = ASSETS/"homebuying-data.json"
     target.write_text(json.dumps(payload, ensure_ascii=False, allow_nan=False, separators=(",", ":")), encoding="utf-8", newline="\n")
     write_json(OUT/"homebuying_asset_manifest.json", {"file": str(target.relative_to(ROOT)).replace("\\", "/"),

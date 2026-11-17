@@ -30,6 +30,12 @@ Among these changes, a home priced 20% lower brings the example within both mode
 
 The three-city comparison also shows why one national answer is insufficient. The two-earner profile fits the modeled financial limits at the Victoria and Halifax benchmarks. The single-earner profile has enough cash in those two markets but remains income constrained.
 
+## A direct price and cash answer
+
+For the Vancouver two-earner example, about **CAD 690,000** fits the financial screen with starting cash and income fixed. Alternatively, keeping the benchmark price and income requires about **CAD 168,000 more cash**. The price display is rounded down and extra cash up to CAD 1,000. These alternatives are not spending recommendations or approvals.
+
+The revised table shows cash/income above or below the requirement. The earlier zero cash shortfall correctly meant the minimum budget was covered; it hid the extra amount available for the down payment. [Read the recheck](calculation_review.md).
+
 ## What the further research found
 
 **History:** between 2021 and 2023, higher transaction prices and mortgage rates increased the minimum-down income hurdle. Buyer-family income growth offset part of that change. In Vancouver, the exact input decomposition attributes approximately **+CAD 14,424** to price, **+CAD 27,144** to rates and **−CAD 20,000** to observed buyer-family income. These are descriptive contributions, not causal effects or matched-borrower outcomes.
@@ -51,8 +57,8 @@ This is an independent review exercise informed by public OSFI B-20. It uses a c
 - 468 saved purchase scenarios across 2020–2023 inputs; nine latest-year baseline examples.
 - 162 waiting scenarios, 36 program comparisons, nine later-rate replays and an exact historical input decomposition.
 - A Python model, separate SQL reconciliation and source/rule checks.
-- A six-page imported Power BI report and an interactive GitHub Pages website.
-- Six shareable figures in PNG/SVG, a PDF, source tables and a mortgage audit working paper.
+- A seven-page imported Power BI report and an interactive GitHub Pages website.
+- Seven shareable figures in PNG/SVG, a PDF, source tables and a mortgage audit working paper.
 
 The prices and baseline rates are **2023**, not present-day quotes. Rules are reviewed November 16, 2026. Buyer finances, closing allowance, reserve and carrying costs are assumptions. City transaction medians do not represent identical homes or every renter.
 

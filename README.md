@@ -4,56 +4,58 @@
 
 This project separates the cash needed to buy from the income needed for the mortgage, then reviews the evidence a bank would need before signing off.
 
-**Main finding:** four of nine buyer examples have enough cash to close but fall short of the modeled mortgage income requirement. They are hypothetical examples, not population estimates.
+**Main finding:** four of nine hypothetical buyer examples have enough cash to meet the minimum purchase budget but insufficient income under the mortgage screen.
 
-[Explore the interactive website](https://kevinyamada.github.io/canadian-household-finance/) · [Read the findings](reports/homebuying_findings.md) · [Bank audit case](docs/bank_audit_case.md)
+[Interactive website](https://kevinyamada.github.io/canadian-household-finance/) · [Findings](reports/homebuying_findings.md) · [Calculation review](reports/calculation_review.md) · [Bank audit case](docs/bank_audit_case.md)
 
 ![Cash and income comparison](reports/figures/homebuying/01_cash_and_income.png)
 
 ## One example
 
-Two earners have CAD 100,000 in cash and CAD 150,000 in annual gross income. At Vancouver's CAD 849,000 transaction benchmark, their minimum purchase cash plus reserve is CAD 85,360. The cash fits.
+Two earners have CAD 100,000 cash and CAD 150,000 annual gross income. At Vancouver's CAD 849,000 transaction benchmark, their minimum purchase cash plus reserve is CAD 85,360. They are CAD 14,640 above that minimum; this extra amount goes toward the down payment.
 
-Using the remaining cash toward the mortgage, the stressed debt-service screen needs CAD 190,014 of gross income: a **CAD 40,014 income shortfall**. A 20% lower home price clears both modeled financial checks; a one-point lower mortgage rate alone does not.
+The stressed mortgage screen still needs CAD 190,014 income, leaving a CAD 40,014 annual income shortfall.
 
-**Banking audit outcome: hold.** The income exception and missing borrower/property evidence need resolution. A passed cash calculation is not a verified mortgage approval.
+The new direct price check puts this example's limit at **about CAD 690,000** with starting finances fixed. Alternatively, keeping the benchmark price and income requires **about CAD 168,000 more cash**. These are separate financial-screen scenarios, not spending recommendations or loan approvals.
+
+## Why the old comparison showed zeros
+
+“Cash shortfall” only measured money still missing. It stayed zero when an already-funded buyer received more cash. The updated table shows cash and income **above or below** the requirements instead.
+
+Program cards now show what the measure changes: mortgage payment and interest for 30 years, transfer tax for BC relief, or available purchase cash for HBP/FHSA. A BC program in Halifax is marked not applicable.
+
+The [review](reports/calculation_review.md) reconciles budgets, loans, program accounting and a separate 60-month payment schedule. **130 local tests pass**, including exhaustive checks of small price/cash search domains. Browser checks cover four widths, all 117 current purchase scenarios and all 36 program comparisons.
 
 ## Explore the work
 
 | Deliverable | What it answers |
 |---|---|
-| [Interactive website](https://kevinyamada.github.io/canadian-household-finance/) | Which constraint binds in each city and buyer example? |
-| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers.pbix) | Six pages: answer, cash/income, what helps, history, waiting and bank audit |
-| [Bank audit working paper](docs/bank_audit_case.md) | Would the mortgage file survive a first review? What evidence is missing? |
-| [Six figures](reports/figures/homebuying/README.md) | Shareable PNG/SVG files and a six-page PDF |
-| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers-Figures.zip) | Figures, source tables and notes for offline review |
-| [Methodology](docs/homebuying_methodology.md) | Rules, sources, assumptions, financial formulas and limits |
+| [Website](https://kevinyamada.github.io/canadian-household-finance/) | A coloured provincial map, buyer comparisons, price limits and graphs |
+| [Power BI Desktop report](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.1.0/HomebuyingBarriers.pbix) | Seven pages: answer, cash/income, changes, price limits, history, waiting and bank audit |
+| [Bank audit working paper](docs/bank_audit_case.md) | What calculations, exceptions and missing evidence matter before sign-off? |
+| [Seven figures](reports/figures/homebuying/README.md) | PNG/SVG files and a seven-page PDF |
+| [Figure/data pack](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.1.0/HomebuyingBarriers-Figures.zip) | Figures, processed tables and review notes |
+| [Methodology](docs/homebuying_methodology.md) | Sources, assumptions, rules, formulas and limits |
 
-The website starts in light mode. Its small theme button remembers an explicit choice. City markers, profile/scenario controls and graphs select precomputed Python results; financial rules are not duplicated in browser JavaScript.
+The website starts in light mode. Its small theme button remembers an explicit choice. The provincial map and national renter trend remain visible. The browser displays saved Python results rather than duplicating lending rules.
 
 ## Scope and data
 
-Vancouver City, Victoria City and Halifax Regional Municipality use Statistics Canada resident first-time-buyer transaction data. **2023 is the latest comparable observation in the selected city series**, released in 2026. Prices are buyer-based medians across a changing property mix, not 2026 listings.
+The purchase cases use Vancouver City, Victoria City and Halifax Regional Municipality. **2023 is the latest comparable first-time-buyer observation in the selected Statistics Canada source**, released in 2026. Buyer-based transaction medians cover a changing property mix; these are not 2026 listings or matched-house prices.
 
-Bank of Canada national fixed five-year-and-over funds-advanced rates provide the benchmark. Mortgage and tax rules were checked November 16, 2026. Buyer finances, closing costs, reserves and carrying costs are explicit assumptions.
+Bank of Canada funds-advanced fixed five-year-and-over rates provide national benchmarks. Mortgage and tax rules were reviewed November 16, 2026. Borrower finances, eligibility, property costs and reserves are assumptions. Halifax costs use an explicitly assumed urban tax-rate scenario.
 
-The research includes 468 purchase scenarios, 162 waiting scenarios, 36 buyer-measure comparisons, nine 2025-rate replays and a 2021–2023 price/rate/income decomposition. No forecast probabilities, default predictions or personal buying-date recommendations are claimed.
+The study has 468 purchase scenarios, 162 waiting scenarios, 36 buyer-measure comparisons, nine later-rate replays, a historical price/rate/income decomposition and nine baseline price/cash thresholds. The provincial map measures renter core housing need, a separate measure and period.
 
-Data come from **Statistics Canada and official Canadian public bodies**: Bank of Canada, CMHC, FCAC, CRA, OSFI, municipal/provincial governments and Natural Resources Canada. The [manifest](data/raw/homebuying/manifest.json) preserves source URLs and hashes. The model uses 24 narrow Statistics Canada series rather than loading the entire national table.
+Sources are Statistics Canada and official Canadian public bodies: Bank of Canada, CMHC, FCAC, CRA, OSFI, municipal/provincial governments and Natural Resources Canada. The [source manifest](data/raw/homebuying/manifest.json) preserves URLs and hashes.
 
 ## Banking and audit relevance
 
-The [practice file](docs/bank_audit_case.md) connects public housing data to a bank's need for reproducible calculations, documented exceptions and verified evidence. It separates:
+The practice file demonstrates reproducible calculations, documented exceptions and verified-evidence requirements relevant to a bank such as TD. The fictional files remain on hold: a mathematical pass does not verify the borrower, property or lender policy.
 
-- Enough purchase cash from enough income to service the debt.
-- An arithmetic check from independently verified borrower records.
-- A public comparison screen from a lender's actual underwriting policy.
-
-Public OSFI B-20 informs the review approach. The project uses a CMHC-style 39% GDS/44% TDS screen for comparison; uninsured lender limits may differ. This is an independent portfolio project, with no TD customer data, internal policy or endorsement.
+Public OSFI B-20 informs the review approach. A CMHC-style 39% GDS/44% TDS screen is used consistently for comparison; uninsured lender criteria can differ. This is an independent portfolio project with no TD customer data, internal policy or endorsement.
 
 ## Reproduce in desktop VS Code
-
-Python 3.12+; Windows required only for the native Power BI Desktop checks. The source project imports embedded data and does not require access to the author's folders.
 
 ~~~powershell
 python -m venv .venv
@@ -65,17 +67,10 @@ python -m venv .venv
 node tests\check_website.mjs
 ~~~
 
-Open powerbi/HomebuyingBarriers.pbip for the editable source, or download the regular .pbix release. See the [opening guide](docs/powerbi_usage.md).
+Python 3.12+; Windows is needed for native Power BI Desktop checks. Open powerbi/HomebuyingBarriers.pbip for editable source, or download the regular .pbix. Imported data do not need the author's folders. See the [opening guide](docs/powerbi_usage.md).
 
-Python, SQL, plotting, browser checks and native report checks for this extension run through the local desktop VS Code terminal. No paid GPU or cloud financial analysis is needed. Use --refresh-sources only for an intentional official-data refresh; manually review changed tax and program rules.
+Analysis, SQL, plotting, browser checks and native report checks run through the desktop VS Code terminal. Use --refresh-sources only for an intentional official-data refresh and review rule/tax changes separately.
 
-## Project files
+[Mortgage model](src/homebuying_model.py) · [Price/cash search](src/homebuying_limits.py) · [Review](src/homebuying_review.py) · [SQL](sql/homebuying.sql) · [Study](src/homebuying_study.py) · [Tests](tests/test_homebuying_limits.py)
 
-- [Mortgage model](src/homebuying_model.py), [official extracts](src/homebuying_data.py), [study](src/homebuying_study.py) and [audit register](src/homebuying_audit.py).
-- [Independent SQL](sql/homebuying.sql), [financial/source tests](tests/test_homebuying.py) and [browser checks](tests/check_website.mjs).
-- [Processed tables](data/processed) and [figure exporter](src/export_homebuying.py).
-- [Power BI builder](src/build_homebuying_powerbi.py), editable report/model folders and [website](docs/index.html).
-
-The earlier national debt-service/model experiments and renter-saving audit remain in the repository as supporting research. Their forecasts are not used to infer an individual's purchase readiness. Earlier Power BI and figure releases remain available under v2.0.0/v2.1.0.
-
-Official statistics are adapted under their applicable open-data licences, including the [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/reference/licence). Source material retains its applicable terms.
+Earlier national model experiments and the renter-saving audit remain supporting research. Official statistics retain their applicable terms, including the [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/reference/licence).

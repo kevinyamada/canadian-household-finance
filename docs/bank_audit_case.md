@@ -56,3 +56,12 @@ Only the lower-price case clears both modeled financial checks among these chang
 The source review also found a transposed payment in FCAC's public 4% example. The monthly cell says CAD 1,587.06; its total-interest figure implies CAD 1,578.06, matching the standard formula. The model retains the formula, tests other official examples and logs the discrepancy. Trusted sources still need reconciliation.
 
 The [machine-readable review register](../data/processed/homebuying_bank_audit.csv) covers all nine baseline cases. The [SQL queries](../sql/homebuying.sql), [model](../src/homebuying_model.py), [tests](../tests/test_homebuying.py) and [methodology](homebuying_methodology.md) make the work reviewable.
+
+
+## Review update: make the cash result interpretable
+
+A zero cash shortfall means the minimum closing budget is covered. The Vancouver two-earner example has CAD 14,640 above that minimum, which is deployed toward the down payment. It is not unused money left after purchase.
+
+The direct price check finds about CAD 690,000 within both financial checks at starting income and cash. At the unchanged benchmark price, about CAD 168,000 additional cash would instead be needed. These alternatives are model outputs with fixed assumptions, not approvals or spending recommendations.
+
+The [calculation review](../reports/calculation_review.md) records independent budget, SQL and month-by-month loan checks. The [threshold table](../data/processed/homebuying_price_limits.csv) preserves exact values and scope.

@@ -116,3 +116,18 @@ node tests\check_website.mjs
 Use --refresh-sources on the study only when intentionally updating official extracts; review rule and property-tax changes separately. It uses 24 narrow WDS series rather than loading the multi-gigabyte national table. No model training, paid GPU or hosted financial computation is required.
 
 The existing national debt-service/model experiments and renter-saving audit remain archived context. They are not used to predict an individual home purchase.
+
+
+## Review of the zero shortfalls and the price limits
+
+A shortfall is max(required − available, 0). A zero means no extra amount is missing; it does not show how far above the minimum a buyer sits. The comparison now displays signed cash and income positions. Above-minimum purchase cash is deployed toward the down payment, while the stated emergency reserve is retained.
+
+Program displays show the measure's main effect: transfer tax for BC relief, monthly payment and five-year interest for 30 years, and available purchase cash for HBP/FHSA. A BC program in Halifax is explicitly not applicable.
+
+The new baseline thresholds find the largest whole-CAD price that fits both checks with starting finances fixed, and the least total liquid cash needed at the benchmark price with income fixed. Transfer-tax brackets, insurance tiers, the 80% LTV insurance/rate switch and the cash-purchase boundary are isolated before each interval is searched. A single global bisection is unsafe because different insured/uninsured rates can create disconnected feasible intervals.
+
+Tests compare the search to exhaustive whole-dollar domains, including a disconnected example. Published thresholds pass at the stated dollar and fail at the next dollar; minimum cash passes at the stated dollar and fails at one dollar less. Website prices are rounded down and extra cash up to CAD 1,000.
+
+A separate 60-month amortization schedule checks every purchase case's interest and balance. Extended SQL checks reconcile eight identities, including positions, loans and monthly outgoings. The [calculation review](../reports/calculation_review.md) states the checks and their coverage. The [price-limit CSV](../data/processed/homebuying_price_limits.csv) preserves exact values.
+
+These thresholds remain a financial screen with hypothetical costs and fixed 2023 rate benchmarks. They are not market forecasts, a comfortable household spending budget or lender approval.

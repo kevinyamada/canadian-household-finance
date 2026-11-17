@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "price-limit",
+  "position": {
+    "x": 24,
+    "y": 263,
+    "width": 1232,
+    "height": 124,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Keep starting cash and income: a purchase price within both financial checks'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "benchmark_price"
+                }
+              },
+              "queryRef": "Limits.benchmark_price",
+              "nativeQueryRef": "benchmark_price",
+              "displayName": "2023 benchmark price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "profile_cash"
+                }
+              },
+              "queryRef": "Limits.profile_cash",
+              "nativeQueryRef": "profile_cash",
+              "displayName": "Profile cash"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "profile_income"
+                }
+              },
+              "queryRef": "Limits.profile_income",
+              "nativeQueryRef": "profile_income",
+              "displayName": "Profile gross income"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "maximum_price_display"
+                }
+              },
+              "queryRef": "Limits.maximum_price_display",
+              "nativeQueryRef": "maximum_price_display",
+              "displayName": "Price within both checks"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

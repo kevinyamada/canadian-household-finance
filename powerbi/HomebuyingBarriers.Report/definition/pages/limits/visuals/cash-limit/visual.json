@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "cash-limit",
+  "position": {
+    "x": 24,
+    "y": 420,
+    "width": 1232,
+    "height": 124,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Alternatively, keep the benchmark price and income: cash needed'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "benchmark_price"
+                }
+              },
+              "queryRef": "Limits.benchmark_price",
+              "nativeQueryRef": "benchmark_price",
+              "displayName": "2023 benchmark price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "profile_cash"
+                }
+              },
+              "queryRef": "Limits.profile_cash",
+              "nativeQueryRef": "profile_cash",
+              "displayName": "Profile cash"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "total_cash_to_fit_at_benchmark"
+                }
+              },
+              "queryRef": "Limits.total_cash_to_fit_at_benchmark",
+              "nativeQueryRef": "total_cash_to_fit_at_benchmark",
+              "displayName": "Total cash needed at benchmark"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Limits"
+                    }
+                  },
+                  "Property": "additional_cash_display"
+                }
+              },
+              "queryRef": "Limits.additional_cash_display",
+              "nativeQueryRef": "additional_cash_display",
+              "displayName": "Extra cash at benchmark"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-"""Build a portable, imported six-page Power BI project from the saved desktop study."""
+"""Build a portable, imported seven-page Power BI project from the saved desktop study."""
 from pathlib import Path
 import json
 import shutil
@@ -9,7 +9,7 @@ import build_powerbi as b
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data/processed"; BI=ROOT/"powerbi"
 REPORT=BI/"HomebuyingBarriers.Report";MODEL=BI/"HomebuyingBarriers.SemanticModel"
-PAGES=[("answer","Start here"),("cash","Cash and income"),("changes","What helps"),
+PAGES=[("answer","Start here"),("cash","Cash and income"),("changes","What helps"),("limits","Price limits"),
        ("history","Over time"),("waiting","Waiting to buy"),("audit","Bank audit")]
 MONEY='"CAD "#,0;("CAD "#,0)'
 
@@ -29,6 +29,11 @@ def proj(t,c,kind="Column"):
         "five_year_interest_after":"First-five-year interest after","control":"Review objective",
         "status":"Review result","result":"Calculation / assumption","evidence_needed":"Evidence still needed",
         "buyer_family_median_income":"Observed buyer-family median","review_conclusion":"Review conclusion",
+        "cash_position_label":"Cash vs minimum","income_position_label":"Income vs requirement/year","result_label":"Financial screen",
+        "Cash position":"Cash vs minimum","Income position":"Income vs requirement",
+        "metric_1_label":"Measure affected","metric_1_before":"Before","metric_1_after":"After",
+        "benchmark_price":"2023 benchmark price","maximum_price_display":"Price within both checks",
+        "additional_cash_display":"Extra cash at benchmark","total_cash_to_fit_at_benchmark":"Total cash needed at benchmark",
         "price_growth_label":"Hypothetical price path","rent_growth_label":"Rent growth"}.get(c,c)
     return p
 
@@ -53,10 +58,13 @@ def build():
         for path in [REPORT,MODEL]:
             if path.exists():shutil.move(str(path),str(backup/path.name))
     cases=frame("homebuying_cases.csv");cases=cases[cases.year.eq(2023)].copy()
+    order=["baseline","price10","price20","rate1","cash25","income20","amort30","hbp","no_relief","no_reserve","assess75","assess125","costs_high"]
+    cases["scenario_order"]=cases.scenario.map({name:i for i,name in enumerate(order)})
     baseline=cases[cases.scenario.eq("baseline")].copy()
     compare=cases[cases.scenario.isin(["baseline","price10","price20","rate1","cash25","income20","amort30","hbp"])].copy()
     history=frame("homebuying_history.csv")
-    programs=frame("homebuying_programs.csv")
+    programs=frame("homebuying_programs.csv");programs=programs[programs.applicable.eq(1)]
+    limits=frame("homebuying_price_limits.csv")
     waiting=frame("homebuying_waiting.csv")
     waiting["price_growth_label"]=waiting.annual_price_growth.map({-.05:"Price -5%/year",0:"Flat prices",.05:"Price +5%/year"})
     waiting["rent_growth_label"]=waiting.annual_rent_growth.map({0:"0%",.03:"3%",.06:"6%"})
@@ -67,15 +75,18 @@ def build():
     markets=pd.DataFrame({"city":summary["cities"]})
     tables=[]
     measures=[b.measure(label,f'IF(HASONEVALUE(\'Cases\'[case_id]), MAX(\'Cases\'[{col}]))',MONEY) for label,col in [
-        ("Cash target","cash_target"),("Available cash","profile_cash"),("Cash shortfall","cash_gap"),
-        ("Income needed","required_gross_income"),("Profile income","profile_income"),("Income shortfall","income_gap"),
+        ("Cash target","cash_target"),("Available cash","profile_cash"),("Cash shortfall","cash_gap"),("Cash position","cash_position"),
+        ("Income needed","required_gross_income"),("Profile income","profile_income"),("Income shortfall","income_gap"),("Income position","income_position"),
         ("Monthly outgoings","modeled_monthly_outgoings"),("Mortgage payment","monthly_mortgage")]]
-    measures.append(b.measure("Selected result",'IF(HASONEVALUE(\'Cases\'[case_id]), SELECTEDVALUE(\'Cases\'[barrier]), "Choose one city, buyer and scenario")',""))
+    measures.append(b.measure("Selected result",'IF(HASONEVALUE(\'Cases\'[case_id]), SELECTEDVALUE(\'Cases\'[result_label]), "Choose one city, buyer and scenario")',""))
+    for m in measures:
+        if m["name"] in ["Cash position","Income position"]:
+            m["formatString"]='"+CAD "#,0;"-CAD "#,0;"CAD 0"'
     sources=[("Markets",markets,None),("Profiles",profiles,None),("Cases",cases,measures),
              ("Baseline",baseline,None),("Comparisons",compare,None),
              ("History",history,[b.measure("Modeled income needed","MAX(\'History\'[required_gross_income])",MONEY),b.measure("Observed buyer-family income","MAX(\'History\'[buyer_family_median_income])",MONEY)]),
              ("Programs",programs,None),("Waiting",waiting,[b.measure("Required gross income","MAX(\'Waiting\'[required_gross_income])",MONEY)]),
-             ("Audit",audit,None),("Controls",controls,None),("Decomposition",decomp,None)]
+             ("Audit",audit,None),("Controls",controls,None),("Decomposition",decomp,None),("Limits",limits,None)]
     for name,df,ms in sources:
         t=b.table(name,df,ms)
         for c in t["columns"]:
@@ -84,6 +95,10 @@ def build():
                 if any(k in col for k in ["income","cash","payment","interest","price","down","tax","mortgage","reserve","balance","contribution_cad"]) and not any(k in col for k in ["rate","pct","ratio","pass","growth","year","months"]):
                     c["formatString"]=MONEY
                 elif col in ["year","months"]:c["formatString"]="0"
+                if col.startswith("metric_") and (col.endswith("_before") or col.endswith("_after")):
+                    c["formatString"]=MONEY
+        if name=="Cases":
+            next(c for c in t["columns"] if c["name"]=="scenario_label")["sortByColumn"]="scenario_order"
         tables.append(t)
     rel=[]
     for name,df,_ in sources:
@@ -118,16 +133,16 @@ def build():
     slicer("cash","profile",307,330,"Profiles","profile_label","Buyer example")
     slicer("cash","scenario",660,595,"Cases","scenario_label","Change one assumption")
     table("cash","cash-values",24,260,1232,110,"Purchase cash including the stated emergency reserve","Cases",
-          [("Available cash","Measure"),("Cash target","Measure"),("Cash shortfall","Measure")])
+          [("Available cash","Measure"),("Cash target","Measure"),("Cash position","Measure")])
     table("cash","income-values",24,393,1232,110,"Income under the stress-test screen","Cases",
-          [("Profile income","Measure"),("Income needed","Measure"),("Income shortfall","Measure"),("Selected result","Measure")])
+          [("Profile income","Measure"),("Income needed","Measure"),("Income position","Measure"),("Selected result","Measure")])
     table("cash","payments",24,524,1232,100,"Monthly contract payment and modeled outgoings","Cases",[("Mortgage payment","Measure"),("Monthly outgoings","Measure")])
-    foot("cash","Screen: 39% GDS / 44% TDS, qualifying at max(contract + 2 points, 5.25%). Available cash above costs/reserve reduces the loan. If cash is short, the income test is conditional on having minimum cash. Actual lender criteria and evidence are still required.")
+    foot("cash","Positive position is above the requirement; negative is short. Extra cash reduces the loan while the reserve stays aside. The income check is conditional on having minimum cash if funds are short. Actual lender criteria and verified evidence remain necessary.")
     header("changes","What changes the result?","Each sensitivity changes one baseline assumption. Buyer measures are conditional on eligibility.")
     slicer("changes","city",24,350,"Markets","city","City");slicer("changes","profile",398,400,"Profiles","profile_label","Buyer example")
     text("changes","note",824,118,430,105,"Keep price, rates, income and cash separate. A change helps only if the remaining constraint is also resolved.",14)
-    table("changes","compare",24,247,1232,240,"One change at a time","Comparisons",["scenario_label","cash_gap","income_gap","required_gross_income","barrier"])
-    table("changes","programs",24,508,1232,136,"Buyer measures: resulting income, payment and first-five-year interest","Programs",["program","required_income_after","monthly_payment_after","five_year_interest_after"])
+    table("changes","compare",24,247,1232,240,"One change at a time","Comparisons",["scenario_label","cash_position_label","income_position_label","result_label"])
+    table("changes","programs",24,508,1232,136,"The main effect of each buyer measure | before and after","Programs",["program","metric_1_label","metric_1_before","metric_1_after","required_income_after"])
     foot("changes","HBP moves existing RRSP assets; it is not new wealth and requires future repayment. FHSA compares identical 12-month saving with only an assumed 30% tax refund added. Thirty-year insured resale case assumes first-time eligibility and includes the premium surcharge.")
     header("history","Why did the income hurdle rise?","Minimum-down market comparison, 2020–2023. Buyer-family income is context, not borrower eligibility.")
     slicer("history","city",24,350,"Markets","city","City")
@@ -148,6 +163,13 @@ def build():
     text("audit","hold",824,118,430,110,"Review outcome: hold pending evidence.\nA modeled income exception also needs resolution. No baseline case is labeled a verified approval.",14)
     table("audit","workpaper",24,248,1232,385,"Audit working paper | selected baseline case","Audit",["control","status","result","evidence_needed"])
     foot("audit","Public OSFI B-20 informs documentation and independent review. CMHC-style 39%/44% screen is a comparison, not TD policy or a universal uninsured lender limit. Python/SQL arithmetic agrees; income, funds, debts, valuation, costs and eligibility remain unverified.")
+    header("limits","What purchase price fits the starting finances?","Baseline only. Choose one city and buyer; rates, costs and the emergency reserve stay fixed.")
+    slicer("limits","city",24,350,"Markets","city","City");slicer("limits","profile",398,400,"Profiles","profile_label","Buyer example")
+    text("limits","explanation",824,118,430,110,"Two alternatives: change the purchase price, or bring more cash while keeping the benchmark price and starting income.",14)
+    table("limits","price-limit",24,263,1232,124,"Keep starting cash and income: a purchase price within both financial checks","Limits",["benchmark_price","profile_cash","profile_income","maximum_price_display"])
+    table("limits","cash-limit",24,420,1232,124,"Alternatively, keep the benchmark price and income: cash needed","Limits",["benchmark_price","profile_cash","total_cash_to_fit_at_benchmark","additional_cash_display"])
+    text("limits","meaning",24,566,1232,70,"Cash includes down payment, closing allowance and the stated reserve. The alternatives are calculated separately. Actual borrower records, property costs and lender policy still need review.",15)
+    foot("limits","Prices are rounded down and extra cash up to CAD 1,000. Based on 2023 price/rate benchmarks and rules reviewed Nov 16, 2026. This is a financial-screen limit, not a comfortable-spending budget or mortgage approval.")
     # Structural checks before opening the native application.
     model_tables={t["name"]:{c["name"] for c in t["columns"]}|{m["name"] for m in t.get("measures",[])} for t in tables}
     def walk(value):
@@ -161,5 +183,5 @@ def build():
             for v in value:walk(v)
     for path in REPORT.rglob("*.json"):walk(json.loads(path.read_text(encoding="utf-8")))
     (ROOT/"work/homebuying_powerbi_build.json").write_text(json.dumps({"passed":True,"pages":[label for _,label in PAGES],"tables":len(tables),"case_rows":len(cases),"portable_import":True},indent=2),encoding="utf-8")
-    print("Built portable six-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
+    print("Built portable seven-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
 if __name__=="__main__":build()

@@ -192,19 +192,19 @@ def test_later_rates_are_explicitly_replayed_against_old_prices():
     assert replay.scope.str.contains("not observed 2025 affordability").all()
     assert replay.income_reduction.gt(0).all()
 
-def test_published_figures_have_six_pages_and_valid_hashes():
+def test_published_figures_have_seven_pages_and_valid_hashes():
     from pypdf import PdfReader
     folder=ROOT/"reports/figures/homebuying"
     manifest=json.loads((folder/"manifest.json").read_text(encoding="utf-8"))
-    assert len(manifest["assets"])==13
+    assert len(manifest["assets"])==15
     for item in manifest["assets"]:
         assert hashlib.sha256((folder/item["file"]).read_bytes()).hexdigest()==item["sha256"]
-    assert len(PdfReader(folder/"HomebuyingBarriers-Figures.pdf").pages)==6
+    assert len(PdfReader(folder/"HomebuyingBarriers-Figures.pdf").pages)==7
 
-def test_native_report_source_is_portable_and_has_six_pages():
+def test_native_report_source_is_portable_and_has_seven_pages():
     folder=ROOT/"powerbi/HomebuyingBarriers.Report/definition/pages"
     pages=json.loads((folder/"pages.json").read_text(encoding="utf-8"))
-    assert pages["pageOrder"]==["answer","cash","changes","history","waiting","audit"]
+    assert pages["pageOrder"]==["answer","cash","changes","limits","history","waiting","audit"]
     assert pages["activePageName"]=="answer"
     source=(ROOT/"powerbi/HomebuyingBarriers.SemanticModel/model.bim").read_text(encoding="utf-8")
     assert "Binary.FromText" in source and "File.Contents" not in source and "C:\\\\" not in source

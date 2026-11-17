@@ -1,6 +1,6 @@
 # Homebuying barriers: figure gallery
 
-Six figures answer one question: is the down payment really the biggest obstacle?
+Seven figures answer one question: is the down payment really the biggest obstacle?
 
 2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.
 
@@ -40,4 +40,10 @@ Six figures answer one question: is the down payment really the biggest obstacle
 
 [PNG](06_waiting_to_buy.png) · [Editable SVG](06_waiting_to_buy.svg)
 
-[Six-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)
+## Price limits from starting finances
+
+![Price limits from starting finances](07_price_limits.png)
+
+[PNG](07_price_limits.png) · [Editable SVG](07_price_limits.svg)
+
+[Seven-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)

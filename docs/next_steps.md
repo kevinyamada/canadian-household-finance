@@ -1,21 +1,22 @@
-# Project status and next evidence
+# Project status
 
-The homebuying extension completes the five improvements: regional transaction benchmarks and costs, mortgage-income screening, explicit buyer profiles, sensitivities and an auditable source/review trail.
+The latest review and next analytical step are complete:
 
-It also completes the three research comparisons: historical price/rate/income inputs, first-time-buyer measures and saving while prices/rent change. The website, Power BI project, source tables and shareable figures follow the same question.
+- Rechecked purchase cash, income, loan balances, first-five-year interest, program accounting and waiting cash.
+- Explained the zero shortfalls and replaced them in comparisons with amounts above or below the requirements.
+- Changed program cards to show the quantity each measure changes.
+- Restored the coloured provincial Canada map as a visible main feature and kept the renter trend graph visible.
+- Calculated a purchase-price limit and additional cash needed for all nine baseline buyers.
+- Added the price-limit comparison to Power BI and the published figures.
 
-[Findings](../reports/homebuying_findings.md) · [Bank audit case](bank_audit_case.md) · [Methodology](homebuying_methodology.md)
+[Calculation review](../reports/calculation_review.md) · [Findings](../reports/homebuying_findings.md) · [Bank audit case](bank_audit_case.md)
 
-## Evidence needed for an actual mortgage decision
+## What still needs real-world evidence
 
-This public-data project cannot verify a real borrower's income, liquid funds, debts, credit or eligibility. The fictional audit files remain on hold pending evidence. A real review would need permitted borrower records, a specific property, current offered terms and the lender's actual policy.
+A mortgage decision needs verified borrower finances, a specific property, current offered terms and the lender's actual policy. The fictional files remain on hold pending evidence. A calculated limit is not a recommendation to spend that amount.
 
-## What a later research refresh would require
+A later research refresh should use a comparable post-2023 city buyer release when available. The existing 2025 rate replay isolates rates and cannot establish observed 2025 affordability.
 
-Comparable post-2023 city transaction prices and buyer incomes are not in the selected source. The 2025 rate replay is therefore a rate-only scenario. A later release would need source-vintage checks and a fresh review of the findings, tax rules and native Power BI file.
+A complete buy-versus-rent investment comparison would require matched property/rent evidence, justified investment returns, maintenance, selling costs and a holding period. The current waiting study does not claim that broader result.
 
-A complete buy-versus-rent investment comparison would also require matched property/rent data, a justified investment return, maintenance paths, selling costs and an explicit holding period. The waiting study does not claim that broader result.
-
-## Before presenting
-
-Use the [walkthrough](project_walkthrough.md) and [interview notes](interview_notes.md). Be able to explain the separate cash/income checks, why all examples still need verification, and why a scenario is not a prediction.
+For an interview, demonstrate the Canada map, the cash/income split, the direct price check and the banking audit. Explain the source dates and assumptions clearly.

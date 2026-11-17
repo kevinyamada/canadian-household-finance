@@ -9,7 +9,7 @@
     },
     {
       "file": "01_cash_and_income.svg",
-      "sha256": "a4beea50a5da2e3e6dda812ae50edfec47f9c9567b557679550c10f5398fd725",
+      "sha256": "9aac5a00b4561e7916ea5a5916f24523cf46099086e637dc941297ed1e767494",
       "bytes": 22118
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "file": "02_income_hurdle_history.svg",
-      "sha256": "ce753e94a22275990925d695ea94d0082a9a473f39a096e6a221a7b5281e95c5",
+      "sha256": "8312f0f6f04359e1a722a7b826f35b0c3882876f0848f4bc1171c7cd22e86cd8",
       "bytes": 30096
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "file": "03_what_changes_the_result.svg",
-      "sha256": "c3546d0dda2730cc64284452878d766e753b194f14b7ab79434fbf6606646774",
+      "sha256": "0798889a1080664eb2c52784d8fbdc91ad4d057d2857a192b7f4641f1380ec61",
       "bytes": 10969
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "file": "04_price_rate_income.svg",
-      "sha256": "c857624cdc7727abda2be3aacc1ff6e9ac2e4245d3f7427880bd13cd15c2b9ec",
+      "sha256": "9d1cbb2bc18c8596d1f275658d7e3f21a658f109d4e79ba060f829d31f5bb3a1",
       "bytes": 20068
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "file": "05_buyer_measures.svg",
-      "sha256": "1d16c11d7feb0900789f6587fbeebbef216dfa39b3da8bf2f3117017c8710fd6",
+      "sha256": "ae235720352d33af0ba757720e740da9832e599d170d7b08943fe23d921b72bc",
       "bytes": 16996
     },
     {
@@ -59,13 +59,23 @@
     },
     {
       "file": "06_waiting_to_buy.svg",
-      "sha256": "a8159252104b5390c37a0a8c111d9bb19ff9e1fd5896b6611bd3968e434e888a",
+      "sha256": "bd1912d197dfe8c168e493a64f1eb7b5ea87ced13298abfdf0f4682da34b60da",
       "bytes": 15979
     },
     {
+      "file": "07_price_limits.png",
+      "sha256": "71ea4c7775a30ef63da08c11436ae4bae643b6e519a59bd25741ac2d35c94719",
+      "bytes": 186989
+    },
+    {
+      "file": "07_price_limits.svg",
+      "sha256": "7d0a338d2fa743cf4a66e3de5d33fcb2e172f5c5e2ab2fe313d194d235709311",
+      "bytes": 19997
+    },
+    {
       "file": "HomebuyingBarriers-Figures.pdf",
-      "sha256": "e13415fc16cf49272292ebe2f5e48957e50decdc10d61d5b1f827a7d635fede2",
-      "bytes": 64451
+      "sha256": "2e887c80c2809c887907c35028b373f0d79c678d77c7d12b676f121579f30bbd",
+      "bytes": 68859
     }
   ],
   "execution": "Exported with matplotlib in Kevin's desktop VS Code"

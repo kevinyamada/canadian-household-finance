@@ -1,32 +1,39 @@
 {
   "passed": true,
-  "execution": "Kevin's desktop VS Code integrated terminal",
-  "checked_utc": "2026-11-16T20:16:08.451987+00:00",
-  "tests_passed": 117,
+  "execution": "Desktop VS Code integrated terminal",
+  "checked_utc": "2026-11-17T03:40:53.480714+00:00",
+  "tests_passed": 130,
   "browser_widths": [
     1440,
     768,
     390,
     320
   ],
+  "displayed_data_review": {
+    "failures": [],
+    "purchase_cases": 117,
+    "program_comparisons": 36,
+    "price_limit_cases": 9
+  },
   "native_pages": [
     "Start here",
     "Cash and income",
     "What helps",
+    "Price limits",
     "Over time",
     "Waiting to buy",
     "Bank audit"
   ],
-  "native_pbix_sha256": "1bf75a85d304f8af102cddd38385c382126e6cddcbc35f783dee4126afada3e6",
-  "native_pbix_bytes": 490824,
+  "native_pbix_sha256": "53b1a032cdf959828f7d24883ad627f8f09c6fdf676bef4582e7eb36e1122b07",
+  "native_pbix_bytes": 569963,
   "power_bi_version": "2.159.1231.0",
   "native_checks": {
     "reopened_native_file": true,
     "buyer_selection_changes_values": true,
     "opens_on_start_here": true,
+    "price_limits_checked_after_reopen": true,
     "no_model_format_prompt_on_open_or_save": true
   },
   "source_policy": "Statistics Canada and official Canadian public bodies",
-  "limits": "Hypothetical buyer cases; 2023 price/rate baseline; rules reviewed 2026-11-16; not approval or population inference",
-  "overview_conclusion_fits_without_scrolling": true
+  "limits": "2023 price/rate benchmarks; rules reviewed 2026-11-16; hypothetical buyer finances and property costs; financial screens are not approvals or comfortable-spending recommendations"
 }

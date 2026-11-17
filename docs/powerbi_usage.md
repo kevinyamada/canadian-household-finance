@@ -1,40 +1,43 @@
 # Open the Power BI report
 
-1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.0.1/HomebuyingBarriers.pbix).
-2. Open it in a current **Power BI Desktop** for Windows.
-3. Begin on **Start here**, then use **Cash and income** to change the city, buyer and one assumption.
+1. Download [HomebuyingBarriers.pbix](https://github.com/kevinyamada/canadian-household-finance/releases/download/v3.1.0/HomebuyingBarriers.pbix).
+2. Open it in a current Power BI Desktop for Windows.
+3. Begin on **Start here**, then change the city, buyer and assumption on **Cash and income**.
 
-The regular .pbix file contains its imported data. It does not need the author's source folders or a Statistics Canada download to display the results. A Power BI Service subscription is not needed for this local report.
+The regular .pbix contains imported data. It does not need the author's source folders or a Statistics Canada download to display results. A Power BI Service subscription is not needed for this local report.
 
-## Pages
+## Seven pages
 
-- **Start here:** the question, main finding and nine hypothetical buyer examples.
-- **Cash and income:** select one city, one buyer and one scenario; inspect cash, income and monthly costs.
-- **What helps:** compare one change at a time and review buyer measures.
+- **Start here:** the question, finding and nine hypothetical buyer examples.
+- **Cash and income:** money available, required amounts and signed positions.
+- **What helps:** scenario comparisons and the main effect of buyer measures.
+- **Price limits:** a price within both checks, or extra cash at the benchmark price.
 - **Over time:** observed 2020–2023 inputs with current rules held fixed.
-- **Waiting to buy:** 12/24-month scenarios under three price paths and selected rent growth.
+- **Waiting to buy:** 12/24-month scenarios with three price paths and rent growth.
 - **Bank audit:** calculation results and evidence still needed before sign-off.
 
-The audit page reviews the selected buyer's baseline, independently of a scenario chosen on another page. The history page is a market comparison at minimum down, not the selected buyer's personal income.
+A positive cash/income position is above the requirement; negative is short. Cash above the minimum goes toward the down payment, while the stated reserve stays aside. It is not cash left after purchase.
 
-## About the figures
+The price-limit and audit pages review the selected baseline, independently of a scenario selected elsewhere. Price displays are rounded down and extra cash up to CAD 1,000.
 
-Prices and baseline rates are **2023**, the latest comparable city observations in the selected Statistics Canada source. They are not 2026 quotes. Rules are reviewed November 16, 2026. Buyer finances and property costs are assumptions.
+## Scope
 
-“Within modeled limits” is not approval. The comparison uses a CMHC-style 39% GDS/44% TDS screen; an uninsured lender may apply different criteria. All fictional audit files remain on hold pending evidence.
+Prices and baseline rates are 2023 benchmarks, not current listings or offered rates. Rules were reviewed November 16, 2026. Buyer finances and costs are assumptions.
+
+Passing both financial checks is not approval or a comfortable spending budget. The comparison uses a CMHC-style 39%/44% debt-service screen; uninsured lender criteria can differ. The fictional files still need verified evidence.
 
 ## If Power BI asks for folders or an update
 
-Check the filename: use the release **HomebuyingBarriers.pbix**. Older intermediate .pbit templates and editable .pbip source projects have different opening behaviour.
+Use the release **HomebuyingBarriers.pbix**. Earlier intermediate .pbit templates and editable .pbip projects have different opening behaviour.
 
-The release is exported and reopened in native Power BI Desktop with an imported DataModel. Its data does not use local File.Contents paths. If your installed Desktop cannot read the file format, update using the official [Microsoft Power BI Desktop download](https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop). The release notes record the version used for verification.
+The release contains a native imported DataModel. Its data do not use local File.Contents paths. If an older Desktop cannot read the format, use the official [Power BI Desktop download](https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop). Release notes record the tested version.
 
-You do not need to choose “Get data” or browse for CSV files to inspect the report.
+You do not need to choose Get data or browse for CSV files to inspect the report.
 
 ## Editable source
 
-Open powerbi/HomebuyingBarriers.pbip from the cloned repository. It links to the sibling .Report and .SemanticModel folders. Keep those folders together.
+Open powerbi/HomebuyingBarriers.pbip with its sibling .Report and .SemanticModel folders together. To rebuild, use the [methodology](homebuying_methodology.md) commands in desktop VS Code, then open and refresh the project.
 
-To rebuild from saved official extracts, run the commands in the [methodology](homebuying_methodology.md) from desktop VS Code, then open the project and refresh. In the editable project, select one city, buyer and scenario on Cash and income; guarded measures intentionally stay blank if the selection does not identify one case.
+Select one city, buyer and scenario on Cash and income. Guarded measures stay blank if the selection does not identify one case.
 
-The older [v2.0.0 renter-saving audit](https://github.com/kevinyamada/canadian-household-finance/releases/tag/v2.0.0) remains archived separately.
+[Calculation review](../reports/calculation_review.md) · [Exact price/cash thresholds](../data/processed/homebuying_price_limits.csv)

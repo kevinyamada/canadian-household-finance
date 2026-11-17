@@ -124,12 +124,12 @@
                       "Entity": "Cases"
                     }
                   },
-                  "Property": "Income shortfall"
+                  "Property": "Income position"
                 }
               },
-              "queryRef": "Cases.Income shortfall",
-              "nativeQueryRef": "Income shortfall",
-              "displayName": "Income shortfall"
+              "queryRef": "Cases.Income position",
+              "nativeQueryRef": "Income position",
+              "displayName": "Income vs requirement"
             },
             {
               "field": {

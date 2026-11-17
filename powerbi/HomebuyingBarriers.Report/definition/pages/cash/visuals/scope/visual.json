@@ -90,7 +90,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Screen: 39% GDS / 44% TDS, qualifying at max(contract + 2 points, 5.25%). Available cash above costs/reserve reduces the loan. If cash is short, the income test is conditional on having minimum cash. Actual lender criteria and evidence are still required.",
+                    "value": "Positive position is above the requirement; negative is short. Extra cash reduces the loan while the reserve stays aside. The income check is conditional on having minimum cash if funds are short. Actual lender criteria and verified evidence remain necessary.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

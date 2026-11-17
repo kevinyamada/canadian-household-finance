@@ -124,12 +124,12 @@
                       "Entity": "Cases"
                     }
                   },
-                  "Property": "Cash shortfall"
+                  "Property": "Cash position"
                 }
               },
-              "queryRef": "Cases.Cash shortfall",
-              "nativeQueryRef": "Cash shortfall",
-              "displayName": "Cash shortfall"
+              "queryRef": "Cases.Cash position",
+              "nativeQueryRef": "Cash position",
+              "displayName": "Cash vs minimum"
             }
           ]
         }

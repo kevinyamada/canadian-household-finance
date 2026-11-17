@@ -121,6 +121,21 @@ def export():
     ax.set_ylabel("Required annual gross income (CAD thousands)");ax.legend(fontsize=9,loc="upper left");ax.grid(axis="y",color="#d7dfda",linewidth=.6)
     note(fig,"Price changes are hypothetical paths, not forecasts or probabilities. Higher rent reduces the initially stated net saving; cash earns zero interest. Closing costs and loan-insurance tiers are recalculated at each price. Starting point is the 2023 transaction benchmark with rules reviewed November 16, 2026. This is a sensitivity study, not a recommendation to buy or wait.")
     figures.append(("06_waiting_to_buy","Waiting to buy",fig))
+    limits=pd.read_csv(OUT/"homebuying_price_limits.csv")
+    fig,axs=frame("What price fits the buyer's starting finances?",
+        "Baseline income, cash, rates and reserve held fixed. Bars are financial-screen limits; dashed line is the observed 2023 benchmark.",cols=3)
+    for ax,city in zip(axs[0],["Vancouver","Victoria","Halifax"]):
+        g=limits[limits.city.eq(city)].set_index("profile").loc[["single","couple","deposit"]]
+        ax.barh(["Single earner","Two earners","Larger deposit"],g.maximum_price/1000,color=BLUE,height=.45)
+        price=g.benchmark_price.iloc[0]
+        ax.axvline(price/1000,color=RUST,linestyle="--",linewidth=1.5)
+        ax.set_title(city,loc="left");ax.set_xlim(0,1000);ax.set_xlabel("Purchase price (CAD thousands)")
+        ax.invert_yaxis();clean(ax)
+        for i,v in enumerate(g.maximum_price):
+            ax.text(v/1000+8,i,f"{v/1000:,.0f}k",va="center",fontsize=9)
+    fig.subplots_adjust(left=.13,wspace=.50)
+    note(fig,"The search isolates transfer-tax, insurance-premium and insured/uninsured-rate boundaries rather than assuming one globally smooth relationship. Exact whole-dollar thresholds and additional cash needed at each benchmark are in homebuying_price_limits.csv. Buyer finances and costs are assumptions. This is not a market-price forecast, a safe spending recommendation or lender approval. Sources: Statistics Canada, Bank of Canada, CMHC and government tax schedules; see methodology.")
+    figures.append(("07_price_limits","Price limits from starting finances",fig))
     assets=[]
     pdf=DEST/"HomebuyingBarriers-Figures.pdf"
     with PdfPages(pdf) as book:
@@ -136,18 +151,18 @@ def export():
     manifest={"price_year":2023,"rule_date":"2026-11-16","assets":assets,
               "execution":"Exported with matplotlib in Kevin's desktop VS Code"}
     (DEST/"manifest.json").write_text(json.dumps(manifest,indent=2),encoding="utf-8",newline="\n")
-    gallery="# Homebuying barriers: figure gallery\n\nSix figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
+    gallery="# Homebuying barriers: figure gallery\n\nSeven figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
     for stem,title,_ in figures:
         gallery+=f"## {title}\n\n![{title}]({stem}.png)\n\n[PNG]({stem}.png) · [Editable SVG]({stem}.svg)\n\n"
-    gallery+="[Six-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
+    gallery+="[Seven-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
     (DEST/"README.md").write_text(gallery,encoding="utf-8",newline="\n")
     archive=ROOT/"work/HomebuyingBarriers-Figures.zip"
     with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
         for path in DEST.iterdir():
             if path.is_file():z.write(path,"figures/"+path.name)
         for path in OUT.glob("homebuying_*.csv"):z.write(path,"data/"+path.name)
-        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md"]:
+        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md",ROOT/"reports/calculation_review.md"]:
             if path.exists():z.write(path,"notes/"+path.name)
-    print(f"Published six PNG/SVG pairs, six-page PDF and ZIP: {archive}",flush=True)
+    print(f"Published seven PNG/SVG pairs, seven-page PDF and ZIP: {archive}",flush=True)
     return manifest
 if __name__=="__main__":export()

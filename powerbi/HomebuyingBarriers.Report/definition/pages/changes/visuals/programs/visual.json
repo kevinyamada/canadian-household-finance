@@ -25,7 +25,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Buyer measures: resulting income, payment and first-five-year interest'"
+                  "Value": "'The main effect of each buyer measure | before and after'"
                 }
               }
             },
@@ -109,42 +109,57 @@
                       "Entity": "Programs"
                     }
                   },
+                  "Property": "metric_1_label"
+                }
+              },
+              "queryRef": "Programs.metric_1_label",
+              "nativeQueryRef": "metric_1_label",
+              "displayName": "Measure affected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programs"
+                    }
+                  },
+                  "Property": "metric_1_before"
+                }
+              },
+              "queryRef": "Programs.metric_1_before",
+              "nativeQueryRef": "metric_1_before",
+              "displayName": "Before"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programs"
+                    }
+                  },
+                  "Property": "metric_1_after"
+                }
+              },
+              "queryRef": "Programs.metric_1_after",
+              "nativeQueryRef": "metric_1_after",
+              "displayName": "After"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programs"
+                    }
+                  },
                   "Property": "required_income_after"
                 }
               },
               "queryRef": "Programs.required_income_after",
               "nativeQueryRef": "required_income_after",
               "displayName": "Income needed after/year"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Programs"
-                    }
-                  },
-                  "Property": "monthly_payment_after"
-                }
-              },
-              "queryRef": "Programs.monthly_payment_after",
-              "nativeQueryRef": "monthly_payment_after",
-              "displayName": "Monthly payment after"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Programs"
-                    }
-                  },
-                  "Property": "five_year_interest_after"
-                }
-              },
-              "queryRef": "Programs.five_year_interest_after",
-              "nativeQueryRef": "five_year_interest_after",
-              "displayName": "First-five-year interest after"
             }
           ]
         }

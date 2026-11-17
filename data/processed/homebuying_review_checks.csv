@@ -1,0 +1,14 @@
+check,rows,max_absolute_error,tolerance,status,note
+Cash shortfall identity,468,0.0,1e-07,Pass,
+Signed cash position,468,0.0,1e-07,Pass,
+Signed income position,468,0.0,1e-07,Pass,
+Cash allocation stays within funds,410,0.0,1e-06,Pass,Cash above the minimum target is deployed toward the down payment; it is not cash left after buying.
+Financed premium and loan identity,468,0.0,1e-07,Pass,
+Independent 60-month balance schedule,468,7.916241884231567e-09,1e-05,Pass,
+Independent 60-month interest sum,468,5.2677933126688e-09,1e-05,Pass,
+Program cash identity: before,36,0.0,1e-07,Pass,
+Program cash identity: after,36,0.0,1e-07,Pass,
+FHSA contributions counted once,9,0.0,1e-07,Pass,
+HBP moves stated existing assets,9,0.0,1e-07,Pass,
+Waiting cash identity,162,0.0,1e-07,Pass,
+Nine baseline price/cash thresholds,9,0.0,0.0,Pass,Boundary-aware interval search; dollar immediately beyond each reported threshold fails. Separate tests compare to exhaustive searches.

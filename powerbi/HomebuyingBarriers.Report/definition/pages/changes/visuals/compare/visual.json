@@ -109,12 +109,12 @@
                       "Entity": "Comparisons"
                     }
                   },
-                  "Property": "cash_gap"
+                  "Property": "cash_position_label"
                 }
               },
-              "queryRef": "Comparisons.cash_gap",
-              "nativeQueryRef": "cash_gap",
-              "displayName": "Cash shortfall"
+              "queryRef": "Comparisons.cash_position_label",
+              "nativeQueryRef": "cash_position_label",
+              "displayName": "Cash vs minimum"
             },
             {
               "field": {
@@ -124,12 +124,12 @@
                       "Entity": "Comparisons"
                     }
                   },
-                  "Property": "income_gap"
+                  "Property": "income_position_label"
                 }
               },
-              "queryRef": "Comparisons.income_gap",
-              "nativeQueryRef": "income_gap",
-              "displayName": "Income shortfall/year"
+              "queryRef": "Comparisons.income_position_label",
+              "nativeQueryRef": "income_position_label",
+              "displayName": "Income vs requirement/year"
             },
             {
               "field": {
@@ -139,27 +139,12 @@
                       "Entity": "Comparisons"
                     }
                   },
-                  "Property": "required_gross_income"
+                  "Property": "result_label"
                 }
               },
-              "queryRef": "Comparisons.required_gross_income",
-              "nativeQueryRef": "required_gross_income",
-              "displayName": "Income needed/year"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Comparisons"
-                    }
-                  },
-                  "Property": "barrier"
-                }
-              },
-              "queryRef": "Comparisons.barrier",
-              "nativeQueryRef": "barrier",
-              "displayName": "Modeled result"
+              "queryRef": "Comparisons.result_label",
+              "nativeQueryRef": "result_label",
+              "displayName": "Financial screen"
             }
           ]
         }

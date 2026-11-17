@@ -177,6 +177,7 @@ def evaluate(price, buyer, province, property_tax_rate, insured_rate, uninsured_
         "monthly_mortgage": actual_payment, "qualifying_payment": stressed_payment,
         "property_tax_rate": property_tax_rate, "assessment_ratio": assessment_ratio, "annual_property_tax": annual_tax,
         "monthly_debt": buyer.monthly_debt, "heating": buyer.heating, "condo_fee": buyer.condo_fee,
+        "home_insurance": buyer.home_insurance, "maintenance_monthly": buyer.maintenance_monthly,
         "modeled_monthly_outgoings": actual_payment + annual_tax/12 + buyer.heating + buyer.condo_fee + buyer.home_insurance + buyer.maintenance_monthly + buyer.monthly_debt,
         "required_gross_income": required_income, "profile_income": buyer.gross_income,
         "income_gap": income_gap, "income_pass": income_pass, "barrier": barrier,

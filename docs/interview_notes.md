@@ -41,8 +41,14 @@ It does not use TD's internal policy, client records or endorsement. The 39%/44%
 ## Resume bullets
 
 - Built a Canadian homebuying study using Python, SQL and official public data to compare cash and mortgage-income constraints across three cities, 468 purchase scenarios and 162 waiting scenarios.
-- Created a six-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
+- Created a seven-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
 
 Use wording you can explain in your own words. Describe assistance honestly if asked.
 
 [Live project](https://kevinyamada.github.io/canadian-household-finance/) · [Three-minute demo](project_walkthrough.md) · [Methodology](homebuying_methodology.md)
+
+## Why did the comparison show zero cash shortfalls?
+
+The shortfall was floored at zero. It showed only money missing, so it hid the effect of extra cash in an already-funded example. I now show cash and income above or below the requirement, and program cards show the variable the program changes.
+
+The direct price/cash search handles tax and insurance boundaries. It is checked against exhaustive small domains, including a disconnected feasible set. See the [calculation review](../reports/calculation_review.md).
