@@ -5,9 +5,11 @@
     "cash",
     "changes",
     "limits",
+    "latest",
     "history",
     "waiting",
-    "audit"
+    "audit",
+    "calculation_audit"
   ],
   "activePageName": "answer"
 }

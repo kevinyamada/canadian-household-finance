@@ -154,8 +154,10 @@ try{
       const matrix=hbExpected.cases.filter(r=>r.year===2023).map(({city,profile,scenario,cash_position_label,income_position_label,profile_cash,cash_target,profile_income,required_gross_income})=>({city,profile,scenario,cash_position_label,income_position_label,profile_cash,cash_target,profile_income,required_gross_income}));
       const programMatrix=hbExpected.programs.map(p=>Object.fromEntries(["city","profile","program","applicable","metric_1_label","metric_1_before","metric_1_after","metric_2_label","metric_2_before","metric_2_after","metric_3_label","metric_3_before","metric_3_after"].map(k=>[k,p[k]])));
       const limits=hbExpected.price_limits;
+      const audits=hbExpected.calculation_audit.map(a=>Object.fromEntries(["city","profile","scenario","variant","required_gross_income","income_understated","decision_label"].map(k=>[k,a[k]])));
+      const latestRates=hbExpected.latest_rate_cases;
       const exhaustiveDisplay=await evaluate(`(()=>{
-        const cases=${JSON.stringify(matrix)},programs=${JSON.stringify(programMatrix)},limits=${JSON.stringify(limits)};
+        const cases=${JSON.stringify(matrix)},programs=${JSON.stringify(programMatrix)},limits=${JSON.stringify(limits)},audits=${JSON.stringify(audits)},latestRates=${JSON.stringify(latestRates)};
         const el=id=>document.getElementById(id),failures=[];
         const change=(id,value)=>{el(id).value=value;el(id).dispatchEvent(new Event('change',{bubbles:true}));};
         const numeric=t=>Number(t.replace(/[^0-9.-]/g,''));
@@ -166,6 +168,14 @@ try{
           const shown=[...bars.querySelectorAll('.hb-meter b')].map(b=>numeric(b.textContent));
           const expected=[c.profile_cash,c.cash_target,c.profile_income,c.required_gross_income];
           if(shown.length!==4||shown.some((n,i)=>Math.abs(n-expected[i])>.51))failures.push('bar values '+c.city+' '+c.profile+' '+c.scenario);
+          change('hb-audit-scenario',c.scenario);
+          const sourceRows=audits.filter(a=>a.city===c.city&&a.profile===c.profile&&a.scenario===c.scenario);
+          const auditTable=el('hb-error-table');
+          if(auditTable.querySelectorAll('tbody tr').length!==5)failures.push('audit row count '+c.city);
+          for(const a of sourceRows){
+            const tr=auditTable.querySelector('tr[data-variant="'+a.variant+'"]'),cells=[...tr.querySelectorAll('td')];
+            if(Math.abs(numeric(cells[0].textContent)-a.required_gross_income)>.51||Math.abs(numeric(cells[1].textContent)-a.income_understated)>.51||cells[2].textContent!==a.decision_label)failures.push('audit display '+c.city+' '+c.profile+' '+c.scenario+' '+a.variant);
+          }
         }
         change('hb-scenario','baseline');
         for(const p of programs){
@@ -187,7 +197,15 @@ try{
           if(el('hb-limit-price').textContent!==l.maximum_price_label||el('hb-limit-cash').textContent!==l.additional_cash_label)failures.push('threshold '+l.city+' '+l.profile);
         }
         change('hb-city','Vancouver');change('hb-profile','couple');change('hb-scenario','baseline');change('hb-program','30-year amortization');
-        return {failures,purchase_cases:cases.length,program_comparisons:programs.length,price_limit_cases:limits.length};
+        for(const r of latestRates){
+          change('hb-city',r.city);change('hb-profile',r.profile);
+          const tr=el('hb-latest').querySelector('tr[data-rate="latest"]'),cells=[...tr.querySelectorAll('td')];
+          if(Math.abs(numeric(cells[0].textContent)-r.monthly_mortgage)>.51||Math.abs(numeric(cells[1].textContent)-r.required_gross_income)>.51||cells[2].textContent!==r.income_position_label)failures.push('latest-rate display '+r.city+' '+r.profile);
+        }
+        change('hb-city','Vancouver');change('hb-profile','couple');change('hb-audit-scenario','price10');
+        if(!el('hb-error-table').querySelector('tr[data-variant="contract_rate"]').textContent.includes('False pass'))failures.push('worked false pass');
+        if(!el('latest-rates').textContent.includes("not today's housing market"))failures.push('mixed-vintage scope');
+        return {failures,purchase_cases:cases.length,program_comparisons:programs.length,price_limit_cases:limits.length,audit_calculations:audits.length,latest_rate_cases:latestRates.length};
       })()`);
       if(exhaustiveDisplay.failures.length)throw new Error('Displayed-data review failed '+JSON.stringify(exhaustiveDisplay));
       result.displayed_data_review=exhaustiveDisplay;
@@ -247,7 +265,7 @@ try{
     await evaluate('document.querySelector(\'#canada-map [data-region="35"]\').dispatchEvent(new MouseEvent("click",{bubbles:true}));document.activeElement.blur();window.scrollTo(0,0)');
     result.interactions??=[];result.interactions.push({width,...interactions,keyboard_map:true});
     if(width===1440||width===390){
-      for(const [id,name] of [['buying','buyers'],['bank-audit','bank-audit'],['limits','limits'],['buyer-measures','programs'],['changes','scenarios'],['history','history'],['waiting','waiting'],['explore','map'],['story','trend'],['cash-heading','cash']]){
+      for(const [id,name] of [['buying','buyers'],['latest-rates','rates'],['audit-errors','calculation-audit'],['bank-audit','bank-audit'],['limits','limits'],['buyer-measures','programs'],['changes','scenarios'],['history','history'],['waiting','waiting'],['explore','map'],['story','trend'],['cash-heading','cash']]){
         await evaluate('document.getElementById('+JSON.stringify(id)+').scrollIntoView({block:"start"});');
         const shot=await command('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
         fs.writeFileSync(path.join(shots,(live?'live-':'')+width+'-'+name+'.png'),Buffer.from(shot.data,'base64'));

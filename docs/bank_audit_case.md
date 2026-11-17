@@ -65,3 +65,11 @@ A zero cash shortfall means the minimum closing budget is covered. The Vancouver
 The direct price check finds about CAD 690,000 within both financial checks at starting income and cash. At the unchanged benchmark price, about CAD 168,000 additional cash would instead be needed. These alternatives are model outputs with fixed assumptions, not approvals or spending recommendations.
 
 The [calculation review](../reports/calculation_review.md) records independent budget, SQL and month-by-month loan checks. The [threshold table](../data/processed/homebuying_price_limits.csv) preserves exact values and scope.
+
+## A calculation that produces a false pass
+
+The separate worked audit uses the Vancouver couple at **CAD 764,100**, a 10% lower-price scenario. Correct income needed is CAD 167,429. Using the contract rate instead of the qualifying rate incorrectly gives CAD 141,543, making CAD 150,000 income appear sufficient.
+
+The reviewer should trace the rate commitment, verify the applicable qualifying-rate rule and reperform the payment before sign-off. Other controlled omissions examine debt, property costs and the financed premium. A missing item can remain an error even when another constraint keeps the overall outcome unchanged.
+
+These are defined demonstrations, not findings about an actual bank's files. [Full worked calculations and controls](../reports/mortgage_calculation_audit.md) · [All 585 rows](../data/processed/homebuying_calculation_audit.csv)

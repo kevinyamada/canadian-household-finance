@@ -1,0 +1,50 @@
+{
+  "checked_on": "2026-11-17",
+  "retrieved_utc": "2026-11-17T20:54:14.521323+00:00",
+  "sources": [
+    {
+      "file": "boc_V122667780.json",
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667780/json?start_date=2020-01-01&end_date=2026-11-17",
+      "sha256": "648a8e03085312ac948a55e4a791eef31851dead881cafbd18a4a0a65225da42"
+    },
+    {
+      "file": "boc_V122667786.json",
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667786/json?start_date=2020-01-01&end_date=2026-11-17",
+      "sha256": "b5475ae79cd15e787ee73880afaa2e05ce32b6f6eab4826d778af339a66d086b"
+    },
+    {
+      "file": "statcan_release_review.json",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260826/dq260826b-eng.htm",
+      "sha256": "8860d018310a0f45d1ec2dd6b273a3d0fc2435796699df6a451225f98e58972b"
+    }
+  ],
+  "latest_common_rates": {
+    "period": "2026-09",
+    "insured": 4.15,
+    "uninsured": 4.66
+  },
+  "retrieval_attempts": [
+    {
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667780/json?start_date=2020-01-01&end_date=2026-11-17",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://www.bankofcanada.ca/valet/observations/V122667786/json?start_date=2020-01-01&end_date=2026-11-17",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite",
+      "status": 403,
+      "passed": false
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/46100099/en",
+      "status": 403,
+      "passed": false
+    }
+  ],
+  "source_policy": "Official Canadian public bodies only; historical source snapshots are preserved separately.",
+  "execution": "Kevin's desktop VS Code integrated terminal"
+}

@@ -1,4 +1,4 @@
-"""Build a portable, imported seven-page Power BI project from the saved desktop study."""
+"""Build a portable, imported nine-page Power BI project from the saved desktop study."""
 from pathlib import Path
 import json
 import shutil
@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data/processed"; BI=ROOT/"powerbi"
 REPORT=BI/"HomebuyingBarriers.Report";MODEL=BI/"HomebuyingBarriers.SemanticModel"
 PAGES=[("answer","Start here"),("cash","Cash and income"),("changes","What helps"),("limits","Price limits"),
-       ("history","Over time"),("waiting","Waiting to buy"),("audit","Bank audit")]
+       ("latest","Latest rates"),("history","Over time"),("waiting","Waiting to buy"),("audit","Bank audit"),("calculation_audit","Calculation audit")]
 MONEY='"CAD "#,0;("CAD "#,0)'
 
 def frame(name):
@@ -34,6 +34,9 @@ def proj(t,c,kind="Column"):
         "metric_1_label":"Measure affected","metric_1_before":"Before","metric_1_after":"After",
         "benchmark_price":"2023 benchmark price","maximum_price_display":"Price within both checks",
         "additional_cash_display":"Extra cash at benchmark","total_cash_to_fit_at_benchmark":"Total cash needed at benchmark",
+        "baseline_required_income":"Income needed: 2023 rates","baseline_monthly_mortgage":"Payment: 2023 rates",
+        "variant_label":"Calculation","income_understated":"Income understated/year","decision_label":"Audit result",
+        "contract_rate":"Contract rate (%)","qualifying_rate":"Qualifying rate (%)",
         "price_growth_label":"Hypothetical price path","rent_growth_label":"Rent growth"}.get(c,c)
     return p
 
@@ -69,6 +72,10 @@ def build():
     waiting["price_growth_label"]=waiting.annual_price_growth.map({-.05:"Price -5%/year",0:"Flat prices",.05:"Price +5%/year"})
     waiting["rent_growth_label"]=waiting.annual_rent_growth.map({0:"0%",.03:"3%",.06:"6%"})
     audit=frame("homebuying_bank_audit.csv");controls=frame("homebuying_controls.csv")
+    latest=frame("homebuying_latest_rates.csv")
+    latest_limits=frame("homebuying_latest_rate_limits.csv")
+    errors=frame("homebuying_calculation_audit.csv")
+    errors["scenario_order"]=errors.scenario.map({name:i for i,name in enumerate(order)})
     decomp=frame("homebuying_decomposition.csv")
     summary=json.loads((OUT/"homebuying_summary.json").read_text(encoding="utf-8"))
     profiles=pd.DataFrame(summary["profiles"])[["id","name","gross_income","liquid_cash","monthly_debt"]].rename(columns={"id":"profile","name":"profile_label"})
@@ -86,7 +93,8 @@ def build():
              ("Baseline",baseline,None),("Comparisons",compare,None),
              ("History",history,[b.measure("Modeled income needed","MAX(\'History\'[required_gross_income])",MONEY),b.measure("Observed buyer-family income","MAX(\'History\'[buyer_family_median_income])",MONEY)]),
              ("Programs",programs,None),("Waiting",waiting,[b.measure("Required gross income","MAX(\'Waiting\'[required_gross_income])",MONEY)]),
-             ("Audit",audit,None),("Controls",controls,None),("Decomposition",decomp,None),("Limits",limits,None)]
+             ("Audit",audit,None),("Controls",controls,None),("Decomposition",decomp,None),("Limits",limits,None),
+             ("LatestRates",latest,None),("LatestRateLimits",latest_limits,None),("CalculationAudit",errors,None)]
     for name,df,ms in sources:
         t=b.table(name,df,ms)
         for c in t["columns"]:
@@ -98,6 +106,9 @@ def build():
                 if col.startswith("metric_") and (col.endswith("_before") or col.endswith("_after")):
                     c["formatString"]=MONEY
         if name=="Cases":
+            next(c for c in t["columns"] if c["name"]=="scenario_label")["sortByColumn"]="scenario_order"
+        if name=="CalculationAudit":
+            next(c for c in t["columns"] if c["name"]=="variant_label")["sortByColumn"]="variant_order"
             next(c for c in t["columns"] if c["name"]=="scenario_label")["sortByColumn"]="scenario_order"
         tables.append(t)
     rel=[]
@@ -170,6 +181,21 @@ def build():
     table("limits","cash-limit",24,420,1232,124,"Alternatively, keep the benchmark price and income: cash needed","Limits",["benchmark_price","profile_cash","total_cash_to_fit_at_benchmark","additional_cash_display"])
     text("limits","meaning",24,566,1232,70,"Cash includes down payment, closing allowance and the stated reserve. The alternatives are calculated separately. Actual borrower records, property costs and lender policy still need review.",15)
     foot("limits","Prices are rounded down and extra cash up to CAD 1,000. Based on 2023 price/rate benchmarks and rules reviewed Nov 16, 2026. This is a financial-screen limit, not a comfortable-spending budget or mortgage approval.")
+    fresh=json.loads((OUT/"homebuying_source_freshness.json").read_text(encoding="utf-8"))
+    header("latest","Do newer mortgage rates solve the income hurdle?","Same 2023 price, tax schedule and buyer finances. Change only the mortgage-rate benchmark.")
+    slicer("latest","city",24,350,"Markets","city","City");slicer("latest","profile",398,400,"Profiles","profile_label","Buyer example")
+    text("latest","period",824,118,430,110,"Latest common rate month: "+fresh["rate_period"]+"\nInsured "+format(fresh["insured_rate"],".2f")+"%; uninsured "+format(fresh["uninsured_rate"],".2f")+"%. Sources checked "+fresh["checked_on"]+".",14)
+    table("latest","income-comparison",24,263,1232,124,"Annual gross income: matched baseline vs newer-rate scenario","LatestRates",["baseline_required_income","required_gross_income","income_position_label","result_label"])
+    table("latest","payment-comparison",24,420,1232,110,"Contract monthly payment: same purchase price and cash","LatestRates",["baseline_monthly_mortgage","monthly_mortgage","contract_rate","qualifying_rate"])
+    table("latest","price-comparison",24,554,1232,82,"Financial-screen price limit under the newer-rate scenario","LatestRateLimits",["maximum_price_display"])
+    foot("latest","Rate sensitivity, not observed current affordability. The latest reviewed StatsCan release still uses 2023 buyer transactions/income. Newer monthly national rates are not an annual mean or an individual offer. Historical tax schedule and profile assumptions remain fixed.")
+    header("calculation_audit","Could a calculation mistake change the decision?","Compare the correct calculation with four deliberately flawed variants. Each error is introduced separately.")
+    slicer("calculation_audit","city",24,260,"Markets","city","City")
+    slicer("calculation_audit","profile",307,330,"Profiles","profile_label","Buyer example")
+    slicer("calculation_audit","scenario",660,595,"CalculationAudit","scenario_label","Audit this saved scenario")
+    table("calculation_audit","error-comparison",24,263,1232,345,"Correct and deliberately flawed income screens","CalculationAudit",["variant_label","required_gross_income","income_understated","decision_label"])
+    text("calculation_audit","worked-example",24,614,1232,38,"Try Vancouver / Two earners / Price 10% lower: using the contract rate to qualify creates a false pass.",12)
+    foot("calculation_audit","False pass: the flawed result fits both financial checks while the correct one does not. Cash stays unchanged. Demonstrations are not observed bank mistakes or a bank error rate. Actual borrower evidence, property costs and lender/insurer policy still require review.")
     # Structural checks before opening the native application.
     model_tables={t["name"]:{c["name"] for c in t["columns"]}|{m["name"] for m in t.get("measures",[])} for t in tables}
     def walk(value):
@@ -183,5 +209,5 @@ def build():
             for v in value:walk(v)
     for path in REPORT.rglob("*.json"):walk(json.loads(path.read_text(encoding="utf-8")))
     (ROOT/"work/homebuying_powerbi_build.json").write_text(json.dumps({"passed":True,"pages":[label for _,label in PAGES],"tables":len(tables),"case_rows":len(cases),"portable_import":True},indent=2),encoding="utf-8")
-    print("Built portable seven-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
+    print("Built portable nine-page Power BI project:",BI/"HomebuyingBarriers.pbip",flush=True)
 if __name__=="__main__":build()

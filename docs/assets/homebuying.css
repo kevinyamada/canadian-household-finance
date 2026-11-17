@@ -104,3 +104,10 @@
 .hb-program-numbers strong{font-size:16px}
 @media(max-width:800px){.hb-program-numbers{grid-template-columns:1fr 1fr}.hb-limit-grid h3{font-size:25px}#hb-bars{gap:24px}}
 @media(max-width:600px){#hb-bars,.hb-limit-grid,.hb-program-numbers{grid-template-columns:1fr}.hb-limit-grid{gap:15px}.hb-limit-grid article{padding:22px}.hb-limit-grid h3{font-size:27px}#hb-bars{gap:3px}.hb-meter-title{font-size:12px}.hb-result{grid-row:auto}.hb-program-numbers strong{font-size:17px}}
+
+/* Dated rate comparison and clearly marked deliberate errors. */
+.hb-latest-conclusion{font-size:16px;line-height:1.8;margin:20px 0;padding-left:17px;border-left:3px solid var(--green)}
+.hb-table tr.hb-false-pass{background:var(--wash);box-shadow:inset 3px 0 var(--hb-rust)}
+.hb-table tr.hb-false-pass td:last-child{font-weight:700;color:var(--hb-rust)}
+#hb-latest-context,#hb-error-context{margin-top:22px;line-height:1.8}
+#hb-error-checks p{font-size:13px;line-height:1.8}

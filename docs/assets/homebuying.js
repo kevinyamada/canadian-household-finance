@@ -17,15 +17,16 @@
     labels.forEach(([x,label])=>body+=text(x,276,label));return body;
   };
   async function init(){
-    const response=await fetch("assets/homebuying-data.json?v=4");
+    const response=await fetch("assets/homebuying-data.json?v=5");
     if(!response.ok)throw new Error("The saved buyer comparisons could not be loaded.");
     const data=await response.json();
-    let city="Vancouver",profile="couple",scenario="baseline",program="30-year amortization",rent="0.03";
+    let city="Vancouver",profile="couple",scenario="baseline",program="30-year amortization",rent="0.03",auditScenario="price10";
     opts("hb-city",Object.keys(data.cities).map(c=>[c,c]),city);
     opts("hb-profile",data.profiles.map(p=>[p.id,p.name]),profile);
     opts("hb-scenario",data.scenarios.map(s=>[s.id,s.label]),scenario);
     opts("hb-program",[...new Set(data.programs.map(p=>p.program))].map(p=>[p,p]),program);
     opts("hb-rent",[["0","0%"],["0.03","3%"],["0.06","6%"]],rent);
+    opts("hb-audit-scenario",data.audit_scenarios.map(s=>[s.id,s.label]),auditScenario);
     const lookup=(s=scenario)=>data.cases.find(r=>r.city===city&&r.profile===profile&&r.year===2023&&r.scenario===s);
     function meter(label,available,needed,availablePct,neededPct,position){
       return '<div class="hb-meter"><div class="hb-meter-title"><strong>'+label+'</strong><span>'+esc(position)+'</span></div>'+
@@ -56,6 +57,22 @@
       el("hb-limit-cash").textContent=limit.additional_cash_label;
       el("hb-limit-price-note").textContent="Purchase price that fits both financial checks with the starting cash and income.";
       el("hb-limit-cash-note").textContent="Alternatively, keep the "+money(limit.benchmark_price)+" benchmark price and the starting income.";
+      const fresh=data.source_freshness,latestRate=data.latest_rate_cases.find(r=>r.city===city&&r.profile===profile);
+      el("hb-refresh-date").textContent="Sources checked "+fresh.checked_on;
+      el("hb-latest-context").textContent=city+" · "+buyer.name+" · Baseline price "+money(base.price)+" · Gross annual income "+money(base.profile_income);
+      el("hb-latest").querySelector("tbody").innerHTML=
+        '<tr data-rate="baseline"><th scope="row">2023 annual benchmark · '+base.contract_rate.toFixed(2)+'%</th><td>'+money(base.monthly_mortgage)+'</td><td>'+money(base.required_gross_income)+'</td><td>'+esc(base.income_position_label)+'</td></tr>'+
+        '<tr data-rate="latest"><th scope="row">'+esc(fresh.rate_period)+' monthly benchmark · '+latestRate.contract_rate.toFixed(2)+'%</th><td>'+money(latestRate.monthly_mortgage)+'</td><td>'+money(latestRate.required_gross_income)+'</td><td>'+esc(latestRate.income_position_label)+'</td></tr>';
+      el("hb-latest-conclusion").textContent=words[latestRate.barrier]+" Required annual income changes from "+money(base.required_gross_income)+" to "+money(latestRate.required_gross_income)+".";
+      const errorRows=data.calculation_audit.filter(a=>a.city===city&&a.profile===profile&&a.scenario===auditScenario).sort((a,b)=>a.variant_order-b.variant_order);
+      const correct=errorRows.find(a=>a.variant==="correct");
+      el("hb-error-context").textContent=city+" · "+buyer.name+" · "+correct.scenario_label+" · Price "+money(correct.price)+" · Gross annual income "+money(correct.profile_income);
+      el("hb-error-table").querySelector("tbody").innerHTML=errorRows.map(a=>'<tr data-variant="'+esc(a.variant)+'"'+(a.false_pass?' class="hb-false-pass"':a.variant==="correct"?' class="selected"':"")+'><th scope="row">'+esc(a.variant_label)+'</th><td>'+money(a.required_gross_income)+'</td><td>'+money(a.income_understated)+'</td><td>'+esc(a.decision_label)+'</td></tr>').join("");
+      const wrongPass=errorRows.filter(a=>a.false_pass);
+      el("hb-error-conclusion").textContent=wrongPass.length
+        ?"The correct calculation leaves income short. "+(wrongPass.length===1?"The highlighted mistake produces a false pass.":"The highlighted mistakes produce false passes.")
+        :"None of the tested mistakes changes the financial-screen result in this case. An understated requirement still needs correction.";
+      el("hb-error-checks").innerHTML=errorRows.filter(a=>a.variant!=="correct").map(a=>'<p><strong>'+esc(a.variant_label)+':</strong> '+esc(a.reviewer_check)+'</p>').join("");
       const audit=data.bank_audit.filter(a=>a.city===city&&a.profile===profile);
       el("hb-audit-conclusion").textContent=city+" · "+buyer.name+" · "+audit[0].review_conclusion+".";
       el("hb-audit-controls").innerHTML=audit.map(a=>'<article><div><h3>'+esc(a.control)+'</h3><span class="hb-status">'+esc(a.status)+'</span></div><p>'+esc(a.result)+'</p><p class="small"><strong>Evidence needed:</strong> '+esc(a.evidence_needed)+'</p></article>').join("");
@@ -86,7 +103,7 @@
       el("hb-wait-readout").innerHTML=wait.series.map(s=>'<span><strong>'+esc(s.label)+'</strong><br>24 months: '+money(s.points.at(-1).income)+' income needed<br>'+esc(s.points.at(-1).barrier)+'</span>').join("");
       document.documentElement.dataset.homebuying="ready";
     }
-    for(const [id,set] of [["hb-city",v=>city=v],["hb-profile",v=>profile=v],["hb-scenario",v=>scenario=v],["hb-program",v=>program=v],["hb-rent",v=>rent=v]]){
+    for(const [id,set] of [["hb-city",v=>city=v],["hb-profile",v=>profile=v],["hb-scenario",v=>scenario=v],["hb-program",v=>program=v],["hb-rent",v=>rent=v],["hb-audit-scenario",v=>auditScenario=v]]){
       el(id).addEventListener("change",e=>{set(e.target.value);render();});
     }
     render();

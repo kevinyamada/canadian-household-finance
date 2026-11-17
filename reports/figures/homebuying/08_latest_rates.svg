@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="540pt" viewBox="0 0 864 540" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-17T16:24:06.966406</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Kevin Yamada | Local VS Code Python</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 540
+L 864 540
+L 864 0
+L 0 0
+z
+" style="fill: #fafbf8"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 112.32 432
+L 287.227317 432
+L 287.227317 108
+L 112.32 108
+z
+" style="fill: #fafbf8"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 112.32 432
+L 112.32 108
+" clip-path="url(#p2fc2b83358)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="112.32" y="443.097656" transform="rotate(-0 112.32 443.097656)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 152.071663 432
+L 152.071663 108
+" clip-path="url(#p2fc2b83358)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="152.071663" y="443.097656" transform="rotate(-0 152.071663 443.097656)">50</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 191.823326 432
+L 191.823326 108
+" clip-path="url(#p2fc2b83358)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="191.823326" y="443.097656" transform="rotate(-0 191.823326 443.097656)">100</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 231.574989 432
+L 231.574989 108
+" clip-path="url(#p2fc2b83358)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="231.574989" y="443.097656" transform="rotate(-0 231.574989 443.097656)">150</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 271.326652 432
+L 271.326652 108
+" clip-path="url(#p2fc2b83358)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="271.326652" y="443.097656" transform="rotate(-0 271.326652 443.097656)">200</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1c2d29" x="199.773659" y="457.098438" transform="rotate(-0 199.773659 457.098438)">Income needed (CAD thousands)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="108.82" y="160.512505" transform="rotate(-0 108.82 160.512505)">Single earner</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="108.82" y="273.798828" transform="rotate(-0 108.82 273.798828)">Two earners</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="108.82" y="387.085932" transform="rotate(-0 108.82 387.085932)">Larger deposit</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 112.32 122.727273
+L 266.024865 122.727273
+L 266.024865 154.447552
+L 112.32 154.447552
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 112.32 236.013986
+L 263.387308 236.013986
+L 263.387308 267.734266
+L 112.32 267.734266
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 112.32 349.300699
+L 234.693375 349.300699
+L 234.693375 381.020979
+L 112.32 381.020979
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 112.32 158.979021
+L 254.099883 158.979021
+L 254.099883 190.699301
+L 112.32 190.699301
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 112.32 272.265734
+L 251.683568 272.265734
+L 251.683568 303.986014
+L 112.32 303.986014
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 112.32 385.552448
+L 227.667459 385.552448
+L 227.667459 417.272727
+L 112.32 417.272727
+z
+" clip-path="url(#p2fc2b83358)" style="fill: #396fa1"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="112.32" y="102" transform="rotate(-0 112.32 102)">Vancouver</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_9">
+     <path d="M 179.558567 428.5
+L 282.327317 428.5
+Q 283.727317 428.5 283.727317 427.1
+L 283.727317 406.798906
+Q 283.727317 405.398906 282.327317 405.398906
+L 179.558567 405.398906
+Q 178.158567 405.398906 178.158567 406.798906
+L 178.158567 427.1
+Q 178.158567 428.5 179.558567 428.5
+z
+" style="fill: #fafbf8; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="patch_10">
+     <path d="M 180.958567 413.517812
+L 194.958567 413.517812
+L 194.958567 408.617813
+L 180.958567 408.617813
+z
+" style="fill: #a7b7b0"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="200.558567" y="413.517812" transform="rotate(-0 200.558567 413.517812)">2023 annual rates</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 180.958567 424.018359
+L 194.958567 424.018359
+L 194.958567 419.118359
+L 180.958567 419.118359
+z
+" style="fill: #396fa1"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="200.558567" y="424.018359" transform="rotate(-0 200.558567 424.018359)">2026-09 monthly rates</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_12">
+    <path d="M 383.426341 432
+L 558.333659 432
+L 558.333659 108
+L 383.426341 108
+z
+" style="fill: #fafbf8"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_6">
+     <g id="line2d_14">
+      <path d="M 383.426341 432
+L 383.426341 108
+" clip-path="url(#p3afae88fb1)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_13">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="383.426341" y="443.097656" transform="rotate(-0 383.426341 443.097656)">0</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_16">
+      <path d="M 423.178004 432
+L 423.178004 108
+" clip-path="url(#p3afae88fb1)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_14">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="423.178004" y="443.097656" transform="rotate(-0 423.178004 443.097656)">50</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_18">
+      <path d="M 462.929667 432
+L 462.929667 108
+" clip-path="url(#p3afae88fb1)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19"/>
+     <g id="text_15">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="462.929667" y="443.097656" transform="rotate(-0 462.929667 443.097656)">100</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_20">
+      <path d="M 502.68133 432
+L 502.68133 108
+" clip-path="url(#p3afae88fb1)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21"/>
+     <g id="text_16">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="502.68133" y="443.097656" transform="rotate(-0 502.68133 443.097656)">150</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_22">
+      <path d="M 542.432993 432
+L 542.432993 108
+" clip-path="url(#p3afae88fb1)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23"/>
+     <g id="text_17">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="542.432993" y="443.097656" transform="rotate(-0 542.432993 443.097656)">200</text>
+     </g>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1c2d29" x="470.88" y="457.098438" transform="rotate(-0 470.88 457.098438)">Income needed (CAD thousands)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_24"/>
+     <g id="text_19">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="379.926341" y="160.512505" transform="rotate(-0 379.926341 160.512505)">Single earner</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_25"/>
+     <g id="text_20">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="379.926341" y="273.798828" transform="rotate(-0 379.926341 273.798828)">Two earners</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_26"/>
+     <g id="text_21">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="379.926341" y="387.085932" transform="rotate(-0 379.926341 387.085932)">Larger deposit</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_13">
+    <path d="M 383.426341 122.727273
+L 494.57022 122.727273
+L 494.57022 154.447552
+L 383.426341 154.447552
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 383.426341 236.013986
+L 484.781537 236.013986
+L 484.781537 267.734266
+L 383.426341 267.734266
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 383.426341 349.300699
+L 457.600263 349.300699
+L 457.600263 381.020979
+L 383.426341 381.020979
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 383.426341 158.979021
+L 486.24797 158.979021
+L 486.24797 190.699301
+L 383.426341 190.699301
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 383.426341 272.265734
+L 477.456506 272.265734
+L 477.456506 303.986014
+L 383.426341 303.986014
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 383.426341 385.552448
+L 453.654472 385.552448
+L 453.654472 417.272727
+L 383.426341 417.272727
+z
+" clip-path="url(#p3afae88fb1)" style="fill: #396fa1"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="383.426341" y="102" transform="rotate(-0 383.426341 102)">Victoria</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_19">
+    <path d="M 654.532683 432
+L 829.44 432
+L 829.44 108
+L 654.532683 108
+z
+" style="fill: #fafbf8"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_11">
+     <g id="line2d_27">
+      <path d="M 654.532683 432
+L 654.532683 108
+" clip-path="url(#p1129c75d58)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_23">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="654.532683" y="443.097656" transform="rotate(-0 654.532683 443.097656)">0</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_29">
+      <path d="M 694.284346 432
+L 694.284346 108
+" clip-path="url(#p1129c75d58)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_24">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="694.284346" y="443.097656" transform="rotate(-0 694.284346 443.097656)">50</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_31">
+      <path d="M 734.036009 432
+L 734.036009 108
+" clip-path="url(#p1129c75d58)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_32"/>
+     <g id="text_25">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="734.036009" y="443.097656" transform="rotate(-0 734.036009 443.097656)">100</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_33">
+      <path d="M 773.787672 432
+L 773.787672 108
+" clip-path="url(#p1129c75d58)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_34"/>
+     <g id="text_26">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="773.787672" y="443.097656" transform="rotate(-0 773.787672 443.097656)">150</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_35">
+      <path d="M 813.539335 432
+L 813.539335 108
+" clip-path="url(#p1129c75d58)" style="fill: none; stroke: #d7dfda; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_36"/>
+     <g id="text_27">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #54635e" x="813.539335" y="443.097656" transform="rotate(-0 813.539335 443.097656)">200</text>
+     </g>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1c2d29" x="741.986341" y="457.098438" transform="rotate(-0 741.986341 457.098438)">Income needed (CAD thousands)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6">
+    <g id="ytick_7">
+     <g id="line2d_37"/>
+     <g id="text_29">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="651.032683" y="160.512505" transform="rotate(-0 651.032683 160.512505)">Single earner</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_38"/>
+     <g id="text_30">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="651.032683" y="273.798828" transform="rotate(-0 651.032683 273.798828)">Two earners</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_39"/>
+     <g id="text_31">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #54635e" x="651.032683" y="387.085932" transform="rotate(-0 651.032683 387.085932)">Larger deposit</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_20">
+    <path d="M 654.532683 122.727273
+L 749.346961 122.727273
+L 749.346961 154.447552
+L 654.532683 154.447552
+z
+" clip-path="url(#p1129c75d58)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 654.532683 236.013986
+L 740.727737 236.013986
+L 740.727737 267.734266
+L 654.532683 267.734266
+z
+" clip-path="url(#p1129c75d58)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 654.532683 349.300699
+L 712.697345 349.300699
+L 712.697345 381.020979
+L 654.532683 381.020979
+z
+" clip-path="url(#p1129c75d58)" style="fill: #a7b7b0"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 654.532683 158.979021
+L 742.835144 158.979021
+L 742.835144 190.699301
+L 654.532683 190.699301
+z
+" clip-path="url(#p1129c75d58)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 654.532683 272.265734
+L 735.684512 272.265734
+L 735.684512 303.986014
+L 654.532683 303.986014
+z
+" clip-path="url(#p1129c75d58)" style="fill: #396fa1"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 654.532683 385.552448
+L 710.099446 385.552448
+L 710.099446 417.272727
+L 654.532683 417.272727
+z
+" clip-path="url(#p1129c75d58)" style="fill: #396fa1"/>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="654.532683" y="102" transform="rotate(-0 654.532683 102)">Halifax</text>
+   </g>
+  </g>
+  <g id="text_33">
+   <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1c2d29" x="51.84" y="36.796875" transform="rotate(-0 51.84 36.796875)">Newer rates help. The income hurdle can remain.</text>
+  </g>
+  <g id="text_34">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="51.84" y="64.298437" transform="rotate(-0 51.84 64.298437)">Same 2023 purchase price, property-tax schedule and buyer finances; newer monthly national rates replace the 2023 annual benchmark.</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(51.84 482.079531)">Latest rate period: 2026-09. Bank of Canada funds-advanced fixed 5-year-and-over series V122667780/786. Monthly rates are not annual averages or</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(51.84 491.681719)">borrower offers. The latest reviewed Statistics Canada buyer release still uses 2023 transactions and income. This isolates rates and does not measure</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #54635e" transform="translate(51.84 501.283906)">current-market affordability. Profile income, cash, historical tax schedule and other costs stay fixed.</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #54635e" x="51.84" y="521.1" transform="rotate(-0 51.84 521.1)">Kevin Yamada | Canadian Household Finance | Official Canadian public sources</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2fc2b83358">
+   <rect x="112.32" y="108" width="174.907317" height="324"/>
+  </clipPath>
+  <clipPath id="p3afae88fb1">
+   <rect x="383.426341" y="108" width="174.907317" height="324"/>
+  </clipPath>
+  <clipPath id="p1129c75d58">
+   <rect x="654.532683" y="108" width="174.907317" height="324"/>
+  </clipPath>
+ </defs>
+</svg>

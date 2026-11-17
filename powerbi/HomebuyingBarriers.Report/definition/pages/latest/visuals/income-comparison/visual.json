@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "income-comparison",
+  "position": {
+    "x": 24,
+    "y": 263,
+    "width": 1232,
+    "height": 124,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Annual gross income: matched baseline vs newer-rate scenario'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "baseline_required_income"
+                }
+              },
+              "queryRef": "LatestRates.baseline_required_income",
+              "nativeQueryRef": "baseline_required_income",
+              "displayName": "Income needed: 2023 rates"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "required_gross_income"
+                }
+              },
+              "queryRef": "LatestRates.required_gross_income",
+              "nativeQueryRef": "required_gross_income",
+              "displayName": "Income needed/year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "income_position_label"
+                }
+              },
+              "queryRef": "LatestRates.income_position_label",
+              "nativeQueryRef": "income_position_label",
+              "displayName": "Income vs requirement/year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "result_label"
+                }
+              },
+              "queryRef": "LatestRates.result_label",
+              "nativeQueryRef": "result_label",
+              "displayName": "Financial screen"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

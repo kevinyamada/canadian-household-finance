@@ -1,22 +1,19 @@
-# Project status
+# Project status and further work
 
-The latest review and next analytical step are complete:
+Completed November 17, 2026:
 
-- Rechecked purchase cash, income, loan balances, first-five-year interest, program accounting and waiting cash.
-- Explained the zero shortfalls and replaced them in comparisons with amounts above or below the requirements.
-- Changed program cards to show the quantity each measure changes.
-- Restored the coloured provincial Canada map as a visible main feature and kept the renter trend graph visible.
-- Calculated a purchase-price limit and additional cash needed for all nine baseline buyers.
-- Added the price-limit comparison to Power BI and the published figures.
+- Separate minimum cash from mortgage income and show amounts above/below each requirement.
+- Restore the coloured interactive Canada map, retaining light mode and the small manual theme button.
+- Calculate baseline price limits and extra-cash alternatives.
+- Review the latest Statistics Canada release without relabeling 2023 sales as newer data.
+- Download September 2026 Bank of Canada mortgage rates and show a separately scoped rate sensitivity.
+- Add a worked mortgage-calculation audit, four defined mistakes, reviewer controls and a separate SQL check.
+- Update the website, native Power BI report, nine figures and short interview brief.
 
-[Calculation review](../reports/calculation_review.md) · [Findings](../reports/homebuying_findings.md) · [Bank audit case](bank_audit_case.md)
+## Research that would strengthen the evidence
 
-## What still needs real-world evidence
+1. Replace city medians and historical cost assumptions with a current, matched property example using an official tax bill, justified costs and a documented rate quote. Public city medians cannot establish a particular property's affordability.
+2. Review the next Statistics Canada matched buyer release and any revisions when its API is available. Check geography, buyer/property mix, suppression and reference periods before comparison.
+3. If appropriate borrower evidence is ever available with authorization, test the screen against verified income, debt and source-of-funds records. The present project uses fictional profiles and cannot estimate actual approvals or default rates.
 
-A mortgage decision needs verified borrower finances, a specific property, current offered terms and the lender's actual policy. The fictional files remain on hold pending evidence. A calculated limit is not a recommendation to spend that amount.
-
-A later research refresh should use a comparable post-2023 city buyer release when available. The existing 2025 rate replay isolates rates and cannot establish observed 2025 affordability.
-
-A complete buy-versus-rent investment comparison would require matched property/rent evidence, justified investment returns, maintenance, selling costs and a holding period. The current waiting study does not claim that broader result.
-
-For an interview, demonstrate the Canada map, the cash/income split, the direct price check and the banking audit. Explain the source dates and assumptions clearly.
+The current portfolio is ready to explain through [the interview brief](interview_brief.md). New work should improve the evidence behind the same question.

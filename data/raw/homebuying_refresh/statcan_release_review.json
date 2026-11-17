@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-17",
+  "release_date": "2026-08-26",
+  "property_reference_year": 2024,
+  "latest_sales_year": 2023,
+  "table": "46-10-0099-01",
+  "table_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610009901",
+  "release_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260826/dq260826b-eng.htm",
+  "review_method": "Official Statistics Canada table and Daily release reviewed with web access. Release explicitly distinguishes 2024 property stock from 2023 sales/buyers.",
+  "extract_status": "Official release reviewed on 2026-11-17. Desktop WDS metadata and download-info requests returned HTTP 403; the existing checksummed historical extract was not re-downloaded or certified free of revisions."
+}

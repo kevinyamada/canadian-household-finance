@@ -63,3 +63,11 @@ This is an independent review exercise informed by public OSFI B-20. It uses a c
 The prices and baseline rates are **2023**, not present-day quotes. Rules are reviewed November 16, 2026. Buyer finances, closing allowance, reserve and carrying costs are assumptions. City transaction medians do not represent identical homes or every renter.
 
 [Explore the website](https://kevinyamada.github.io/canadian-household-finance/) · [Audit working paper](../docs/bank_audit_case.md) · [Methodology and sources](../docs/homebuying_methodology.md) · [Figure gallery](figures/homebuying/README.md)
+
+## November 17 extension: newer rates and a worked audit
+
+At the unchanged Vancouver benchmark, September 2026 rates change required income from CAD 190,014 to CAD 175,293. Income is still CAD 25,293 short. This holds the 2023 price/tax schedule and profile finances fixed; it is not observed current affordability.
+
+A separate CAD 764,100 worked case needs CAD 167,429 income correctly. Qualifying at the contract rate incorrectly reduces that to CAD 141,543, creating a false pass. Four controlled mistakes are retained across 117 scenarios (585 correct/flawed rows); they do not measure a bank error rate.
+
+[Source refresh and retrieval limits](source_refresh.md) · [Calculation audit](mortgage_calculation_audit.md) · [Interview brief](../docs/interview_brief.md)

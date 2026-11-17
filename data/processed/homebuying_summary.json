@@ -101,5 +101,7 @@
   "price_limit_cases": 9,
   "review_checks": 13,
   "source_policy": "Statistics Canada first; official Canadian public bodies only",
-  "execution": "Prepared and checked with Python and SQL in Kevin's local desktop VS Code integrated terminal"
+  "execution": "Prepared and checked with Python and SQL in Kevin's local desktop VS Code integrated terminal",
+  "latest_rate_period": "2026-09",
+  "calculation_audit_rows": 585
 }

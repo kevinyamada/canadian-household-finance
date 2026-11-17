@@ -277,6 +277,10 @@ def generate():
     save_csv(OUT/"homebuying_bank_audit.csv", audit)
     with sqlite3.connect(OUT/"homebuying.sqlite") as connection:
         audit.to_sql("audit_reviews", connection, if_exists="replace", index=False)
+    from homebuying_updates import build_updates
+    updates = build_updates(cases)
+    summary.update(latest_rate_period=updates["source_freshness"]["rate_period"], calculation_audit_rows=len(updates["calculation_audit"]))
+    write_json(OUT/"homebuying_summary.json", summary)
     existing_map = json.loads((ASSETS/"visuals-data.json").read_text(encoding="utf-8"))["map"]
     map_payload = {**existing_map, "markers": projected_markers(existing_map)}
     # SVG plot coordinates are built locally, with explicit axes; no financial rules run in the browser.
@@ -307,7 +311,7 @@ def generate():
                     series.append({"label": label, "style": style, "points": points, "path": "M"+"L".join(f"{p['x']:.3f},{p['y']:.3f}" for p in points)})
                 income_y = 250-buyer.gross_income/250000*215
                 waiting_lines[f"{city}|{buyer.id}|{rent_growth:g}"] = {"series": series, "profile_path": f"M70,{income_y:.3f}L710,{income_y:.3f}"}
-    payload = {"version": 2, "summary": summary, "cities": CITIES, "profiles": summary["profiles"],
+    payload = {**updates, "version": 3, "summary": summary, "cities": CITIES, "profiles": summary["profiles"],
                "scenarios": [{"id": s, "label": label} for s, label in SCENARIOS], "map": map_payload,
                "cases": records(cases), "history": records(history), "history_lines": history_lines,
                "waiting": records(waiting), "waiting_lines": waiting_lines, "programs": records(programs), "rate_replay": records(rate_replay), "decomposition": records(contributions),

@@ -131,3 +131,17 @@ Tests compare the search to exhaustive whole-dollar domains, including a disconn
 A separate 60-month amortization schedule checks every purchase case's interest and balance. Extended SQL checks reconcile eight identities, including positions, loans and monthly outgoings. The [calculation review](../reports/calculation_review.md) states the checks and their coverage. The [price-limit CSV](../data/processed/homebuying_price_limits.csv) preserves exact values.
 
 These thresholds remain a financial screen with hypothetical costs and fixed 2023 rate benchmarks. They are not market forecasts, a comfortable household spending budget or lender approval.
+
+## Dated rate refresh and deliberate-error audit
+
+The original matched 2023 comparison is preserved. The dated refresh manifest stores full Bank of Canada observations through the requested cutoff, verifies the funds-advanced/insurance identities, rejects duplicate or invalid months, excludes future dates and selects the latest month common to both series. September 2026 is a monthly observation, not a 2026 annual mean. Reproduction uses preserved source files and does not need live requests.
+
+Statistics Canada's latest reviewed release (August 26, 2026) combines 2024 property stock with 2023 sales/buyers. Desktop WDS requests returned HTTP 403 on November 17; official table/release pages were reviewed, and the existing checksummed extract retained. Revision-free re-download is not claimed. See [source refresh](../reports/source_refresh.md).
+
+The newer-rate sensitivity changes only insured/uninsured national mortgage rates, holding 2023 prices, tax schedules and all buyer assumptions fixed. Its nine financial-screen price limits use the same boundary-aware search. It does not measure current-market affordability.
+
+The audit module calculates one correct and four intentionally flawed versions for each of 117 saved current-benchmark cases. Errors separately use the contract rate to qualify, omit debt, omit property tax/heat/half condo fees, or omit the financed premium while retaining the same qualifying rate. Cash is unchanged. A false pass requires both cash and flawed income checks to pass while the correct financial result fails. It is not a default-risk measure or observed bank error rate.
+
+[Audit SQL](../sql/homebuying_updates.sql) independently rechecks requirements and false-pass classification. Tests cover a known false pass, binding TDS, cash-short cases, premium-free and cash purchases, common-month/date coverage and all latest-rate threshold boundaries. Website checks compare all 585 displayed audit rows and all nine newer-rate examples with saved outputs.
+
+For an intentional refresh, review the official release first, save a dated review JSON, and run src/refresh_homebuying_sources.py --as-of YYYY-MM-DD --statcan-review PATH. Newer matched buyer data or policy/tax changes require review before rebuilding.

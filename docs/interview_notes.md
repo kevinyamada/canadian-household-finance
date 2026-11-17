@@ -41,7 +41,7 @@ It does not use TD's internal policy, client records or endorsement. The 39%/44%
 ## Resume bullets
 
 - Built a Canadian homebuying study using Python, SQL and official public data to compare cash and mortgage-income constraints across three cities, 468 purchase scenarios and 162 waiting scenarios.
-- Created a seven-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
+- Created a nine-page Power BI report, interactive GitHub Pages website and an OSFI-informed mortgage audit working paper that separates checked calculations, policy assumptions and missing evidence.
 
 Use wording you can explain in your own words. Describe assistance honestly if asked.
 
@@ -52,3 +52,12 @@ Use wording you can explain in your own words. Describe assistance honestly if a
 The shortfall was floored at zero. It showed only money missing, so it hid the effect of extra cash in an already-funded example. I now show cash and income above or below the requirement, and program cards show the variable the program changes.
 
 The direct price/cash search handles tax and insurance boundaries. It is checked against exhaustive small domains, including a disconnected feasible set. See the [calculation review](../reports/calculation_review.md).
+
+## Current interview brief and follow-up questions
+
+Use [the short interview brief](interview_brief.md) for the spoken introduction. The new [worked audit](../reports/mortgage_calculation_audit.md) shows a defined mistake that changes the financial-screen result.
+
+- Why keep 2023 data? The latest reviewed matched city-buyer release still uses 2023 sales and income. Newer mortgage rates are a separate sensitivity.
+- Why does missing debt sometimes leave the income requirement unchanged? The GDS constraint may still bind. An unchanged outcome does not validate a missing input.
+- What did the deliberate errors prove? Their financial effect in the saved examples, not the error frequency at TD or any bank.
+- What would a real lender need? Verified income, source of funds, debt records, property value/costs, eligibility and its actual underwriting criteria.

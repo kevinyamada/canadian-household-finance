@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-11-17",
+  "latest_sales_year": 2023,
+  "statcan_release_date": "2026-08-26",
+  "statcan_property_reference_year": 2024,
+  "rate_period": "2026-09",
+  "insured_rate": 4.15,
+  "uninsured_rate": 4.66,
+  "statcan_status": "Official release reviewed on 2026-11-17. Desktop WDS metadata and download-info requests returned HTTP 403; the existing checksummed historical extract was not re-downloaded or certified free of revisions.",
+  "rates_status": "Downloaded and checksummed from Bank of Canada Valet",
+  "matched_baseline_kept": true,
+  "current_rate_sensitivity_not_current_market": true,
+  "source_table": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610009901",
+  "release_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260826/dq260826b-eng.htm",
+  "rates_url": "https://www.bankofcanada.ca/rates/banking-and-financial-statistics/interest-rates-for-new-and-existing-lending-by-chartered-banks/",
+  "scope": "A publication date, property-stock reference year and sales reference year are different. Partial-year rates are monthly observations, not a full-year average."
+}

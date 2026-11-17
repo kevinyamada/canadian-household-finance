@@ -9,7 +9,7 @@
     },
     {
       "file": "01_cash_and_income.svg",
-      "sha256": "9aac5a00b4561e7916ea5a5916f24523cf46099086e637dc941297ed1e767494",
+      "sha256": "4c73641113c8b968c3f5137d8b467905112d7e1d058314f9687c236708be4ff4",
       "bytes": 22118
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "file": "02_income_hurdle_history.svg",
-      "sha256": "8312f0f6f04359e1a722a7b826f35b0c3882876f0848f4bc1171c7cd22e86cd8",
+      "sha256": "2e3304b0b2d08d779a04419274ae2572ca87f24954627c1de36df3161c36642b",
       "bytes": 30096
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "file": "03_what_changes_the_result.svg",
-      "sha256": "0798889a1080664eb2c52784d8fbdc91ad4d057d2857a192b7f4641f1380ec61",
+      "sha256": "3617bb8deebd36d8b9b7a1e42870aa024b09089bca0d65ce5225ecd0e309b5f3",
       "bytes": 10969
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "file": "04_price_rate_income.svg",
-      "sha256": "9d1cbb2bc18c8596d1f275658d7e3f21a658f109d4e79ba060f829d31f5bb3a1",
+      "sha256": "76e61d218547b424e5ea88fdc936fd3765e7666876f0e1b0148a911a74b9fee3",
       "bytes": 20068
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "file": "05_buyer_measures.svg",
-      "sha256": "ae235720352d33af0ba757720e740da9832e599d170d7b08943fe23d921b72bc",
+      "sha256": "6b6b2fe630db90c35f7309fa41750ee8d11a7341488593f147732baf45df0235",
       "bytes": 16996
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "file": "06_waiting_to_buy.svg",
-      "sha256": "bd1912d197dfe8c168e493a64f1eb7b5ea87ced13298abfdf0f4682da34b60da",
+      "sha256": "fd8812f225b94c69a98e4689da91985c370bf53dea1080eb66d3b5562a83513f",
       "bytes": 15979
     },
     {
@@ -69,13 +69,33 @@
     },
     {
       "file": "07_price_limits.svg",
-      "sha256": "7d0a338d2fa743cf4a66e3de5d33fcb2e172f5c5e2ab2fe313d194d235709311",
+      "sha256": "71a03060b1f73774eb1fa13f86c51487b948b1f8e233359c602cb527f3574193",
       "bytes": 19997
     },
     {
+      "file": "08_latest_rates.png",
+      "sha256": "252d8d4f54537d8e076ec6a957e587d5197edd5d10bbbe6d67e4dcc5af3602b0",
+      "bytes": 161795
+    },
+    {
+      "file": "08_latest_rates.svg",
+      "sha256": "ee906bfa20c3bfca5d90a87670e9b432bfeb49ac7c7a686ef9b90436c9637e89",
+      "bytes": 19211
+    },
+    {
+      "file": "09_calculation_audit.png",
+      "sha256": "076b534533961382f46ab4608f1a9a6b9b9c74be0930a46db94ca814a8e4941e",
+      "bytes": 159105
+    },
+    {
+      "file": "09_calculation_audit.svg",
+      "sha256": "1fedb20271b5613972f5bedc23de31edd9b3248ac2e0582ae1cdbe30f3809cfa",
+      "bytes": 12095
+    },
+    {
       "file": "HomebuyingBarriers-Figures.pdf",
-      "sha256": "2e887c80c2809c887907c35028b373f0d79c678d77c7d12b676f121579f30bbd",
-      "bytes": 68859
+      "sha256": "0b19d2927fe22c86ddd201d62332c8ea9be4a75a11b9df4f6fb1af09189bb56c",
+      "bytes": 77350
     }
   ],
   "execution": "Exported with matplotlib in Kevin's desktop VS Code"

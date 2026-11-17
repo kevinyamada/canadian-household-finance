@@ -136,6 +136,36 @@ def export():
     fig.subplots_adjust(left=.13,wspace=.50)
     note(fig,"The search isolates transfer-tax, insurance-premium and insured/uninsured-rate boundaries rather than assuming one globally smooth relationship. Exact whole-dollar thresholds and additional cash needed at each benchmark are in homebuying_price_limits.csv. Buyer finances and costs are assumptions. This is not a market-price forecast, a safe spending recommendation or lender approval. Sources: Statistics Canada, Bank of Canada, CMHC and government tax schedules; see methodology.")
     figures.append(("07_price_limits","Price limits from starting finances",fig))
+    latest=pd.read_csv(OUT/"homebuying_latest_rates.csv")
+    fig,axs=frame("Newer rates help. The income hurdle can remain.",
+        "Same 2023 purchase price, property-tax schedule and buyer finances; newer monthly national rates replace the 2023 annual benchmark.",cols=3)
+    for ax,city in zip(axs[0],["Vancouver","Victoria","Halifax"]):
+        g=latest[latest.city.eq(city)].set_index("profile").loc[["single","couple","deposit"]]
+        y=np.arange(3)
+        ax.barh(y-.16,g.baseline_required_income/1000,height=.28,color="#a7b7b0",label="2023 annual rates")
+        ax.barh(y+.16,g.required_gross_income/1000,height=.28,color=BLUE,label=str(g.rate_period.iloc[0])+" monthly rates")
+        ax.set_yticks(y,["Single earner","Two earners","Larger deposit"]);ax.invert_yaxis()
+        ax.set_title(city,loc="left");ax.set_xlim(0,220);ax.set_xlabel("Income needed (CAD thousands)");clean(ax)
+    axs[0,0].legend(fontsize=7,loc="lower right");fig.subplots_adjust(left=.13,wspace=.55)
+    period=str(latest.rate_period.iloc[0])
+    note(fig,"Latest rate period: "+period+". Bank of Canada funds-advanced fixed 5-year-and-over series V122667780/786. Monthly rates are not annual averages or borrower offers. The latest reviewed Statistics Canada buyer release still uses 2023 transactions and income. This isolates rates and does not measure current-market affordability. Profile income, cash, historical tax schedule and other costs stay fixed.")
+    figures.append(("08_latest_rates","Newer rates on the same purchase",fig))
+    errors=pd.read_csv(OUT/"homebuying_calculation_audit.csv")
+    g=errors[errors.city.eq("Vancouver")&errors.profile.eq("couple")&errors.scenario.eq("price10")].sort_values("variant_order")
+    fig,axs=frame("The wrong qualifying rate can create a false pass.",
+        "Worked audit: Vancouver, two earners, price 10% lower (CAD 764,100), CAD 150,000 gross income, unchanged purchase cash.")
+    ax=axs[0,0]
+    labels=["Correct calculation","Contract rate used to qualify","Other debt omitted","Tax, heat and condo costs omitted","Financed premium omitted"]
+    colors=[BLUE,*[RUST if bool(v) else "#a7b7b0" for v in g.false_pass.iloc[1:]]]
+    ax.barh(np.arange(5),g.required_gross_income/1000,color=colors,height=.5)
+    ax.axvline(150,color=INK,linestyle="--",label="Profile income: CAD 150,000")
+    ax.set_yticks(np.arange(5),labels);ax.invert_yaxis();ax.set_xlim(0,195)
+    for i,row in enumerate(g.itertuples()):
+        ax.text(row.required_gross_income/1000+1,i,f"{row.required_gross_income/1000:,.1f}k"+(" / false pass" if row.false_pass else ""),va="center",fontsize=9,bbox={"facecolor":PAPER,"edgecolor":"none","pad":2})
+    ax.set_xlabel("Annual gross income needed (CAD thousands)");clean(ax);fig.legend(*ax.get_legend_handles_labels(),loc="upper left",bbox_to_anchor=(.33,.855),fontsize=9,frameon=False)
+    fig.subplots_adjust(left=.33)
+    note(fig,"Each incorrect row introduces one deliberate calculation error; the cash position is held fixed. The correct qualifying rate uses the contract rate plus 2 percentage points or 5.25%, whichever is higher. A false pass means the flawed calculation fits both checks while the correct one does not. These are defined examples, not observed errors at TD or any other lender, and not a bank error-rate estimate. Sources: CMHC debt-service guidance and OSFI B-20.")
+    figures.append(("09_calculation_audit","A calculation mistake that changes the result",fig))
     assets=[]
     pdf=DEST/"HomebuyingBarriers-Figures.pdf"
     with PdfPages(pdf) as book:
@@ -151,18 +181,18 @@ def export():
     manifest={"price_year":2023,"rule_date":"2026-11-16","assets":assets,
               "execution":"Exported with matplotlib in Kevin's desktop VS Code"}
     (DEST/"manifest.json").write_text(json.dumps(manifest,indent=2),encoding="utf-8",newline="\n")
-    gallery="# Homebuying barriers: figure gallery\n\nSeven figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
+    gallery="# Homebuying barriers: figure gallery\n\nNine figures answer one question: is the down payment really the biggest obstacle?\n\n2023 transaction benchmarks; mortgage and tax rules reviewed November 16, 2026. Buyer profiles are hypothetical, not population estimates or loan approvals.\n\n"
     for stem,title,_ in figures:
         gallery+=f"## {title}\n\n![{title}]({stem}.png)\n\n[PNG]({stem}.png) · [Editable SVG]({stem}.svg)\n\n"
-    gallery+="[Seven-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
+    gallery+="[Nine-page PDF](HomebuyingBarriers-Figures.pdf) · [Source tables](../../../data/processed) · [Methodology](../../../docs/homebuying_methodology.md)\n"
     (DEST/"README.md").write_text(gallery,encoding="utf-8",newline="\n")
     archive=ROOT/"work/HomebuyingBarriers-Figures.zip"
     with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
         for path in DEST.iterdir():
             if path.is_file():z.write(path,"figures/"+path.name)
         for path in OUT.glob("homebuying_*.csv"):z.write(path,"data/"+path.name)
-        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md",ROOT/"reports/calculation_review.md"]:
+        for path in [ROOT/"docs/homebuying_methodology.md",ROOT/"reports/homebuying_findings.md",ROOT/"docs/bank_audit_case.md",ROOT/"reports/calculation_review.md",ROOT/"reports/source_refresh.md",ROOT/"reports/mortgage_calculation_audit.md",ROOT/"docs/interview_brief.md"]:
             if path.exists():z.write(path,"notes/"+path.name)
-    print(f"Published seven PNG/SVG pairs, seven-page PDF and ZIP: {archive}",flush=True)
+    print(f"Published nine PNG/SVG pairs, nine-page PDF and ZIP: {archive}",flush=True)
     return manifest
 if __name__=="__main__":export()

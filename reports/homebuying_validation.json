@@ -1,8 +1,8 @@
 {
   "passed": true,
   "execution": "Desktop VS Code integrated terminal",
-  "checked_utc": "2026-11-17T03:40:53.480714+00:00",
-  "tests_passed": 130,
+  "checked_utc": "2026-11-17T21:24:24.549302+00:00",
+  "tests_passed": 150,
   "browser_widths": [
     1440,
     768,
@@ -13,27 +13,49 @@
     "failures": [],
     "purchase_cases": 117,
     "program_comparisons": 36,
-    "price_limit_cases": 9
+    "price_limit_cases": 9,
+    "audit_calculations": 585,
+    "latest_rate_cases": 9
   },
   "native_pages": [
     "Start here",
     "Cash and income",
     "What helps",
     "Price limits",
+    "Latest rates",
     "Over time",
     "Waiting to buy",
-    "Bank audit"
+    "Bank audit",
+    "Calculation audit"
   ],
-  "native_pbix_sha256": "53b1a032cdf959828f7d24883ad627f8f09c6fdf676bef4582e7eb36e1122b07",
-  "native_pbix_bytes": 569963,
+  "native_pbix_sha256": "7979e4ffa12f11ec185159cccfbc5fef6f65e20d7b9d97c24a7cbdfc4c20f267",
+  "native_pbix_bytes": 854656,
   "power_bi_version": "2.159.1231.0",
   "native_checks": {
     "reopened_native_file": true,
     "buyer_selection_changes_values": true,
     "opens_on_start_here": true,
-    "price_limits_checked_after_reopen": true,
-    "no_model_format_prompt_on_open_or_save": true
+    "no_model_format_prompt_on_open_or_save": true,
+    "latest_rates_checked_after_reopen": true,
+    "calculation_audit_checked_after_reopen": true
+  },
+  "source_freshness": {
+    "checked_on": "2026-11-17",
+    "latest_sales_year": 2023,
+    "statcan_release_date": "2026-08-26",
+    "statcan_property_reference_year": 2024,
+    "rate_period": "2026-09",
+    "insured_rate": 4.15,
+    "uninsured_rate": 4.66,
+    "statcan_status": "Official release reviewed on 2026-11-17. Desktop WDS metadata and download-info requests returned HTTP 403; the existing checksummed historical extract was not re-downloaded or certified free of revisions.",
+    "rates_status": "Downloaded and checksummed from Bank of Canada Valet",
+    "matched_baseline_kept": true,
+    "current_rate_sensitivity_not_current_market": true,
+    "source_table": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=4610009901",
+    "release_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260826/dq260826b-eng.htm",
+    "rates_url": "https://www.bankofcanada.ca/rates/banking-and-financial-statistics/interest-rates-for-new-and-existing-lending-by-chartered-banks/",
+    "scope": "A publication date, property-stock reference year and sales reference year are different. Partial-year rates are monthly observations, not a full-year average."
   },
   "source_policy": "Statistics Canada and official Canadian public bodies",
-  "limits": "2023 price/rate benchmarks; rules reviewed 2026-11-16; hypothetical buyer finances and property costs; financial screens are not approvals or comfortable-spending recommendations"
+  "limits": "2023 matched price/income and original rate benchmark; separate 2026-09 monthly-rate sensitivity; rules reviewed 2026-11-16; hypothetical finances/costs; financial screens are not approvals; controlled errors are not observed bank error rates."
 }

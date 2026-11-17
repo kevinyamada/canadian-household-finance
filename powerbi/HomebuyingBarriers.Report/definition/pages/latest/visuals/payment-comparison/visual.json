@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "payment-comparison",
+  "position": {
+    "x": 24,
+    "y": 420,
+    "width": 1232,
+    "height": 110,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Contract monthly payment: same purchase price and cash'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183D40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "baseline_monthly_mortgage"
+                }
+              },
+              "queryRef": "LatestRates.baseline_monthly_mortgage",
+              "nativeQueryRef": "baseline_monthly_mortgage",
+              "displayName": "Payment: 2023 rates"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "monthly_mortgage"
+                }
+              },
+              "queryRef": "LatestRates.monthly_mortgage",
+              "nativeQueryRef": "monthly_mortgage",
+              "displayName": "monthly_mortgage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "contract_rate"
+                }
+              },
+              "queryRef": "LatestRates.contract_rate",
+              "nativeQueryRef": "contract_rate",
+              "displayName": "Contract rate (%)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LatestRates"
+                    }
+                  },
+                  "Property": "qualifying_rate"
+                }
+              },
+              "queryRef": "LatestRates.qualifying_rate",
+              "nativeQueryRef": "qualifying_rate",
+              "displayName": "Qualifying rate (%)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
